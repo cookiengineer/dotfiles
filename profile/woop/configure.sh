@@ -104,6 +104,9 @@ if [ -d "/home/$USER" ]; then
 	gsettings set org.gnome.desktop.background picture-options "stretched";
 	gsettings set org.gnome.desktop.background picture-uri "file:///home/$USER/Pictures/background.jpg";
 
+	echo -e "[Settings]\n" > "/home/$USER/.config/gtk-3.0/settings.ini";
+	echo -e "gtk-application-prefer-dark-theme=1\n" >> "/home/$USER/.config/gtk-3.0/settings.ini";
+
 
 	rm -f /home/$USER/.vimrc;
 	rm -rf /home/$USER/.vim;
