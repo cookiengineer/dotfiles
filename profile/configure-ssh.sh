@@ -11,7 +11,7 @@ fi;
 
 
 if [ ! -f "/home/$USER/.ssh/id_rsa" ]; then
-	ssh-keygen -t rsa -b 8192 -C "$EMAIL" -p "" -f "/home/$USER/.ssh/id_rsa";
+	ssh-keygen -t rsa -b 8192 -C "$EMAIL";
 fi;
 
 SSH_PUBLIC_KEY=$(cat "/home/$USER/.ssh/id_rsa.pub");
