@@ -38,6 +38,9 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-ssh.sh";
 	$ROOT/profile/configure-ssh.sh;
 
+	chmod +x "$ROOT/profile/configure-bash.sh";
+	$ROOT/profile/configure-bash.sh;
+
 else
 	exit 1;
 fi;

@@ -1,0 +1,31 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+# >>>>BEGIN ADDED BY CNCHI INSTALLER<<<< #
+BROWSER=/usr/bin/chromium
+EDITOR=/usr/bin/vim
+# >>>>>END ADDED BY CNCHI INSTALLER<<<<< #
+
+source /etc/profile.d/vte.sh;
+
+# TODO Uncomment this if no GNOME used
+# xset r rate 150 40;
+
+
+source /usr/share/git/git-prompt.sh;
+GIT_PS1_SHOWDIRTYSTATE=1;
+GIT_PS1_SHOWSTASHSTATE=1;
+
+# user@host folder (branch)
+# PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ ';
+
+# folder (branch)
+PS1='[\W]$(__git_ps1 " (%s)")\$ ';
+
