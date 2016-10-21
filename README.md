@@ -23,7 +23,6 @@ is the server.
 - Keyboard (Cherry JK0340 US Layout)
 - Trackball (Kensington Orbit)
 
-
 **Tower (weep)**
 
 This is my computing machine for the hardcore AI / ML shit.
@@ -35,7 +34,6 @@ It also has a webcam connected and serves as a peer-synced
 - Webcam (Logitech C920)
 - Analog Audio Interface (Scarlet 2i2 USB)
 
-
 **Raspberry Pi2 (wiip-XX)**
 
 These Raspberry Pis are connected in a cluster and serve as
@@ -43,14 +41,14 @@ peer-synced [lychee.js](https://lychee.js.org) Harvester
 instances. No hardware connected, just ArchLinux for ARM
 and local network access.
 
+**Thinkpad (wuup)**
 
-**Raspberry Pi2 (wuup)**
+An old Thinkpad I had laying around, it serves as my laptop
+for presentations of my courses at University.
 
-This Raspberry serves as a NAS, media server and mobile
-backup of source code. It is solar powered and runs ArchLinux
-for ARM.
-
-- Analog Audio Interface
+- Monitor 1 (internal 1440x900)
+- Monitor 2 (Projector 1024x768 VGA)
+- German keyboard mapped as US keyboard
 
 
 ## Installation
