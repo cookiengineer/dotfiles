@@ -90,6 +90,9 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "cookiengineer/lycheejs-experiments";
 
 
+	gsettings set org.gnome.desktop.wm.preferences audible-bell false;
+	gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close";
+
 	gsettings set org.gnome.desktop.interface gtk-theme "Arc-Dark";
 	gsettings set org.gnome.desktop.interface icon-theme "Arc";
 
