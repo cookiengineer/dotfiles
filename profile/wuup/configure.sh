@@ -80,11 +80,13 @@ if [ -d "/home/$USER" ]; then
 
 	_clone_github "cookiengineer/abs";
 	_clone_github "cookiengineer/dotfiles";
+	_clone_github "cookiengineer/html5-console";
 	_clone_github "cookiengineer/.vim";
 	# _clone_github "cookiengineer/git-hollywood";
 	# _clone_github "cookiengineer/icon-webfont-exporter";
 	# _clone_github "cookiengineer/printer-driver-dell1130";
 	# _clone_github "cookiengineer/screencast-to-youtube";
+	_clone_github "cookiengineer/unimatrix-zero";
 
 	_clone_github "cookiengineer/random-experiments";
 	_clone_github "cookiengineer/lycheejs-experiments";
