@@ -12,7 +12,12 @@ pacman -S --noconfirm --needed abs cups git ffmpeg nmap nodejs npm openssh tor v
 pacman -S --noconfirm --needed chromium evolution gimp gparted firefox quodlibet transmission-gtk;
 
 # Stuff
-pacman -S --noconfirm --needed gtk-theme-arc xorg-server-xdmx;
+# pacman -S --noconfirm --needed gtk-theme-arc xorg-server-xdmx;
+pacman -S --noconfirm --needed yaourt;
+
+# AUR Stuff
+yaourt -S --noconfirm --needed arc-firefox-theme firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere
+yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git
 
 
 # System Configuration

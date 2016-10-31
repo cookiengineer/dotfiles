@@ -12,7 +12,7 @@ pacman -S --noconfirm --needed abs cups git ffmpeg nmap nodejs npm openssh tor v
 pacman -S --noconfirm --needed chromium evolution gimp gparted firefox quodlibet transmission-gtk;
 
 # Stuff
-pacman -S --noconfirm --needed gtk-theme-arc xorg-server-xdmx;
+# pacman -S --noconfirm --needed gtk-theme-arc xorg-server-xdmx;
 pacman -S --noconfirm --needed yaourt;
 
 # AUR Stuff

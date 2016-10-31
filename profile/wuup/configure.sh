@@ -59,8 +59,8 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "Artificial-Engineering/lycheejs-website";
 
 	# _clone_github "Artificial-Engineering/AE-CICD";
-	# _clone_github "Artificial-Engineering/AE-github-todo";
 	# _clone_github "Artificial-Engineering/AE-github-scrumboard";
+	# _clone_github "Artificial-Engineering/AE-github-todo";
 	# _clone_github "Artificial-Engineering/AE-slides";
 	# _clone_github "Artificial-Engineering/AE-website" "gh-pages";
 	_clone_github "Artificial-Engineering/offgrid-browser";
@@ -71,22 +71,31 @@ if [ -d "/home/$USER" ]; then
 		mkdir -p "/home/$USER/Software/Artificial-University";
 	fi;
 
+	# _clone_github "Artificial-University/AU-lecture-tool";
 	_clone_github "Artificial-University/lecture-tool";
+	# _clone_github "Artificial-University/adblock-proxy";
+	# _clone_github "Artificial-University/fytoJS";
+	# _clone_github "Artificial-University/GeoIP.js";
+
 
 
 	if [ ! -d "/home/$USER/Software/cookiengineer" ]; then
 		mkdir -p "/home/$USER/Software/cookiengineer";
 	fi;
 
-	_clone_github "cookiengineer/abs";
-	_clone_github "cookiengineer/dotfiles";
-	_clone_github "cookiengineer/html5-console";
 	_clone_github "cookiengineer/.vim";
+	_clone_github "cookiengineer/abs";
+	# _clone_github "cookiengineer/alcatel-6015x";
+	# _clone_github "cookiengineer/cookiengineer.github.io";
+	_clone_github "cookiengineer/dotfiles";
 	# _clone_github "cookiengineer/git-hollywood";
+	_clone_github "cookiengineer/html5-console";
 	# _clone_github "cookiengineer/icon-webfont-exporter";
+	# _clone_github "cookiengineer/jsconf2014-slides";
 	# _clone_github "cookiengineer/printer-driver-dell1130";
 	# _clone_github "cookiengineer/screencast-to-youtube";
 	_clone_github "cookiengineer/unimatrix-zero";
+	_clone_github "cookiengineer/vim-explorer";
 
 	_clone_github "cookiengineer/random-experiments";
 	_clone_github "cookiengineer/lycheejs-experiments";
