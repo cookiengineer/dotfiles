@@ -35,6 +35,20 @@ _clone_github() {
 
 }
 
+_install_crx() {
+
+	name="$1";
+	crxid="$2";
+	crxurl="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=54.0&x=id%3D$crxid%26installsource%3Dondemand%26uc";
+
+	if [ ! -d "/home/$USER/Software/CRX" ]; then
+		mkdir -p "/home/$USER/Software/CRX";
+	fi;
+
+	wget --quiet -O "/home/$USER/Software/CRX/$1.crx" "$crxurl";
+
+}
+
 
 
 if [ -d "/home/$USER" ]; then
@@ -131,6 +145,12 @@ if [ -d "/home/$USER" ]; then
 	if [ ! -d /home/$USER/.vim/bundle/Vundle.vim ]; then
 		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim;
 	fi;
+
+
+	_install_crx "adguard-adblocker" "bgnkhhnnamicmpeenaelnjfhikgbkllg";
+	_install_crx "ublock-origin" "cjpalhdlnbpafiamejdnhcphjbkeiagm";
+	_install_crx "https-everywhere" "gcbommkclmclpchllfjekcdonpmejbdp";
+	_install_crx "scriptsafe" "oiigbmnaadbkfbmpbfijlflahbdbdgdf";
 
 fi;
 

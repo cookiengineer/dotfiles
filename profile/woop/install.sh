@@ -16,8 +16,9 @@ pacman -S --noconfirm --needed chromium evolution gimp gparted firefox quodlibet
 pacman -S --noconfirm --needed yaourt;
 
 # AUR Stuff
-yaourt -S --noconfirm --needed arc-firefox-theme firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere
-yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git
+yaourt -S --noconfirm --needed arc-firefox-theme firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
+yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git;
+yaourt -S --noconfirm --needed inox-bin;
 
 
 # System Configuration
