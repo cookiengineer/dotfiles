@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PROFILE=$(cd "$(dirname "$0")/"; pwd);
+
 # LightDM
 pacman -S --noconfirm --needed lightdm;
 
@@ -31,4 +33,8 @@ fi;
 
 systemctl enable sshd.service;
 systemctl enable tor.service;
+
+cat "$PROFILE/_etc/51-noto-color-emoji.conf" > "/etc/fonts/conf.avail/51-noto-color-emoji.conf";
+ln -s /etc/fonts/conf.avail/51-noto-color-emoji.conf /etc/fonts/conf.d/51-noto-color-emoji.conf;
+fc-cache;
 

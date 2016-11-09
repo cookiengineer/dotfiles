@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PROFILE=$(cd "$(dirname "$0")/"; pwd);
+
 # LightDM
 pacman -S --noconfirm --needed lightdm;
 
@@ -13,12 +15,13 @@ pacman -S --noconfirm --needed chromium evolution gimp gparted firefox quodlibet
 
 # Stuff
 # pacman -S --noconfirm --needed gtk-theme-arc xorg-server-xdmx;
-pacman -S --noconfirm --needed yaourt;
+pacman -S --noconfirm --needed yaourt noto-fonts noto-fonts-emoji;
 
 # AUR Stuff
 yaourt -S --noconfirm --needed arc-firefox-theme firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
 yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git;
 yaourt -S --noconfirm --needed inox-bin;
+yaourt -S --noconfirm --needed cairo-coloredemoji;
 
 
 # System Configuration
@@ -31,4 +34,8 @@ fi;
 
 systemctl enable sshd.service;
 systemctl enable tor.service;
+
+cat "$PROFILE/_etc/51-noto-color-emoji.conf" > "/etc/fonts/conf.avail/51-noto-color-emoji.conf";
+ln -s /etc/fonts/conf.avail/51-noto-color-emoji.conf /etc/fonts/conf.d/51-noto-color-emoji.conf;
+fc-cache;
 
