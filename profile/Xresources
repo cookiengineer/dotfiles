@@ -1,0 +1,50 @@
+
+!
+! Use this file via
+! xrdb -merge ~/.Xresources; uxterm &
+!
+
+! Font settings
+xterm*faceName: DejaVu Sans Mono Book
+xterm*faceSize: 12
+
+! Every shell is a login shell by default
+xterm*loginShell: true
+
+! User Interface
+xterm*internalBorder: 0
+xterm*borderWidth: 0
+xterm*rightScrollBar: false
+xterm*ScrollBar: false
+xterm*scrollTtyOutput: false
+
+
+! GNOME colors
+! xterm*foreground: rgb:ff/ff/ff
+! xterm*background: rgb:40/45/52
+
+! VIM colors
+xterm*foreground: rgb:ff/ff/ff
+xterm*background: rgb:12/12/12
+
+
+! GNOME (Tango) color scheme
+
+xterm*color0: rgb:2e/34/36
+xterm*color1: rgb:cc/00/00
+xterm*color2: rgb:4e/9a/06
+xterm*color3: rgb:c4/a0/00
+xterm*color4: rgb:34/65/a4
+xterm*color5: rgb:75/50/7b
+xterm*color6: rgb:06/98/9a
+xterm*color7: rgb:d3/d7/cf
+
+xterm*color8: rgb:55/57/53
+xterm*color9: rgb:ef/29/29
+xterm*color10: rgb:8a/e2/34
+xterm*color11: rgb:fc/e9/4f
+xterm*color12: rgb:72/9f/cf
+xterm*color13: rgb:ad/7f/a8
+xterm*color14: rgb:34/e2/e2
+xterm*color15: rgb:ee/ee/ec
+

@@ -10,7 +10,7 @@ pacman -S --noconfirm --needed gnome-backgrounds gnome-bluetooth gnome-calculato
 pacman -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git gnome-shell-extension-status-menu-buttons gnome-shell-extensions;
 
 # Applications
-pacman -S --noconfirm --needed abs cups git ffmpeg nmap nodejs npm openssh tor vim;
+pacman -S --noconfirm --needed abs cups git ffmpeg nmap nodejs npm openssh tor vim xterm;
 pacman -S --noconfirm --needed chromium evolution gimp gparted firefox quodlibet transmission-gtk;
 
 # Stuff

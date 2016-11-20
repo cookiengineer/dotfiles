@@ -44,6 +44,9 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-top.sh";
 	$ROOT/profile/configure-top.sh;
 
+	chmod +x "$ROOT/profile/configure-xterm.sh";
+	$ROOT/profile/configure-xterm.sh;
+
 else
 	exit 1;
 fi;
