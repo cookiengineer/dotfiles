@@ -17,6 +17,7 @@ xterm*borderWidth: 0
 xterm*rightScrollBar: false
 xterm*ScrollBar: false
 xterm*scrollTtyOutput: false
+xterm*pointerShape: left_ptr
 
 
 ! GNOME colors
