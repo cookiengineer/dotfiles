@@ -88,16 +88,21 @@ if [ -d "/home/$USER" ]; then
 	# _clone_github "cookiengineer/cookiengineer.github.io";
 	_clone_github "cookiengineer/dotfiles";
 	# _clone_github "cookiengineer/git-hollywood";
-	# _clone_github "cookiengineer/html5-console";
 	# _clone_github "cookiengineer/icon-webfont-exporter";
 	# _clone_github "cookiengineer/jsconf2014-slides";
 	# _clone_github "cookiengineer/printer-driver-dell1130";
 	# _clone_github "cookiengineer/screencast-to-youtube";
+	# _clone_github "cookiengineer/talks";
 	# _clone_github "cookiengineer/unimatrix-zero";
 	# _clone_github "cookiengineer/vim-explorer";
 
 	_clone_github "cookiengineer/random-experiments";
 	_clone_github "cookiengineer/lycheejs-experiments";
+
+	# _clone_github "polyfillr/polyfillr-console";
+	# _clone_github "polyfillr/polyfillr-ecmascript";
+	# _clone_github "polyfillr/polyfillr-webcomponents";
+	# _clone_github "polyfillr/polyfillr.github.io";
 
 
 	gsettings set org.gnome.desktop.wm.preferences audible-bell false;
