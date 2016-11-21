@@ -103,7 +103,6 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "cookiengineer/cookiengineer.github.io";
 	_clone_github "cookiengineer/dotfiles";
 	_clone_github "cookiengineer/git-hollywood";
-	_clone_github "cookiengineer/html5-console";
 	_clone_github "cookiengineer/icon-webfont-exporter";
 	_clone_github "cookiengineer/jsconf2014-slides";
 	_clone_github "cookiengineer/printer-driver-dell1130";
