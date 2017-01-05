@@ -47,6 +47,9 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-xterm.sh";
 	$ROOT/profile/configure-xterm.sh;
 
+	chmod +x "$ROOT/profile/configure-apt-pac.sh";
+	sudo $ROOT/profile/configure-apt-pac.sh;
+
 else
 	exit 1;
 fi;

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-XTERM_RC=$(cd "$(dirname "$0")/"; pwd)"/Xresources";
+XTERM_RC=$(cd "$(dirname "$0")/"; pwd)"/_etc/Xresources";
 XRDB=`which xrdb`;
 
 if [ "$USER" == "" ]; then

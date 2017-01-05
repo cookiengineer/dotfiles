@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASH_RC=$(cd "$(dirname "$0")/"; pwd)"/bashrc";
+BASH_RC=$(cd "$(dirname "$0")/"; pwd)"/_etc/bashrc";
 
 if [ "$USER" == "" ]; then
 	USER="cookiengineer";
