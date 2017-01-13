@@ -14,6 +14,7 @@ EDITOR=/usr/bin/vim
 # >>>>>END ADDED BY CNCHI INSTALLER<<<<< #
 
 source /etc/profile.d/vte.sh;
+source /etc/profile.d/z.sh;
 
 # TODO Uncomment this if no GNOME used
 # xset r rate 150 40;
