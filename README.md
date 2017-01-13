@@ -73,3 +73,14 @@ cat ~/.ssh/id_rsa.pub;
 vim;
 ```
 
+
+## Work in Progress
+
+The typical backup scenarios aren't integrated nicely. tar has an overly complicated syntax, so it makes sense to write a shell wrapper for it.
+
+Example for backup scenario:
+
+```bash
+ssh root@git-mirror 'cd /; tar -cvpzf - --exclude=/lost+found --exclude=/dev --exclude=/mnt --exclude=/proc --exclude=/run --exclude=/sys --one-file-system /' > /home/cookiengineer/git-mirror-backup.tar.gz
+```
+
