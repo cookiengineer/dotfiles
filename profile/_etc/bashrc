@@ -13,7 +13,6 @@ EDITOR=/usr/bin/vim
 # >>>>>END ADDED BY CNCHI INSTALLER<<<<< #
 
 source /etc/profile.d/vte.sh;
-source /etc/profile.d/z.sh;
 
 # TODO Uncomment this if no GNOME used
 # xset r rate 150 40;
@@ -52,11 +51,14 @@ __my_ps1() {
 		str=$str"\e[01;49;39m$(__git_ps1 "%s")\e[0m";
 	fi;
 
-	str="$str]\n└─▶";
+	str="$str]\n[$]";
 
 	echo -e "$str ";
 
 }
 
 PS1='$(__my_ps1)';
+
+
+stty -ixon;
 
