@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Exec=redshift -O 3750
+

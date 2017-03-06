@@ -152,10 +152,16 @@ if [ -d "/home/$USER" ]; then
 	fi;
 
 
-	_install_crx "adguard-adblocker" "bgnkhhnnamicmpeenaelnjfhikgbkllg";
 	_install_crx "ublock-origin" "cjpalhdlnbpafiamejdnhcphjbkeiagm";
 	_install_crx "https-everywhere" "gcbommkclmclpchllfjekcdonpmejbdp";
 	_install_crx "scriptsafe" "oiigbmnaadbkfbmpbfijlflahbdbdgdf";
+
+
+	if [ ! -d /home/$USER/.config/autostart ]; then
+		mkdir -p /home/$USER/.config/autostart;
+	fi;
+
+	cp -R $PROFILE/autostart/*.desktop /home/$USER/.config/autostart;
 
 fi;
 

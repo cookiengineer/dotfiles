@@ -19,9 +19,8 @@ pacman -S --noconfirm --needed yaourt noto-fonts noto-fonts-emoji;
 
 # AUR Stuff
 yaourt -S --noconfirm --needed arc-firefox-theme firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
-yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git;
-yaourt -S --noconfirm --needed inox-bin;
-yaourt -S --noconfirm --needed cairo-coloredemoji;
+yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git cairo-coloredemoji;
+yaourt -S --noconfirm --needed inox-bin redshift-minimal;
 
 
 # System Configuration
