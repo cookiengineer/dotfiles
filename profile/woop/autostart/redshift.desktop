@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
-Exec=redshift -O 3750
+Exec=bash -c "sleep 3 && redshift -O 3500"
 
