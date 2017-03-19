@@ -50,6 +50,12 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-apt-pac.sh";
 	sudo $ROOT/profile/configure-apt-pac.sh;
 
+	chmod +x "$ROOT/profile/configure-autotagger.sh";
+	sudo $ROOT/profile/configure-autotagger.sh;
+
+	chmod +x "$ROOT/profile/configure-cleanupdrive.sh";
+	sudo $ROOT/profile/configure-cleanupdrive.sh;
+
 else
 	exit 1;
 fi;
