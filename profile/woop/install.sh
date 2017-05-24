@@ -15,9 +15,9 @@ sudo pacman -S --noconfirm --needed noto-fonts noto-fonts-emoji;
 # AUR Stuff
 gpg --recv-key 1EB2638FF56C0C53;
 gpg --recv-key EA9DBF9FB761A677;
-pacaur -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git;
+pacaur -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git gnome-shell-extension-hidetopbar-git;
 pacaur -S --noconfirm --needed firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
-pacaur -S --noconfirm --needed numix-icon-theme-git gtk-theme-arc-flatabulous-git cplay inox-bin redshift-minimal cairo-coloredemoji;
+pacaur -S --noconfirm --needed numix-circle-icon-theme-git gtk-theme-arc-flatabulous-git cplay inox-bin redshift-minimal cairo-coloredemoji;
 
 
 # System Configuration
