@@ -6,21 +6,17 @@ PROFILE=$(cd "$(dirname "$0")/"; pwd);
 pacman -S --noconfirm --needed lightdm;
 
 # GNOME
-pacman -S --noconfirm --needed gnome-backgrounds gnome-bluetooth gnome-calculator gnome-calendar gnome-control-center gnome-desktop gnome-disk-utility gnome-font-viewer gnome-keyring gnome-maps gnome-menus gnome-mplayer gnome-online-accounts gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-system-monitor gnome-terminal gnome-themes-standard gnome-tweak-tool;
-pacman -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git gnome-shell-extension-status-menu-buttons gnome-shell-extensions;
+pacman -S --noconfirm --needed gnome-backgrounds gnome-bluetooth gnome-calculator gnome-calendar gnome-control-center gnome-desktop gnome-disk-utility gnome-font-viewer gnome-keyring gnome-maps gnome-menus gnome-mplayer gnome-online-accounts gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-system-monitor gnome-terminal gnome-tweak-tool;
+pacman -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git gnome-shell-extensions;
 
 # Applications
-pacman -S --noconfirm --needed abs cups git ffmpeg nmap nodejs npm openssh tor vim xterm;
-pacman -S --noconfirm --needed chromium evolution gimp gparted firefox quodlibet transmission-gtk;
-
-# Stuff
-# pacman -S --noconfirm --needed gtk-theme-arc xorg-server-xdmx;
-pacman -S --noconfirm --needed yaourt;
+pacman -S --noconfirm --needed abs git ffmpeg nmap nodejs npm openssh tor vim xterm;
+pacman -S --noconfirm --needed chromium gimp gparted firefox quodlibet transmission-gtk;
 
 # AUR Stuff
-yaourt -S --noconfirm --needed arc-firefox-theme firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
-yaourt -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git;
-yaourt -S --noconfirm --needed inox-bin;
+pacaur -S --noconfirm --needed firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
+pacaur -S --noconfirm --needed gtk-arc-flatabulous-theme-git gtk-theme-arc-git;
+pacaur -S --noconfirm --needed inox-bin;
 
 
 # System Configuration
