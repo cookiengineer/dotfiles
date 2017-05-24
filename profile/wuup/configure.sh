@@ -59,37 +59,39 @@ if [ -d "/home/$USER" ]; then
 
 
 
+	#
+	# GIT Repositories
+	#
+
 	if [ ! -d "/home/$USER/Software/Artificial-Engineering" ]; then
 		mkdir -p "/home/$USER/Software/Artificial-Engineering";
 	fi;
 
-	_clone_github "Artificial-Engineering/lycheejs-future";
-	_clone_github "Artificial-Engineering/lycheejs-garden";
+	# _clone_github "Artificial-Engineering/lycheejs-runtime";
+	_clone_github "Artificial-Engineering/lycheejs-bundle";
+	_clone_github "Artificial-Engineering/lycheejs-buildbot";
 	_clone_github "Artificial-Engineering/lycheejs-guide";
+	_clone_github "Artificial-Engineering/lycheejs-future";
 
-	_clone_github "Artificial-Engineering/lycheejs-legacy";
 	_clone_github "Artificial-Engineering/lycheejs-library";
 	_clone_github "Artificial-Engineering/lycheejs-harvester";
 	_clone_github "Artificial-Engineering/lycheejs-website";
 
 	# _clone_github "Artificial-Engineering/AE-CICD";
-	# _clone_github "Artificial-Engineering/AE-github-scrumboard";
-	# _clone_github "Artificial-Engineering/AE-github-todo";
-	# _clone_github "Artificial-Engineering/AE-slides";
 	# _clone_github "Artificial-Engineering/AE-website" "gh-pages";
-	_clone_github "Artificial-Engineering/offgrid-browser";
-	# _clone_github "Artificial-Engineering/node-sdl-runtime";
+	_clone_github "Artificial-Engineering/research";
+	# _clone_github "Artificial-Engineering/node-websdl";
+
 
 
 	if [ ! -d "/home/$USER/Software/Artificial-University" ]; then
 		mkdir -p "/home/$USER/Software/Artificial-University";
 	fi;
 
-	# _clone_github "Artificial-University/AU-lecture-tool";
-	_clone_github "Artificial-University/lecture-tool";
 	# _clone_github "Artificial-University/adblock-proxy";
-	# _clone_github "Artificial-University/fytoJS";
-	# _clone_github "Artificial-University/GeoIP.js";
+	# _clone_github "Artificial-University/AU-lecture-tool";
+	# _clone_github "Artificial-University/AU-courses";
+	# _clone_github "Artificial-University/AU-courses-website";
 
 
 
@@ -99,26 +101,46 @@ if [ -d "/home/$USER" ]; then
 
 	_clone_github "cookiengineer/.vim";
 	_clone_github "cookiengineer/abs";
-	# _clone_github "cookiengineer/alcatel-6015x";
+	# _clone_github "cookiengineer/anet-a8-upgrades";
 	# _clone_github "cookiengineer/cookiengineer.github.io";
 	_clone_github "cookiengineer/dotfiles";
-	# _clone_github "cookiengineer/git-hollywood";
+	_clone_github "cookiengineer/git-ddiff";
+	_clone_github "cookiengineer/git-hollywood";
+
 	# _clone_github "cookiengineer/icon-webfont-exporter";
 	# _clone_github "cookiengineer/jsconf2014-slides";
+	_clone_github "cookiengineer/lycheejs-experiments";
+	_clone_github "cookiengineer/lycheejs-prototyper";
+	_clone_github "cookiengineer/lycheejs-transpiler";
+	_clone_github "cookiengineer/machine-learning-for-dummies";
 	# _clone_github "cookiengineer/printer-driver-dell1130";
+	_clone_github "cookiengineer/random-experiments";
+	_clone_github "cookiengineer/root-tapper";
 	# _clone_github "cookiengineer/screencast-to-youtube";
+	# _clone_github "cookiengineer/smartrapcore";
+	# _clone_github "cookiengineer/sprite-tool";
 	_clone_github "cookiengineer/talks";
 	_clone_github "cookiengineer/unimatrix-zero";
 	_clone_github "cookiengineer/vim-explorer";
+	_clone_github "cookiengineer/vim-typewriter";
 
-	_clone_github "cookiengineer/random-experiments";
-	_clone_github "cookiengineer/lycheejs-experiments";
 
-	# _clone_github "polyfillr/polyfillr-console";
-	# _clone_github "polyfillr/polyfillr-ecmascript";
-	# _clone_github "polyfillr/polyfillr-webcomponents";
-	# _clone_github "polyfillr/polyfillr.github.io";
 
+	if [ ! -d "/home/$USER/Software/polyfillr" ]; then
+		mkdir -p "/home/$USER/Software/polyfillr";
+	fi;
+
+	_clone_github "polyfillr/polyfillr-console";
+	_clone_github "polyfillr/polyfillr-ecmascript";
+	_clone_github "polyfillr/polyfillr-framework";
+	_clone_github "polyfillr/polyfillr-webcomponents";
+	_clone_github "polyfillr/polyfillr.github.io";
+
+
+
+	#
+	# GNOME Settings
+	#
 
 	gsettings set org.gnome.desktop.wm.preferences audible-bell false;
 	gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close";
