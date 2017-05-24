@@ -26,7 +26,7 @@ if [ "$err" == "0" ]; then
 
 	if [ -f "$PROFILE/install.sh" ]; then
 		chmod +x "$PROFILE/install.sh";
-		sudo $PROFILE/install.sh;
+		$PROFILE/install.sh;
 	fi;
 
 
