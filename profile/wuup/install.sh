@@ -17,6 +17,7 @@ gpg --recv-key EA9DBF9FB761A677;
 pacaur -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git gnome-shell-extension-hidetopbar-git;
 pacaur -S --noconfirm --needed firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
 pacaur -S --noconfirm --needed numix-circle-icon-theme-git gtk-theme-arc-flatabulous-git cplay inox-bin redshift-minimal cairo-coloredemoji;
+pacaur -S --noconfirm --needed youtube-dl;
 
 
 # System Configuration
@@ -30,8 +31,8 @@ fi;
 sudo systemctl enable sshd.service;
 sudo systemctl enable tor.service;
 
-sudo cp "$PROFILE/../_etc/51-noto-color-emoji.conf" "/etc/fonts/conf.avail/51-noto-color-emoji.conf";
-sudo ln -s /etc/fonts/conf.avail/51-noto-color-emoji.conf /etc/fonts/conf.d/51-noto-color-emoji.conf;
+sudo cp "$PROFILE/../_etc/01-noto-color-emoji.conf" "/etc/fonts/conf.avail/01-noto-color-emoji.conf";
+sudo ln -s /etc/fonts/conf.avail/01-noto-color-emoji.conf /etc/fonts/conf.d/01-noto-color-emoji.conf;
 sudo fc-cache;
 fc-cache;
 
