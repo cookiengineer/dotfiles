@@ -1,8 +1,8 @@
 #!/bin/bash
 
-APT_PAC=$(cd "$(dirname "$0")/"; pwd)"/_bin/autotagger.js";
+file=$(cd "$(dirname "$0")/"; pwd)"/_bin/autotagger.js";
 
 
-cp "$APT_PAC" "/usr/bin/autotagger";
+cp "$file" "/usr/bin/autotagger";
 chmod +x "/usr/bin/autotagger";
 

@@ -50,6 +50,9 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-apt-pac.sh";
 	sudo $ROOT/profile/configure-apt-pac.sh;
 
+	chmod +x "$ROOT/profile/configure-autobackup.sh";
+	sudo $ROOT/profile/configure-autobackup.sh;
+
 	chmod +x "$ROOT/profile/configure-autotagger.sh";
 	sudo $ROOT/profile/configure-autotagger.sh;
 
