@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-SELF_BACKUP=`which autobackup`;
-SELF_RESTORE=`which autorestore`;
+SELF_BACKUP=`which autobackup 2> /dev/null`;
+SELF_RESTORE=`which autorestore 2> /dev/null`;
 
 #ROOT_FOLDER=$(cd $(dirname "$0"); pwd);
 ROOT_FOLDER="/home/$USER/BACKUP";
@@ -57,10 +57,26 @@ _backup_mirror() {
 	elif [ -d "$ROOT_FOLDER/mirror/$orga/$repo" ]; then
 
 		cd "$ROOT_FOLDER/mirror/$orga/$repo";
-		git config --bool core.bare false;
-		git checkout -f "$branch" --quiet;
-		git fetch origin $branch --quiet --update-head-ok;
-		git reset --hard $branch;
+
+		changes=$(git status --porcelain);
+
+		if [ "$changes" == "" ]; then
+
+			git config --bool core.bare false;
+			git checkout -f "$branch" --quiet;
+			git fetch origin $branch --quiet --update-head-ok;
+			git reset --hard $branch;
+
+			echo "OKAY";
+
+		else
+
+			git fetch origin $branch --quiet --update-head-ok;
+
+			echo "error: repo has local changes, but fetched changes";
+			echo "SKIP";
+
+		fi;
 
 	fi;
 
@@ -117,9 +133,25 @@ _backup_repo() {
 	elif [ -d "$ROOT_FOLDER/repo/$orga/$repo" ]; then
 
 		cd "$ROOT_FOLDER/repo/$orga/$repo";
-		git checkout $branch --quiet;
-		git fetch origin $branch --quiet;
-		git reset --hard origin/$branch;
+
+		changes=$(git status --porcelain);
+
+		if [ "$changes" == "" ]; then
+
+			git checkout $branch --quiet;
+			git fetch origin $branch --quiet;
+			git reset --hard origin/$branch;
+
+			echo "OKAY";
+
+		else
+
+			git fetch origin $branch --quiet;
+
+			echo "error: repo has local changes, but fetched changes";
+			echo "SKIP";
+
+		fi;
 
 	fi;
 
