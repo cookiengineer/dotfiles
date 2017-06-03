@@ -81,11 +81,24 @@ which are there to export and import all git repositories that are
 tracked.
 
 ```bash
-# This will sync local repos
+# Sync local repos with origins
 autobackup;
 
-# This will export to USB stick
+# Export backup to USB stick
 autobackup --export /run/media/cookiengineer/usb_stick/whatever;
+
+# ... Go to other Machine ...
+
+# Import backup from USB stick
+autobackup --import /run/media/cookiengineer/usb_stick/whatever;
+
+# ... Go to other (unconfigured) Machine ...
+
+# Import backup from USB stick
+cd /run/media/cookiengineer/usb_stick/whatever;
+
+chmod +x ./autobackup.sh;
+./autobackup.sh --import $(pwd);
 ```
 
 

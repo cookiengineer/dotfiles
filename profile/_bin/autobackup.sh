@@ -2,7 +2,6 @@
 
 
 SELF_BACKUP=`which autobackup 2> /dev/null`;
-SELF_RESTORE=`which autorestore 2> /dev/null`;
 
 #ROOT_FOLDER=$(cd $(dirname "$0"); pwd);
 ROOT_FOLDER="/home/$USER/BACKUP";
@@ -44,8 +43,34 @@ _backup_mirror() {
 		branch="master";
 	fi;
 
+
+	if [ "$FLAG" == "--import" ]; then
+
+		echo "import $orga/$repo";
+
+		if [ ! -d "$ROOT_FOLDER/repo/$orga" ]; then
+			mkdir -p "$ROOT_FOLDER/repo/$orga";
+		fi;
+
+		if [ "$TARGET_FOLDER" != "" ]; then
+
+			if [ -f "$TARGET_FOLDER/export/$orga/$repo.mirror.tar.gz" ]; then
+				tar xf "$TARGET_FOLDER/export/$orga/$repo.mirror.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
+			fi;
+
+		else
+
+			if [ -f "$ROOT_FOLDER/export/$orga/$repo.mirror.tar.gz" ]; then
+				tar xf "$ROOT_FOLDER/export/$orga/$repo.mirror.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
+			fi;
+
+		fi;
+
+	fi;
+
+
 	echo "";
-	echo "backup $orga/$repo";
+	echo "sync $orga/$repo";
 
 	if [ ! -d "$ROOT_FOLDER/mirror/$orga/$repo" ]; then
 
@@ -120,8 +145,34 @@ _backup_repo() {
 		branch="master";
 	fi;
 
+
+	if [ "$FLAG" == "--import" ]; then
+
+		echo "import $orga/$repo";
+
+		if [ ! -d "$ROOT_FOLDER/repo/$orga" ]; then
+			mkdir -p "$ROOT_FOLDER/repo/$orga";
+		fi;
+
+		if [ "$TARGET_FOLDER" != "" ]; then
+
+			if [ -f "$TARGET_FOLDER/export/$orga/$repo.tar.gz" ]; then
+				tar xf "$TARGET_FOLDER/export/$orga/$repo.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
+			fi;
+
+		else
+
+			if [ -f "$ROOT_FOLDER/export/$orga/$repo.tar.gz" ]; then
+				tar xf "$ROOT_FOLDER/export/$orga/$repo.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
+			fi;
+
+		fi;
+
+	fi;
+
+
 	echo "";
-	echo "backup $orga/$repo";
+	echo "sync $orga/$repo";
 
 	if [ ! -d "$ROOT_FOLDER/repo/$orga/$repo" ]; then
 
