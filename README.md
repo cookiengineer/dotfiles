@@ -4,9 +4,9 @@
 Well, here we go again. I'm tired of unautomated shit, so this
 is my repository where all the system profiles are stored in.
 
-I'm kind of an ArchLinux / AntergOS and GNOME fanboy, so you
-gotta deal with it. All devices here serve only on-demand, so
-the setup is made for partial usage, too.
+I'm kind of an Arch Linux and GNOME fanboy, so you gotta deal
+with it. All devices here serve only on-demand, so the setup
+is made for partial usage, too.
 
 
 ## Devices
@@ -71,6 +71,21 @@ cat ~/.ssh/id_rsa.pub;
 
 # Start VIM and enter :VundleInstall
 vim;
+```
+
+
+## Automatic Backup and Restore
+
+These dotfiles will also install `autobackup` and `autorestore` (WIP)
+which are there to export and import all git repositories that are
+tracked.
+
+```bash
+# This will sync local repos
+autobackup;
+
+# This will export to USB stick
+autobackup --export /run/media/cookiengineer/usb_stick/whatever;
 ```
 
 

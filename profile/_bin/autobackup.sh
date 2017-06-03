@@ -1,12 +1,18 @@
 #!/bin/bash
 
+
+SELF_BACKUP=`which autobackup`;
+SELF_RESTORE=`which autorestore`;
+
+#ROOT_FOLDER=$(cd $(dirname "$0"); pwd);
 ROOT_FOLDER="/home/$USER/BACKUP";
 FLAG="$1";
+TARGET_FOLDER="$2";
 
-if [ ! -d "/home/$USER/BACKUP" ]; then
-	mkdir -p "/home/$USER/BACKUP/export";
-	mkdir -p "/home/$USER/BACKUP/mirror";
-	mkdir -p "/home/$USER/BACKUP/repo";
+if [ ! -d "$ROOT_FOLDER" ]; then
+	mkdir -p "$ROOT_FOLDER/export";
+	mkdir -p "$ROOT_FOLDER/mirror";
+	mkdir -p "$ROOT_FOLDER/repo";
 fi;
 
 
@@ -61,12 +67,27 @@ _backup_mirror() {
 
 	if [ "$FLAG" == "--export" ]; then
 
-		if [ ! -d "$ROOT_FOLDER/export/$orga" ]; then
-			mkdir -p "../export/$orga";
-		fi;
+		echo "export $orga/$repo";
 
 		cd "$ROOT_FOLDER/mirror/$orga";
-		tar czvf "../export/$orga/$repo.tar.gz" ./$repo;
+
+		if [ "$TARGET_FOLDER" != "" ]; then
+
+			if [ ! -d "$TARGET_FOLDER/export/$orga" ]; then
+				mkdir -p "$TARGET_FOLDER/export/$orga";
+			fi;
+
+			tar czf "$TARGET_FOLDER/export/$orga/$repo.mirror.tar.gz" ./$repo;
+
+		else
+
+			if [ ! -d "$ROOT_FOLDER/export/$orga" ]; then
+				mkdir -p "$ROOT_FOLDER/export/$orga";
+			fi;
+
+			tar czf "$ROOT_FOLDER/export/$orga/$repo.mirror.tar.gz" ./$repo;
+
+		fi;
 
 	fi;
 
@@ -105,12 +126,48 @@ _backup_repo() {
 
 	if [ "$FLAG" == "--export" ]; then
 
-		if [ ! -d "$ROOT_FOLDER/export/$orga" ]; then
-			mkdir -p "../export/$orga";
-		fi;
+		echo "export $orga/$repo";
 
 		cd "$ROOT_FOLDER/repo/$orga/";
-		tar czvf "../export/$orga/$repo.tar.gz" ./$repo;
+
+		if [ "$TARGET_FOLDER" != "" ]; then
+
+			if [ ! -d "$TARGET_FOLDER/export/$orga" ]; then
+				mkdir -p "$TARGET_FOLDER/export/$orga";
+			fi;
+
+			tar czf "$TARGET_FOLDER/export/$orga/$repo.tar.gz" ./$repo;
+
+		else
+
+			if [ ! -d "$ROOT_FOLDER/export/$orga" ]; then
+				mkdir -p "$ROOT_FOLDER/export/$orga";
+			fi;
+
+			tar czf "$ROOT_FOLDER/export/$orga/$repo.tar.gz" ./$repo;
+
+		fi;
+
+
+	fi;
+
+}
+
+_backup_self() {
+
+	if [ "$FLAG" == "--export" ]; then
+
+		if [ "$TARGET_FOLDER" != "" ]; then
+
+			if [ -f "$SELF_BACKUP" ]; then
+				cp "$SELF_BACKUP" "$TARGET_FOLDER/autobackup.sh";
+			fi;
+
+			if [ -f "$SELF_RESTORE" ]; then
+				cp "$SELF_RESTORE" "$TARGET_FOLDER/autorestore.sh";
+			fi;
+
+		fi;
 
 	fi;
 
@@ -207,4 +264,7 @@ _backup_repo "humansneednotapply" "dear-github-please-dont-delete-me";
 
 _backup_repo "samyk" "poisontap";
 # _backup_file "https://arch-anywhere.org/iso/arch-anywhere-2.2.7-2-x86_64.iso";
+
+
+_backup_self;
 
