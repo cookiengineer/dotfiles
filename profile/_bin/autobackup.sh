@@ -43,6 +43,7 @@ _backup_mirror() {
 		branch="master";
 	fi;
 
+	echo "";
 
 	if [ "$FLAG" == "--import" ]; then
 
@@ -69,8 +70,7 @@ _backup_mirror() {
 	fi;
 
 
-	echo "";
-	echo "sync $orga/$repo";
+	echo "sync   $orga/$repo";
 
 	if [ ! -d "$ROOT_FOLDER/mirror/$orga/$repo" ]; then
 
@@ -145,6 +145,7 @@ _backup_repo() {
 		branch="master";
 	fi;
 
+	echo "";
 
 	if [ "$FLAG" == "--import" ]; then
 
@@ -171,8 +172,7 @@ _backup_repo() {
 	fi;
 
 
-	echo "";
-	echo "sync $orga/$repo";
+	echo "sync   $orga/$repo";
 
 	if [ ! -d "$ROOT_FOLDER/repo/$orga/$repo" ]; then
 
