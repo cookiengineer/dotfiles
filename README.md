@@ -76,9 +76,13 @@ vim;
 
 ## Automatic Backup and Restore
 
-These dotfiles will also install `autobackup` and `autorestore` (WIP)
-which are there to export and import all git repositories that are
-tracked.
+These dotfiles will also install the `autobackup` tool which is there to
+export and import all git repositories that are tracked in `~/BACKUP`.
+
+The shell script itself contains the list of files, mirrors and
+repositories; so you should modify it to your needs.
+
+Here's the workflow usage:
 
 ```bash
 # Sync local repos with origins
@@ -104,7 +108,8 @@ chmod +x ./autobackup.sh;
 
 ## Work in Progress
 
-The typical backup scenarios aren't integrated nicely. tar has an overly complicated syntax, so it makes sense to write a shell wrapper for it.
+Remote server backups are a bit overcomplicated right now. So this
+has still to be integrated nicely.
 
 Example for backup scenario:
 
