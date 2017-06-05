@@ -10,6 +10,8 @@ sudo pacman -S --noconfirm --needed gnome-bluetooth gnome-calculator gnome-calen
 sudo pacman -S --noconfirm --needed abs git ffmpeg nmap nodejs npm openssh tor vim xterm;
 sudo pacman -S --noconfirm --needed chromium gimp gparted firefox transmission-gtk;
 sudo pacman -S --noconfirm --needed noto-fonts noto-fonts-emoji;
+sudo pacman -S --noconfirm --needed usb_modeswitch modemmanager networkmanager nm-connection-editor mobile-broadband-provider-info;
+sudo pacman -S --noconfirm --needed bluez bluez-firmware bluez-hid2hci bluez-libs bluez-utils gnome-bluetooth pulseaudio-bluetooth;
 
 # AUR Stuff
 gpg --recv-key 1EB2638FF56C0C53;
@@ -17,7 +19,7 @@ gpg --recv-key EA9DBF9FB761A677;
 pacaur -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-mediaplayer-git gnome-shell-extension-hidetopbar-git;
 pacaur -S --noconfirm --needed firefox-noscript firefox-ublock-origin firefox-extension-https-everywhere;
 pacaur -S --noconfirm --needed numix-circle-icon-theme-git gtk-theme-arc-flatabulous-git cplay inox-bin redshift-minimal cairo-coloredemoji;
-pacaur -S --noconfirm --needed youtube-dl;
+pacaur -S --noconfirm --needed youtube-dl foxtrotgps;
 
 
 # System Configuration
@@ -30,6 +32,9 @@ fi;
 
 sudo systemctl enable sshd.service;
 sudo systemctl enable tor.service;
+sudo systemctl enable bluetooth.service;
+sudo systemctl enable ModemManager.service;
+sudo systemctl enable NetworkManager.service;
 
 sudo cp "$PROFILE/../_etc/01-noto-color-emoji.conf" "/etc/fonts/conf.avail/01-noto-color-emoji.conf";
 sudo ln -s /etc/fonts/conf.avail/01-noto-color-emoji.conf /etc/fonts/conf.d/01-noto-color-emoji.conf;
