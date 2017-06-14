@@ -309,6 +309,7 @@ _backup_repo "cookiengineer" ".vim";
 _backup_repo "cookiengineer" "anet-a8-upgrades";
 _backup_repo "cookiengineer" "cookiengineer.github.io";
 _backup_repo "cookiengineer" "dotfiles";
+_backup_repo "cookiengineer" "git-cockpit";
 _backup_repo "cookiengineer" "git-ddiff";
 _backup_repo "cookiengineer" "git-work";
 _backup_repo "cookiengineer" "icon-webfont-exporter";
