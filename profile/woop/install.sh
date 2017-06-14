@@ -20,6 +20,9 @@ pacaur -S --noconfirm --needed firefox-noscript firefox-ublock-origin firefox-ex
 pacaur -S --noconfirm --needed numix-circle-icon-theme-git gtk-theme-arc-flatabulous-git cplay inox-bin redshift-minimal cairo-coloredemoji;
 pacaur -S --noconfirm --needed youtube-dl;
 
+# NPM Stuff
+sudo npm install -g eslint git-cockpit git-work;
+
 
 # System Configuration
 tor_configured=$(cat /etc/tor/torrc | grep ClientUseIPv6);

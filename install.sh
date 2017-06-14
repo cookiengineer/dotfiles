@@ -59,6 +59,9 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-cleanupdrive.sh";
 	sudo $ROOT/profile/configure-cleanupdrive.sh;
 
+	chmod +x "$ROOT/profile/configure-systemd.sh";
+	$ROOT/profile/configure-systemd.sh;
+
 else
 	exit 1;
 fi;
