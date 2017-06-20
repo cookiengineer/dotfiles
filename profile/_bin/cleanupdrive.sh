@@ -34,12 +34,12 @@ if [ -d /home/$USER ]; then
 	cd /home/$USER/.cache;
 
 	rm -rf pacaur totem;
-	rm -rf lycheejs-editor lycheejs-ranger lycheejs-studio nwjs offgrid-browser;
+	rm -rf lycheejs-editor lycheejs-ranger lycheejs-studio nwjs research;
 
 
 	cd /home/$USER/.config;
 
-	rm -rf lycheejs-editor lycheejs-ranger lycheejs-studio nwjs offgrid-browser;
+	rm -rf lycheejs-editor lycheejs-ranger lycheejs-studio nwjs research;
 
 fi;
 

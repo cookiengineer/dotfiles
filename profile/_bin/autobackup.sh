@@ -8,6 +8,33 @@ ROOT_FOLDER="/home/$USER/BACKUP";
 FLAG="$1";
 TARGET_FOLDER="$2";
 
+if [ "$1" == "" ] && [ "$2" == "" ]; then
+
+	echo "Usage: autobackup [flag] [target]";
+	echo "";
+	echo "The root folder (where git repositories are stored)";
+	echo "will always be ~/BACKUP. Use a symlink if desired.";
+	echo "";
+	echo "Flags:";
+	echo "";
+	echo "    --sync      syncs local repositories";
+	echo "    --export    exports to folder as tar.gz";
+	echo "    --import    imports from folder as tar.gz";
+	echo "";
+	echo "Examples:";
+	echo "";
+	echo "    # Create backup on first machine";
+	echo "    autobackup --export /media/cookiengineer/EXTERN";
+	echo "";
+	echo "    # Restore backup on second machine";
+	echo "    autobackup --import /media/cookiengineer/EXTERN";
+	echo "";
+
+	exit 1;
+
+fi;
+
+
 if [ ! -d "$ROOT_FOLDER" ]; then
 	mkdir -p "$ROOT_FOLDER/export";
 	mkdir -p "$ROOT_FOLDER/mirror";
