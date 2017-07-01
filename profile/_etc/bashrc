@@ -7,6 +7,7 @@
 
 alias ls="ls --color=auto";
 alias cls="clear; printf '\033[3J'";
+alias git-serve="git daemon --reuseaddr --verbose --base-path=. --export-all --enable=receive-pack --";
 
 # >>>>BEGIN ADDED BY CNCHI INSTALLER<<<< #
 BROWSER=/usr/bin/chromium
