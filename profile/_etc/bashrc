@@ -7,7 +7,21 @@
 
 alias ls="ls --color=auto";
 alias cls="clear; printf '\033[3J'";
-alias git-serve="git daemon --reuseaddr --verbose --base-path=. --export-all --enable=receive-pack --";
+
+function git_serve() {
+
+	cwd=$PWD;
+
+	if [ -d "$cwd/.git" ]; then
+		$(git daemon --reuseaddr --verbose --base-path=$cwd --export-all --enable=receive-pack -- $cwd/.git);
+	else
+		echo "$cwd/.git is not a git repository";
+	fi;
+
+}
+
+alias git-serve=git_serve;
+
 
 # >>>>BEGIN ADDED BY CNCHI INSTALLER<<<< #
 BROWSER=/usr/bin/chromium
