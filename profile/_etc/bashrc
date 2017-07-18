@@ -8,7 +8,8 @@
 alias ls="ls --color=auto";
 alias cls="clear; printf '\033[3J'";
 
-function git_serve() {
+
+function git-serve() {
 
 	cwd=$PWD;
 
@@ -20,7 +21,10 @@ function git_serve() {
 
 }
 
-alias git-serve=git_serve;
+function youtube-mp3() {
+	url="$1";
+	youtube-dl --extract-audio --audio-format mp3 $1;
+}
 
 
 # >>>>BEGIN ADDED BY CNCHI INSTALLER<<<< #
