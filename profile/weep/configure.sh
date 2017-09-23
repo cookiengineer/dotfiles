@@ -60,6 +60,8 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "Artificial-Engineering/lycheejs-harvester";
 	_clone_github "Artificial-Engineering/lycheejs-website";
 
+	_clone_github "Artificial-Engineering/research";
+
 
 
 	if [ ! -d "/home/$USER/Software/cookiengineer" ]; then
@@ -68,7 +70,8 @@ if [ -d "/home/$USER" ]; then
 
 	_clone_github "cookiengineer/.vim";
 	_clone_github "cookiengineer/dotfiles";
-	_clone_github "cookiengineer/vim-explorer";
+	_clone_github "cookiengineer/git-cockpit";
+	_clone_github "cookiengineer/git-work";
 
 
 

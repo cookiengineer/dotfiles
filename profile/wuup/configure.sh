@@ -100,28 +100,30 @@ if [ -d "/home/$USER" ]; then
 	fi;
 
 	_clone_github "cookiengineer/.vim";
-	_clone_github "cookiengineer/abs";
-	# _clone_github "cookiengineer/anet-a8-upgrades";
-	# _clone_github "cookiengineer/cookiengineer.github.io";
+	_clone_github "cookiengineer/anet-a8-upgrades";
+	_clone_github "cookiengineer/cookiengineer.github.io";
 	_clone_github "cookiengineer/dotfiles";
+	_clone_github "cookiengineer/git-cockpit";
 	_clone_github "cookiengineer/git-ddiff";
 	_clone_github "cookiengineer/git-hollywood";
+	_clone_github "cookiengineer/git-work";
 
 	# _clone_github "cookiengineer/icon-webfont-exporter";
+	_clone_github "cookiengineer/jarhead-printer";
 	# _clone_github "cookiengineer/jsconf2014-slides";
 	_clone_github "cookiengineer/lycheejs-experiments";
 	_clone_github "cookiengineer/lycheejs-prototyper";
 	_clone_github "cookiengineer/lycheejs-transpiler";
 	_clone_github "cookiengineer/machine-learning-for-dummies";
+	_clone_github "cookiengineer/packup";
 	# _clone_github "cookiengineer/printer-driver-dell1130";
+	_clone_github "cookiengineer/proposal-string-cut";
 	_clone_github "cookiengineer/random-experiments";
 	_clone_github "cookiengineer/root-tapper";
 	# _clone_github "cookiengineer/screencast-to-youtube";
-	# _clone_github "cookiengineer/smartrapcore";
 	# _clone_github "cookiengineer/sprite-tool";
 	_clone_github "cookiengineer/talks";
 	_clone_github "cookiengineer/unimatrix-zero";
-	_clone_github "cookiengineer/vim-explorer";
 	_clone_github "cookiengineer/vim-typewriter";
 
 
@@ -178,6 +180,7 @@ if [ -d "/home/$USER" ]; then
 	_install_crx "ublock-origin" "cjpalhdlnbpafiamejdnhcphjbkeiagm";
 	_install_crx "https-everywhere" "gcbommkclmclpchllfjekcdonpmejbdp";
 	_install_crx "scriptsafe" "oiigbmnaadbkfbmpbfijlflahbdbdgdf";
+	_install_crx "umatrix" "ogfcmafjalglgifnmanfmnieipoejdcf";
 
 fi;
 
