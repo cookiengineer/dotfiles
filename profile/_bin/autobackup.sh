@@ -347,7 +347,6 @@ _backup_repo "cookiengineer" "printer-driver-dell1130";
 _backup_repo "cookiengineer" "sprite-tool";
 _backup_repo "cookiengineer" "ultimate-robot-kit";
 _backup_repo "cookiengineer" "unimatrix-zero";
-_backup_repo "cookiengineer" "vim-explorer";
 _backup_repo "cookiengineer" "vim-typewriter";
 
 _backup_repo "cookiengineer" "lycheejs-experiments";
