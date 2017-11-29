@@ -334,14 +334,18 @@ _backup_repo "polyfillr" "polyfillr-framework";
 
 _backup_repo "cookiengineer" ".vim";
 _backup_repo "cookiengineer" "anet-a8-upgrades";
+_backup_repo "cookiengineer" "backprop-neat-js";
 _backup_repo "cookiengineer" "cookiengineer.github.io";
 _backup_repo "cookiengineer" "dotfiles";
 _backup_repo "cookiengineer" "git-cockpit";
 _backup_repo "cookiengineer" "git-ddiff";
 _backup_repo "cookiengineer" "git-work";
 _backup_repo "cookiengineer" "icon-webfont-exporter";
+_backup_repo "cookiengineer" "jarhead-printer";
+_backup_repo "cookiengineer" "packup";
 _backup_repo "cookiengineer" "printer-driver-dell1130";
 _backup_repo "cookiengineer" "sprite-tool";
+_backup_repo "cookiengineer" "ultimate-robot-kit";
 _backup_repo "cookiengineer" "unimatrix-zero";
 _backup_repo "cookiengineer" "vim-explorer";
 _backup_repo "cookiengineer" "vim-typewriter";
