@@ -60,113 +60,27 @@ _backup_file() {
 
 }
 
-_backup_mirror() {
-
-	orga="$1";
-	repo="$2";
-	branch="$3";
-
-	if [ "$branch" == "" ]; then
-		branch="master";
-	fi;
-
-	echo "";
-
-	if [ "$FLAG" == "--import" ]; then
-
-		echo "import $orga/$repo";
-
-		if [ ! -d "$ROOT_FOLDER/repo/$orga" ]; then
-			mkdir -p "$ROOT_FOLDER/repo/$orga";
-		fi;
-
-		if [ "$TARGET_FOLDER" != "" ]; then
-
-			if [ -f "$TARGET_FOLDER/export/$orga/$repo.mirror.tar.gz" ]; then
-				tar xf "$TARGET_FOLDER/export/$orga/$repo.mirror.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
-			fi;
-
-		else
-
-			if [ -f "$ROOT_FOLDER/export/$orga/$repo.mirror.tar.gz" ]; then
-				tar xf "$ROOT_FOLDER/export/$orga/$repo.mirror.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
-			fi;
-
-		fi;
-
-	fi;
-
-
-	echo "sync   $orga/$repo";
-
-	if [ ! -d "$ROOT_FOLDER/mirror/$orga/$repo" ]; then
-
-		cd "$ROOT_FOLDER";
-		mkdir -p "$ROOT_FOLDER/mirror/$orga/$repo";
-
-		git clone --mirror --progress "https://github.com/$orga/$repo.git" "$ROOT_FOLDER/mirror/$orga/$repo/.git";
-
-	elif [ -d "$ROOT_FOLDER/mirror/$orga/$repo" ]; then
-
-		cd "$ROOT_FOLDER/mirror/$orga/$repo";
-
-		changes=$(git status --porcelain);
-
-		if [ "$changes" == "" ]; then
-
-			git config --bool core.bare false;
-			git checkout -f "$branch" --quiet;
-			git fetch origin $branch --quiet --update-head-ok;
-			git reset --hard $branch;
-
-			echo "OKAY";
-
-		else
-
-			git fetch origin $branch --quiet --update-head-ok;
-
-			echo "error: repo has local changes, but fetched changes";
-			echo "SKIP";
-
-		fi;
-
-	fi;
-
-
-	if [ "$FLAG" == "--export" ]; then
-
-		echo "export $orga/$repo";
-
-		cd "$ROOT_FOLDER/mirror/$orga";
-
-		if [ "$TARGET_FOLDER" != "" ]; then
-
-			if [ ! -d "$TARGET_FOLDER/export/$orga" ]; then
-				mkdir -p "$TARGET_FOLDER/export/$orga";
-			fi;
-
-			tar czf "$TARGET_FOLDER/export/$orga/$repo.mirror.tar.gz" ./$repo;
-
-		else
-
-			if [ ! -d "$ROOT_FOLDER/export/$orga" ]; then
-				mkdir -p "$ROOT_FOLDER/export/$orga";
-			fi;
-
-			tar czf "$ROOT_FOLDER/export/$orga/$repo.mirror.tar.gz" ./$repo;
-
-		fi;
-
-	fi;
-
-}
-
 
 _backup_repo() {
 
-	orga="$1";
-	repo="$2";
-	branch="$3";
+	host="$1";
+	orga="$2";
+	repo="$3";
+	branch="$4";
+	project="$5";
+
+
+	source_orga="$ROOT_FOLDER/repo/$orga";
+	source_repo="$ROOT_FOLDER/repo/$orga/$repo";
+	target_orga="$TARGET_FOLDER/export/$orga";
+	target_repo="$TARGET_FOLDER/export/$orga/$repo";
+
+
+	if [ "$project" != "" ]; then
+		source_repo="$ROOT_FOLDER/repo/$orga/$project/$repo";
+		target_repo="$TARGET_FOLDER/export/$orga/$project/$repo";
+	fi;
+
 
 	if [ "$branch" == "" ]; then
 		branch="master";
@@ -178,20 +92,20 @@ _backup_repo() {
 
 		echo "import $orga/$repo";
 
-		if [ ! -d "$ROOT_FOLDER/repo/$orga" ]; then
-			mkdir -p "$ROOT_FOLDER/repo/$orga";
+		if [ ! -d "$source_repo" ]; then
+			mkdir -p "$source_repo";
 		fi;
 
 		if [ "$TARGET_FOLDER" != "" ]; then
 
-			if [ -f "$TARGET_FOLDER/export/$orga/$repo.tar.gz" ]; then
-				tar xf "$TARGET_FOLDER/export/$orga/$repo.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
+			if [ -f "$target_repo.tar.gz" ]; then
+				tar xf "$target_repo.tar.gz" -C "$source_orga";
 			fi;
 
 		else
 
 			if [ -f "$ROOT_FOLDER/export/$orga/$repo.tar.gz" ]; then
-				tar xf "$ROOT_FOLDER/export/$orga/$repo.tar.gz" -C "$ROOT_FOLDER/repo/$orga";
+				tar xf "$ROOT_FOLDER/export/$orga/$repo.tar.gz" -C "$source_orga";
 			fi;
 
 		fi;
@@ -201,16 +115,20 @@ _backup_repo() {
 
 	echo "sync   $orga/$repo";
 
-	if [ ! -d "$ROOT_FOLDER/repo/$orga/$repo" ]; then
+	if [ ! -d "$source_repo" ]; then
 
 		cd "$ROOT_FOLDER";
-		mkdir -p "$ROOT_FOLDER/repo/$orga/$repo";
+		mkdir -p "$source_repo";
 
-		git clone --progress "https://github.com/$orga/$repo.git" "$ROOT_FOLDER/repo/$orga/$repo";
+		if [ "$host" == "bitbucket" ]; then
+			git clone --progress "git@bitbucket.org:$orga/$repo.git" "$source_repo";
+		elif [ "$host" == "github" ]; then
+			git clone --progress "https://github.com/$orga/$repo.git" "$source_repo";
+		fi;
 
-	elif [ -d "$ROOT_FOLDER/repo/$orga/$repo" ]; then
+	elif [ -d "$source_repo" ]; then
 
-		cd "$ROOT_FOLDER/repo/$orga/$repo";
+		cd "$source_repo";
 
 		changes=$(git status --porcelain);
 
@@ -238,15 +156,15 @@ _backup_repo() {
 
 		echo "export $orga/$repo";
 
-		cd "$ROOT_FOLDER/repo/$orga/";
+		cd "$orga_path";
 
 		if [ "$TARGET_FOLDER" != "" ]; then
 
-			if [ ! -d "$TARGET_FOLDER/export/$orga" ]; then
-				mkdir -p "$TARGET_FOLDER/export/$orga";
+			if [ ! -d "$target_orga" ]; then
+				mkdir -p "$target_orga";
 			fi;
 
-			tar czf "$TARGET_FOLDER/export/$orga/$repo.tar.gz" ./$repo;
+			tar czf "$target_repo.tar.gz" ./$repo;
 
 		else
 
@@ -285,98 +203,114 @@ _backup_self() {
 
 
 
-# XXX: HG FLOW STUFF (all branches)
-
 # _backup_file "https://github.com/Artificial-Engineering/lycheejs-runtime/releases/download/2017.04.09/lycheejs-runtime.zip";
-_backup_mirror "Artificial-Engineering" "lycheejs" "development";
+
+
+
+# UNOFFICIAL STUFF
+
+_backup_repo "bitbucket" "MM-Automation" "automaton.connector" "" "AUTO";
+_backup_repo "bitbucket" "MM-Automation" "connector" "" "AUTO";
+_backup_repo "bitbucket" "MM-Automation" "mmconnector" "" "AUTO";
+_backup_repo "bitbucket" "MM-Automation" "modbusslave" "" "AUTO";
+_backup_repo "bitbucket" "MM-Automation" "lycheejs-transpiler" "" "AUTO";
+
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.bdw" "" "MMSC";
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.dwb" "" "MMSC";
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.vc.generator" "" "MMSC";
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.vc.interface" "" "MMSC";
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.vc.interface_alt" "" "MMSC";
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.vc.merge.bits16_to_word" "" "MMSC";
+_backup_repo "bitbucket" "MM-Automation" "mm.sc.vc.split.word_to_bits16" "" "MMSC";
+
 
 
 # OFFICIAL STUFF
 
-_backup_repo "Artificial-Engineering" "lycheejs" "development";
-_backup_repo "Artificial-Engineering" "lycheejs-runtime";
-_backup_repo "Artificial-Engineering" "lycheejs-bundle";
-_backup_repo "Artificial-Engineering" "lycheejs-buildbot";
-_backup_repo "Artificial-Engineering" "lycheejs-guide";
-_backup_repo "Artificial-Engineering" "lycheejs-future";
+_backup_repo "github" "Artificial-Engineering" "lycheejs" "development";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-runtime";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-bundle";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-buildbot";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-guide";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-future";
 
-_backup_repo "Artificial-Engineering" "lycheejs-library";
-_backup_repo "Artificial-Engineering" "lycheejs-harvester";
-_backup_repo "Artificial-Engineering" "lycheejs-website";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-library";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-harvester";
+_backup_repo "github" "Artificial-Engineering" "lycheejs-website";
 
-_backup_repo "Artificial-Engineering" "AE-CICD";
-_backup_repo "Artificial-Engineering" "AE-website" "gh-pages";
-_backup_repo "Artificial-Engineering" "research";
-_backup_repo "Artificial-Engineering" "node-websdl";
+_backup_repo "github" "Artificial-Engineering" "AE-CICD";
+_backup_repo "github" "Artificial-Engineering" "AE-website" "gh-pages";
+_backup_repo "github" "Artificial-Engineering" "research";
+_backup_repo "github" "Artificial-Engineering" "node-websdl";
 
-_backup_repo "Artificial-University" "adblock-proxy";
-_backup_repo "Artificial-University" "AU-courses";
-_backup_repo "Artificial-University" "AU-lecture-tool";
-_backup_repo "Artificial-University" "AU-website" "gh-pages";
+_backup_repo "github" "Artificial-University" "adblock-proxy";
+_backup_repo "github" "Artificial-University" "AU-courses";
+_backup_repo "github" "Artificial-University" "AU-lecture-tool";
+_backup_repo "github" "Artificial-University" "AU-website" "gh-pages";
 
-_backup_repo "INT-WAW" "Boilerplate";
-_backup_repo "INT-WAW" "Slides";
-_backup_repo "INT-WAW" "git-patrol";
+_backup_repo "github" "INT-WAW" "Boilerplate";
+_backup_repo "github" "INT-WAW" "Slides";
+_backup_repo "github" "INT-WAW" "git-patrol";
 
 
 
 # POLYFILLR STUFF
 
-_backup_repo "polyfillr" "polyfillr.github.io";
-_backup_repo "polyfillr" "polyfillr-console";
-_backup_repo "polyfillr" "polyfillr-components";
-_backup_repo "polyfillr" "polyfillr-ecmascript";
-_backup_repo "polyfillr" "polyfillr-framework";
+_backup_repo "github" "polyfillr" "polyfillr.github.io";
+_backup_repo "github" "polyfillr" "polyfillr-console";
+_backup_repo "github" "polyfillr" "polyfillr-components";
+_backup_repo "github" "polyfillr" "polyfillr-ecmascript";
+_backup_repo "github" "polyfillr" "polyfillr-framework";
 
 
 
 # PRIVATE STUFF
 
-_backup_repo "cookiengineer" ".vim";
-_backup_repo "cookiengineer" "anet-a8-upgrades";
-_backup_repo "cookiengineer" "backprop-neat-js";
-_backup_repo "cookiengineer" "cookiengineer.github.io";
-_backup_repo "cookiengineer" "dotfiles";
-_backup_repo "cookiengineer" "git-cockpit";
-_backup_repo "cookiengineer" "git-ddiff";
-_backup_repo "cookiengineer" "git-work";
-_backup_repo "cookiengineer" "icon-webfont-exporter";
-_backup_repo "cookiengineer" "jarhead-printer";
-_backup_repo "cookiengineer" "packup";
-_backup_repo "cookiengineer" "printer-driver-dell1130";
-_backup_repo "cookiengineer" "sprite-tool";
-_backup_repo "cookiengineer" "ultimate-robot-kit";
-_backup_repo "cookiengineer" "unimatrix-zero";
-_backup_repo "cookiengineer" "vim-typewriter";
+_backup_repo "github" "cookiengineer" ".vim";
+_backup_repo "github" "cookiengineer" "anet-a8-upgrades";
+_backup_repo "github" "cookiengineer" "backprop-neat-js";
+_backup_repo "github" "cookiengineer" "cookiengineer.github.io";
+_backup_repo "github" "cookiengineer" "dotfiles";
+_backup_repo "github" "cookiengineer" "git-cockpit";
+_backup_repo "github" "cookiengineer" "git-ddiff";
+_backup_repo "github" "cookiengineer" "git-work";
+_backup_repo "github" "cookiengineer" "icon-webfont-exporter";
+_backup_repo "github" "cookiengineer" "jarhead-printer";
+_backup_repo "github" "cookiengineer" "packup";
+_backup_repo "github" "cookiengineer" "printer-driver-dell1130";
+_backup_repo "github" "cookiengineer" "sprite-tool";
+_backup_repo "github" "cookiengineer" "ultimate-robot-kit";
+_backup_repo "github" "cookiengineer" "unimatrix-zero";
+_backup_repo "github" "cookiengineer" "vim-typewriter";
 
-_backup_repo "cookiengineer" "lycheejs-experiments";
-_backup_repo "cookiengineer" "lycheejs-prototyper";
-_backup_repo "cookiengineer" "lycheejs-transpiler";
-_backup_repo "cookiengineer" "random-experiments";
+_backup_repo "github" "cookiengineer" "lycheejs-experiments";
+_backup_repo "github" "cookiengineer" "lycheejs-prototyper";
+_backup_repo "github" "cookiengineer" "lycheejs-transpiler";
+_backup_repo "github" "cookiengineer" "random-experiments";
 
-# _backup_repo "cookiengineer" "blackberry-desktop-linux";
-# _backup_repo "cookiengineer" "N1T1";
-# _backup_repo "cookiengineer" "Nidium";
-_backup_repo "cookiengineer" "regulex";
-_backup_repo "cookiengineer" "root-tapper";
-_backup_repo "cookiengineer" "screencast-to-youtube";
-_backup_repo "cookiengineer" "stardate.js";
+# _backup_repo "github" "cookiengineer" "blackberry-desktop-linux";
+# _backup_repo "github" "cookiengineer" "N1T1";
+# _backup_repo "github" "cookiengineer" "Nidium";
+_backup_repo "github" "cookiengineer" "regulex";
+_backup_repo "github" "cookiengineer" "root-tapper";
+_backup_repo "github" "cookiengineer" "screencast-to-youtube";
+_backup_repo "github" "cookiengineer" "stardate.js";
 
-_backup_repo "cookiengineer" "jsconf2014-slides";
-_backup_repo "cookiengineer" "machine-learning-for-dummies";
-_backup_repo "cookiengineer" "talks";
+_backup_repo "github" "cookiengineer" "jsconf2014-slides";
+_backup_repo "github" "cookiengineer" "machine-learning-for-dummies";
+_backup_repo "github" "cookiengineer" "talks";
 
 
 
 # BOTS
 
-_backup_repo "humansneednotapply" "dear-github-please-dont-delete-me";
+_backup_repo "github" "humansneednotapply" "dear-github-please-dont-delete-me";
 
 
 
 # OTHER
 
-_backup_repo "samyk" "poisontap";
+_backup_repo "github" "samyk" "poisontap";
 # _backup_file "https://arch-anywhere.org/iso/arch-anywhere-2.2.7-2-x86_64.iso";
 
 
