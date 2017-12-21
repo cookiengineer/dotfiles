@@ -122,8 +122,10 @@ _backup_repo() {
 
 		if [ "$host" == "bitbucket" ]; then
 			git clone --progress "git@bitbucket.org:$orga/$repo.git" "$source_repo";
+			git fetch origin --tags;
 		elif [ "$host" == "github" ]; then
 			git clone --progress "https://github.com/$orga/$repo.git" "$source_repo";
+			git fetch origin --tags;
 		fi;
 
 	elif [ -d "$source_repo" ]; then
@@ -135,6 +137,7 @@ _backup_repo() {
 		if [ "$changes" == "" ]; then
 
 			git checkout $branch --quiet;
+			git fetch origin --tags;
 			git fetch origin $branch --quiet;
 			git reset --hard origin/$branch;
 
