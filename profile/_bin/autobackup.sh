@@ -167,6 +167,16 @@ _backup_repo() {
 				mkdir -p "$target_orga";
 			fi;
 
+			target_path=$(dirname "$target_repo");
+			source_path=$(dirname "$source_repo");
+
+			if [ ! -d "$target_path" ]; then
+				mkdir -p "$target_path";
+			fi;
+
+
+			cd $source_path;
+
 			tar czf "$target_repo.tar.gz" ./$repo;
 
 		else
