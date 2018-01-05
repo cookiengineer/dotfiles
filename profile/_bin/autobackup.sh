@@ -119,6 +119,7 @@ _backup_repo() {
 
 		cd "$ROOT_FOLDER";
 		mkdir -p "$source_repo";
+		cd "$source_repo";
 
 		if [ "$host" == "bitbucket" ]; then
 			git clone --progress "git@bitbucket.org:$orga/$repo.git" "$source_repo";
@@ -246,10 +247,10 @@ _backup_repo "github" "Artificial-Engineering" "lycheejs-bundle";
 _backup_repo "github" "Artificial-Engineering" "lycheejs-buildbot";
 _backup_repo "github" "Artificial-Engineering" "lycheejs-guide";
 _backup_repo "github" "Artificial-Engineering" "lycheejs-future";
-
 _backup_repo "github" "Artificial-Engineering" "lycheejs-library";
 _backup_repo "github" "Artificial-Engineering" "lycheejs-harvester";
 _backup_repo "github" "Artificial-Engineering" "lycheejs-website";
+_backup_repo "github" "Artificial-Engineering" "gnome-shell-extension-lycheejs";
 
 _backup_repo "github" "Artificial-Engineering" "AE-CICD";
 _backup_repo "github" "Artificial-Engineering" "AE-website" "gh-pages";
