@@ -50,6 +50,14 @@ for presentations of my courses at University.
 - Monitor 2 (Projector 1024x768 VGA)
 - German keyboard mapped as US keyboard
 
+**Thinkpad (tinky)**
+
+A new Thinkpad I repaired and reanimated, it serves as my laptop
+for coding AI- and ML-related stuff.
+
+- Monitor 1 (internal 1366x768)
+- Monitor 2 (external 1920x1080)
+- German keyboard mapped as US keyboard
 
 ## Installation
 

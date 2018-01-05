@@ -91,7 +91,6 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "Artificial-University/adblock-proxy";
 	_clone_github "Artificial-University/AU-lecture-tool";
 	_clone_github "Artificial-University/AU-courses";
-	_clone_github "Artificial-University/AU-courses-website";
 
 
 
@@ -105,7 +104,6 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "cookiengineer/dotfiles";
 	_clone_github "cookiengineer/git-cockpit";
 	_clone_github "cookiengineer/git-ddiff";
-	_clone_github "cookiengineer/git-hollywood";
 	_clone_github "cookiengineer/git-work";
 
 	# _clone_github "cookiengineer/icon-webfont-exporter";

@@ -67,7 +67,7 @@ if [ -d "/home/$USER" ]; then
 		mkdir -p "/home/$USER/Software/Artificial-Engineering";
 	fi;
 
-	# _clone_github "Artificial-Engineering/lycheejs-runtime";
+	_clone_github "Artificial-Engineering/lycheejs-runtime";
 	_clone_github "Artificial-Engineering/lycheejs-bundle";
 	_clone_github "Artificial-Engineering/lycheejs-buildbot";
 	_clone_github "Artificial-Engineering/lycheejs-guide";
@@ -77,10 +77,10 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "Artificial-Engineering/lycheejs-harvester";
 	_clone_github "Artificial-Engineering/lycheejs-website";
 
-	# _clone_github "Artificial-Engineering/AE-CICD";
-	# _clone_github "Artificial-Engineering/AE-website" "gh-pages";
+	_clone_github "Artificial-Engineering/AE-CICD";
+	_clone_github "Artificial-Engineering/AE-website" "gh-pages";
 	_clone_github "Artificial-Engineering/research";
-	# _clone_github "Artificial-Engineering/node-websdl";
+	_clone_github "Artificial-Engineering/node-websdl";
 
 
 
@@ -88,10 +88,9 @@ if [ -d "/home/$USER" ]; then
 		mkdir -p "/home/$USER/Software/Artificial-University";
 	fi;
 
-	# _clone_github "Artificial-University/adblock-proxy";
-	# _clone_github "Artificial-University/AU-lecture-tool";
-	# _clone_github "Artificial-University/AU-courses";
-	# _clone_github "Artificial-University/AU-courses-website";
+	_clone_github "Artificial-University/adblock-proxy";
+	_clone_github "Artificial-University/AU-lecture-tool";
+	_clone_github "Artificial-University/AU-courses";
 
 
 
@@ -105,7 +104,6 @@ if [ -d "/home/$USER" ]; then
 	_clone_github "cookiengineer/dotfiles";
 	_clone_github "cookiengineer/git-cockpit";
 	_clone_github "cookiengineer/git-ddiff";
-	_clone_github "cookiengineer/git-hollywood";
 	_clone_github "cookiengineer/git-work";
 
 	# _clone_github "cookiengineer/icon-webfont-exporter";
