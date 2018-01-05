@@ -64,6 +64,15 @@ for coding AI- and ML-related stuff.
 The `installer.sh` can be used with a second parameter for the profile.
 
 ```bash
+# Preparations: install trizen
+
+sudo pacman -S curl git;
+git clone https://aur.archlinux.org/trizen.git /tmp/trizen;
+cd /tmp/whatever;
+makepkg -s;
+
+# After trizen was installed, do this:
+
 export USER="your-user-name";
 export EMAIL="your-email@server.tld";
 
