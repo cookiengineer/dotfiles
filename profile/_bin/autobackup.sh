@@ -309,6 +309,7 @@ _backup_repo "github" "cookiengineer" "regulex";
 _backup_repo "github" "cookiengineer" "root-tapper";
 _backup_repo "github" "cookiengineer" "screencast-to-youtube";
 _backup_repo "github" "cookiengineer" "stardate.js";
+_backup_repo "github" "cookiengineer" "source-maps-generator";
 
 _backup_repo "github" "cookiengineer" "jsconf2014-slides";
 _backup_repo "github" "cookiengineer" "machine-learning-for-dummies";
