@@ -41,6 +41,9 @@ if [ "$err" == "0" ]; then
 	chmod +x "$ROOT/profile/configure-bash.sh";
 	$ROOT/profile/configure-bash.sh;
 
+	chmod +x "$ROOT/profile/configure-git.sh";
+	$ROOT/profile/configure-git.sh;
+
 	chmod +x "$ROOT/profile/configure-top.sh";
 	$ROOT/profile/configure-top.sh;
 
