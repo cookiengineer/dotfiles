@@ -14,7 +14,7 @@ sudo pacman -S --noconfirm --needed usb_modeswitch modemmanager networkmanager n
 sudo pacman -S --noconfirm --needed bluez bluez-firmware bluez-hid2hci bluez-libs bluez-utils gnome-bluetooth pulseaudio-bluetooth;
 
 # AUR Stuff
-trizen -S --noconfirm --needed gnome-shell-extension-dash-to-dock gnome-shell-extension-hidetopbar-git;
+trizen -S --noconfirm --needed kitty gnome-shell-extension-dash-to-dock gnome-shell-extension-hidetopbar-git;
 trizen -S --noconfirm --needed firefox-ublock-origin firefox-extension-https-everywhere;
 trizen -S --noconfirm --needed numix-circle-icon-theme-git gtk-theme-arc-flatabulous-git cplay inox-bin redshift-minimal cairo-coloredemoji;
 trizen -S --noconfirm --needed youtube-dl foxtrotgps;
