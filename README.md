@@ -1,125 +1,79 @@
 
-# My System Profile(s)
+# System Dotfiles
 
 Well, here we go again. I'm tired of unautomated shit, so this
-is my repository where all the system profiles are stored in.
+is my repository where all the system profiles and their
+configuration procedures are stored in.
 
-I'm kind of an Arch Linux and GNOME fanboy, so you gotta deal
-with it. All devices here serve only on-demand, so the setup
-is made for partial usage, too.
+I'm kind of an Arch Linux, Manjaro and GNOME fanboy, so you
+gotta deal with it. All profiles here have the shared idea
+of incrementally configuring stuff, so the setup procedures
+can be used in partial, too.
 
 
-## Devices
+## Profiles
 
-**Mini PC (woop)**
+**Intel NUC (nuccy)**
 
-This is my development machine. It is also the `xdmx` client
-for the screencast recording setup, where the `weep` machine
-is the server.
+Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
-- Monitor 1 (BenQ 24" DisplayPort 1920x1080)
+- Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
-- Monitor 3 (BenQ 24" HDMI 1920x1080)
-- Keyboard (Cherry JK0340 US Layout)
+- Monitor 3 (BenQ 24" DisplayPort 1920x1080)
+- Keyboard (Cherry KC1000 US Layout)
 - Trackball (Kensington Orbit)
 
 **Tower (weep)**
 
-This is my computing machine for the hardcore AI / ML shit.
-It also has a webcam connected and serves as a peer-synced
-[lychee.js](https://lychee.js.org) Harvester instance.
+Profile still needs to be ported to new shit, yo.
 
-- Monitor (VGA 1280x1024)
+- Monitor 1 (BenQ 24" HDMI 1920x1080)
+- Monitor 2 (BenQ 24" DVI 1920x1080)
+- Monitor 3 (BenQ 24" VGA 1920x1080)
 - Projector (DVI / HDMI 1920x1080)
 - Webcam (Logitech C920)
+- Keyboard (Cherry KC1000 US Layout)
 - Analog Audio Interface (Scarlet 2i2 USB)
-
-**Raspberry Pi2 (wiip-XX)**
-
-These Raspberry Pis are connected in a cluster and serve as
-peer-synced [lychee.js](https://lychee.js.org) Harvester
-instances. No hardware connected, just ArchLinux for ARM
-and local network access.
-
-**Thinkpad (wuup)**
-
-An old Thinkpad I had laying around, it serves as my laptop
-for presentations of my courses at University.
-
-- Monitor 1 (internal 1440x900)
-- Monitor 2 (Projector 1024x768 VGA)
-- German keyboard mapped as US keyboard
 
 **Thinkpad (tinky)**
 
-A new Thinkpad I repaired and reanimated, it serves as my laptop
-for coding AI- and ML-related stuff.
+- Monitor 1 (Internal 1440x900)
+- Monitor 2 (BenQ 24" DisplayPort 1920x1080)
+- Germany Keyboard mapped as US Layout (in UEFI)
 
-- Monitor 1 (internal 1366x768)
-- Monitor 2 (external 1920x1080)
-- German keyboard mapped as US keyboard
 
-## Installation
+## Usage
 
-The `installer.sh` can be used with a second parameter for the profile.
+The profiles are all available in [./profiles](./profiles).
+
+If you want a custom username or email address, use the
+optional export flow described here:
 
 ```bash
-# Preparations: install trizen
+# Optionally set username and email
+export USER="cookiengineer";
+export EMAIL="cookiengineer@hahayougetspam.com";
 
-sudo pacman -S curl git;
-git clone https://aur.archlinux.org/trizen.git /tmp/trizen;
-cd /tmp/whatever;
-makepkg -s;
-
-# After trizen was installed, do this:
-
-export USER="your-user-name";
-export EMAIL="your-email@server.tld";
-
-install.sh woop;
+# Look ma, no sudo!
+bash ./profiles/nuccy.sh;
 ```
 
-A few manual steps are required:
+Afterwards, the `id_rsa.pub` file will be generated
+if it doesn't exist - so it has to be added to the
+GitHub account:
 
 ```bash
 # Add this Public Key to GitHub
 cat ~/.ssh/id_rsa.pub;
-
-
-# Start VIM and enter :VundleInstall
-vim;
 ```
 
-
-## Automatic Backup and Restore
-
-These dotfiles will also install the `autobackup` tool which is there to
-export and import all git repositories that are tracked in `~/BACKUP`.
-
-The shell script itself contains the list of files, mirrors and
-repositories; so you should modify it to your needs.
-
-Here's the workflow usage:
+Also, VIM requires a manuall Install and Update:
 
 ```bash
-# Sync local repos with origins
-autobackup;
+vim;
 
-# Export backup to USB stick
-autobackup --export /run/media/cookiengineer/usb_stick/whatever;
-
-# ... Go to other Machine ...
-
-# Import backup from USB stick
-autobackup --import /run/media/cookiengineer/usb_stick/whatever;
-
-# ... Go to other (unconfigured) Machine ...
-
-# Import backup from USB stick
-cd /run/media/cookiengineer/usb_stick/whatever;
-
-chmod +x ./autobackup.sh;
-./autobackup.sh --import $(pwd);
+# Execute :ZenInstall
+# Execute :ZenUpdate
 ```
 
 

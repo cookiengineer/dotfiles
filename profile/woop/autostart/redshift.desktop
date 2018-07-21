@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=bash -c "sleep 3 && redshift -O 3500"
-
