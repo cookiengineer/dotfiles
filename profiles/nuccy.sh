@@ -66,3 +66,7 @@ _install_packages_aur firefox-extension-https-everywhere firefox-extension-ubloc
 # XXX: GIT projects
 #
 
+_install projects cookiengineer;
+_install projects Artificial-Engineering;
+_install projects Artificial-University;
+

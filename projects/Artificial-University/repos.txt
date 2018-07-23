@@ -1,0 +1,5 @@
+https://github.com/Artificial-University/AU-courses.git
+https://github.com/Artificial-University/AU-lecture-tool.git
+https://github.com/Artificial-University/AU-website.git
+https://github.com/Artificial-University/adblock-proxy.git
+https://github.com/Artificial-University/py-mancala.git

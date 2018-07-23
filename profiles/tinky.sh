@@ -69,3 +69,7 @@ _install_packages_aur gtk-arc-flatabulous-theme-git;
 # XXX: GIT projects
 #
 
+_install projects cookiengineer;
+_install projects Artificial-Engineering;
+_install projects Artificial-University;
+

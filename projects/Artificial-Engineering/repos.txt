@@ -1,0 +1,14 @@
+https://github.com/Artificial-Engineering/AE-CICD.git
+https://github.com/Artificial-Engineering/AE-website.git
+https://github.com/Artificial-Engineering/Nidium.git
+https://github.com/Artificial-Engineering/gnome-shell-extension-lycheejs.git
+https://github.com/Artificial-Engineering/lycheejs-backup.git
+https://github.com/Artificial-Engineering/lycheejs-bundle.git
+https://github.com/Artificial-Engineering/lycheejs-future.git
+https://github.com/Artificial-Engineering/lycheejs-guide.git
+https://github.com/Artificial-Engineering/lycheejs-library.git
+https://github.com/Artificial-Engineering/lycheejs-runtime.git
+https://github.com/Artificial-Engineering/lycheejs-website.git
+https://github.com/Artificial-Engineering/lycheejs.git
+https://github.com/Artificial-Engineering/node-websdl.git
+https://github.com/Artificial-Engineering/research.git
