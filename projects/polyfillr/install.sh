@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_NAME="Artificial-University";
+USER_NAME="polyfillr";
 DIR_SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
 DIR_TARGET="/home/$USER/Software/$USER_NAME";
 

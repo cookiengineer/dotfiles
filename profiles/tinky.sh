@@ -72,4 +72,5 @@ _install_packages_aur gtk-arc-flatabulous-theme-git;
 _install projects cookiengineer;
 _install projects Artificial-Engineering;
 _install projects Artificial-University;
+_install projects polyfillr;
 

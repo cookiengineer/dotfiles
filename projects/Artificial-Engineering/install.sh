@@ -51,7 +51,7 @@ if [ "$GIT_BIN" != "" ] && [ "$NODEJS_BIN" != "" ]; then
 				cd "$DIR_TARGET/$repo_name";
 				git clone "$repo_url" "$DIR_TARGET/$repo_name";
 
-			else
+			elif [ -d "$DIR_TARGET/$repo_name/.git" ]; then
 
 				cd "$DIR_TARGET/$repo_name";
 				git fetch --all;

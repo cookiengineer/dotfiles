@@ -36,7 +36,7 @@ if (_USER !== null) {
 			if (data !== null && data instanceof Array) {
 
 				let filtered = data.map(raw => raw['private'] === true ? raw.ssh_url : raw.clone_url).sort();
-				let buffer   = filtered.join('\n');
+				let buffer   = filtered.join('\n') + '\n';
 				let path     = _path.resolve(__dirname, '../' + _USER + '/repos.txt');
 
 
