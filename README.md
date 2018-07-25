@@ -37,6 +37,8 @@ Profile still needs to be ported to new shit, yo.
 
 **Thinkpad (tinky)**
 
+Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
+
 - Monitor 1 (Internal 1440x900)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Germany Keyboard mapped as US Layout (in UEFI)

@@ -58,7 +58,7 @@ _install_packages chromium ffmpeg firefox gimp gparted nmap transmission-gtk uge
 _install software-aur trizen;
 _install software-aur kitty;
 
-_install_packages_aur cplay redshift-gtk-git telegram-desktop-bin youtube-dl;
+_install_packages_aur cplay redshift-gtk-git telegram-desktop-bin tldr youtube-dl;
 _install_packages_aur firefox-extension-https-everywhere firefox-extension-ublock-gorhill-git firefox-extension-umatrix-git;
 
 
