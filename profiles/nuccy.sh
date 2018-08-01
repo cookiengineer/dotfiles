@@ -59,6 +59,7 @@ _install_packages dnsutils macchanger net-tools nmap;
 # _install software-own apt-pac;
 _install software-aur trizen;
 _install software-aur kitty;
+_install software-aur wireless-regdb-pentest;
 
 _install_packages_aur cplay redshift-gtk-git telegram-desktop-bin tldr youtube-dl;
 _install_packages_aur firefox-extension-https-everywhere firefox-extension-ublock-gorhill-git firefox-extension-umatrix-git;
