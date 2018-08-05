@@ -16,7 +16,7 @@ if [ "$GSETTINGS_BIN" != "" ]; then
 	else
 
 		$GSETTINGS_BIN set org.gnome.desktop.interface gtk-theme "Arc-Dark";
-		$GSETTINGS_BIN set org.gnome.desktop.interface icon-theme "Arc";
+		$GSETTINGS_BIN set org.gnome.desktop.interface icon-theme "Numix-Circle";
 
 	fi;
 

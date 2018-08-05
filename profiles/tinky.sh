@@ -48,7 +48,8 @@ _install software xterm;
 
 _install_packages bluez bluez-firmware bluez-hid2hci bluez-libs bluez-utils;
 _install_packages noto-fonts noto-fonts-compat;
-_install_packages chromium ffmpeg firefox foxtrotgps gimp gparted transmission-gtk uget;
+_install_packages chromium firefox foxtrotgps gimp gparted transmission-gtk uget;
+_install_packages ffmpeg gnome-mpv;
 _install_packages dnsutils macchanger net-tools nmap;
 
 

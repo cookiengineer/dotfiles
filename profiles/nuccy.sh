@@ -47,7 +47,8 @@ _install software vim;
 _install software xterm;
 
 _install_packages noto-fonts noto-fonts-compat;
-_install_packages chromium ffmpeg firefox gimp gparted transmission-gtk uget;
+_install_packages chromium firefox gimp gparted transmission-gtk uget;
+_install_packages ffmpeg gnome-mpv;
 _install_packages dnsutils macchanger net-tools nmap;
 
 
