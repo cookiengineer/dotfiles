@@ -25,7 +25,7 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
 **Tower (weep)**
 
-Profile still needs to be ported to new shit, yo.
+Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DVI 1920x1080)

@@ -38,19 +38,19 @@ _install_packages_aur () {
 _install software bash;
 _install software gnome-shell;
 _install software networkmanager;
-# _install software modemmanager;
+_install software modemmanager;
 _install software git;
 _install software openssh;
 _install software nodejs;
 _install software tor;
 _install software vim;
-_install software xterm;
 
+_install_packages bluez bluez-firmware bluez-hid2hci bluez-libs bluez-utils;
 _install_packages noto-fonts noto-fonts-compat;
-_install_packages chromium firefox gimp gparted transmission-gtk uget;
+_install_packages chromium firefox foxtrotgps gimp gparted transmission-gtk uget;
 _install_packages ffmpeg gnome-mpv;
-_install_packages dnsutils macchanger net-tools nmap;
-
+_install_packages dnsutils macchanger net-tools nmap veracrypt;
+_install_packages openra;
 
 
 #
@@ -60,10 +60,12 @@ _install_packages dnsutils macchanger net-tools nmap;
 # _install software-own apt-pac;
 _install software-aur trizen;
 _install software-aur kitty;
-_install software-aur wireless-regdb-pentest;
 
 _install_packages_aur cplay redshift-gtk-git telegram-desktop-bin tldr youtube-dl;
 _install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-gorhill-git firefox-extension-umatrix-git;
+_install_packages_aur gnome-shell-extension-clipboard-indicator-git gnome-shell-extension-dash-to-dock-git gnome-shell-extension-hidetopbar-git gnome-shell-extension-pixel-saver-git;
+_install_packages_aur gtk-arc-flatabulous-theme-git;
+_install_packages_aur mobac openscad wireless-regdb-pentest;
 
 
 #
