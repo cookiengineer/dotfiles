@@ -62,7 +62,7 @@ _install software-aur trizen;
 _install software-aur kitty;
 
 _install_packages_aur cplay redshift-gtk-git telegram-desktop-bin tldr youtube-dl;
-_install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-gorhill-git firefox-extension-umatrix-git;
+_install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-origin firefox-extension-umatrix;
 _install_packages_aur gnome-shell-extension-dash-to-dock-git gnome-shell-extension-hidetopbar-git;
 _install_packages_aur gtk-arc-flatabulous-theme-git;
 
