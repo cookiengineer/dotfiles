@@ -79,6 +79,12 @@ vim;
 ```
 
 
+## Notes
+
+The [./packages-aur](./packages-aur) folder contains a backup
+of the equivalent packages on [AUR](https://aur.archlinux.org).
+
+
 ## Work in Progress
 
 Remote server backups are a bit overcomplicated right now. So this

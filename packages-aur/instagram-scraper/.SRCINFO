@@ -1,0 +1,15 @@
+pkgbase = instagram-scraper
+	pkgdesc = Scrapes and downloads an instagram user's photos and videos
+	pkgver = 1.5.38
+	pkgrel = 1
+	url = https://github.com/rarcega/instagram-scraper
+	arch = any
+	license = custom:Public domain
+	makedepends = python-setuptools
+	depends = python-requests
+	depends = python-tqdm
+	source = https://files.pythonhosted.org/packages/source/i/instagram-scraper/instagram-scraper-1.5.38.tar.gz
+	sha512sums = 6c75ebd658a4bb59b5fd156725340ab1d82a4299d640524c9ea1eb947bf27b4a362fcc46cbfcc665caa1c30ccdce8f73588f7599c32a6ef7f4e261eeb09c67d4
+
+pkgname = instagram-scraper
+
