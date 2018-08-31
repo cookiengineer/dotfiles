@@ -22,6 +22,7 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
+- Intel HD4000
 - Keyboard (Cherry KC1000 US Layout)
 - Trackball (Kensington Orbit)
 
@@ -30,19 +31,23 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
-- Monitor 2 (BenQ 24" DVI 1920x1080)
-- Monitor 3 (BenQ 24" VGA 1920x1080)
-- Projector (DVI / HDMI 1920x1080)
+- Monitor 2 (BenQ 24" HDMI 1920x1080)
+- Monitor 3 (BenQ 24" HDMI 1920x1080)
+- Radeon HD6000 and GTX 1080Ti
 - Webcam (Logitech C920)
 - Keyboard (Cherry KC1000 US Layout)
-- Analog Audio Interface (Scarlet 2i2 USB)
+- Vertical Mouse (CSL 26069)
+- Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
+- Analog Audio Headphones (AKG HD242)
 
 **Thinkpad (tinky)**
 
 Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
 - Monitor 1 (Internal 1440x900)
-- Monitor 2 (BenQ 24" DisplayPort 1920x1080)
+- Monitor 2 (BenQ 24" HDMI 1920x1080)
+- Monitor 3 (Acer 24" HDMI 1920x1080)
+- Intel HD4000 and GT730M
 - Germany Keyboard mapped as US Layout (in UEFI)
 
 
