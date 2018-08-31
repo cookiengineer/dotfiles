@@ -1,6 +1,8 @@
 
 # System Dotfiles
 
+![Camera Picture](./README.jpg)
+
 Well, here we go again. I'm tired of unautomated shit, so this
 is my repository where all the system profiles and their
 configuration procedures are stored in.
