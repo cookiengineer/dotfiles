@@ -51,6 +51,7 @@ _install_packages noto-fonts noto-fonts-compat;
 _install_packages chromium firefox foxtrotgps gimp gparted transmission-gtk uget;
 _install_packages ffmpeg gnome-mpv;
 _install_packages dnsutils macchanger net-tools nmap;
+_install_packages synergy;
 
 
 #
@@ -75,4 +76,21 @@ _install projects cookiengineer;
 _install projects Artificial-Engineering;
 _install projects Artificial-University;
 _install projects polyfillr;
+
+
+#
+# XXX: per-system configs
+#
+
+if [ ! -f /usr/bin/share-internet ]; then
+	sudo cp $DIR/tinky/usr/bin/share-internet.sh /usr/bin/share-internet;
+	sudo chmod +x /usr/bin/share-internet;
+fi;
+
+local synergyc_service="/home/cookiengineer/.config/systemd/user/synergyc.service";
+if [ ! -f $synergyc_service ]; then
+	mkdir -p $(dirname $synergyc_service);
+	cp "$DIR/tinky$synergyc_service" $synergyc_service;
+	systemctl --user enable synergyc;
+fi;
 

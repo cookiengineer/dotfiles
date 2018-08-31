@@ -1,0 +1,12 @@
+[Unit]
+Description=Synergy Client Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/synergyc --no-daemon weep
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+

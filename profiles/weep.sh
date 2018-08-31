@@ -51,6 +51,7 @@ _install_packages chromium firefox foxtrotgps gimp gparted transmission-gtk uget
 _install_packages ffmpeg gnome-mpv;
 _install_packages dnsutils macchanger net-tools nmap veracrypt;
 _install_packages openra;
+_install_packages synergy;
 
 
 #
@@ -76,4 +77,27 @@ _install projects cookiengineer;
 _install projects Artificial-Engineering;
 _install projects Artificial-University;
 _install projects polyfillr;
+
+
+#
+# XXX: per-system configs
+#
+
+if [ ! -f /etc/synergy.conf ]; then
+	sudo cp $DIR/weep/etc/synergy.conf /etc/synergy.conf;
+fi;
+
+
+sudo chmod +r /etc/NetworkManager/system-connections;
+
+if [ ! -f /etc/NetworkManager/system-connections/Home ]; then
+	sudo cp $DIR/weep/etc/NetworkManager/system-connections/Home /etc/NetworkManager/system-connections/Home;
+fi;
+
+local synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
+if [ ! -f $synergys_service ]; then
+	mkdir -p $(dirname $synergys_service);
+	cp "$DIR/weep$synergys_service" $synergys_service;
+	systemctl --user enable synergys;
+fi;
 

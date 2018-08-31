@@ -12,6 +12,9 @@ gotta deal with it. All profiles here have the shared idea
 of incrementally configuring stuff, so the setup procedures
 can be used in partial, too.
 
+Most likely there's `kitty` Terminal and `vim` installed
+everywhere, as that's my preferred development environment.
+
 
 ## Profiles
 
@@ -19,6 +22,7 @@ can be used in partial, too.
 
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
+- Manjaro Linux and GNOME
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
@@ -30,6 +34,8 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
+- Arch Linux and GNOME
+- Synergy Server
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
 - Monitor 3 (BenQ 24" HDMI 1920x1080)
@@ -44,6 +50,8 @@ Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
+- Arch Linux and GNOME
+- Synergy Client (right of `weep`)
 - Monitor 1 (Internal 1440x900)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
 - Monitor 3 (Acer 24" HDMI 1920x1080)
