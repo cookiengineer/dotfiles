@@ -11,10 +11,10 @@ else
 	modprobe iptable_nat;
 	echo 1 > /proc/sys/net/ipv4/ip_forward;
 
-	local wifi_iface="";
-	local eth_iface="";
+	wifi_iface="";
+	eth_iface="";
 
-	local ifconfig=`which ifconfig`;
+	ifconfig=`which ifconfig`;
 
 	if [ "$ifconfig" != "" ]; then
 
