@@ -58,7 +58,6 @@ _install_packages synergy;
 # XXX: AUR software
 #
 
-# _install software-own apt-pac;
 _install software-aur trizen;
 _install software-aur kitty;
 
@@ -67,6 +66,12 @@ _install_packages_aur firefox-extension-google-search-link-fix firefox-extension
 _install_packages_aur gnome-shell-extension-clipboard-indicator-git gnome-shell-extension-dash-to-dock-git gnome-shell-extension-hidetopbar-git gnome-shell-extension-pixel-saver-git;
 _install_packages_aur gtk-arc-flatabulous-theme-git;
 _install_packages_aur mobac openscad wireless-regdb-pentest;
+
+# _install software-own apt-pac;
+# _install software-own auto-cleanup;
+_install software-own auto-tagger;
+_install software-own chromium-extensions;
+# _install software-own pacman-server;
 
 
 #
