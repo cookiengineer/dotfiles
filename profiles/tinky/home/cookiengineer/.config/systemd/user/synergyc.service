@@ -3,6 +3,7 @@ Description=Synergy Client Daemon
 After=network.target
 
 [Service]
+ExecStartPre=/usr/bin/sleep 10
 ExecStart=/usr/bin/synergyc --no-daemon weep
 Restart=always
 RestartSec=5
