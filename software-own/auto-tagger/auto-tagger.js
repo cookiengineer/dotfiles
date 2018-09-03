@@ -1,16 +1,37 @@
 #!/usr/bin/env node
 
-const fs    = require('fs');
-const exec  = require('child_process').exec;
-const _ROOT = '/home/' + process.env.USER + '/Music';
-const _META = {};
-const _TODO = [];
+const fs     = require('fs');
+const exec   = require('child_process').exec;
+const _ROOT  = '/home/' + process.env.USER + '/Music';
+const _META  = {};
+const _STAT  = {};
+const _TODO  = [];
+const _SPACE = ' ' + new Array(128).fill(' ').join(' ');
 
 
 
 /*
  * HELPERS
  */
+
+const _format = function(str, length, invert) {
+
+	invert = invert === true;
+
+
+	if (str.length < length) {
+
+		if (invert === true) {
+			return str + _SPACE.substr(0, length - str.length);
+		} else {
+			return _SPACE.substr(0, length - str.length) + str;
+		}
+
+	} else {
+		return str;
+	}
+
+};
 
 const _autotag_file = function(path, data) {
 
@@ -22,9 +43,8 @@ const _autotag_file = function(path, data) {
 
 	if (data.album  != null) cmd.push('--album "'  + data.album  + '"');
 	if (data.genre  != null) cmd.push('--genre "'  + data.genre  + '"');
-	if (data.track  != null) cmd.push('--track "'  + data.track  + '"');
 	if (data.artist != null) cmd.push('--artist "' + data.artist + '"');
-	if (data.title  != null) cmd.push('--song "'   + data.title  + '"');
+	if (data.song   != null) cmd.push('--song "'   + data.song   + '"');
 
 	cmd.push('"' + path + '"');
 
@@ -40,7 +60,10 @@ const _autotag_file = function(path, data) {
 			if (err) return;
 
 			if (stdout.trim() !== '' || stderr.trim() !== '') {
+
 				console.log('id3v2 failed tagging "' + path + '".');
+				console.log(data);
+
 			}
 
 		});
@@ -51,39 +74,24 @@ const _autotag_file = function(path, data) {
 
 const _autoparse_data = function(album, file) {
 
-	let data = {};
+	let name = file.substr(0, file.length - 4);
 
-	let tmp1 = file.substr(0, file.length - 4);
-	let tmp2 = tmp1.split('-').map(val => val.trim());
-	if (tmp2.length === 2) {
-
-		let artist = tmp2[0];
-		let title  = tmp2[1];
-		let track  = null;
-
-		let i1 = artist.indexOf('.');
-		if (i1 > 0 && i1 < 5) {
-
-			let tmp3 = artist.substr(0, i1).trim();
-			if (/([0-9]+)/g.test(tmp3)) {
-				track  = tmp3.trim();
-				artist = artist.substr(i1 + 1);
-			}
-
-		}
-
-		// XXX: We use Genre as Album here
-		if (album  != null) data.genre  = album;
-
-		if (album  != null) data.album  = album;
-		if (track  != null) data.track  = track;
-		if (artist != null) data.artist = artist;
-		if (title  != null) data.title  = title;
-
-
+	let artist = name.split(' - ')[0].trim();
+	if (artist.includes('(') === true && artist.includes(')') === false) {
+		artist = file.substr(0, file.indexOf(')') + 1).trim();
 	}
 
-	return data;
+	let song = name.substr(artist.length).trim();
+	if (song.startsWith('-')) {
+		song = song.substr(1).trim();
+	}
+
+	return {
+		album:  album,
+		artist: artist,
+		genre:  album,
+		song:   song
+	};
 
 };
 
@@ -161,13 +169,16 @@ if (user.trim() === '') {
 					return val.split('.').pop() === 'mp3';
 				});
 
-				let all = files.length;
+				_STAT[album] = {
+					todo:  0,
+					files: files.length
+				};
 
 				files = files.filter(function(file) {
 					return _META[album][file] === undefined;
 				});
 
-				console.log('"' + album + '" -> ' + files.length + '/' + all);
+				_STAT[album].todo = files.length;
 
 				files.forEach(function(file) {
 					_META[album][file] = Date.now();
@@ -205,9 +216,32 @@ if (user.trim() === '') {
 
 		}
 
+
+		let albums = Object.keys(_STAT).sort();
+		let max    = albums.map(v => v.length).reduce((a, b) => Math.max(a, b), 0);
+		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' - NEW / ALL';
+		let div    = new Array(header.length).fill('-').join('');
+
+		console.log(header);
+		console.log(div);
+
+		albums.forEach(id => {
+
+			let stat  = _STAT[id];
+			let album = _format(id, max, true);
+			let todo  = _format('' + stat.todo,  3, false);
+			let files = _format('' + stat.files, 3, false);
+
+			console.log('~/Music/' + album + ' - ' + todo + ' / ' + files);
+
+		});
+
+		console.log(div);
+
 		if (_TODO.length > 0) {
 
 			_TODO.forEach(function(task) {
+				console.log('> ~/Music/' + task.path.substr(_ROOT.length));
 				_autotag_file(task.path, task.data);
 			});
 
