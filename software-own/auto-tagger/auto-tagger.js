@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
-const fs     = require('fs');
-const exec   = require('child_process').exec;
-const _ROOT  = '/home/' + process.env.USER + '/Music';
-const _META  = {};
-const _OLD   = {};
-const _STAT  = {};
-const _TODO  = [];
-const _SPACE = ' ' + new Array(128).fill(' ').join(' ');
+const fs          = require('fs');
+const exec        = require('child_process').exec;
+const _ROOT       = '/home/' + process.env.USER + '/Music';
+const _META       = {};
+const _STATISTICS = {};
+const _ID3_TASKS  = [];
+const _SPACE      = ' ' + new Array(128).fill(' ').join(' ');
 
 
 
@@ -24,12 +23,13 @@ const _distance = function(str_a, str_b) {
 	if (len_b === 0) return len_a;
 
 
-	let matrix = new Array(len_a + 1).fill(0).map(val => {
-		return new Array(len_b + 1).fill(0);
-	});
+	let matrix = new Array(len_a + 1);
 
-	for (let a = 0; a <= len_a; a++) {
-		matrix[a][0] = a;
+	for (let m = 0; m < matrix.length; m++) {
+
+		matrix[m]    = new Array(len_b + 1).fill(0);
+		matrix[m][0] = m;
+
 	}
 
 	for (let b = 0; b <= len_b; b++) {
@@ -82,25 +82,34 @@ const _filter = function(str) {
 		tmp[tmp.length - 1] = ch1.substr(0, ch1.length - 4);
 	}
 
-	tmp = tmp.filter(val => val !== '-');
-	tmp = tmp.map(val => {
+	for (let t = 0, tl = tmp.length; t < tl; t++) {
 
-		if (val.startsWith('(')) val = val.substr(1);
-		if (val.endsWith(')'))   val = val.substr(0, val.length - 1);
-        if (val.includes('.'))   val = val.split('.').join('');
-		if (val.includes('\''))  val = val.split('\'').join('');
-		if (val === '&')         val = 'and';
+		let chunk = tmp[t].trim().toLowerCase();
+		let cl    = chunk.length;
 
-		return val;
+		// map
+		if (chunk[0] === '(')           chunk = chunk.substr(1);
+		if (chunk[cl - 1] === ')')      chunk = chunk.substr(cl - 1);
+		if (chunk.indexOf('.') !== -1)  chunk = chunk.split('.').join('');
+		if (chunk.indexOf('\'') !== -1) chunk = chunk.split('\'').join('');
+		if (chunk.indexOf('"') !== -1)  chunk = chunk.split('"').join('');
+		if (chunk === '&')              chunk = 'and';
 
-	});
+		// filter
+		if (chunk === '-') chunk = null;
+		if (chunk === '')  chunk = null;
 
-	// tmp = tmp.filter(val => /^([A-Za-z0-9]+)$/g.test(val));
-	tmp = tmp.map(val => val.toLowerCase());
-	tmp = tmp.map(val => val.trim());
-	tmp = tmp.filter(val => val !== '');
+		if (chunk !== null) {
+			tmp[t] = chunk;
+		} else {
+			tmp.splice(t, 1);
+			tl--;
+			t--;
+		}
 
-	return tmp;
+	}
+
+	return tmp.join(' ');
 
 };
 
@@ -199,27 +208,55 @@ if (user.trim() === '') {
 
 } else {
 
+	let stat = null;
 	try {
+		stat = fs.lstatSync(_ROOT + '/.auto-tagger.json');
+	} catch (err) {
+	}
 
-		let stat = fs.lstatSync(_ROOT + '/.auto-tagger.json');
-		if (stat.isFile()) {
+	if (stat !== null && stat.isFile()) {
 
-			let buffer = fs.readFileSync(_ROOT + '/.auto-tagger.json', 'utf8');
-			if (buffer !== null) {
+		let buffer = fs.readFileSync(_ROOT + '/.auto-tagger.json', 'utf8');
+		if (buffer !== null) {
 
-				let data = JSON.parse(buffer);
-				if (data instanceof Object) {
+			let data = JSON.parse(buffer);
+			if (data instanceof Object) {
 
-					for (let genre in data) {
+				for (let genre in data) {
 
-						if (data[genre] instanceof Object) {
+					if (data[genre] instanceof Object) {
 
-							if (_META[genre] === undefined) {
-								_META[genre] = {};
+						if (_STATISTICS[genre] === undefined) {
+							_STATISTICS[genre] = {
+								'new': 0,
+								'old': 0,
+								'all': 0
+							};
+						}
+
+						if (_META[genre] === undefined) {
+							_META[genre] = {};
+						}
+
+						for (let file in data[genre]) {
+
+							let check = true;
+
+							try {
+								fs.lstatSync(_ROOT + '/' + genre + '/' + file);
+							} catch (err) {
+
+								if (err.code === 'ENOENT') {
+									check = false;
+								}
+
 							}
 
-							for (let file in data[genre]) {
+
+							if (check === true) {
 								_META[genre][file] = data[genre][file];
+							} else {
+								_STATISTICS[genre]['old']++;
 							}
 
 						}
@@ -232,89 +269,64 @@ if (user.trim() === '') {
 
 		}
 
+	}
 
-		for (let genre in _META) {
 
-			_OLD[genre] = 0;
+	fs.readdir(_ROOT, (err, genres) => {
 
-			for (let file in _META[genre]) {
+		if (err) return;
 
-				let exists = true;
+		for (let g = 0; g < genres.length; g++) {
 
-				try {
-					fs.lstatSync(_ROOT + '/' + genre + '/' + file);
-				} catch (err) {
+			let genre = genres[g];
+			if (fs.statSync(_ROOT + '/' + genre).isDirectory()) {
 
-					if (err.code === 'ENOENT') {
-						exists = false;
+				if (_META[genre] === undefined) {
+					_META[genre] = {};
+				}
+
+
+				fs.readdir(_ROOT + '/' + genre, (err, files) => {
+
+					if (err) return;
+
+					let statistics = _STATISTICS[genre] || null;
+					if (statistics === null) {
+						statistics = _STATISTICS[genre] = {
+							'new': 0,
+							'old': 0,
+							'all': 0
+						};
 					}
 
-				}
+					statistics['all'] = files.length;
 
-				if (exists === false) {
-					delete _META[genre][file];
-					_OLD[genre]++;
-				}
+					for (let f = 0, fl = files.length; f < fl; f++) {
+
+						let file = files[f];
+						if (file.endsWith('.mp3') && fs.statSync(_ROOT + '/' + genre + '/' + file).isFile()) {
+
+							if (_META[genre][file] === undefined) {
+
+								_ID3_TASKS.push({
+									path: _ROOT + '/' + genre + '/' + file,
+									data: _autoparse_data(genre, file)
+								});
+
+								_META[genre][file] = Date.now();
+								statistics['new']++;
+
+							}
+
+						}
+
+					}
+
+				});
 
 			}
 
 		}
-
-	} catch (err) {
-	}
-
-
-	fs.readdir(_ROOT, function(err, albums) {
-
-		if (err) return;
-
-		albums.filter(function(val) {
-			return fs.statSync(_ROOT + '/' + val).isDirectory();
-		}).forEach(function(album) {
-
-			if (_META[album] === undefined) {
-				_META[album] = {};
-			}
-
-			fs.readdir(_ROOT + '/' + album, function(err, files) {
-
-				if (err) return;
-
-
-				files = files.filter(function(val) {
-					return fs.statSync(_ROOT + '/' + album + '/' + val).isFile();
-				}).filter(function(val) {
-					return val.split('.').pop() === 'mp3';
-				});
-
-				_STAT[album] = {
-					'new': 0,
-					'old': _OLD[album],
-					'all': files.length
-				};
-
-				files = files.filter(function(file) {
-					return _META[album][file] === undefined;
-				});
-
-				_STAT[album]['new'] = files.length;
-
-				files.forEach(function(file) {
-					_META[album][file] = Date.now();
-				});
-
-				files.forEach(function(file) {
-
-					_TODO.push({
-						path: _ROOT + '/' + album + '/' + file,
-						data: _autoparse_data(album, file)
-					});
-
-				});
-
-			});
-
-		});
 
 	});
 
@@ -336,36 +348,29 @@ if (user.trim() === '') {
 		}
 
 
-		let albums = Object.keys(_STAT).sort();
-		let max    = albums.map(v => v.length).reduce((a, b) => Math.max(a, b), 0);
+		let genres = Object.keys(_STATISTICS).sort();
+		let max    = Math.max.apply(0, genres.map(str => str.length));
 		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' - OLD / NEW / ALL';
-		let div    = new Array(header.length).fill('-').join('');
+		let div    = '+' + new Array(header.length + 2).fill('-').join('') + '+';
 
-		console.log(header);
+		console.log(div);
+		console.log('| ' + header + ' |');
 		console.log(div);
 
-		albums.forEach(id => {
+		for (let g = 0, gl = genres.length; g < gl; g++) {
 
-			let stat  = _STAT[id];
-			let album = _format(id, max, true);
+			let genre = genres[g];
+			let stat  = _STATISTICS[genre];
+			let album = _format(genre, max, true);
 			let s_old = _format('' + stat['old'], 3, false);
 			let s_new = _format('' + stat['new'], 3, false);
 			let s_all = _format('' + stat['all'], 3, false);
 
-			console.log('~/Music/' + album + ' - ' + s_old + ' / ' + s_new + ' / ' + s_all);
+			console.log('| ~/Music/' + album + ' - ' + s_old + ' / ' + s_new + ' / ' + s_all + ' |');
 
-		});
+		};
 
 		console.log(div);
-
-		if (_TODO.length > 0) {
-
-			_TODO.forEach(function(task) {
-				console.log('> ~/Music' + task.path.substr(_ROOT.length));
-				_autotag_file(task.path, task.data);
-			});
-
-		}
 
 
 		let references = [];
@@ -373,61 +378,81 @@ if (user.trim() === '') {
 		for (let genre in _META) {
 
 			let files = Object.keys(_META[genre]);
-			let words = files.map(val => _filter(val));
 
 			for (let f = 0, fl = files.length; f < fl; f++) {
+
+				let file = files[f];
+
 				references.push({
 					genre:    genre,
-					file:     files[f],
-					sentence: words[f]
+					file:     file,
+					sentence: _filter(file)
 				});
+
 			}
 
 		}
 
 
+		let rl           = references.length;
+		let sl           = 0;
 		let similarities = [];
 
-		references.forEach(reference1 => {
+		for (let r1 = 0; r1 < rl; r1++) {
 
-			references.forEach(reference2 => {
+			let reference1 = references[r1];
 
-				if (reference1 !== reference2) {
+			for (let r2 = 0; r2 < rl; r2++) {
 
-					let sentence1 = reference1.sentence.join(' ');
-					let sentence2 = reference2.sentence.join(' ');
-					let maxlength = Math.max(sentence1.length, sentence2.length);
+				let reference2 = references[r2];
+				if (reference1 === reference2) continue;
 
-					let distance = _distance(sentence1, sentence2);
-					if (distance < 0.1 * maxlength) {
+				let sentence1 = reference1.sentence;
+				let sentence2 = reference2.sentence;
+				let maxlength = Math.max(sentence1.length, sentence2.length);
 
-						let check = similarities.find(data => {
-							if (data[0] === reference1 && data[1] === reference2) return true;
-							if (data[0] === reference2 && data[1] === reference1) return true;
-							return false;
-						}) || null;
+				let distance = _distance(sentence1, sentence2);
+				if (distance < 0.1 * maxlength) {
 
-						if (check === null) {
-							similarities.push([
-								reference1,
-								reference2,
-								(1 - distance / maxlength) * 100
-							]);
+					let check = null;
+
+					for (let s = 0; s < sl; s++) {
+
+						let other = similarities[s];
+						if (other[0] === reference1 && other[1] === reference2) {
+							check = other;
+							break;
 						}
+
+						if (other[0] === reference2 && other[1] === reference1) {
+							check = other;
+							break;
+						}
+
+					}
+
+					if (check === null) {
+
+						similarities.push([
+							reference1,
+							reference2,
+							(1 - distance / maxlength) * 100
+						]);
+
+						sl++;
 
 					}
 
 				}
 
-			});
+			}
 
-		});
+		}
 
 
 		if (similarities.length > 0) {
 
-			console.log('');
-			console.log('Warning: Found similar looking songs:');
+			console.log('|      WARNING: Found similar looking songs!     |');
 			console.log(div);
 
 			similarities.sort((a, b) => {
@@ -440,14 +465,39 @@ if (user.trim() === '') {
 				let sim_b   = similarity[1];
 				let percent = similarity[2];
 
-				console.log('');
-				console.log('Similarity: ' + (percent).toFixed(2) + '%');
-				console.log('~/Music/' + sim_a.genre + '/' + sim_a.file);
-				console.log('~/Music/' + sim_b.genre + '/' + sim_b.file);
+				console.log('|');
+				console.log('|> Similarity: ' + (percent).toFixed(2) + '%');
+				console.log('|  ~/Music/' + sim_a.genre + '/' + sim_a.file);
+				console.log('|  ~/Music/' + sim_b.genre + '/' + sim_b.file);
 
 			});
 
-			console.log('');
+			console.log('|');
+
+			if (_ID3_TASKS.length === 0) {
+				console.log(div);
+			}
+
+		}
+
+
+		if (_ID3_TASKS.length > 0) {
+
+			console.log(div);
+			console.log('|        Auto-Tagging Songs via id3v2 ...        |');
+			console.log(div);
+			console.log('|');
+
+			for (let t = 0, tl = _ID3_TASKS.length; t < tl; t++) {
+
+				let task = _ID3_TASKS[t];
+
+				console.log('|> ~/Music' + task.path.substr(_ROOT.length));
+				_autotag_file(task.path, task.data);
+
+			}
+
+			console.log('|');
 			console.log(div);
 
 		}
