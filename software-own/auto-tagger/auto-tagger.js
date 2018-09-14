@@ -4,6 +4,7 @@ const fs     = require('fs');
 const exec   = require('child_process').exec;
 const _ROOT  = '/home/' + process.env.USER + '/Music';
 const _META  = {};
+const _OLD   = {};
 const _STAT  = {};
 const _TODO  = [];
 const _SPACE = ' ' + new Array(128).fill(' ').join(' ');
@@ -231,6 +232,34 @@ if (user.trim() === '') {
 
 		}
 
+
+		for (let genre in _META) {
+
+			_OLD[genre] = 0;
+
+			for (let file in _META[genre]) {
+
+				let exists = true;
+
+				try {
+					fs.lstatSync(_ROOT + '/' + genre + '/' + file);
+				} catch (err) {
+
+					if (err.code === 'ENOENT') {
+						exists = false;
+					}
+
+				}
+
+				if (exists === false) {
+					delete _META[genre][file];
+					_OLD[genre]++;
+				}
+
+			}
+
+		}
+
 	} catch (err) {
 	}
 
@@ -259,15 +288,16 @@ if (user.trim() === '') {
 				});
 
 				_STAT[album] = {
-					todo:  0,
-					files: files.length
+					'new': 0,
+					'old': _OLD[album],
+					'all': files.length
 				};
 
 				files = files.filter(function(file) {
 					return _META[album][file] === undefined;
 				});
 
-				_STAT[album].todo = files.length;
+				_STAT[album]['new'] = files.length;
 
 				files.forEach(function(file) {
 					_META[album][file] = Date.now();
@@ -308,7 +338,7 @@ if (user.trim() === '') {
 
 		let albums = Object.keys(_STAT).sort();
 		let max    = albums.map(v => v.length).reduce((a, b) => Math.max(a, b), 0);
-		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' - NEW / ALL';
+		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' - OLD / NEW / ALL';
 		let div    = new Array(header.length).fill('-').join('');
 
 		console.log(header);
@@ -318,10 +348,11 @@ if (user.trim() === '') {
 
 			let stat  = _STAT[id];
 			let album = _format(id, max, true);
-			let todo  = _format('' + stat.todo,  3, false);
-			let files = _format('' + stat.files, 3, false);
+			let s_old = _format('' + stat['old'], 3, false);
+			let s_new = _format('' + stat['new'], 3, false);
+			let s_all = _format('' + stat['all'], 3, false);
 
-			console.log('~/Music/' + album + ' - ' + todo + ' / ' + files);
+			console.log('~/Music/' + album + ' - ' + s_old + ' / ' + s_new + ' / ' + s_all);
 
 		});
 
@@ -416,22 +447,10 @@ if (user.trim() === '') {
 
 			});
 
+			console.log('');
+			console.log(div);
+
 		}
-
-
-		// references.forEach(reference => {
-
-		// 	let sentence = reference.sentence;
-		// 	let vector   = vocabulary.map(word => sentence.includes(word) ? 1 : 0);
-
-		// 	console.log(sentence, vector.join(' '));
-
-		// });
-
-
-		// references.forEach((file, f) => {
-		// 	console.log(file, dictionary[f]);
-		// });
 
 	}, 1000);
 
