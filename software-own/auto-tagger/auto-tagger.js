@@ -14,6 +14,95 @@ const _SPACE = ' ' + new Array(128).fill(' ').join(' ');
  * HELPERS
  */
 
+const _distance = function(str_a, str_b) {
+
+	let len_a = str_a.length;
+	let len_b = str_b.length;
+
+	if (len_a === 0) return len_b;
+	if (len_b === 0) return len_a;
+
+
+	let matrix = new Array(len_a + 1).fill(0).map(val => {
+		return new Array(len_b + 1).fill(0);
+	});
+
+	for (let a = 0; a <= len_a; a++) {
+		matrix[a][0] = a;
+	}
+
+	for (let b = 0; b <= len_b; b++) {
+		matrix[0][b] = b;
+	}
+
+
+	for (let a = 1; a <= len_a; a++) {
+
+		let chr_a = str_a.charAt(a - 1);
+
+		for (let b = 1; b <= len_b; b++) {
+
+			if (a === b && matrix[a][b] > 4) {
+				return len_a;
+			}
+
+			let chr_b = str_b.charAt(b - 1);
+			let cost  = chr_a === chr_b ? 0 : 1;
+
+			let min  = matrix[a - 1][b] + 1;
+			let min2 = matrix[a][b - 1] + 1;
+			let min3 = matrix[a - 1][b - 1] + cost;
+
+			if (min2 < min) min = min2;
+			if (min3 < min) min = min3;
+
+			matrix[a][b] = min;
+
+
+			if (a > 1 && b > 1 && chr_a === str_b.charAt(b - 2) && str_a.charAt(a - 2) === chr_b) {
+				matrix[a][b] = Math.min(matrix[a - 2][b - 2], matrix[a - 2][b - 2] + cost);
+			}
+
+		}
+
+	}
+
+
+	return matrix[len_a][len_b];
+
+};
+
+const _filter = function(str) {
+
+	let tmp = str.split(' ');
+
+	let ch1 = tmp[tmp.length - 1];
+	if (ch1.endsWith('.mp3')) {
+		tmp[tmp.length - 1] = ch1.substr(0, ch1.length - 4);
+	}
+
+	tmp = tmp.filter(val => val !== '-');
+	tmp = tmp.map(val => {
+
+		if (val.startsWith('(')) val = val.substr(1);
+		if (val.endsWith(')'))   val = val.substr(0, val.length - 1);
+        if (val.includes('.'))   val = val.split('.').join('');
+		if (val.includes('\''))  val = val.split('\'').join('');
+		if (val === '&')         val = 'and';
+
+		return val;
+
+	});
+
+	// tmp = tmp.filter(val => /^([A-Za-z0-9]+)$/g.test(val));
+	tmp = tmp.map(val => val.toLowerCase());
+	tmp = tmp.map(val => val.trim());
+	tmp = tmp.filter(val => val !== '');
+
+	return tmp;
+
+};
+
 const _format = function(str, length, invert) {
 
 	invert = invert === true;
@@ -241,11 +330,108 @@ if (user.trim() === '') {
 		if (_TODO.length > 0) {
 
 			_TODO.forEach(function(task) {
-				console.log('> ~/Music/' + task.path.substr(_ROOT.length));
+				console.log('> ~/Music' + task.path.substr(_ROOT.length));
 				_autotag_file(task.path, task.data);
 			});
 
 		}
+
+
+		let references = [];
+
+		for (let genre in _META) {
+
+			let files = Object.keys(_META[genre]);
+			let words = files.map(val => _filter(val));
+
+			for (let f = 0, fl = files.length; f < fl; f++) {
+				references.push({
+					genre:    genre,
+					file:     files[f],
+					sentence: words[f]
+				});
+			}
+
+		}
+
+
+		let similarities = [];
+
+		references.forEach(reference1 => {
+
+			references.forEach(reference2 => {
+
+				if (reference1 !== reference2) {
+
+					let sentence1 = reference1.sentence.join(' ');
+					let sentence2 = reference2.sentence.join(' ');
+					let maxlength = Math.max(sentence1.length, sentence2.length);
+
+					let distance = _distance(sentence1, sentence2);
+					if (distance < 0.1 * maxlength) {
+
+						let check = similarities.find(data => {
+							if (data[0] === reference1 && data[1] === reference2) return true;
+							if (data[0] === reference2 && data[1] === reference1) return true;
+							return false;
+						}) || null;
+
+						if (check === null) {
+							similarities.push([
+								reference1,
+								reference2,
+								(1 - distance / maxlength) * 100
+							]);
+						}
+
+					}
+
+				}
+
+			});
+
+		});
+
+
+		if (similarities.length > 0) {
+
+			console.log('');
+			console.log('Warning: Found similar looking songs:');
+			console.log(div);
+
+			similarities.sort((a, b) => {
+				if (a[2] > b[2]) return -1;
+				if (b[2] > a[2]) return  1;
+				return 0;
+			}).forEach(similarity => {
+
+				let sim_a   = similarity[0];
+				let sim_b   = similarity[1];
+				let percent = similarity[2];
+
+				console.log('');
+				console.log('Similarity: ' + (percent).toFixed(2) + '%');
+				console.log('~/Music/' + sim_a.genre + '/' + sim_a.file);
+				console.log('~/Music/' + sim_b.genre + '/' + sim_b.file);
+
+			});
+
+		}
+
+
+		// references.forEach(reference => {
+
+		// 	let sentence = reference.sentence;
+		// 	let vector   = vocabulary.map(word => sentence.includes(word) ? 1 : 0);
+
+		// 	console.log(sentence, vector.join(' '));
+
+		// });
+
+
+		// references.forEach((file, f) => {
+		// 	console.log(file, dictionary[f]);
+		// });
 
 	}, 1000);
 
