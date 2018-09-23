@@ -96,18 +96,23 @@ vim;
 
 ## Notes
 
-The [./packages-aur](./packages-aur) folder contains a backup
-of the equivalent packages on [AUR](https://aur.archlinux.org).
+Available Profiles:
+
+- [nuccy](./profiles/nuccy.sh)
+- [tinky](./profiles/tinky.sh)
+- [weep](./profiles/weep.sh)
+
+Folder Structure:
+
+- [./profiles](./profiles) contains ready-to-use profiles.
+- [./projects](./projects) contains github organization and repository integrations.
+- [./packages-aur](./packages-aur) contains all self-maintained [aur](https://aur.archlinux.org) packages.
+- [./software](./software) contains package integrations for `core`, `community`, `extra` and `multilib`.
+- [./software-aur](./software-aur) contains package integrations for [aur.archlinux.org](https://aur.archlinux.org).
+- [./software-own](./software-own) contains custom helpers that have no upstream packages.
 
 
-## Work in Progress
+## License
 
-Remote server backups are a bit overcomplicated right now. So this
-has still to be integrated nicely.
-
-Example for backup scenario:
-
-```bash
-ssh root@git-mirror 'cd /; tar -cvpzf - --exclude=/lost+found --exclude=/dev --exclude=/mnt --exclude=/proc --exclude=/run --exclude=/sys --one-file-system /' > /home/cookiengineer/git-mirror-backup.tar.gz
-```
+[Cookie Engineer](https://github.com/cookiengineer)'s Dotfiles are released under the [WTFPL 2.0](./LICENSE_WTFPL.txt).
 
