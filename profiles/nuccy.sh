@@ -1,34 +1,11 @@
 #!/bin/bash
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
-ROOT="$(dirname "$DIR")";
 
-
-_install () {
-
-	pkg_type="$1";
-	pkg_name="$2";
-
-	install_sh="$ROOT/$pkg_type/$pkg_name/install.sh";
-	configure_sh="$ROOT/$pkg_type/$pkg_name/configure.sh";
-
-	if [ -f "$install_sh" ]; then
-		bash $install_sh;
-	fi;
-
-	if [ -f "$configure_sh" ]; then
-		bash $configure_sh;
-	fi;
-
-}
-
-_install_packages () {
-	sudo pacman -S --needed --noconfirm $@;
-}
-
-_install_packages_aur () {
-	trizen -S --needed --noconfirm $@;
-}
+if [ "$1" == "--debug" ]; then
+	source "$(dirname "$0")/_lib/install.sh" "nuccy" "--debug";
+else
+	source "$(dirname "$0")/_lib/install.sh" "nuccy";
+fi;
 
 
 #
@@ -37,6 +14,7 @@ _install_packages_aur () {
 
 _install software bash;
 _install software gnome-shell;
+# _install software lightdm;
 _install software networkmanager;
 # _install software modemmanager;
 _install software git;

@@ -1,34 +1,10 @@
 #!/bin/bash
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
-ROOT="$(dirname "$DIR")";
-
-
-_install () {
-
-	pkg_type="$1";
-	pkg_name="$2";
-
-	install_sh="$ROOT/$pkg_type/$pkg_name/install.sh";
-	configure_sh="$ROOT/$pkg_type/$pkg_name/configure.sh";
-
-	if [ -f "$install_sh" ]; then
-		bash $install_sh;
-	fi;
-
-	if [ -f "$configure_sh" ]; then
-		bash $configure_sh;
-	fi;
-
-}
-
-_install_packages () {
-	sudo pacman -S --needed --noconfirm $@;
-}
-
-_install_packages_aur () {
-	trizen -S --needed --noconfirm $@;
-}
+if [ "$1" == "--debug" ]; then
+	source "$(dirname "$0")/_lib/install.sh" "tinky" "--debug";
+else
+	source "$(dirname "$0")/_lib/install.sh" "tinky";
+fi;
 
 
 #
@@ -37,6 +13,7 @@ _install_packages_aur () {
 
 _install software bash;
 _install software gnome-shell;
+# _install software lightdm;
 _install software networkmanager;
 _install software modemmanager;
 _install software git;
@@ -60,6 +37,7 @@ _install_packages synergy;
 
 _install software-aur trizen;
 _install software-aur kitty;
+_install software-aur wireless-regdb-pentest;
 
 _install_packages_aur cplay redshift-gtk-git telegram-desktop-bin tldr youtube-dl;
 _install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-origin firefox-extension-umatrix;
@@ -88,14 +66,14 @@ _install projects polyfillr;
 #
 
 if [ ! -f /usr/bin/share-internet ]; then
-	sudo cp $DIR/tinky/usr/bin/share-internet.sh /usr/bin/share-internet;
+	sudo cp $PROFILE_ROOT/usr/bin/share-internet.sh /usr/bin/share-internet;
 	sudo chmod +x /usr/bin/share-internet;
 fi;
 
 local synergyc_service="/home/cookiengineer/.config/systemd/user/synergyc.service";
 if [ ! -f $synergyc_service ]; then
 	mkdir -p $(dirname $synergyc_service);
-	cp "$DIR/tinky$synergyc_service" $synergyc_service;
+	cp "$PROFILE_ROOT$synergyc_service" $synergyc_service;
 	systemctl --user enable synergyc;
 fi;
 

@@ -1,34 +1,10 @@
 #!/bin/bash
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
-ROOT="$(dirname "$DIR")";
-
-
-_install () {
-
-	pkg_type="$1";
-	pkg_name="$2";
-
-	install_sh="$ROOT/$pkg_type/$pkg_name/install.sh";
-	configure_sh="$ROOT/$pkg_type/$pkg_name/configure.sh";
-
-	if [ -f "$install_sh" ]; then
-		bash $install_sh;
-	fi;
-
-	if [ -f "$configure_sh" ]; then
-		bash $configure_sh;
-	fi;
-
-}
-
-_install_packages () {
-	sudo pacman -S --needed --noconfirm $@;
-}
-
-_install_packages_aur () {
-	trizen -S --needed --noconfirm $@;
-}
+if [ "$1" == "--debug" ]; then
+	source "$(dirname "$0")/_lib/install.sh" "weep" "--debug";
+else
+	source "$(dirname "$0")/_lib/install.sh" "weep";
+fi;
 
 
 #
@@ -37,6 +13,7 @@ _install_packages_aur () {
 
 _install software bash;
 _install software gnome-shell;
+_install software lightdm;
 _install software networkmanager;
 _install software modemmanager;
 _install software git;
@@ -44,6 +21,7 @@ _install software openssh;
 _install software nodejs;
 _install software tor;
 _install software vim;
+# _install software xterm;
 
 _install_packages bluez bluez-firmware bluez-hid2hci bluez-libs bluez-utils;
 _install_packages noto-fonts noto-fonts-compat;
@@ -89,20 +67,20 @@ _install projects polyfillr;
 #
 
 if [ ! -f /etc/synergy.conf ]; then
-	sudo cp $DIR/weep/etc/synergy.conf /etc/synergy.conf;
+	sudo cp $PROFILE_ROOT/etc/synergy.conf /etc/synergy.conf;
 fi;
 
 
 sudo chmod +r /etc/NetworkManager/system-connections;
 
 if [ ! -f /etc/NetworkManager/system-connections/Home ]; then
-	sudo cp $DIR/weep/etc/NetworkManager/system-connections/Home /etc/NetworkManager/system-connections/Home;
+	sudo cp $PROFILE_ROOT/etc/NetworkManager/system-connections/Home /etc/NetworkManager/system-connections/Home;
 fi;
 
 local synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
 if [ ! -f $synergys_service ]; then
 	mkdir -p $(dirname $synergys_service);
-	cp "$DIR/weep$synergys_service" $synergys_service;
+	cp "$PROFILE_ROOT$synergys_service" $synergys_service;
 	systemctl --user enable synergys;
 fi;
 
