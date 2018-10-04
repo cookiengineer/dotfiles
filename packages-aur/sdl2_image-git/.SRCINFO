@@ -1,0 +1,18 @@
+pkgbase = sdl2_image
+	pkgdesc = A simple library to load images of various formats as SDL surfaces (Version 2)
+	pkgver = 2.0.3
+	pkgrel = 1
+	url = http://www.libsdl.org/projects/SDL_image
+	arch = x86_64
+	license = MIT
+	makedepends = cmake
+	depends = sdl2
+	depends = libpng
+	depends = libtiff
+	depends = libjpeg
+	depends = libwebp
+	source = https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.3.tar.gz
+	sha512sums = 869cf3485cc850a91dc1d7f0023f0497bc7bbfd63e721365358b19d19d4da850e52667731d0e5ec80f4a11d7687aa6cfbdd5ceaec956af0e7f5567e87535977a
+
+pkgname = sdl2_image
+
