@@ -6,14 +6,6 @@
 
 [[ $- != *i* ]] && return
 
-if [ -r /usr/share/git/git-prompt.sh ]; then
-	source /usr/share/git/git-prompt.sh;
-fi;
-
-if [ -r /etc/profile.d/vte.sh ]; then
-	source /etc/profile.d/vte.sh;
-fi;
-
 if [ -r /usr/share/bash-completion/bash_completion ]; then
 	source /usr/share/bash-completion/bash_completion;
 fi;
@@ -35,6 +27,7 @@ stty -ixon;
 # Misc Options
 #
 
+export PATH=/home/$USER/.cargo/bin:$PATH;
 xhost +local:root > /dev/null 2>&1;
 complete -cf sudo;
 
@@ -131,31 +124,96 @@ colors() {
 
 if [ -r /usr/share/git/git-prompt.sh ]; then
 
+	source /usr/share/git/git-prompt.sh;
+
 	__my_ps1() {
 
-		last_status="$?";
-		str="\n[";
+		local last_status="$?";
+		local code="";
+		local git_status="$(__git_ps1 "%s")";
+		local user="$USER";
+		local host="$HOSTNAME";
+		local path="$PWD";
 
 		if [ "$last_status" == "0" ]; then
-			str=$str"\e[32m✔\e[0m";
+			code="✔️ ";
+		elif [ "$last_status" == "2" ]; then
+			code="🔥";
 		else
-			str=$str"\e[31m✘\e[0m";
+			code="❌";
 		fi;
 
-		str="$str]─[";
-		str=$str"\e[01;49;39m$USER@$HOSTNAME\e[0m";
-		str="$str]─[";
-		str=$str"\e[01;49;39m$PWD\e[0m";
+		if [ "$user" == "cookiengineer" ]; then
+			user="🍪🔧";
+		elif [ "$user" == "root" ]; then
+			user="🤖";
+		fi;
 
-		git_status="$(__git_ps1 "%s")";
+		if [ "$host" == "weep" ]; then
+			host="🖥️ ";
+		elif [ "$host" == "tinky" ]; then
+			host="💻";
+		fi;
+
+		if [ "$path" == "$HOME" ]; then
+			path="🏠";
+		elif [ "$path" == "$HOME/Software" ]; then
+			path="💽";
+		elif [ "$path" == "/opt/lycheejs" ]; then
+			path="🌱";
+		fi;
+
+		local str="$code \e[01;49;39m$user@$host:$path\e[0m";
+
 		if [ "$git_status" != "" ]; then
-			str="$str]─[";
-			str=$str"\e[01;49;39m${git_status}\e[0m";
+			echo -e "\n$str 🛰️  \e[01;49;39m${git_status}\e[0m 🛰️  \n💻 ";
+		else
+			echo -e "\n$str\n💻 ";
 		fi;
 
-		str="$str]\n[$]";
+	}
 
-		echo -e "$str ";
+	PS1='$(__my_ps1)';
+
+else
+
+	__my_ps1() {
+
+		local last_status="$?";
+		local code="";
+		local user="$USER";
+		local host="$HOSTNAME";
+		local path="$PWD";
+
+		if [ "$last_status" == "0" ]; then
+			code="✔️ ";
+		elif [ "$last_status" == "2" ]; then
+			code="🔥";
+		else
+			code="❌";
+		fi;
+
+		if [ "$user" == "cookiengineer" ]; then
+			user="🍪🔧";
+		elif [ "$user" == "root" ]; then
+			user="🤖";
+		fi;
+
+		if [ "$host" == "weep" ]; then
+			host="🖥️ ";
+		elif [ "$host" == "tinky" ]; then
+			host="💻";
+		fi;
+
+		if [ "$path" == "$HOME" ]; then
+			path="🏠";
+		elif [ "$path" == "$HOME/Software" ]; then
+			path="💽";
+		elif [ "$path" == "/opt/lycheejs" ]; then
+			path="🌱";
+		fi;
+
+		echo -e "\n$code \e[01;49;39m$user@$host:$path\e[0m\n💻 ";
 
 	}
 
@@ -214,6 +272,17 @@ git-serve() {
 
 }
 
+tomp3() {
+	local input="$1";
+	local output="${input%.*}.mp3";
+	ffmpeg -i "$input" -codec:a libmp3lame -qscale:a 0 "$output";
+}
+
+vimgrep() {
+	local search="$1";
+	local folder="$2";
+	vim -o `grep -ril "$search" $folder`;
+}
 
 
 #
@@ -228,4 +297,16 @@ youtube-mp3() {
 youtube-opus() {
 	youtube-dl --extract-audio --audio-format opus $1 --continue;
 }
+
+
+if [ -r /etc/profile.d/vte.sh ]; then
+	source /etc/profile.d/vte.sh;
+fi;
+
+
+THEFUCK=`which thefuck`;
+
+if [ "$THEFUCK" != "" ]; then
+	eval $(thefuck --alias);
+fi;
 
