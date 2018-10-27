@@ -350,7 +350,7 @@ if (user.trim() === '') {
 
 		let genres = Object.keys(_STATISTICS).sort();
 		let max    = Math.max.apply(0, genres.map(str => str.length));
-		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' - OLD / NEW / ALL';
+		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' | NEW | OLD | ALL';
 		let div    = '+' + new Array(header.length + 2).fill('-').join('') + '+';
 
 		console.log(div);
@@ -362,11 +362,11 @@ if (user.trim() === '') {
 			let genre = genres[g];
 			let stat  = _STATISTICS[genre];
 			let album = _format(genre, max, true);
-			let s_old = _format('' + stat['old'], 3, false);
 			let s_new = _format('' + stat['new'], 3, false);
+			let s_old = _format('' + stat['old'], 3, false);
 			let s_all = _format('' + stat['all'], 3, false);
 
-			console.log('| ~/Music/' + album + ' - ' + s_old + ' / ' + s_new + ' / ' + s_all + ' |');
+			console.log('| ~/Music/' + album + ' | ' + s_new + ' | ' + s_old + ' | ' + s_all + ' |');
 
 		};
 
