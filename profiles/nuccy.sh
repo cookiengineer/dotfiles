@@ -46,6 +46,7 @@ _install_packages_aur firefox-extension-google-search-link-fix firefox-extension
 # _install software-own auto-cleanup;
 _install software-own auto-tagger;
 _install software-own chromium-extensions;
+# _install software-own pacman-backup;
 # _install software-own pacman-server;
 
 

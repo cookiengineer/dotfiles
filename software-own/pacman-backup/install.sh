@@ -12,10 +12,10 @@ if [ "$NODEJS_BIN" == "" ]; then
 fi;
 
 
-if [ ! -x /usr/bin/pacman-server ]; then
+if [ ! -x /usr/bin/pacman-backup]; then
 
-	sudo cp "$DIR/pacman-server.js" /usr/bin/pacman-server;
-	sudo chmod +x /usr/bin/pacman-server;
+	sudo cp "$DIR/pacman-backup.js" /usr/bin/pacman-backup;
+	sudo chmod +x /usr/bin/pacman-backup;
 
 fi;
 

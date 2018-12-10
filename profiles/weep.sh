@@ -49,6 +49,7 @@ _install_packages_aur mobac openscad wireless-regdb-pentest;
 # _install software-own auto-cleanup;
 _install software-own auto-tagger;
 _install software-own chromium-extensions;
+_install software-own pacman-backup;
 # _install software-own pacman-server;
 
 
