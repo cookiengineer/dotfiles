@@ -13,7 +13,7 @@ const _ARCH   = (arch => {
 const _ARGS   = Array.from(process.argv).slice(2);
 const _CACHE  = [];
 const _MIRROR = 'https://arch.eckner.net/archlinux/$repo/os/$arch';
-const _ACTION = /^(backup|cleanup|download|serve|upgrade)$/g.test((_ARGS[0] || '')) ? _ARGS[0] : null;
+const _ACTION = /^(archive|cleanup|download|serve|upgrade)$/g.test((_ARGS[0] || '')) ? _ARGS[0] : null;
 const _FOLDER = _ARGS.find(v => v.startsWith('/')) || null;
 const _SERVER = _ARGS.find(v => (v.includes(':') || v.includes('.'))) || _ARGS.find(a => a !== _ACTION && a !== _FOLDER) || null;
 
@@ -214,6 +214,14 @@ const _parse_pkgname = function(file) {
 
 };
 
+const _read_file = function(path, callback) {
+
+	_fs.readFile(path, (err, data) => {
+		callback(err ? null : data);
+	});
+
+};
+
 const _read_pkgs = function(path, callback) {
 
 	let cache = [];
@@ -305,26 +313,6 @@ const _remove = function(target, callback) {
 
 	_fs.unlink(target, err => {
 		callback(err ? err : null);
-	});
-
-};
-
-const _serve = function(response, path) {
-
-	_fs.readFile(path, (err, data) => {
-
-		if (err) {
-			res.writeHead(404, {});
-			res.end();
-		} else {
-			res.writeHead(200, {
-				'Content-Type': 'application/octet-stream',
-				'Content-Length': Buffer.byteLength(data)
-			});
-			res.write(data);
-			res.end();
-		}
-
 	});
 
 };
@@ -459,7 +447,7 @@ const _write = function(target, buffer, callback) {
  * IMPLEMENTATION
  */
 
-if (_ACTION === 'backup' && _FOLDER !== null) {
+if (_ACTION === 'archive' && _FOLDER !== null) {
 
 	_mkdir(_FOLDER + '/pkgs');
 	_mkdir(_FOLDER + '/sync');
@@ -520,7 +508,7 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 			let pkg = _parse_pkgname(file);
 			if (pkg === null) {
 
-				console.log(':: Cannot recognize version scheme of ' + file);
+				console.log(':! Cannot recognize version scheme of ' + file);
 
 			} else {
 
@@ -546,8 +534,6 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 			let tree = Object.values(database[arch]);
 			if (tree.length > 0) {
 
-				console.log(':: Purging cache for "' + arch + '"');
-
 				tree
 					.filter(pkg => pkg.versions.length > 1)
 					.forEach(pkg => {
@@ -558,7 +544,7 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 							.forEach(version => {
 
 								_remove(pkgs_folder + '/' + pkg.name + '-' + version + '-' + pkg.arch + '.pkg.tar.xz', err => {
-									if (!err) console.log(':: purged ' + pkg.name + '-' + version);
+									if (!err) console.log(':: purged "' + pkg.name + '-' + version + '" (' + pkg.arch + ')');
 								});
 
 							});
@@ -663,7 +649,7 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 
 			} else {
 
-				console.log(':: Cannot synchronize database with "' + _SERVER + '".');
+				console.log(':! Cannot synchronize database with "' + _SERVER + '".');
 				console.log(stderr);
 
 				process.exit(1);
@@ -739,12 +725,51 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 
 		let file = req.url.split('/').pop();
 		if (file.endsWith('.tar.xz')) {
-			_serve(res, pkgs_folder + '/' + file);
+
+			_read_file(pkgs_folder + '/' + file, buffer => {
+
+				if (buffer !== null) {
+					console.log(':: served "' + file + '"');
+					res.writeHead(200, {
+						'Content-Type': 'application/octet-stream',
+						'Content-Length': Buffer.byteLength(buffer)
+					});
+					res.write(buffer);
+					res.end();
+				} else {
+					console.log(':! Cannot serve "' + file + '"');
+					res.writeHead(404, {});
+					res.end();
+				}
+
+			});
+
 		} else if ((file.endsWith('.db') || file.endsWith('.db.sig')) && database.includes(file)) {
-			_serve(res, sync_folder + '/' + file);
+
+			_read_file(sync_folder + '/' + file, buffer => {
+
+				if (buffer !== null) {
+					console.log(':: served "' + file + '"');
+					res.writeHead(200, {
+						'Content-Type': 'application/octet-stream',
+						'Content-Length': Buffer.byteLength(buffer)
+					});
+					res.write(buffer);
+					res.end();
+				} else {
+					console.log(':! Cannot serve "' + file + '"');
+					res.writeHead(404, {});
+					res.end();
+				}
+
+			});
+
 		} else {
+
+			console.log(':! Cannot serve "' + file + '"');
 			res.writeHead(404, {});
 			res.end();
+
 		}
 
 	});
@@ -831,18 +856,19 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 } else {
 
 	console.log('pacman-backup');
-	console.log('Backup tool for off-the-grid upgrades via portable USB sticks.');
+	console.log('Backup tool for off-the-grid upgrades via portable USB sticks or LAN networks.');
 	console.log('');
 	console.log('Usage: pacman-backup [Action] [Folder]');
 	console.log('');
 	console.log('Usage Notes:');
 	console.log('');
-	console.log('    Folder is assumed write-able by the current user.');
-	console.log('    Remember to "sync" after backup or clean.');
+	console.log('    If no folder is given, system-wide folders are used.');
+	console.log('    If folder is given, it is assumed write-able by the current user.');
+	console.log('    Remember to always "sync" after archive or cleanup.');
 	console.log('');
 	console.log('Available Actions:');
 	console.log('');
-	console.log('    backup     copies local package cache to folder');
+	console.log('    archive    copies local package cache to folder');
 	console.log('    cleanup    removes outdated packages from folder');
 	console.log('    upgrade    prints pacman command to upgrade from folder');
 	console.log('');
@@ -854,7 +880,7 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 	console.log('    # 1: Machine with internet connection');
 	console.log('    sudo pacman -Sy;');
 	console.log('    sudo pacman -Suw;');
-	console.log('    pacman-backup backup /run/media/cookiengineer/pacman-usbstick;');
+	console.log('    pacman-backup archive /run/media/cookiengineer/pacman-usbstick;');
 	console.log('    pacman-backup cleanup /run/media/cookiengineer/pacman-usbstick;');
 	console.log('    sync;');
 	console.log('');
@@ -874,12 +900,12 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 	console.log('    pacman-backup serve;');
 	console.log('');
 	console.log('    # 2: User walks to other machine with LAN connection');
-	console.log('    #    and downloads package cache from pacman server ...');
+	console.log('    #    and downloads package cache from pacman-backup server ...');
 	console.log('');
 	console.log('    # 3: Machine without internet connection');
 	console.log('    #    "Server = http://192.168.0.10:15678" in /etc/pacman.d/mirrorlist');
 	console.log('    sudo pacman-backup download 192.168.0.10');
-	console.log('    sudo pacman-backup upgrade');
+	console.log('    pacman-backup upgrade');
 	console.log('');
 
 }
