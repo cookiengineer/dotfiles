@@ -12,6 +12,7 @@ const _ARCH   = (arch => {
 })(process.arch);
 const _ARGS   = Array.from(process.argv).slice(2);
 const _CACHE  = [];
+const _MIRROR = 'https://arch.eckner.net/archlinux/$repo/os/$arch';
 const _ACTION = /^(backup|cleanup|download|serve|upgrade)$/g.test((_ARGS[0] || '')) ? _ARGS[0] : null;
 const _FOLDER = _ARGS.find(v => v.startsWith('/')) || null;
 const _SERVER = _ARGS.find(v => (v.includes(':') || v.includes('.'))) || _ARGS.find(a => a !== _ACTION && a !== _FOLDER) || null;
@@ -251,6 +252,52 @@ const _read_sync = function(path, callback) {
 		}
 
 	});
+
+};
+
+const _read_upgrades = function(callback) {
+
+	let handle = _spawn('pacman', [
+		'-Sup',
+		'--print-format',
+		'%n /// %v /// %r /// %l'
+	], {
+		cwd: '/tmp'
+	});
+
+	let stdout   = (handle.stdout || '').toString().trim();
+	let stderr   = (handle.stderr || '').toString().trim();
+	let upgrades = [];
+
+	if (stderr.length === 0) {
+
+		let lines = stdout.split('\n').filter(l => l.startsWith('::') === false && l.includes('///'));
+		if (lines.length > 0) {
+
+			upgrades = lines.map(line => {
+
+				let file = line.split(' /// ')[3].split('/').pop();
+				let arch = null;
+
+				if (file.endsWith('.pkg.tar.xz')) {
+					arch = file.substr(0, file.length - 11).split('-').pop();
+				}
+
+				return {
+					file:    file,
+					name:    line.split(' /// ')[0],
+					version: line.split(' /// ')[1],
+					arch:    arch,
+					repo:    line.split(' /// ')[2]
+				};
+
+			});
+
+		}
+
+	}
+
+	callback(upgrades);
 
 };
 
@@ -563,145 +610,102 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 			});
 
 			let stderr = (sync_handle.stderr || '').toString().trim();
-
 			if (stderr.length === 0) {
 
-				let pkgs_handle = _spawn('pacman', [ '-Sup', '--print-format', '%n /// %v' ], {
-					cwd: pkgs_folder
-				});
+				_read_upgrades(upgrades => {
 
-				let stdout   = (pkgs_handle.stdout || '').toString().trim();
-				let stderr   = (pkgs_handle.stderr || '').toString().trim();
-				let packages = [];
+					if (upgrades.length > 0) {
 
-				if (stderr.length === 0) {
+						_read_pkgs(pkgs_folder, cache => {
 
-					_read_pkgs(pkgs_folder, cache => {
-
-						stdout
-							.split('\n')
-							.filter(line => line.startsWith('::') === false)
-							.map(line => ({
-								name:    line.split(' /// ')[0],
-								version: line.split(' /// ')[1]
-							})).filter(pkg => {
-
-								let file_arch = pkg.name + '-' + pkg.version + '-' + _ARCH + '.pkg.tar.xz';
-								let file_any  = pkg.name + '-' + pkg.version + '-any.pkg.tar.xz';
-
-								if (cache.includes(file_arch) === true) {
-
-									packages.push({
-										_success: true,
-										arch:     _ARCH,
-										file:     file_arch,
-										name:     pkg.name,
-										version:  pkg.version
-									});
-
-								} else if (cache.includes(file_any) === true) {
-
-									packages.push({
-										_success: true,
-										arch:     'any',
-										file:     file_any,
-										name:     pkg.name,
-										version:  pkg.version
-									});
-
-								} else {
-
-									packages.push({
-										_success: false,
-										arch:     null,
-										file:     null,
-										name:     pkg.name,
-										version:  pkg.version
-									});
-
-								}
-
+							upgrades.forEach(pkg => {
+								pkg._success = cache.includes(pkg.file);
 							});
 
-					});
 
+							let downloads = upgrades.filter(pkg => pkg._success === false);
+							if (downloads.length > 0) {
 
-					setTimeout(_ => {
+								downloads.forEach((pkg, d) => {
 
-						packages.filter(pkg => pkg._success === false).forEach(pkg => {
+									_download('http://' + _SERVER + ':15678/' + pkg.file, buffer => {
 
-							let handle = _spawn('pacman', [ '-Si', pkg.name ], {
-								cwd: pkgs_folder
-							});
+										if (buffer !== null && buffer.length > 0) {
 
-							let stdout = (handle.stdout || '').toString().trim();
-							if (stdout.length > 0) {
+											_write(pkgs_folder + '/' + pkg.file, buffer, err => {
 
-								let arch = (stdout.split('\n').find(line => line.startsWith('Architecture')) || '').split(':').pop().trim();
-								if (arch !== null) {
-									pkg.arch = arch;
-									pkg.file = pkg.name + '-' + pkg.version + '-' + pkg.arch + '.pkg.tar.xz';
-								}
+												if (!err) console.log(':: downloaded ' + pkg.name + '-' + pkg.version);
+												pkg._success = true;
+
+												if (d === downloads.length - 1) on_download_complete(pkgs_folder, upgrades);
+
+											});
+
+										} else {
+
+											pkg._success = false;
+
+											if (d === downloads.length - 1) on_download_complete(pkgs_folder, upgrades);
+
+										}
+
+									});
+
+								});
 
 							}
 
 						});
 
+					}
 
-						let invalid_arch = packages.filter(pkg => pkg.file === null);
-						if (invalid_arch.length > 0) {
-							invalid_arch.forEach(pkg => console.log(':: Database query for ' + pkg.name + ' failed.'));
-						}
-
-
-						packages = packages.filter(pkg => pkg.file !== null);
-
-
-						let downloads = packages.filter(pkg => pkg._success === false);
-
-						downloads.forEach((pkg, d) => {
-
-							_download('http://' + _SERVER + ':15678/' + pkg.file, buffer => {
-
-								if (buffer !== null && buffer.length > 0) {
-
-									_write(pkgs_folder + '/' + pkg.file, buffer, err => {
-
-										if (!err) console.log(':: downloaded ' + pkg.name + '-' + pkg.version);
-										pkg._success = true;
-
-										if (d === downloads.length - 1) {
-											on_download_complete(pkgs_folder, packages);
-										}
-
-									});
-
-								} else {
-
-									pkg._success = false;
-
-									if (d === downloads.length - 1) {
-										on_download_complete(pkgs_folder, packages);
-									}
-
-								}
-
-							});
-
-						});
-
-					}, 500);
-
-				}
+				});
 
 			} else {
 
-				console.log(':: Database synchronization failed.');
+				console.log(':: Cannot synchronize database with "' + _SERVER + '".');
 				console.log(stderr);
 
 				process.exit(1);
 
 			}
+
+		}
+
+	});
+
+} else if (_ACTION === 'download') {
+
+	let pkgs_folder = '/var/cache/pacman/pkg';
+
+	if (_FOLDER !== null) {
+		pkgs_folder = _FOLDER + '/pkgs';
+		_mkdir(_FOLDER + '/pkgs');
+	}
+
+
+	_read_upgrades(packages => {
+
+		if (packages.length > 0) {
+
+			_read_pkgs(pkgs_folder, cache => {
+
+				let downloads = packages.filter(pkg => cache.includes(pkg.file) === false);
+				if (downloads.length > 0) {
+
+					console.log('\n:: Copy/Paste this into a Download Manager of your choice:');
+					console.log('');
+
+					downloads.forEach(pkg => {
+						let url = _MIRROR;
+						url = url.replace('$arch', _ARCH);
+						url = url.replace('$repo', pkg.repo);
+						console.log(url + '/' + pkg.file);
+					});
+
+				}
+
+			});
 
 		}
 
@@ -745,25 +749,50 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 
 	});
 
-	server.listen(15678);
+	server.on('error', err => {
 
+		if (err.code === 'EADDRINUSE') {
+			console.log('\n:: pacman-backup is already serving on port 15678');
+			process.exit(1);
+		} else {
+			console.log('\n:: ' + err.message);
+			process.exit(1);
+		}
 
-	let interfaces = Object.values(_os.networkInterfaces()).flat().filter(iface => iface.internal === false);
-	if (interfaces.length > 0) {
+	});
 
-		console.log('\n:: Execute this on another machine to download from local package cache:');
-		console.log('');
-
-		interfaces.forEach(iface => {
-			console.log('pacman-backup download /tmp/pacman-backup-cache "' + iface.address + '";');
-		});
-
-	} else {
-
-		console.log('\n:: Execute this on another machine to download from local package cache:');
-		console.log('\npacman-backup download /tmp/pacman-backup-cache this-machines-address;');
-
+	try {
+		server.listen(15678);
+	} catch (err) {
 	}
+
+
+	setTimeout(_ => {
+
+		let hostname   = (_spawn('hostname').stdout || '').toString().trim();
+		let interfaces = Object.values(_os.networkInterfaces()).flat().filter(iface => iface.internal === false);
+
+		if (hostname !== '') {
+
+			console.log('\n:: Execute this on another machine to download from local package cache:');
+			console.log('\npacman-backup download ' + hostname + ';');
+
+		} else if (interfaces.length > 0) {
+
+			console.log('\n:: Execute this on another machine to download from local package cache:');
+			console.log('');
+
+			if (interfaces.length > 0) {
+
+				interfaces.forEach(iface => {
+					console.log('pacman-backup download "' + iface.address + '";');
+				});
+
+			}
+
+		}
+
+	}, 250);
 
 } else if (_ACTION === 'upgrade') {
 
@@ -775,55 +804,29 @@ if (_ACTION === 'backup' && _FOLDER !== null) {
 	}
 
 
-	let handle = _spawn('pacman', [ '-Sup', '--print-format', '%n /// %v' ], {
-		cwd: pkgs_folder
+	_read_upgrades(packages => {
+
+		if (packages.length > 0) {
+
+			_read_pkgs(pkgs_folder, cache => {
+
+				let upgrades = packages.filter(pkg => cache.includes(pkg.file) === true);
+				if (upgrades.length > 0) {
+					console.log('\n:: Execute this to install upgrades from local package cache:');
+					console.log('\ncd "' + pkgs_folder + '"; sudo pacman -U ' + upgrades.map(pkg => pkg.file).join(' ') + ';');
+				}
+
+				let downloads = packages.filter(pkg => cache.includes(pkg.file) === false);
+				if (downloads.length > 0) {
+					console.log('\n:: Execute this to download upgrades into local package cache:');
+					console.log('\ncd "' + pkgs_folder + '"; sudo pacman -Sw --cachedir "' + pkgs_folder + '" ' + downloads.map(pkg => pkg.name).join(' ') + ';');
+				}
+
+			});
+
+		}
+
 	});
-
-	let stdout = (handle.stdout || '').toString().trim();
-	let stderr = (handle.stderr || '').toString().trim();
-
-	if (stderr.length === 0) {
-
-		_read_pkgs(pkgs_folder, cache => {
-
-			let upgrades  = [];
-			let downloads = [];
-
-			stdout
-				.split('\n')
-				.filter(line => line.startsWith('::') === false)
-				.map(line => ({
-					name:    line.split(' /// ')[0],
-					version: line.split(' /// ')[1]
-				})).filter(pkg => {
-
-					let file_arch = pkg.name + '-' + pkg.version + '-' + _ARCH + '.pkg.tar.xz';
-					let file_any  = pkg.name + '-' + pkg.version + '-any.pkg.tar.xz';
-
-					if (cache.includes(file_arch)) {
-						upgrades.push(file_arch);
-					} else if (cache.includes(file_any)) {
-						upgrades.push(file_any);
-					} else {
-						downloads.push(pkg.name);
-					}
-
-				});
-
-
-			if (upgrades.length > 0) {
-				console.log('\n:: Execute this to install upgrades from local package cache:');
-				console.log('\ncd "' + pkgs_folder + '"; sudo pacman -U ' + upgrades.join(' ') + ';');
-			}
-
-			if (downloads.length > 0) {
-				console.log('\n:: Execute this to download upgrades into local package cache:');
-				console.log('\ncd "' + pkgs_folder + '"; sudo pacman -Sw --cachedir "' + pkgs_folder + '" ' + downloads.join(' ') + ';');
-			}
-
-		});
-
-	}
 
 } else {
 
