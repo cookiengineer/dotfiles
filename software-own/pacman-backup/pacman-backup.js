@@ -317,6 +317,70 @@ const _remove = function(target, callback) {
 
 };
 
+const _serve = function(path, res) {
+
+	_read_file(path, buffer => {
+
+		let file = path.split('/').pop();
+
+		if (buffer !== null) {
+
+			console.log(':: served "' + file + '"');
+			res.writeHead(200, {
+				'Content-Type':  'application/octet-stream',
+				'Content-Length': Buffer.byteLength(buffer)
+			});
+			res.write(buffer);
+			res.end();
+
+		} else {
+
+			console.log(':! Cannot serve "' + file + '"');
+			res.writeHead(404, {});
+			res.end();
+
+		}
+
+	});
+
+};
+
+const _serve_with_range = function(path, range, res) {
+
+	_read_file(path, buffer => {
+
+		let file = path.split('/').pop();
+
+		if (buffer !== null) {
+
+			let total = Buffer.byteLength(buffer);
+			let start = range.start || 0;
+			let end   = range.end   || total;
+			let size  = (end - start);
+
+
+			console.log(':: served "' + file + '" (' + size + ' bytes)');
+			res.writeHead(206, {
+				'Accept-Ranges':  'bytes',
+				'Content-Type':   'application/octet-stream',
+				'Content-Length': size,
+				'Content-Range':  'bytes ' + start + '-' + end + '/' + total
+			});
+			res.write(buffer.slice(start, end));
+			res.end();
+
+		} else {
+
+			console.log(':! Cannot serve "' + file + '"');
+			res.writeHead(404, {});
+			res.end();
+
+		}
+
+	});
+
+};
+
 const _sort_by_version = function(a, b) {
 
 	let [ diff_a, diff_b ] = _diff(a, b);
@@ -723,46 +787,46 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 
 	let server = _http.createServer((req, res) => {
 
+		let range = null;
+
+		if (typeof req.headers.range === 'string') {
+
+			let tmp = req.headers.range.replace('bytes=', '').split('/')[0].split('-');
+			if (tmp.length === 2) {
+
+				range = {};
+
+				let start = parseInt(tmp[0], 10);
+				let end   = parseInt(tmp[1], 10);
+
+				if (!isNaN(start)) range.start = start;
+				if (!isNaN(end))   range.end   = end;
+
+				if (typeof range.start !== 'number') {
+					range = null;
+				}
+
+			}
+
+		}
+
+
 		let file = req.url.split('/').pop();
 		if (file.endsWith('.tar.xz')) {
 
-			_read_file(pkgs_folder + '/' + file, buffer => {
-
-				if (buffer !== null) {
-					console.log(':: served "' + file + '"');
-					res.writeHead(200, {
-						'Content-Type': 'application/octet-stream',
-						'Content-Length': Buffer.byteLength(buffer)
-					});
-					res.write(buffer);
-					res.end();
-				} else {
-					console.log(':! Cannot serve "' + file + '"');
-					res.writeHead(404, {});
-					res.end();
-				}
-
-			});
+			if (range !== null) {
+				_serve_with_range(pkgs_folder + '/' + file, range, res);
+			} else {
+				_serve(pkgs_folder + '/' + file, res);
+			}
 
 		} else if ((file.endsWith('.db') || file.endsWith('.db.sig')) && database.includes(file)) {
 
-			_read_file(sync_folder + '/' + file, buffer => {
-
-				if (buffer !== null) {
-					console.log(':: served "' + file + '"');
-					res.writeHead(200, {
-						'Content-Type': 'application/octet-stream',
-						'Content-Length': Buffer.byteLength(buffer)
-					});
-					res.write(buffer);
-					res.end();
-				} else {
-					console.log(':! Cannot serve "' + file + '"');
-					res.writeHead(404, {});
-					res.end();
-				}
-
-			});
+			if (range !== null) {
+				_serve_with_range(sync_folder + '/' + file, range, res);
+			} else {
+				_serve(sync_folder + '/' + file, res);
+			}
 
 		} else {
 

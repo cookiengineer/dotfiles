@@ -21,11 +21,11 @@ if [ "$NODEJS_BIN" == "" ]; then
 fi;
 
 
-if [ ! -x /usr/bin/auto-backup ]; then
+# if [ ! -x /usr/bin/auto-backup ]; then
 
 	cat "$DIR/console.js" "$DIR/auto-backup.js" > /tmp/auto-backup.js;
 	sudo mv /tmp/auto-backup.js /usr/bin/auto-backup;
 	sudo chmod +x /usr/bin/auto-backup;
 
-fi;
+# fi;
 
