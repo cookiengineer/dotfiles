@@ -1,23 +1,17 @@
 #!/bin/bash
 
 _clear_locale () {
-
 	cd /usr/share/locale;
 	sudo rm -rf $@ 2> /dev/null;
-
 }
 
 _clear_home () {
-
 	cd "/home/$USER";
 	rm -rf $@ 2> /dev/null;
-
 }
 
 
-
-# Clear unnecessary locales
-
+# Unnecessary Locales
 _clear_locale af am an ang ar as ast az az_IR;
 _clear_locale bal be be@latin "bg" bn bn_IN bo br bs;
 _clear_locale ca ca@valencia crh cs csb cy;
@@ -43,37 +37,59 @@ _clear_locale wa wo;
 _clear_locale xh yi yo zh_CN zh_HK zh_TW zu;
 
 
-# Clear pacman cache
+# Pacman Cache
 sudo rm -rf /var/cache/pacman/pkg/*.pkg.tar.xz 2> /dev/null;
 
-# Clear unnecessary docs
+# Unnecessary Docs
 sudo rm -rf /usr/share/gtk-doc/*;
 sudo rm -rf /usr/share/doc/*;
 
 
-# Clear unnecessary user-specific caches
 if [ "$USER" != "" ]; then
 
+	# Unnecessary Profile Folders
 	if [ -d "/home/$USER" ]; then
 
+		# Package Managers
+		_clear_home .cargo;
+		_clear_home .gradle;
+		_clear_home .jd;
+		_clear_home .m2;
+		_clear_home .node-gyp .npm;
+		_clear_home .cache/pip;
+		_clear_home .rustup;
+		_clear_home .cache/yarn;
+
+		# Build Toolchains
+		_clear_home .babel.json;
+		_clear_home .cmake;
+		_clear_home .mono;
+		_clear_home .pylint.d;
+		_clear_home .cache/typescript;
+
+
+		# Other Software
 		_clear_home .audacity-data;
+		_clear_home .bash_history .bash_logout;
 		_clear_home .cache/banshee-1 .config/banshee-1;
 		_clear_home .config/blender;
 		_clear_home .cache/cura .config/cura;
 		_clear_home .cache/dasht;
 		_clear_home .config/eog;
 		_clear_home .cache/epiphany .config/epiphany;
+		_clear_home .esd_auth .cache/event-sound-cache*;
+		_clear_home .cache/folks;
 		_clear_home .config/gedit;
 		_clear_home .gimp-2.8 .config/GIMP;
-		_clear_home .cache/gnome-calculator .cache/gnome-dictionary-3.0 .cache/gnome-photos;
+		_clear_home .cache/gnome-calculator;
+		_clear_home .cache/gnome-dictionary-3.0;
+		_clear_home .cache/gnome-photos;
 		_clear_home .cache/kitty .config/kitty;
+		_clear_home .lesshst;
 		_clear_home .cache/libgweather;
 		_clear_home .cache/media-art;
 		_clear_home .config/monitors.xml~;
-		_clear_home .mono;
-		_clear_home .node-gyp .npm;
-		_clear_home .cache/pip;
-		_clear_home .pylint.d;
+		_clear_home .cache/qt_compose_cache* .config/QtProject.conf .config/Trolltech.conf;
 		_clear_home .ssr;
 		_clear_home .swt;
 		_clear_home .config/termtosvg;
@@ -81,8 +97,7 @@ if [ "$USER" != "" ]; then
 		_clear_home .cache/totem;
 		_clear_home .cache/tracker;
 		_clear_home .config/trizen;
-		_clear_home .cache/typescript;
-		# _clear_home .config/uGet;
+		_clear_home .config/uGet;
 		_clear_home .cache/vim;
 		_clear_home .config/VirtualBox;
 		_clear_home .cache/webkitgtk;
@@ -90,9 +105,9 @@ if [ "$USER" != "" ]; then
 		_clear_home .cache/wine;
 		_clear_home .config/wireshark;
 		_clear_home .xsession-errors .xsession-errors.old;
-		_clear_home .cache/yarn;
 
 
+		# lychee.js Software
 		_clear_home .cache/lycheejs-ranger .cache/lycheejs-studio;
 		_clear_home .config/lycheejs-ranger .config/lycheejs-studio;
 		_clear_home .cache/nwjs .cache/research;
