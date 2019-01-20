@@ -71,8 +71,10 @@ if [ "$USER" != "" ]; then
 		# Other Software
 		_clear_home .audacity-data;
 		_clear_home .bash_history .bash_logout;
+		_clear_home .cache/babl;
 		_clear_home .cache/banshee-1 .config/banshee-1;
 		_clear_home .config/blender;
+		_clear_home .config/cef_user_data;
 		_clear_home .cache/cura .config/cura .local/share/cura;
 		_clear_home .cache/dasht .local/share/dasht;
 		_clear_home .local/share/desktop-directories;
@@ -80,15 +82,17 @@ if [ "$USER" != "" ]; then
 		_clear_home .cache/epiphany .config/epiphany .local/share/epiphany;
 		_clear_home .esd_auth .cache/event-sound-cache*;
 		_clear_home .cache/folks .local/share/folks;
+		_clear_home .fontconfig .cache/fontconfig;
 		_clear_home .config/gedit;
-		_clear_home .local/share/gegl-0.2 .local/share/gegl-0.3 .local/share/gegl-0.4;
+		_clear_home .cache/gegl-0.2 .local/share/gegl-0.2 .cache/gegl-0.3 .local/share/gegl-0.3 .cache/gegl-0.4 .local/share/gegl-0.4;
 		_clear_home .gimp-2.8 .config/GIMP;
 		_clear_home .cache/gnome-calculator;
+		_clear_home .config/gnome-control-center;
 		_clear_home .cache/gnome-dictionary-3.0;
 		_clear_home .cache/gnome-photos;
 		_clear_home .local/share/gnome-shell;
 		_clear_home .local/share/grilo-plugins;
-		_clear_home .local/share/gstreamer-1.0;
+		_clear_home .cache/gstreamer-1.0 .local/share/gstreamer-1.0;
 		_clear_home .local/share/gtk-doc;
 		_clear_home .local/share/gvfs-metadata;
 		_clear_home .local/share/icc;
@@ -100,7 +104,7 @@ if [ "$USER" != "" ]; then
 		_clear_home .local/share/localstorage;
 		_clear_home .cache/media-art;
 		_clear_home .local/share/mime;
-		_clear_home .local/share/modem-manager-gui;
+		_clear_home .cache/modem-manager-gui local/share/modem-manager-gui;
 		_clear_home .config/monitors.xml~;
 		_clear_home .local/share/nautilus;
 		_clear_home .local/share/recently-used.xbel;
@@ -116,6 +120,7 @@ if [ "$USER" != "" ]; then
 		_clear_home .cache/tracker;
 		_clear_home .config/trizen;
 		_clear_home .config/uGet;
+		_clear_home .config/VeraCrypt;
 		_clear_home .cache/vim;
 		_clear_home .config/VirtualBox;
 		_clear_home .cache/webkitgtk .local/share/webkitgtk;
