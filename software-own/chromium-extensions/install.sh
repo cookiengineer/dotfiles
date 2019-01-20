@@ -10,7 +10,7 @@ _download_crx () {
 
 	echo "$crx_url";
 
-	curl -sL "$crx_url" > "/home/Downloads/CRX/$name.crx";
+	curl -sL "$crx_url" > "/home/$USER/Downloads/CRX/$name.crx";
 
 }
 

@@ -57,14 +57,45 @@ if [ "$USER" != "" ]; then
 	if [ -d "/home/$USER" ]; then
 
 		_clear_home .audacity-data;
-		_clear_home .thumbnails;
+		_clear_home .cache/banshee-1 .config/banshee-1;
+		_clear_home .config/blender;
+		_clear_home .cache/cura .config/cura;
+		_clear_home .cache/dasht;
+		_clear_home .config/eog;
+		_clear_home .cache/epiphany .config/epiphany;
+		_clear_home .config/gedit;
+		_clear_home .gimp-2.8 .config/GIMP;
+		_clear_home .cache/gnome-calculator .cache/gnome-dictionary-3.0 .cache/gnome-photos;
+		_clear_home .cache/kitty .config/kitty;
+		_clear_home .cache/libgweather;
+		_clear_home .cache/media-art;
+		_clear_home .config/monitors.xml~;
+		_clear_home .mono;
 		_clear_home .node-gyp .npm;
-
+		_clear_home .cache/pip;
+		_clear_home .pylint.d;
+		_clear_home .ssr;
+		_clear_home .swt;
+		_clear_home .config/termtosvg;
+		_clear_home .thumbnails .cache/thumbnails;
 		_clear_home .cache/totem;
-		_clear_home .cache/lycheejs-ranger .cache/lycheejs-studio;
-		_clear_home .cache/nwjs .cache/research;
+		_clear_home .cache/tracker;
+		_clear_home .config/trizen;
+		_clear_home .cache/typescript;
+		# _clear_home .config/uGet;
+		_clear_home .cache/vim;
+		_clear_home .config/VirtualBox;
+		_clear_home .cache/webkitgtk;
+		_clear_home .wget-hsts;
+		_clear_home .cache/wine;
+		_clear_home .config/wireshark;
+		_clear_home .xsession-errors .xsession-errors.old;
+		_clear_home .cache/yarn;
 
+
+		_clear_home .cache/lycheejs-ranger .cache/lycheejs-studio;
 		_clear_home .config/lycheejs-ranger .config/lycheejs-studio;
+		_clear_home .cache/nwjs .cache/research;
 		_clear_home .config/nwjs .config/research;
 
 	fi;
