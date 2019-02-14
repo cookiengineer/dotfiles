@@ -252,7 +252,7 @@ const _push = function(config, status) {
 	if (remotes.length > 0) {
 
 		let branch = status.branch || 'master';
-		let result = false;
+		let result = true;
 
 		remotes.forEach(remote => {
 
@@ -683,7 +683,7 @@ if (user.trim() === '') {
 						) {
 							return true;
 						} else {
-							console.warn('> Ignoring ' + orga + '/' + repo);
+							console.warn('> Ignoring  ' + orga + '/' + repo);
 							return false;
 						}
 
@@ -776,7 +776,7 @@ if (user.trim() === '') {
 
 							if (change === true) {
 
-								console.info('> Writing  ' + orga + '/' + repo);
+								console.info('> Writing   ' + orga + '/' + repo);
 
 								let check = _set_config(orga, repo, config);
 								if (check === true) {
@@ -790,11 +790,11 @@ if (user.trim() === '') {
 
 							if (status.modified === true) {
 
-								console.error('> Ignoring ' + orga + '/' + repo + ' (uncommited changes)');
+								console.error('> Ignoring  ' + orga + '/' + repo + ' (uncommited changes)');
 
 							} else {
 
-								console.info('> Fetching ' + orga + '/' + repo);
+								console.info('> Fetching  ' + orga + '/' + repo);
 
 								let result = _fetch(config, status);
 								if (result === true) {
@@ -802,7 +802,7 @@ if (user.trim() === '') {
 									console.log('  OKAY');
 
 
-									console.info('> Merging  ' + orga + '/' + repo);
+									console.info('> Merging   ' + orga + '/' + repo);
 
 									let result = _merge(config, status);
 									if (result === true) {
@@ -810,7 +810,7 @@ if (user.trim() === '') {
 										console.log('  OKAY');
 
 
-										console.info('> Pushing  ' + orga + '/' + repo);
+										console.info('> Pushing   ' + orga + '/' + repo);
 
 										let result = _push(config, status);
 										if (result === true) {
@@ -831,6 +831,8 @@ if (user.trim() === '') {
 
 
 							if (_FLAGS.includes('backup')) {
+
+								console.info('> Archiving ' + orga + '/' + repo);
 
 								let result = _backup(config, status);
 								if (result === true) {
