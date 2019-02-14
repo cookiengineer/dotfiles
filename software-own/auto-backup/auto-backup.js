@@ -1,8 +1,97 @@
+#!/usr/bin/env node
 
 const fs       = require('fs');
 const execSync = require('child_process').execSync;
-const _ROOT    = '/home/' + process.env.USER + '/Software';
-const _FLAGS   = Array.from(process.argv).filter(v => v.startsWith('--')).map(v => v.substr(2));
+
+const _BACKUP   = '/home/' + process.env.USER + '/Backup';
+const _SOFTWARE = '/home/' + process.env.USER + '/Software';
+const _FLAGS    = Array.from(process.argv).filter(v => v.startsWith('--')).map(v => v.substr(2));
+const _SELF     = (function(buffer) {
+	return buffer.toString('utf8').split('\n').shift().trim();
+})(fs.readFileSync('/etc/hostname'));
+
+
+const _args_to_string = function(args) {
+
+	let output = [];
+
+	for (let a = 0, al = args.length; a < al; a++) {
+
+		let arg = args[a];
+		if (typeof arg === 'string') {
+			output[a] = arg;
+		} else {
+			output[a] = JSON.stringify(args[a], null, '\t');
+		}
+
+	}
+
+	return output.join(' ');
+
+};
+
+const _consol = global.console;
+const console = {
+
+	clear: function() {
+
+		// clear screen and reset cursor
+		process.stdout.write('\x1B[2J\x1B[0f');
+
+		// clear scroll buffer
+		process.stdout.write('\u001b[3J');
+
+	},
+
+	info: function() {
+
+		let al   = arguments.length;
+		let args = [ '(I)' ];
+		for (let a = 0; a < al; a++) {
+			args.push(arguments[a]);
+		}
+
+		process.stdout.write('\u001b[42m\u001b[97m ' + _args_to_string(args) + ' \u001b[39m\u001b[49m\u001b[0m\n');
+
+	},
+
+	log: function() {
+
+		let al   = arguments.length;
+		let args = [ '(L)' ];
+		for (let a = 0; a < al; a++) {
+			args.push(arguments[a]);
+		}
+
+		process.stdout.write('\u001b[49m\u001b[97m ' + _args_to_string(args) + ' \u001b[39m\u001b[49m\u001b[0m\n');
+
+	},
+
+	warn: function() {
+
+		let al   = arguments.length;
+		let args = [ '(W)' ];
+		for (let a = 0; a < al; a++) {
+			args.push(arguments[a]);
+		}
+
+		process.stdout.write('\u001b[43m\u001b[97m ' + _args_to_string(args) + ' \u001b[39m\u001b[49m\u001b[0m\n');
+
+	},
+
+	error: function() {
+
+		let al   = arguments.length;
+		let args = [ '(E)' ];
+		for (let a = 0; a < al; a++) {
+			args.push(arguments[a]);
+		}
+
+		process.stderr.write('\u001b[41m\u001b[97m ' + _args_to_string(args) + ' \u001b[39m\u001b[49m\u001b[0m\n');
+
+	}
+
+};
 
 
 
@@ -30,204 +119,96 @@ const _PEERS = [
  * HELPERS
  */
 
-const _pretty_path = function(path) {
+const _backup = function(config, status) {
 
-	if (path.startsWith('/home/' + process.env.USER) === true) {
-		path = '~' + path.substr(('/home/' + process.env.USER).length);
-	}
+	let folder = false;
+	let backup = false;
 
-	return path;
-
-};
-
-const _deserialize_config = function(path, config) {
-
-	let data = {
-		core:   {},
-		branch: {},
-		remote: {}
-	};
-	let errors = [];
-
-
-	let section = null;
-
-	config.split('\n').map(line => line.trim()).forEach(line => {
-
-		if (line.startsWith('[') && line.endsWith(']')) {
-
-			let tmp1 = line.substr(1, line.length - 2);
-			if (tmp1 === 'core') {
-
-				section = data.core;
-
-			} else if (tmp1.startsWith('branch ')) {
-
-				let tmp2 = tmp1.substr('branch '.length).trim();
-				if (tmp2.startsWith('"') && tmp2.endsWith('"')) {
-
-					let name = tmp2.substr(1, tmp2.length - 2);
-					if (name.trim() !== '') {
-						section = data.branch[name] = {};
-					}
-
-				}
-
-			} else if (tmp1.startsWith('remote ')) {
-
-				let tmp2 = tmp1.substr('remote '.length).trim();
-				if (tmp2.startsWith('"') && tmp2.endsWith('"')) {
-
-					let name = tmp2.substr(1, tmp2.length - 2);
-					if (name.trim() !== '') {
-						section = data.remote[name] = {};
-					}
-
-				}
-
-			} else {
-
-				errors.push(line);
-				section = null;
-
-			}
-
-		} else if (section === data.core) {
-
-			if (line.includes(' = ')) {
-				let [ key, val ] = line.split(' = ').map(v => v.trim());
-				section[key] = val;
-			}
-
-		} else if (
-			Object.values(data.branch).includes(section)
-			|| Object.values(data.remote).includes(section)
-		) {
-
-			if (line.includes(' = ')) {
-				let [ key, val ] = line.split(' = ').map(v => v.trim());
-				section[key] = val;
-			}
-
-		} else if (line.trim() !== '') {
-			errors.push(line);
-		}
-
-	});
-
-
-	if (errors.length > 0) {
-		console.warn('Invalid git config "' + path + '".');
-		errors.forEach(err => console.warn(err));
-	}
-
-	return data;
-
-};
-
-const _serialize_config = function(data) {
-
-	let config = '';
-
-	let core = data.core || null;
-	if (core !== null) {
-
-		config += '[core]\n';
-
-		Object.keys(core).forEach(key => {
-			config += '\t' + key + ' = ' + core[key] + '\n';
-		});
-
-	}
-
-	let branches = data.branch || null;
-	if (branches !== null) {
-
-		Object.keys(branches).forEach(branch => {
-
-			config += '[branch "' + branch + '"]\n';
-
-			Object.keys(branches[branch]).forEach(key => {
-				config += '\t' + key + ' = ' + branches[branch][key] + '\n';
-			});
-
-		});
-
-	}
-
-	let remotes = data.remote || null;
-	if (remotes !== null) {
-
-		Object.keys(remotes).forEach(remote => {
-
-			config += '[remote "' + remote + '"]\n';
-
-			Object.keys(remotes[remote]).forEach(key => {
-				config += '\t' + key + ' = ' + remotes[remote][key] + '\n';
-			});
-
-		});
-
-	}
-
-	return config;
-
-};
-
-const _read_config = function(path) {
-
-	let stat = null;
 	try {
-		stat = fs.lstatSync(path + '/.git/config');
-	} catch (err) {
-	}
 
-	if (stat !== null && stat.isFile()) {
-
-		let buffer = null;
-		try {
-			buffer = fs.readFileSync(path + '/.git/config', 'utf8');
-		} catch (err) {
+		let check = fs.existsSync(_BACKUP + '/' + config.meta.orga);
+		if (check === true) {
+			folder = true;
+		} else {
+			fs.mkdirSync(_BACKUP + '/' + config.meta.orga, {
+				recursive: true
+			});
+			folder = true;
 		}
 
-		if (buffer !== null) {
+	} catch (err) {
+		folder = false;
+	}
 
-			let data = _deserialize_config(path, buffer.toString('utf8'));
-			if (data !== null) {
-				return data;
+	if (folder === true) {
+
+		try {
+
+			let file = _BACKUP + '/' + config.meta.orga + '/' + config.meta.repo + '.tar.xz';
+			let tmp  = execSync('tar cvfJ "' + file + '" "' + config.meta.repo + '"', {
+				cwd: _SOFTWARE + '/' + config.meta.orga
+			});
+
+			let stdout = tmp.toString('utf8').trim();
+			if (stdout !== '' && stdout.includes('refusing to create empty archive') === false) {
+				backup = true;
 			}
 
+		} catch (err) {
+			backup = false;
 		}
 
 	}
 
-
-	return null;
+	return backup;
 
 };
 
-const _write_config = function(path, config) {
+const _fetch = function(config, status) {
 
-	console.info(' > Fix git config at "' + _pretty_path(path) + '"');
+	let remotes = [];
 
-	let buffer = null;
+	if (_FLAGS.includes('online') === true) {
+		remotes = Object.keys(config.remotes).filter(r => (r === 'gitlab' || r === 'github'));
+	} else {
+		remotes = Object.keys(config.remotes).filter(r => (r !== 'gitlab' || r !== 'github'));
+	}
 
-	let data = _serialize_config(config);
-	if (data !== '') {
+	if (remotes.length > 0) {
 
-		let buffer = Buffer.from(data, 'utf8');
-		if (buffer instanceof Buffer) {
+		let results = remotes.map(remote => {
 
 			let result = false;
+
 			try {
-				fs.writeFileSync(path + '/.git/config', buffer, 'utf8');
-				result = true;
+
+				let tmp = execSync('git fetch --multiple ' + remotes.join(' '), {
+					cwd: config.meta.path
+				});
+
+				let stdout = tmp.toString('utf8').trim();
+				if (stdout !== '') {
+					result = true;
+				}
+
 			} catch (err) {
-				result = false;
+
+				let stderr = err.stderr.toString('utf8');
+				if (stderr.includes('unable to connect')) {
+					result = true;
+				} else {
+					result = false;
+				}
+
 			}
 
 			return result;
 
+		});
+
+		// Peer-to-Peer means any Peer wins
+		if (results.includes(true)) {
+			return true;
 		}
 
 	}
@@ -237,10 +218,112 @@ const _write_config = function(path, config) {
 
 };
 
-const _get_status = function(path) {
+const _merge = function(config, status) {
 
+	let result = false;
+
+	try {
+
+		let tmp = execSync('git merge FETCH_HEAD', {
+			cwd: config.meta.path
+		});
+
+		let stdout = tmp.toString('utf8').trim();
+		if (stdout !== '') {
+			result = true;
+		}
+
+	} catch (err) {
+		result = false;
+	}
+
+	return result;
+
+};
+
+const _push = function(config, status) {
+
+	let remotes = [];
+
+	if (_FLAGS.includes('online') === true) {
+		remotes = Object.keys(config.remotes).filter(r => (r === 'gitlab' || r === 'github'));
+	}
+
+	if (remotes.length > 0) {
+
+		let branch = status.branch || 'master';
+		let result = false;
+
+		remotes.forEach(remote => {
+
+			try {
+				execSync('git push ' + remote + ' ' + branch, {
+					cwd: config.meta.path
+				});
+			} catch (err) {
+				result = false;
+			}
+
+		});
+
+		return result;
+
+	}
+
+	return true;
+
+};
+
+const _remove = function(config, status, name) {
+
+	let remote = config.remotes[name] || null;
+	if (remote !== null) {
+		delete config.remotes[name];
+	}
+
+	let refs = Object.keys(status.remotes[name] || {});
+	if (refs.length > 0) {
+
+		delete status.remotes[name];
+
+		refs.forEach(ref => {
+
+			try {
+				fs.unlinkSync(config.meta.path + '/.git/refs/remotes/origin/' + ref);
+			} catch (err) {
+			}
+
+		});
+
+		try {
+			fs.rmdirSync(config.meta.path + '/.git/refs/remotes/origin');
+		} catch (err) {
+		}
+
+	}
+
+	let branches = config.branches || null;
+	if (branches !== null) {
+
+		Object.keys(branches).forEach(branch => {
+
+			if (branches[branch].remote === name) {
+				branches[branch].remote = 'github';
+			}
+
+		});
+
+	}
+
+};
+
+const _status = function(orga, repo) {
+
+	let path   = _SOFTWARE + '/' + orga + '/' + repo;
 	let status = {
+		branch:   'master',
 		modified: true,
+		heads:    {},
 		remotes:  {}
 	};
 
@@ -254,6 +337,45 @@ const _get_status = function(path) {
 		let stdout = tmp.toString('utf8').trim();
 		if (stdout === '') {
 			status.modified = false;
+		}
+
+	} catch (err) {
+	}
+
+	try {
+
+		let tmp = execSync('git branch', {
+			cwd: path
+		});
+
+		let branch = tmp.toString('utf8').trim().split('\n').find(b => b.startsWith('*')) || null;
+		if (branch !== null) {
+			status.branch = branch.substr(1).trim();
+		}
+
+	} catch (err) {
+	}
+
+	try {
+
+		let branches = fs.readdirSync(path + '/.git/refs/heads');
+		if (branches.length > 0) {
+
+			branches.forEach(branch => {
+
+				let head = null;
+				try {
+					head = fs.readFileSync(path + '/.git/refs/heads/' + branch, 'utf8').trim();
+				} catch (err) {
+					head = null;
+				}
+
+				if (head !== null) {
+					status.heads[branch] = head;
+				}
+
+			});
+
 		}
 
 	} catch (err) {
@@ -323,6 +445,201 @@ const _get_status = function(path) {
 
 };
 
+const _deserialize_config = function(buffer) {
+
+	let config = {
+		meta: {
+			path: null,
+			orga: null,
+			repo: null
+		},
+		core: {},
+		branches: {},
+		remotes: {}
+	};
+
+	let errors  = [];
+	let section = null;
+
+	buffer.toString('utf8').split('\n').map(line => line.trim()).forEach(line => {
+
+		if (line.startsWith('[') && line.endsWith(']')) {
+
+			let tmp1 = line.substr(1, line.length - 2);
+			if (tmp1 === 'core') {
+
+				section = config.core;
+
+			} else if (tmp1.startsWith('branch ')) {
+
+				let tmp2 = tmp1.substr('branch '.length).trim();
+				if (tmp2.startsWith('"') && tmp2.endsWith('"')) {
+
+					let name = tmp2.substr(1, tmp2.length - 2);
+					if (name.trim() !== '') {
+						section = config.branches[name] = {};
+					}
+
+				}
+
+			} else if (tmp1.startsWith('remote ')) {
+
+				let tmp2 = tmp1.substr('remote '.length).trim();
+				if (tmp2.startsWith('"') && tmp2.endsWith('"')) {
+
+					let name = tmp2.substr(1, tmp2.length - 2);
+					if (name.trim() !== '') {
+						section = config.remotes[name] = {};
+					}
+
+				}
+
+			} else {
+
+				errors.push(line);
+				section = null;
+
+			}
+
+		} else if (section === config.core) {
+
+			if (line.includes(' = ')) {
+				let [ key, val ] = line.split(' = ').map(v => v.trim());
+				section[key] = val;
+			}
+
+		} else if (Object.values(config.branches).includes(section) || Object.values(config.remotes).includes(section)) {
+
+			if (line.includes(' = ')) {
+				let [ key, val ] = line.split(' = ').map(v => v.trim());
+				section[key] = val;
+			}
+
+		} else if (line.trim() !== '') {
+			errors.push(line);
+		}
+
+	});
+
+	return config;
+
+};
+
+const _serialize_config = function(config) {
+
+	let buffer = '';
+
+	let core = config.core || null;
+	if (core !== null) {
+
+		buffer += '[core]\n';
+
+		Object.keys(core).forEach(key => {
+			buffer += '\t' + key + ' = ' + core[key] + '\n';
+		});
+
+	}
+
+	let branches = config.branches || null;
+	if (branches !== null) {
+
+		Object.keys(branches).forEach(branch => {
+
+			buffer += '[branch "' + branch + '"]\n';
+
+			Object.keys(branches[branch]).forEach(key => {
+				buffer += '\t' + key + ' = ' + branches[branch][key] + '\n';
+			});
+
+		});
+
+	}
+
+	let remotes = config.remotes || null;
+	if (remotes !== null) {
+
+		Object.keys(remotes).forEach(remote => {
+
+			buffer += '[remote "' + remote + '"]\n';
+
+			Object.keys(remotes[remote]).forEach(key => {
+				buffer += '\t' + key + ' = ' + remotes[remote][key] + '\n';
+			});
+
+		});
+
+	}
+
+	if (buffer.length > 0) {
+		return Buffer.from(buffer, 'utf8');
+	}
+
+	return null;
+
+};
+
+const _get_config = function(orga, repo) {
+
+	let path = _SOFTWARE + '/' + orga + '/' + repo;
+	let stat = null;
+	try {
+		stat = fs.lstatSync(path + '/.git/config');
+	} catch (err) {
+	}
+
+	if (stat !== null && stat.isFile()) {
+
+		let buffer = null;
+		try {
+			buffer = fs.readFileSync(path + '/.git/config', 'utf8');
+		} catch (err) {
+		}
+
+		if (buffer !== null) {
+
+			let config = _deserialize_config(buffer);
+			if (config !== null) {
+
+				config.meta = {
+					path: path,
+					orga: orga,
+					repo: repo
+				};
+
+				return config;
+
+			}
+
+		}
+
+	}
+
+	return null;
+
+};
+
+const _set_config = function(orga, repo, config) {
+
+	let path   = _SOFTWARE + '/' + orga + '/' + repo;
+	let buffer = _serialize_config(config);
+	if (buffer !== null) {
+
+		let result = false;
+		try {
+			fs.writeFileSync(path + '/.git/config', buffer, 'utf8');
+			result = true;
+		} catch (err) {
+			result = false;
+		}
+
+		return result;
+
+	}
+
+	return false;
+
+};
+
 
 
 /*
@@ -337,7 +654,7 @@ if (user.trim() === '') {
 
 } else {
 
-	fs.readdir(_ROOT, (err, orgas) => {
+	fs.readdir(_SOFTWARE, (err, orgas) => {
 
 		if (err) return;
 
@@ -346,15 +663,15 @@ if (user.trim() === '') {
 
 			if (_ORGAS.includes(orga) === true) {
 
-				fs.readdir(_ROOT + '/' + orga, (err, repos) => {
+				fs.readdir(_SOFTWARE + '/' + orga, (err, repos) => {
 
 					repos.filter(repo => {
 
 						let stat = null;
 						let git  = null;
 						try {
-							stat = fs.lstatSync(_ROOT + '/' + orga + '/' + repo);
-							git  = fs.lstatSync(_ROOT + '/' + orga + '/' + repo + '/.git');
+							stat = fs.lstatSync(_SOFTWARE + '/' + orga + '/' + repo);
+							git  = fs.lstatSync(_SOFTWARE + '/' + orga + '/' + repo + '/.git');
 						} catch (err) {
 						}
 
@@ -365,21 +682,21 @@ if (user.trim() === '') {
 							&& git.isDirectory()
 						) {
 							return true;
+						} else {
+							console.warn('> Ignoring ' + orga + '/' + repo);
+							return false;
 						}
-
-
-						return false;
 
 					}).forEach(repo => {
 
-						let config = _read_config(_ROOT + '/' + orga + '/' + repo);
-						let status = _get_status(_ROOT + '/' + orga + '/' + repo);
+						let config = _get_config(orga, repo);
+						let status = _status(orga, repo);
 
 						if (config !== null && status !== null) {
 
 							let change = false;
-							let github = config.remote.github || null;
-							let gitlab = config.remote.gitlab || null;
+							let github = config.remotes.github || null;
+							let gitlab = config.remotes.gitlab || null;
 
 							if (github !== null) {
 
@@ -390,7 +707,7 @@ if (user.trim() === '') {
 
 							} else {
 
-								github = config.remote.github = {
+								github = config.remotes.github = {
 									url:   'git@github.com:' + orga + '/' + repo + '.git',
 									fetch: '+refs/heads/*:refs/remotes/github/*'
 								};
@@ -407,7 +724,7 @@ if (user.trim() === '') {
 
 							} else {
 
-								gitlab = config.remote.gitlab = {
+								gitlab = config.remotes.gitlab = {
 									url:   'git@gitlab.com:' + orga + '/' + repo + '.git',
 									fetch: '+refs/heads/*:refs/remotes/gitlab/*'
 								};
@@ -416,46 +733,35 @@ if (user.trim() === '') {
 							}
 
 
-							if (_FLAGS.includes('remove-origin') === true) {
+							if (_FLAGS.includes('fix') === true) {
 
-								let remote = config.remote.origin || null;
-								if (remote !== null) {
-									delete config.remote.origin;
+								let remote = config.remotes.origin || null;
+								let refs   = Object.keys(status.remotes.origin || {});
+
+								if (remote !== null || refs.length > 0) {
+									_remove(config, status, 'origin');
 									change = true;
-								}
-
-								let refs = Object.keys(status.remotes.origin || {});
-								if (refs.length > 0) {
-
-									delete status.remotes.origin;
-									change = true;
-
-									refs.forEach(ref => {
-
-										try {
-											fs.unlinkSync(_ROOT + '/' + orga + '/' + repo + '/.git/refs/remotes/origin/' + ref);
-										} catch (err) {
-										}
-
-									});
-
-									try {
-										fs.rmdirSync(_ROOT + '/' + orga + '/' + repo + '/.git/refs/remotes/origin');
-									} catch (err) {
-									}
-
 								}
 
 							}
 
-							if (_FLAGS.includes('add-peers') === true) {
+							if (_FLAGS.includes('fix') === true) {
 
-								_PEERS.forEach(peer => {
+								let self = config.remotes[_SELF] || null;
+								let refs = Object.keys(status.remotes[_SELF] || {});
 
-									let check = config.remote[peer] || null;
+								if (self !== null || refs.length > 0) {
+									_remove(config, status, _SELF);
+									change = true;
+								}
+
+
+								_PEERS.filter(peer => peer !== _SELF).forEach(peer => {
+
+									let check = config.remotes[peer] || null;
 									if (check === null) {
 
-										config.remote[peer] = {
+										config.remotes[peer] = {
 											url:   'git://' + peer + '/' + orga + '/' + repo + '/.git',
 											fetch: '+refs/heads/*:refs/remotes/' + peer + '/*'
 										};
@@ -465,46 +771,80 @@ if (user.trim() === '') {
 
 								});
 
-
 							}
 
 
 							if (change === true) {
-								_write_config(_ROOT + '/' + orga + '/' + repo, config);
+
+								console.info('> Writing  ' + orga + '/' + repo);
+
+								let check = _set_config(orga, repo, config);
+								if (check === true) {
+									console.log('  OKAY');
+								} else {
+									console.warn('  FAIL');
+								}
+
 							}
 
 
-							if (status.modified === false) {
+							if (status.modified === true) {
 
-								console.info(orga + '/' + repo);
-								// console.log(status);
+								console.error('> Ignoring ' + orga + '/' + repo + ' (uncommited changes)');
 
 							} else {
 
-								console.error(orga + '/' + repo);
-								// console.log(status);
+								console.info('> Fetching ' + orga + '/' + repo);
+
+								let result = _fetch(config, status);
+								if (result === true) {
+
+									console.log('  OKAY');
+
+
+									console.info('> Merging  ' + orga + '/' + repo);
+
+									let result = _merge(config, status);
+									if (result === true) {
+
+										console.log('  OKAY');
+
+
+										console.info('> Pushing  ' + orga + '/' + repo);
+
+										let result = _push(config, status);
+										if (result === true) {
+											console.log('  OKAY');
+										} else {
+											console.error('  FAIL');
+										}
+
+									} else {
+										console.warn('  FAIL');
+									}
+
+								} else {
+									console.warn('  FAIL');
+								}
 
 							}
 
-							// TODO:
-							// 1. fetch from github and gitlab
-							// 2. push to github and gitlab (and bitbucket)
-							// 3.
 
+							if (_FLAGS.includes('backup')) {
 
-							// TODO: Fetch afterwards
-							// console.log('to fetch or not to fetch?', orga + '/' + repo);
+								let result = _backup(config, status);
+								if (result === true) {
+									console.log('  OKAY');
+								} else {
+									console.error('  FAIL');
+								}
+
+							}
 
 						}
 
 					});
 
-				});
-
-			} else {
-
-				fs.readdir(_ROOT + '/' + orga, (err, repos) => {
-					// TODO: Only pull
 				});
 
 			}
