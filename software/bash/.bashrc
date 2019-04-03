@@ -49,6 +49,7 @@ alias free='free -m';                # show sizes in MB
 alias grep='grep --colour=auto';
 alias ls='ls --color=auto';
 alias more=less;                     # cmd compatibility
+alias mv="mv -i";                    # confirm before overwriting something
 alias ns='netstat -tup --wide';      # show only active program sockets
 
 
