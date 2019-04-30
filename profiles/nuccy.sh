@@ -14,7 +14,7 @@ fi;
 
 _install software bash;
 _install software gnome-shell;
-# _install software lightdm;
+_install software gdm;
 _install software networkmanager;
 # _install software modemmanager;
 _install software git;
