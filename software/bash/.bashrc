@@ -158,8 +158,6 @@ if [ -r /usr/share/git/git-prompt.sh ]; then
 
 		if [ "$path" == "$HOME" ]; then
 			path="🏠";
-		elif [ "$path" == "$HOME/Software" ]; then
-			path="💽";
 		elif [ "$path" == "/opt/lycheejs" ]; then
 			path="🌱";
 		fi;
@@ -208,8 +206,6 @@ else
 
 		if [ "$path" == "$HOME" ]; then
 			path="🏠";
-		elif [ "$path" == "$HOME/Software" ]; then
-			path="💽";
 		elif [ "$path" == "/opt/lycheejs" ]; then
 			path="🌱";
 		fi;
@@ -287,16 +283,36 @@ vimgrep() {
 
 
 #
-# Youtube-DL Helpers
-# Usage: cd ~/Music && youtube-dl http://url/to/stream;
+# Download Helpers
 #
+# cd ~/Music && youtube-mp3 http://url/to/stream;
+# cd ~/Web && website-dl http://website.tld/index.html;
+# cd ~/Extensions && crx-dl https://chrome.google.com/url/with/crx/id;
 
 youtube-mp3() {
-	youtube-dl --extract-audio --audio-format mp3 $1 --continue;
+	youtube-dl --extract-audio --audio-format mp3 $1 --continue --ignore-errors;
 }
 
 youtube-opus() {
-	youtube-dl --extract-audio --audio-format opus $1 --continue;
+	youtube-dl --extract-audio --audio-format opus $1 --continue --ignore-errors;
+}
+
+website-dl() {
+	wget --convert-links --page-requisites --html-extension --span-hosts -e robots=off $1;
+}
+
+crx-dl() {
+
+	url="$1";
+	crx=$(basename $url);
+	file=$(basename "$(dirname $url)");
+
+	crx=${url##*/};
+	ver="74.0";
+	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=$ver&x=id%3D$crx%26installsource%3Dondemand%26uc";
+
+	wget -O "$file.crx" "$crx_url";
+
 }
 
 
@@ -305,7 +321,7 @@ if [ -r /etc/profile.d/vte.sh ]; then
 fi;
 
 
-THEFUCK=`which thefuck`;
+THEFUCK=`which thefuck 2> /dev/null`;
 
 if [ "$THEFUCK" != "" ]; then
 	eval $(thefuck --alias);
