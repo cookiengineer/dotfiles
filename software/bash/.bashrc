@@ -307,7 +307,6 @@ crx-dl() {
 	crx=$(basename $url);
 	file=$(basename "$(dirname $url)");
 
-	crx=${url##*/};
 	ver="74.0";
 	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=$ver&x=id%3D$crx%26installsource%3Dondemand%26uc";
 
