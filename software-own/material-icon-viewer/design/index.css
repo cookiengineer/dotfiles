@@ -18,13 +18,15 @@ header {
 	display: block;
 	position: fixed;
 	width: 100%;
-	height: auto;
+	height: 64px;
 	top: 0px;
 	right: 0px;
 	bottom: auto;
 	left: 0px;
 	margin: 0px;
 	padding: 0px;
+	border: 0px solid none;
+	border-bottom: 1px solid #fff;
 	z-index: 100;
 }
 
@@ -53,7 +55,7 @@ main {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	top: 0px;
+	top: 64px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
@@ -87,7 +89,11 @@ main button {
 }
 
 main button[data-visible="false"] {
-	display: none;
+	/* display: none; */
+}
+
+main button[data-visible="true"] {
+	color: #fff;
 }
 
 main button i {

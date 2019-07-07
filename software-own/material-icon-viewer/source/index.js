@@ -18,6 +18,7 @@
 					let button = global.document.createElement('button');
 					let icon   = global.document.createElement('i');
 
+					button.setAttribute('title', label + ' / ' + code);
 					button.setAttribute('data-label', label);
 					button.setAttribute('data-code',  code);
 
@@ -64,7 +65,7 @@
 			} else {
 
 				Array.from(global.document.querySelectorAll('main button')).forEach((button) => {
-					button.setAttribute('data-visible', true);
+					button.removeAttribute('data-visible');
 				});
 
 			}
