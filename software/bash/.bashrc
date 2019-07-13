@@ -275,6 +275,12 @@ tomp3() {
 	ffmpeg -i "$input" -codec:a libmp3lame -qscale:a 0 "$output";
 }
 
+totiff() {
+	local input="$1";
+	local output="${input%.*}.tiff";
+	gs -q -dNOPAUSE -sDEVICE=tiffg4 -sOutputFile=$output $input -c quit;
+}
+
 vimgrep() {
 	local search="$1";
 	local folder="$2";
