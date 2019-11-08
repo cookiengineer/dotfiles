@@ -22,7 +22,7 @@ _install software openssh;
 _install software nodejs;
 _install software tor;
 _install software vim;
-_install software xterm;
+# _install software xterm;
 
 _install_packages noto-fonts noto-fonts-compat;
 _install_packages chromium firefox gimp gparted transmission-gtk uget;
