@@ -10,8 +10,8 @@ if [ "$GSETTINGS_BIN" != "" ]; then
 
 	if [ -f /etc/manjaro-release ]; then
 
-		$GSETTINGS_BIN set org.gnome.desktop.interface gtk-theme "Adapta-Nokto-Eta-Maia";
-		$GSETTINGS_BIN set org.gnome.desktop.interface icon-theme "Papirus-Adapta-Nokto-Maia";
+		$GSETTINGS_BIN set org.gnome.desktop.interface gtk-theme "Matcha-dark-sea";
+		$GSETTINGS_BIN set org.gnome.desktop.interface icon-theme "Numix-Circle";
 
 	else
 

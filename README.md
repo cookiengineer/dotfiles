@@ -71,6 +71,9 @@ optional export flow described here:
 export USER="cookiengineer";
 export EMAIL="cookiengineer@hahayougetspam.com";
 
+# Required for AUR packages
+sudo pacman -S base-devel;
+
 # Look ma, no sudo!
 bash ./profiles/nuccy.sh;
 ```
