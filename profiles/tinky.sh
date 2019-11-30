@@ -34,15 +34,17 @@ _install_packages synergy;
 #
 
 _install software-aur trizen;
-_install_packages_aur gnome-shell-extension-outta-space-git;
-_install_packages_aur numix-circle-icon-theme-git;
 _install software-aur ungoogled-chromium-bin;
 _install software-aur wireless-regdb-pentest;
+
+_install_packages_aur gnome-shell-extension-outta-space-git;
+_install_packages_aur numix-circle-icon-theme-git;
 _install_packages_aur cplay tldr youtube-dl;
 # _install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-origin firefox-extension-umatrix;
 
 # _install software-own apt-pac;
 # _install software-own auto-cleanup;
+_install software-own auto-sleep;
 _install software-own auto-tagger;
 _install software-own chromium-extensions;
 _install software-own pacman-backup;
@@ -73,5 +75,9 @@ if [ ! -f $synergyc_service ]; then
 	mkdir -p $(dirname $synergyc_service);
 	cp "$PROFILE_ROOT$synergyc_service" $synergyc_service;
 	systemctl --user enable synergyc;
+fi;
+
+if [ ! -f /etc/modprobe.d/psmouse_synaptics.conf ]; then
+	sudo echo "options psmouse synaptics_intertouch=0" > /etc/modprobe.d/psmouse_synaptics.conf;
 fi;
 

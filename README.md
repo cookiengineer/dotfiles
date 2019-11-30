@@ -23,6 +23,7 @@ everywhere, as that's my preferred development environment.
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
 - Manjaro Linux and GNOME
+- Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
@@ -35,11 +36,11 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 - Arch Linux and GNOME
-- Synergy Server
+- Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
 - Monitor 3 (BenQ 24" HDMI 1920x1080)
-- Radeon HD6000 and GTX 1080Ti
+- Radeon HD6000 and 2x GTX 1080Ti
 - Webcam (Logitech C920)
 - Keyboard (Cherry KC1000 US Layout)
 - Vertical Mouse (CSL 26069)
@@ -50,13 +51,13 @@ Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
-- Arch Linux and GNOME
-- Synergy Client (right of `weep`)
+- Manjaro Linux and GNOME
+- Synergy Client (right of `weep`, right of `nuccy`)
 - Monitor 1 (Internal 1440x900)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
 - Monitor 3 (Acer 24" HDMI 1920x1080)
 - Intel HD4000 and GT730M
-- Germany Keyboard mapped as US Layout (in UEFI)
+- Lenovo Thinkpad Keyboard (US Layout)
 
 
 ## Usage
@@ -94,6 +95,26 @@ vim;
 
 # Execute :ZenInstall
 # Execute :ZenUpdate
+```
+
+
+## Debugging
+
+The installation procedure can also be followed through
+step-by-step using the [wizard.sh](./wizard.sh) script.
+
+```bash
+# Shows further install help
+./wizard.sh install;
+
+# Install software
+./wizard.sh install software nodejs;
+
+# Install AUR software
+./wizard.sh install software-aur ungoogled-chromium-bin;
+
+# Install own software (from this repository)
+./wizard.sh install software-own auto-sleep;
 ```
 
 
