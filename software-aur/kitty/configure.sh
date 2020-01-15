@@ -8,6 +8,7 @@ elif [ "$USER" != "" ]; then
 	KITTY_RC="/home/$USER/.config/kitty/kitty.conf";
 fi;
 
+
 if [ "$KITTY_RC" != "" ] && [ ! -f "$KITTY_RC" ]; then
 
 	mkdir -p $(dirname $KITTY_RC);

@@ -19,6 +19,12 @@ if [ "$GSETTINGS_BIN" != "" ]; then
 	$GSETTINGS_BIN set org.gnome.desktop.peripherals.keyboard repeat true;
 	$GSETTINGS_BIN set org.gnome.desktop.peripherals.keyboard repeat-interval 25;
 
+	$GSETTINGS_BIN set org.gnome.desktop.lockdown disable-lock-screen true;
+	$GSETTINGS_BIN set org.gnome.settings-daemon.plugins.power idle-dim false;
+	$GSETTINGS_BIN set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "nothing";
+	$GSETTINGS_BIN set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1200;
+	$GSETTINGS_BIN set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type "suspend";
+
 fi;
 
 

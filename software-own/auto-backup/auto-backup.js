@@ -7,8 +7,8 @@ const _BACKUP   = '/home/' + process.env.USER + '/Backup';
 const _SOFTWARE = '/home/' + process.env.USER + '/Software';
 const _FLAGS    = Array.from(process.argv).filter(v => v.startsWith('--')).map(v => v.substr(2));
 const _SELF     = (function(buffer) {
-	return buffer.toString('utf8').split('\n').shift().trim();
-})(fs.readFileSync('/etc/hostname'));
+	return buffer.split('\n').shift().trim();
+})(fs.readFileSync('/etc/hostname', 'utf8'));
 
 
 const _args_to_string = function(args) {
@@ -104,10 +104,12 @@ const _ORGAS = [
 	'humansneednotapply',
 	'Artificial-Engineering',
 	'Artificial-University',
+	'heyamz',
 	'polyfillr'
 ];
 
 const _PEERS = [
+	'nuccy',
 	'tinky',
 	'weep',
 	'wuup'

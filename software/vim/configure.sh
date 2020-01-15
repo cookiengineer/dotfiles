@@ -11,7 +11,7 @@ if [ "$VIM_RC" != "" ] && [ ! -f "$VIM_RC" ]; then
 
 	cd "/home/$USER";
 
-	git clone https://github.com/cookiengineer/.vim;
+	git clone https://github.com/cookiengineer/dotvim .vim;
 	ln -s .vim/.vimrc .vimrc;
 
 fi;

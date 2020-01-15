@@ -29,13 +29,13 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
 - Intel HD4000
 - Keyboard (Cherry KC1000 US Layout)
-- Trackball (Kensington Orbit)
+- Vertical Mouse (CSL 26069)
 
 **Tower (weep)**
 
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
-- Arch Linux and GNOME
+- Manjaro Linux and GNOME
 - Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
@@ -54,8 +54,7 @@ Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 - Manjaro Linux and GNOME
 - Synergy Client (right of `weep`, right of `nuccy`)
 - Monitor 1 (Internal 1440x900)
-- Monitor 2 (BenQ 24" HDMI 1920x1080)
-- Monitor 3 (Acer 24" HDMI 1920x1080)
+- Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Intel HD4000 and GT730M
 - Lenovo Thinkpad Keyboard (US Layout)
 
@@ -84,17 +83,8 @@ if it doesn't exist - so it has to be added to the
 GitHub account:
 
 ```bash
-# Add this Public Key to GitHub
+# Add this Public Key to BitBucket, GitHub and GitLab
 cat ~/.ssh/id_rsa.pub;
-```
-
-Also, VIM requires a manuall Install and Update:
-
-```bash
-vim;
-
-# Execute :ZenInstall
-# Execute :ZenUpdate
 ```
 
 
