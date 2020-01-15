@@ -12,7 +12,7 @@ fi;
 # XXX: MAIN software
 #
 
-_install software bash;
+_install software bash base-devel;
 _install software gnome-shell;
 _install software gdm;
 _install software networkmanager;
@@ -31,6 +31,7 @@ _install_packages ffmpeg celluloid;
 _install_packages dnsutils macchanger net-tools nmap;
 _install_packages openra;
 _install_packages synergy;
+_install_packages telegram-desktop;
 _install_packages veracrypt;
 
 
@@ -41,15 +42,18 @@ _install_packages veracrypt;
 
 _install software-aur trizen;
 # _install software-aur kitty;
+# _install software-aur ungoogled-chromium-bin;
 _install software-aur wireless-regdb-pentest;
 
-_install_packages_aur telegram-desktop-bin tldr youtube-dl;
+_install_packages_aur tldr youtube-dl;
 _install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-origin firefox-extension-umatrix;
+_install_packages_aur gnome-shell-extension-outta-space-git;
 _install_packages_aur mobac;
 _install_packages_aur openscad;
 
 # _install software-own apt-pac;
 # _install software-own auto-cleanup;
+# _install software-own auto-sleep;
 _install software-own auto-tagger;
 _install software-own chromium-extensions;
 _install software-own pacman-backup;
