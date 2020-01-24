@@ -120,103 +120,111 @@ colors() {
 
 
 #
-# XXX: Only override PS1 if git is installed
+# Custom PS1 Status Line
 #
 
-if [ -r /usr/share/git/git-prompt.sh ]; then
+__my_ps1() {
 
-	source /usr/share/git/git-prompt.sh;
+	local last_status="$?";
+	local code="";
+	local user="$USER";
+	local host="$HOSTNAME";
+	local path="$PWD";
 
-	__my_ps1() {
+	if [[ "$last_status" == "0" ]]; then
+		code="✔️ ";
+	elif [[ "$last_status" == "2" ]]; then
+		code="🔥";
+	else
+		code="❌";
+	fi;
 
-		local last_status="$?";
-		local code="";
-		local git_status="$(__git_ps1 "%s")";
-		local user="$USER";
-		local host="$HOSTNAME";
-		local path="$PWD";
 
-		if [ "$last_status" == "0" ]; then
-			code="✔️ ";
-		elif [ "$last_status" == "2" ]; then
-			code="🔥";
+	local git_dir="$(git rev-parse --git-dir 2>/dev/null)";
+	local git_status="";
+
+	if [[ "$git_dir" != "" ]]; then
+
+		local git_branch="";
+		local git_commit=$(git rev-parse --short HEAD);
+		local has_changes=$(git status --porcelain);
+
+		local tmp=$(git status --porcelain -b);
+
+		if [[ "$tmp" == "## "* ]]; then
+			git_branch=$(echo "${tmp//\#\# }" | head -n 1 | cut -f1 -d".");
+		fi;
+		
+		if [[ "$git_branch" != "" ]]; then
+			git_status="🔗 $git_branch";
 		else
-			code="❌";
+			git_status="🔗 $git_commit";
 		fi;
 
-		if [ "$user" == "cookiengineer" ]; then
-			user="🍪🔧";
-		elif [ "$user" == "root" ]; then
-			user="🤖";
+		if [[ "$has_changes" != "" ]]; then
+			git_status="$git_status 🚨";
 		fi;
 
-		if [ "$host" == "weep" ]; then
-			host="🖥️ ";
-		elif [ "$host" == "tinky" ]; then
-			host="💻";
-		fi;
+	fi;
 
-		if [ "$path" == "$HOME" ]; then
-			path="🏠";
-		elif [ "$path" == "/opt/lycheejs" ]; then
-			path="🌱";
-		fi;
 
-		local str="$code \e[01;49;39m$user@$host:$path\e[0m";
+	if [[ "$user" == "cookiengineer" ]]; then
+		user="🍪🔧";
+	elif [[ "$user" == "root" ]]; then
+		user="🤖";
+	fi;
 
-		if [ "$git_status" != "" ]; then
-			echo -e "\n$str 🛰️  \e[01;49;39m${git_status}\e[0m 🛰️  \n💻 ";
+	if [[ "$host" == "nuccy" ]]; then
+		host="📦 ";
+	elif [[ "$host" == "tinky" ]]; then
+		host="💻";
+	elif [[ "$host" == "weep" ]]; then
+		host="🖥️ ";
+	elif [[ "$host" == "wiip" ]]; then
+		host="🍓";
+	fi;
+
+	if [[ "$path" == "$HOME/Backup"* ]]; then
+
+		if [[ $(stat --format "%F" "$HOME/Backup") == "symbolic link" ]]; then
+			path="${path/"$HOME/Backup"/📀}";
 		else
-			echo -e "\n$str\n💻 ";
+			path="${path/"$HOME/Backup"/💿}";
 		fi;
 
-	}
+	elif [[ "$path" == "$HOME/Documents"* ]]; then
+		path="${path/"$HOME/Documents"/📑}";
+	elif [[ "$path" == "$HOME/Downloads"* ]]; then
+		path="${path/"$HOME/Downloads"/⛔}";
+	elif [[ "$path" == "$HOME/Games"* ]]; then
+		path="${path/"$HOME/Games"/🎮}";
+	elif [[ "$path" == "$HOME/Music"* ]]; then
+		path="${path/"$HOME/Music"/🎵}";
+	elif [[ "$path" == "$HOME/Packages"* ]]; then
+		path="${path/"$HOME/Packages"/📦}";
+	elif [[ "$path" == "$HOME/Pictures"* ]]; then
+		path="${path/"$HOME/Pictures"/📷}";
+	elif [[ "$path" == "$HOME/Software"* ]]; then
+		path="${path/"$HOME/Software"/🚧}";
+	elif [[ "$path" == "$HOME/Videos"* ]]; then
+		path="${path/"$HOME/Videos"/📼}";
+	elif [[ "$path" == "$HOME"* ]]; then
+		path="${path/"$HOME"/🏠}";
+	elif [[ "$path" == "/opt/lycheejs"* ]]; then
+		path="${path/"/opt/lycheejs"/🌱}";
+	fi;
 
-	PS1='$(__my_ps1)';
+	local ps1_status="$code \e[01;49;39m$user@$host:$path\e[0m";
 
-else
+	if [[ "$git_status" != "" ]]; then
+		echo -e "\n${ps1_status} ${git_status}\n💻 ";
+	else
+		echo -e "\n${ps1_status}\n💻 ";
+	fi;
 
-	__my_ps1() {
+}
 
-		local last_status="$?";
-		local code="";
-		local user="$USER";
-		local host="$HOSTNAME";
-		local path="$PWD";
-
-		if [ "$last_status" == "0" ]; then
-			code="✔️ ";
-		elif [ "$last_status" == "2" ]; then
-			code="🔥";
-		else
-			code="❌";
-		fi;
-
-		if [ "$user" == "cookiengineer" ]; then
-			user="🍪🔧";
-		elif [ "$user" == "root" ]; then
-			user="🤖";
-		fi;
-
-		if [ "$host" == "weep" ]; then
-			host="🖥️ ";
-		elif [ "$host" == "tinky" ]; then
-			host="💻";
-		fi;
-
-		if [ "$path" == "$HOME" ]; then
-			path="🏠";
-		elif [ "$path" == "/opt/lycheejs" ]; then
-			path="🌱";
-		fi;
-
-		echo -e "\n$code \e[01;49;39m$user@$host:$path\e[0m\n💻 ";
-
-	}
-
-	PS1='$(__my_ps1)';
-
-fi;
+PS1='$(__my_ps1)';
 
 
 
@@ -230,19 +238,20 @@ unpack() {
 	if [ -f $1 ] ; then
 
 		case $1 in
-			*.tar.bz2)   tar -xjf $1       ;;
-			*.tar.gz)    tar -xzf $1       ;;
-			*.tar.zst)   tar --zstd -xf $1 ;;
-			*.bz2)       bunzip2 $1        ;;
-			*.rar)       unrar x $1        ;;
-			*.gz)        gunzip $1         ;;
-			*.tar)       tar -xf $1        ;;
-			*.tbz2)      tar -xjf $1       ;;
-			*.tgz)       tar -xzf $1       ;;
-			*.zip)       unzip $1          ;;
-			*.Z)         uncompress $1     ;;
-			*.7z)        7z x $1           ;;
-			*)           echo "'$1' cannot be extracted via ex()" ;;
+			*.tar.bz2)   tar --one-top-level -xjf $1 ;;
+			*.tar.gz)    tar --one-top-level -xzf $1 ;;
+			*.tar.xz)    tar --one-top-level -xJf $1 ;;
+			*.tar.zst)   tar --one-top-level  --zstd -xf $1 ;;
+			*.bz2)       bunzip2 $1 ;;
+			*.rar)       unrar x $1 ;;
+			*.gz)        gunzip $1 ;;
+			*.tar)       tar --one-top-level -xf $1 ;;
+			*.tbz2)      tar --one-top-level -xjf $1 ;;
+			*.tgz)       tar --one-top-level -xzf $1 ;;
+			*.zip)       unzip $1 ;;
+			*.Z)         uncompress $1 ;;
+			*.7z)        7z x $1 ;;
+			*)           echo "'$1' cannot be unpacked via unpack()" ;;
 		esac;
 
 	else

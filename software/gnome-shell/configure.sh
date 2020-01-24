@@ -10,7 +10,11 @@ if [ "$GSETTINGS_BIN" != "" ]; then
 
 	$GSETTINGS_BIN set org.gnome.desktop.interface cursor-theme "xcursor-breeze-snow";
 	$GSETTINGS_BIN set org.gnome.desktop.interface gtk-theme "Adapta-Nokto-Eta-Maia";
+	$GSETTINGS_BIN set org.gnome.shell.extensions.user-theme name "Adapta-Nokto-Eta-Maia";
 	$GSETTINGS_BIN set org.gnome.desktop.interface icon-theme "Papirus-Adapta-Nokto-Maia";
+
+	$GSETTINGS_BIN set org.gnome.shell disable-user-extensions false;
+	$GSETTINGS_BIN set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chromium.desktop', 'uget-gtk.desktop', 'transmission-gtk.desktop', 'telegramdesktop.desktop']";
 
 	$GSETTINGS_BIN set org.gnome.desktop.background primary-color "#023c88";
 	$GSETTINGS_BIN set org.gnome.desktop.background secondary-color "#5789ca";
