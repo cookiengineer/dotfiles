@@ -2,11 +2,12 @@
 import console from './console.mjs';
 import { execSync } from 'child_process';
 import fs from 'fs';
-import { isArray, isBoolean, isBuffer, isFunction, isString } from './POLYFILLS.mjs';
+import { isArray, isBoolean, isBuffer, isFunction, isNumber, isString } from './POLYFILLS.mjs';
 
 
 
 export const USER = process.env.SUDO_USER || process.env.USER;
+
 export const HOME = (() => {
 
 	if (process.env.SUDO_USER !== undefined) {
@@ -33,8 +34,41 @@ export const HOME = (() => {
 
 })();
 
+export const HOST = (() => {
+
+	let data = null;
+	try {
+		data = fs.readFileSync('/etc/hostname', 'utf8');
+	} catch (err) {
+	}
+
+	if (data !== null) {
+		return data.trim();
+	}
+
+	return null;
+
+})();
+
 export const BACKUP = HOME + '/Backup';
 
+
+
+export const chmod = (path, chmod) => {
+
+	chmod = isNumber(chmod) ? chmod : 0o777;
+
+
+	let result = false;
+	try {
+		fs.chmodSync(path, chmod);
+		result = true;
+	} catch (err) {
+	}
+
+	return result;
+
+};
 
 export const exec = (cmd, cwd, enc) => {
 
@@ -76,11 +110,17 @@ export const exists = (path) => {
 
 };
 
-export const mkdir = (path) => {
+export const mkdir = (path, chmod) => {
+
+	chmod = isNumber(chmod) ? chmod : 0o777;
+
 
 	let result = false;
 	try {
-		fs.mkdirSync(path, { recursive: true });
+		fs.mkdirSync(path, {
+			recursive: true,
+			mode:      chmod
+		});
 		result = true;
 	} catch (err) {
 	}
@@ -224,6 +264,7 @@ export const write = (path, buffer) => {
 
 export default {
 
+	chmod:  chmod,
 	exec:   exec,
 	exists: exists,
 	mkdir:  mkdir,

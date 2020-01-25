@@ -190,11 +190,12 @@ const _details = (mode, database) => {
 
 	database['gnupg'] = database['gnupg'] || [];
 
+
 	if (mode === 'backup') {
 
 		if (database['gnupg'].length > 0) {
 			database['gnupg'].forEach((key) => {
-				console.log('gnupg: ' + key.hash + ' (' + key.user + ')');
+				console.log('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
 			});
 		}
 
@@ -202,7 +203,7 @@ const _details = (mode, database) => {
 
 		if (database['gnupg'].length > 0) {
 			database['gnupg'].forEach((key) => {
-				console.log('gnupg: ' + key.hash + ' (' + key.user + ')');
+				console.log('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
 			});
 		}
 
@@ -219,7 +220,9 @@ const _execute = (mode, database, callback) => {
 
 		if (database['gnupg'].length > 0) {
 
-			mkdir(BACKUP + '/gnupg');
+			if (exists(BACKUP + '/gnupg') === false) {
+				mkdir(BACKUP + '/gnupg');
+			}
 
 			database['gnupg'].forEach((key) => {
 
