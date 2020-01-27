@@ -146,10 +146,10 @@ __my_ps1() {
 	if [[ "$git_dir" != "" ]]; then
 
 		local git_branch="";
-		local git_commit=$(git rev-parse --short HEAD);
-		local has_changes=$(git status --porcelain);
+		local git_commit=$(git rev-parse --short HEAD 2>/dev/null);
+		local has_changes=$(git status --porcelain 2>/dev/null);
 
-		local tmp=$(git status --porcelain -b);
+		local tmp=$(git status --porcelain -b 2>/dev/null);
 
 		if [[ "$tmp" == "## "* ]]; then
 			git_branch=$(echo "${tmp//\#\# }" | head -n 1 | cut -f1 -d".");

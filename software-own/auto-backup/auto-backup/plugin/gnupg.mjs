@@ -1,6 +1,7 @@
 
 import { console } from '../console.mjs';
-import { exec, exists, mkdir, read, scan, write, BACKUP, HOME } from '../helpers.mjs';
+import { exists, mkdir, read, scan, write } from '../helper/fs.mjs';
+import { exec, BACKUP, HOME } from '../helper/sh.mjs';
 
 
 

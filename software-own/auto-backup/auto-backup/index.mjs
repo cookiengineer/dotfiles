@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-import console               from './console.mjs';
-import gnupg                 from './plugin/gnupg.mjs';
-import openssh               from './plugin/openssh.mjs';
-import software              from './plugin/software.mjs';
-import gnome                 from './plugin/gnome.mjs';
-import { queue, read, HOME } from './helpers.mjs';
+import console   from './console.mjs';
+import gnupg     from './plugin/gnupg.mjs';
+import openssh   from './plugin/openssh.mjs';
+import software  from './plugin/software.mjs';
+import gnome     from './plugin/gnome.mjs';
+import { read  } from './helper/fs.mjs';
+import { HOME  } from './helper/sh.mjs';
+import { queue } from './helper/io.mjs';
 
 
 
@@ -55,6 +57,10 @@ if (plugins.length > 0) {
 
 const start = (mode) => {
 
+	console.log('');
+	console.log('auto-backup: collecting ...');
+	console.log('');
+
 	queue(PLUGINS.map((plugin) => plugin.collect), [ mode, DATABASE ], (results) => {
 
 		let errors = [];
@@ -76,6 +82,10 @@ const start = (mode) => {
 		});
 
 		if (tasks.length > 0) {
+
+			console.log('');
+			console.log('auto-backup: executing ...');
+			console.log('');
 
 			queue(tasks, [ mode, DATABASE ], (results) => {
 
@@ -136,19 +146,11 @@ if (action === 'help' || action === undefined) {
 
 	console.info('auto-backup: backup mode');
 
-	console.log('');
-	console.log('auto-backup: collecting data ...');
-	console.log('');
-
 	start('backup');
 
 } else if (action === 'restore') {
 
 	console.info('auto-backup: restore mode');
-
-	console.log('');
-	console.log('auto-backup: collecting data ...');
-	console.log('');
 
 	start('restore');
 
