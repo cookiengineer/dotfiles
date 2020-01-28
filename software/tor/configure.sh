@@ -8,6 +8,7 @@ if [ "$HAS_IPV6" == "" ]; then
 	sudo echo -e "\n\n" >> $TOR_RC;
 	sudo echo -e "ClientUseIPv6 1\n" >> $TOR_RC;
 	sudo echo -e "ClientPreferIPv6ORPort 1\n" >> $TOR_RC;
+	sudo echo -e "UseBridges 1\n" >> $TOR_RC;
 
 fi;
 

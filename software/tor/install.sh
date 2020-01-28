@@ -4,7 +4,7 @@ TOR_BIN=`which tor`;
 
 if [ "$TOR_BIN" == "" ]; then
 
-	sudo pacman -S --needed --noconfirm tor;
+	sudo pacman -S --needed --noconfirm tor torsocks;
 
 fi;
 
