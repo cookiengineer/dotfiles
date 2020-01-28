@@ -152,7 +152,7 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		let files = scan(BACKUP + '/gnupg', true);
+		let files = scan(BACKUP + '/Profile/gnupg', true);
 		if (files.length > 0) {
 
 			files.forEach((file) => {
@@ -221,8 +221,8 @@ const _execute = (mode, database, callback) => {
 
 		if (database['gnupg'].length > 0) {
 
-			if (exists(BACKUP + '/gnupg') === false) {
-				mkdir(BACKUP + '/gnupg');
+			if (exists(BACKUP + '/Profile/gnupg') === false) {
+				mkdir(BACKUP + '/Profile/gnupg');
 			}
 
 			database['gnupg'].forEach((key) => {
@@ -237,7 +237,7 @@ const _execute = (mode, database, callback) => {
 				}
 
 				if (key.data !== null) {
-					write(BACKUP + '/gnupg/' + key.name + '.asc', key.data);
+					write(BACKUP + '/Profile/gnupg/' + key.name + '.asc', key.data);
 				}
 
 			});

@@ -98,7 +98,7 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		let files = scan(BACKUP + '/openssh', true);
+		let files = scan(BACKUP + '/Profile/openssh', true);
 		if (files.length > 0) {
 
 			files.forEach((file) => {
@@ -195,16 +195,16 @@ const _execute = (mode, database, callback) => {
 
 		if (database['openssh'].length > 0) {
 
-			if (exists(BACKUP + '/openssh') === false) {
-				mkdir(BACKUP + '/openssh');
+			if (exists(BACKUP + '/Profile/openssh') === false) {
+				mkdir(BACKUP + '/Profile/openssh');
 			}
 
 			database['openssh'].forEach((key) => {
 
 				if (key.type === 'private') {
-					write(BACKUP + '/openssh/' + key.name + '.key', key.data);
+					write(BACKUP + '/Profile/openssh/' + key.name + '.key', key.data);
 				} else if (key.type === 'public') {
-					write(BACKUP + '/openssh/' + key.name + '.pub', key.data);
+					write(BACKUP + '/Profile/openssh/' + key.name + '.pub', key.data);
 				}
 
 			});

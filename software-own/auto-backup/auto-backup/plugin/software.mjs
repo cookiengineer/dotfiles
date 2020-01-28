@@ -146,10 +146,11 @@ const _collect = (mode, database, callback) => {
 							if (state !== null) {
 
 								database['software'].push({
-									path:    SOFTWARE + '/' + orga + '/' + repo,
-									name:    orga + '/' + repo,
+									archive: BACKUP + '/Software/Repositories/' + orga + '/' + repo + (state.changes.length > 0 ? ('@' + HOST) : '') + '.tar.xz',
 									branch:  state.branch,
 									changes: state.changes,
+									name:    orga + '/' + repo,
+									path:    SOFTWARE + '/' + orga + '/' + repo
 								});
 
 							}
@@ -176,8 +177,67 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		// TODO: Restore from archive files
-		callback(false);
+		if (exists(BACKUP + '/Software/Repositories')) {
+
+			let orgas = scan(BACKUP + '/Software/Repositories', false);
+			if (orgas.length > 0) {
+
+				orgas.forEach((orga) => {
+
+					scan(BACKUP + '/Software/Repositories/' + orga, false).forEach((archive) => {
+
+						if (
+							archive.endsWith('tar.xz')
+							&& exists(BACKUP + '/Software/Repositories/' + orga + '/' + archive, 'file')
+						) {
+
+							let repo = archive.substr(0, archive.length - 7);
+							if (repo.includes('@')) {
+
+								let host = repo.split('@').pop();
+								if (host === HOST) {
+
+									database['software'].push({
+										archive: BACKUP + '/Software/Repositories/' + orga + '/' + archive,
+										branch:  null,
+										changes: [],
+										name:    orga + '/' + repo.split('@').shift(),
+										path:    SOFTWARE + '/' + orga + '/' + repo.split('@').shift()
+									});
+
+								}
+
+							} else {
+
+								database['software'].push({
+									archive: BACKUP + '/Software/Repositories/' + orga + '/' + archive,
+									branch:  null,
+									changes: [],
+									name:    orga + '/' + repo,
+									path:    SOFTWARE + '/' + orga + '/' + repo
+								});
+
+							}
+
+						}
+
+					});
+
+				});
+
+				callback(true);
+
+			} else {
+
+				callback(false);
+
+			}
+
+		} else {
+
+			callback(false);
+
+		}
 
 	}
 
@@ -205,9 +265,15 @@ const _details = (mode, database) => {
 		}
 
 	} else if (mode === 'restore') {
+
+		if (database['software'].length > 0) {
+			database['software'].forEach((repo) => {
+				console.log('software: ' + repo.name);
+			});
+		}
+
 	}
 
-	// TODO: print details
 
 };
 
@@ -215,24 +281,25 @@ const _execute = (mode, database, callback) => {
 
 	database['software'] = database['software'] || [];
 
+
 	if (mode === 'backup') {
 
 		database['software'].forEach((repo) => {
 
-			let archive = BACKUP + '/software/' + repo.name + '.tar.xz';
-			let dirname = archive.split('/').slice(0, -1).join('/');
-			let cwd     = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
-			let source  = repo.name.split('/').pop();
-
-			if (exists(dirname) === false) {
-				mkdir(dirname);
+			let folder = repo.archive.split('/').slice(0, -1).join('/');
+			if (exists(folder) === false) {
+				mkdir(folder);
 			}
 
+			let archive = repo.archive;
 			if (exists(archive) === true) {
 				remove(archive);
 			}
 
 			console.log('software: ' + repo.name);
+
+			let cwd     = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
+			let source  = repo.name.split('/').pop();
 
 			exec('tar cvfJ "' + archive + '" -C "' + cwd + '" ' + source + ' 2>/dev/null', {
 				cwd: cwd
@@ -244,11 +311,16 @@ const _execute = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		// TODO: restore repositories from tar.xz file
+		database['software'].forEach((repo) => {
+
+			// TODO: if NOT exists(repo.path, 'folder') then unpack repo.archive
+			console.log(repo);
+
+		});
+
+		callback(false);
 
 	}
-
-	callback(false);
 
 };
 
