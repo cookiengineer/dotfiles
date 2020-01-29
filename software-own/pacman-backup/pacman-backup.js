@@ -171,6 +171,10 @@ const _parse_pkgname = function(file) {
 		file = file.substr(0, file.length - 11);
 	}
 
+	if (file.endsWith('.pkg.tar.zst')) {
+		file = file.substr(0, file.length - 12);
+	}
+
 
 	let arch = file.split('-').pop();
 	let tmp  = file.split('-').slice(0, -1);
@@ -231,7 +235,7 @@ const _read_pkgs = function(path, callback) {
 		if (!err) {
 
 			files
-				.filter(file => file.endsWith('.pkg.tar.xz'))
+				.filter(file => file.endsWith('.pkg.tar.xz') || file.endsWith('.pkg.tar.zst'))
 				.filter(file => file.includes('-'))
 				.forEach(file => cache.push(file));
 
@@ -289,6 +293,10 @@ const _read_upgrades = function(callback) {
 
 				if (file.endsWith('.pkg.tar.xz')) {
 					arch = file.substr(0, file.length - 11).split('-').pop();
+				}
+
+				if (file.endsWith('.pkg.tar.zst')) {
+					arch = file.substr(0, file.length - 12).split('-').pop();
 				}
 
 				return {
@@ -812,7 +820,7 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 
 
 		let file = req.url.split('/').pop();
-		if (file.endsWith('.tar.xz')) {
+		if (file.endsWith('.tar.xz') || file.endsWith('.tar.zst')) {
 
 			if (range !== null) {
 				_serve_with_range(pkgs_folder + '/' + file, range, res);
