@@ -196,7 +196,7 @@ const _details = (mode, database) => {
 
 		if (database['gnupg'].length > 0) {
 			database['gnupg'].forEach((key) => {
-				console.log('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
+				console.info('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
 			});
 		}
 
@@ -204,7 +204,7 @@ const _details = (mode, database) => {
 
 		if (database['gnupg'].length > 0) {
 			database['gnupg'].forEach((key) => {
-				console.log('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
+				console.info('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
 			});
 		}
 
@@ -237,6 +237,7 @@ const _execute = (mode, database, callback) => {
 				}
 
 				if (key.data !== null) {
+					console.log('gnupg: archiving ' + key.name + ' ...');
 					write(BACKUP + '/Profile/gnupg/' + key.name + '.asc', key.data);
 				}
 
@@ -259,6 +260,8 @@ const _execute = (mode, database, callback) => {
 			database['gnupg'].forEach((key) => {
 
 				if (key.file !== null) {
+
+					console.log('gnupg: restoring ' + key.name + ' ...');
 
 					let result = _parse_import(exec('gpg --allow-secret-key-import --import "' + key.file + '" 2>&1'));
 					if (result === true) {

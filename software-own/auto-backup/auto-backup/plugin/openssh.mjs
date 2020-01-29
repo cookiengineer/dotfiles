@@ -170,7 +170,7 @@ const _details = (mode, database) => {
 
 		if (database['openssh'].length > 0) {
 			database['openssh'].forEach((key) => {
-				console.log('openssh: ' + key.file.split('/').pop() + ' (' + key.name + ' / ' + key.type + ')');
+				console.info('openssh: ' + key.file.split('/').pop() + ' (' + key.name + ' / ' + key.type + ')');
 			});
 		}
 
@@ -178,7 +178,7 @@ const _details = (mode, database) => {
 
 		if (database['openssh'].length > 0) {
 			database['openssh'].forEach((key) => {
-				console.log('openssh: ' + key.file.split('/').pop() + ' (' + key.name + ' / ' + key.type + ')');
+				console.info('openssh: ' + key.file.split('/').pop() + ' (' + key.name + ' / ' + key.type + ')');
 			});
 		}
 
@@ -202,8 +202,10 @@ const _execute = (mode, database, callback) => {
 			database['openssh'].forEach((key) => {
 
 				if (key.type === 'private') {
+					console.log('openssh: archiving ' + key.name + ' ...');
 					write(BACKUP + '/Profile/openssh/' + key.name + '.key', key.data);
 				} else if (key.type === 'public') {
+					console.log('openssh: archiving ' + key.name + ' ...');
 					write(BACKUP + '/Profile/openssh/' + key.name + '.pub', key.data);
 				}
 
@@ -231,6 +233,8 @@ const _execute = (mode, database, callback) => {
 
 			if (private_keys.length === 1 && public_keys.length === 1) {
 
+				console.log('openssh: restoring ' + private_keys[0].name + ' ...');
+
 				write(HOME + '/.ssh/id_rsa',     private_keys[0].data);
 				write(HOME + '/.ssh/id_rsa.pub', public_keys[0].data);
 
@@ -241,17 +245,19 @@ const _execute = (mode, database, callback) => {
 
 				database['openssh'].forEach((key) => {
 
+					console.log('openssh: restoring ' + key.name + ' ...');
+
 					let name = key.name;
 					if (name.includes('@')) {
 						name = key.name.split('@').shift();
 					}
 
 					if (key.type === 'private') {
-						write(HOME + '/.ssh/' + key.name, key.data);
-						chmod(HOME + '/.ssh/' + key.name, 0o600);
+						write(HOME + '/.ssh/' + name, key.data);
+						chmod(HOME + '/.ssh/' + name, 0o600);
 					} else if (key.type === 'public') {
-						write(HOME + '/.ssh/' + key.name + '.pub', key.data);
-						chmod(HOME + '/.ssh/' + key.name + '.pub', 0o644);
+						write(HOME + '/.ssh/' + name + '.pub', key.data);
+						chmod(HOME + '/.ssh/' + name + '.pub', 0o644);
 					}
 
 				});
