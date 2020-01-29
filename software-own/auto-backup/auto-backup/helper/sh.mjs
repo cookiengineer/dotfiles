@@ -64,7 +64,6 @@ export const exec = (cmd, cwd, enc) => {
 			cwd: cwd
 		}).toString(enc);
 	} catch (err) {
-		console.error(err);
 	}
 
 	return output;

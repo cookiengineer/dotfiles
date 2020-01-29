@@ -307,7 +307,7 @@ const _execute = (mode, database, callback) => {
 			let cwd    = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
 			let source = repo.name.split('/').pop();
 
-			exec('tar -cvfJ "' + archive + '" -C "' + cwd + '" ' + source + ' 2>/dev/null', cwd);
+			exec('tar cvfJ "' + archive + '" -C "' + cwd + '" ' + source + ' 2>/dev/null', cwd);
 
 		});
 
@@ -324,7 +324,7 @@ const _execute = (mode, database, callback) => {
 				let archive = repo.archive;
 				let cwd     = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
 
-				exec('tar -xJf "' + archive + '"', cwd);
+				exec('tar xJf "' + archive + '"', cwd);
 
 			}
 
