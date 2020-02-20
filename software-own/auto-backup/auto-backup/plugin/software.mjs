@@ -340,6 +340,8 @@ const _execute = (mode, database, callback) => {
 
 export default {
 
+	name:    'software',
+
 	collect: _collect,
 	details: _details,
 	execute: _execute

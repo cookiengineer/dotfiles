@@ -3,12 +3,8 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
 
 
-NODEJS_BIN=`which node`;
-
-if [ "$NODEJS_BIN" == "" ]; then
-
+if [[ "$(which node 2>/dev/null)" == "" ]]; then
 	sudo pacman -S --needed --noconfirm nodejs;
-
 fi;
 
 

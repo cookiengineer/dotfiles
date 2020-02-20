@@ -280,6 +280,8 @@ const _execute = (mode, database, callback) => {
 
 export default {
 
+	name:    'openssh',
+
 	collect: _collect,
 	details: _details,
 	execute: _execute

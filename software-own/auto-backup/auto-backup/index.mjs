@@ -1,79 +1,60 @@
 #!/usr/bin/env node
 
-import console   from './console.mjs';
-import gnupg     from './plugin/gnupg.mjs';
-import openssh   from './plugin/openssh.mjs';
-import software  from './plugin/software.mjs';
-import gnome     from './plugin/gnome.mjs';
-import { read  } from './helper/fs.mjs';
-import { HOME  } from './helper/sh.mjs';
-import { queue } from './helper/io.mjs';
+import console       from './console.mjs';
+import authenticator from './plugin/gnome-authenticator.mjs';
+import chromium      from './plugin/chromium.mjs';
+import nautilus      from './plugin/gnome-nautilus.mjs';
+import gnupg         from './plugin/gnupg.mjs';
+import openssh       from './plugin/openssh.mjs';
+import software      from './plugin/software.mjs';
+import { read  }     from './helper/fs.mjs';
+import { HOME  }     from './helper/sh.mjs';
+import { queue }     from './helper/io.mjs';
 
 
 
 const DATABASE = {};
 const FLAGS    = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--')).map((v) => v.substr(2));
 const HOSTNAME = read('/etc/hostname').trim();
-const ACTIONS  = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false);
-const PLUGINS  = [];
+const ACTION   = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false)[0] || null;
+const PLUGINS  = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false).slice(1);
 
+const MAP = {
+	'chromium':            chromium,
+	'gnome-authenticator': authenticator,
+	'gnome-nautilus':      nautilus,
+	'gnupg':               gnupg,
+	'openssh':             openssh,
+	'software':            software
+};
 
+if (PLUGINS.length === 0) {
 
-let action  = ACTIONS.shift();
-let plugins = ACTIONS.slice();
-
-if (plugins.length > 0) {
-
-	if (plugins.includes('gnome')) {
-		PLUGINS.push(gnome);
-	}
-	if (plugins.includes('gnupg')) {
-		PLUGINS.push(gnupg);
-	}
-
-	if (plugins.includes('openssh')) {
-		PLUGINS.push(openssh);
-	}
-
-	if (plugins.includes('software')) {
-		PLUGINS.push(software);
-	}
-
-} else {
-
-	plugins.push('gnome');
-	plugins.push('gnupg');
-	plugins.push('openssh');
-	plugins.push('software');
-
-	PLUGINS.push(gnome);
-	PLUGINS.push(gnupg);
-	PLUGINS.push(openssh);
-	PLUGINS.push(software);
+	Object.keys(MAP).forEach((plugin) => {
+		PLUGINS.push(plugin);
+	});
 
 }
 
 
 
-const start = (mode) => {
+const start = (mode, plugins) => {
 
 	console.log('');
 	console.log('auto-backup: collecting ...');
 	console.log('');
 
-	queue(PLUGINS.map((plugin) => plugin.collect), [ mode, DATABASE ], (results) => {
+	queue(plugins.map((plugin) => plugin.collect), [ mode, DATABASE ], (results) => {
 
-		let errors = [];
-		let names  = [];
-		let tasks  = [];
+		let errors    = [];
+		let collected = [];
 
 		results.forEach((result, r) => {
 
 			if (result === true) {
 
-				PLUGINS[r].details(mode, DATABASE);
-				names.push(plugins[r]);
-				tasks.push(PLUGINS[r].execute);
+				plugins[r].details(mode, DATABASE);
+				collected.push(plugins[r]);
 
 			} else if (result !== false) {
 				errors.push(r);
@@ -81,20 +62,20 @@ const start = (mode) => {
 
 		});
 
-		if (tasks.length > 0) {
+		if (collected.length > 0) {
 
 			console.log('');
 			console.log('auto-backup: executing ...');
 			console.log('');
 
-			queue(tasks, [ mode, DATABASE ], (results) => {
+			queue(collected.map((plugin) => plugin.execute), [ mode, DATABASE ], (results) => {
 
 				results.forEach((result, r) => {
 
 					if (result === true) {
-						console.info(names[r] + ': success');
+						console.info(collected[r].name + ': success');
 					} else {
-						console.error(names[r] + ': failure');
+						console.error(collected[r].name + ': failure');
 					}
 
 				});
@@ -116,7 +97,7 @@ const start = (mode) => {
 };
 
 
-if (action === 'help' || action === undefined) {
+if (ACTION === 'help' || ACTION === null) {
 
 	console.log('');
 	console.info('auto-backup');
@@ -125,34 +106,46 @@ if (action === 'help' || action === undefined) {
 	console.log('');
 	console.log('Usage Notes:');
 	console.log('');
-	console.log('    Backups are stored in "~/Backup".');
-	console.log('    Uses all plugins if none given.  ');
+	console.log('    Backups are stored in "~/Backup".  ');
+	console.log('    Executes all plugins if none given.');
 	console.log('');
 	console.log('');
 	console.log('Available Actions:');
 	console.log('');
 	console.log('    backup       Backup data to "~/Backup".   ');
 	console.log('    restore      Restore data from "~/Backup".');
+	console.log('    setup        Setup "~/Backup", "~/Software" and "~/Stealth".');
 	console.log('');
 	console.log('Available Plugins:');
 	console.log('');
-	console.log('    gnome        gnome-keyrings integration                  ');
-	console.log('    gnupg        gnupg secret keys integration               ');
-	console.log('    openssh      ssh secret keys integration                 ');
-	console.log('    software     git repositories in "~/Software" integration');
+	console.log('    chromium               Chromium passwords integration ');
+	console.log('    gnome-authenticator    GNOME Authenticator integration');
+	console.log('    gnome-nautilus         GNOME Nautilus integration     ');
+	console.log('    gnupg                  GnuPG secret keys integration  ');
+	console.log('    openssh                OpenSSH secret keys integration');
+	console.log('    software               "~/Software" integration       ');
+	console.log('    stealth                "~/Stealth" integration        ');
 	console.log('');
 
-} else if (action === 'backup') {
+} else if (ACTION === 'backup') {
 
 	console.info('auto-backup: backup mode');
 
-	start('backup');
+	start('backup', Object.keys(MAP).filter((name, m) => {
+		return PLUGINS.includes(name);
+	}).map((name) => {
+		return MAP[name];
+	}));
 
-} else if (action === 'restore') {
+} else if (ACTION === 'restore') {
 
 	console.info('auto-backup: restore mode');
 
-	start('restore');
+	start('restore', Object.keys(MAP).filter((name, m) => {
+		return PLUGINS.includes(name);
+	}).map((name) => {
+		return MAP[name];
+	}));
 
 }
 

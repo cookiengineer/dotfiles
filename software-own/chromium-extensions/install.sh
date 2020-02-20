@@ -20,17 +20,12 @@ if [ ! -d "/home/$USER/Downloads/CRX" ]; then
 fi;
 
 
-CURL_BIN=`which curl`;
-
-if [ "$CURL_BIN" == "" ]; then
-
+if [[ "$(which curl 2>/dev/null)" == "" ]]; then
 	sudo pacman -S --needed --noconfirm curl;
-	CURL_BIN=`which curl`;
-
 fi;
 
 
-if [ "$CURL_BIN" != "" ]; then
+if [[ "$(which curl 2>/dev/null)" != "" ]]; then
 
 	_download_crx "cookie-autodelete" "fhcgjolkccmbidfldomjliifgaodjagh";
 	_download_crx "dark-reader"       "eimadpbcbfnmbkopoojfekhnkhdbieeh";

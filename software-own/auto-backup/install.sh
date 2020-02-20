@@ -3,29 +3,35 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
 
 
-GIT_BIN=`which git`;
-
-if [ "$GIT_BIN" == "" ]; then
-
+if [[ "$(which git 2>/dev/null)" == "" ]]; then
 	sudo pacman -S --needed --noconfirm git;
-
 fi;
 
-
-NODEJS_BIN=`which node`;
-
-if [ "$NODEJS_BIN" == "" ]; then
-
+if [[ "$(which node 2>/dev/null)" == "" ]]; then
 	sudo pacman -S --needed --noconfirm nodejs;
+fi;
+
+if [[ "$(which secret-tool 2>/dev/null)" == "" ]]; then
+	sudo pacman -S --needed --noconfirm libsecret;
+fi;
+
+if [[ "$(which sqlite3 2>/dev/null)" == "" ]]; then
+	sudo pacman -S --needed --noconfirm sqlite;
+fi;
+
+
+if [ ! -x /usr/lib/auto-backup ]; then
+
+	sudo mkdir -p /usr/lib/auto-backup;
+	sudo cp -R $DIR/auto-backup/* /usr/lib/auto-backup/;
 
 fi;
 
 
-# if [ ! -x /usr/bin/auto-backup ]; then
+if [ ! -x /usr/bin/auto-backup ]; then
 
-	cat "$DIR/console.js" "$DIR/auto-backup.js" > /tmp/auto-backup.js;
-	sudo mv /tmp/auto-backup.js /usr/bin/auto-backup;
+	sudo ln -s /usr/lib/auto-backup/index.mjs /usr/bin/auto-backup;
 	sudo chmod +x /usr/bin/auto-backup;
 
-# fi;
+fi;
 

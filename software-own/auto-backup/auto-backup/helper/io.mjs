@@ -1,4 +1,5 @@
 
+import { console } from '../console.mjs';
 import { isArray, isFunction } from '../POLYFILLS.mjs';
 
 
@@ -20,6 +21,8 @@ const process_stack = (stack, results, parameters, callback) => {
 			entry.apply(null, args);
 
 		} catch (err) {
+
+			console.error(err);
 
 			results.push(null);
 			process_stack(stack, results, parameters, callback);

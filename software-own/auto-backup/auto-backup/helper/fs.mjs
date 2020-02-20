@@ -22,36 +22,42 @@ export const chmod = (path, chmod) => {
 
 export const exists = (path, type) => {
 
+	path = isString(path) ? path : null;
 	type = isString(type) ? type : null;
 
 
-	let stat = null;
-	try {
-		stat = fs.lstatSync(path);
-	} catch (err) {
-	}
+	if (path !== null) {
 
-	if (stat !== null) {
+		let stat = null;
+		try {
+			stat = fs.lstatSync(path);
+		} catch (err) {
+		}
 
-		if (type !== null) {
+		if (stat !== null) {
 
-			if (type === 'file' && stat.isFile()) {
-				return true;
-			} else if (type === 'folder' && stat.isDirectory()) {
-				return true;
-			}
+			if (type !== null) {
 
-		} else {
+				if (type === 'file' && stat.isFile()) {
+					return true;
+				} else if (type === 'folder' && stat.isDirectory()) {
+					return true;
+				}
 
-			if (stat.isFile()) {
-				return true;
-			} else if (stat.isDirectory()) {
-				return true;
+			} else {
+
+				if (stat.isFile()) {
+					return true;
+				} else if (stat.isDirectory()) {
+					return true;
+				}
+
 			}
 
 		}
 
 	}
+
 
 	return false;
 
@@ -78,17 +84,22 @@ export const mkdir = (path, chmod) => {
 
 export const read = (path, enc) => {
 
-	enc = isString(enc) ? enc : 'utf8';
+	path = isString(path) ? path : null;
+	enc  = isString(enc)  ? enc  : 'utf8';
 
 
-	let result = null;
-	try {
-		result = fs.readFileSync(path, enc);
-	} catch (err) {
-	}
+	if (path !== null) {
 
-	if (result !== null) {
-		return result;
+		let result = null;
+		try {
+			result = fs.readFileSync(path, enc);
+		} catch (err) {
+		}
+
+		if (result !== null) {
+			return result;
+		}
+
 	}
 
 
@@ -98,41 +109,49 @@ export const read = (path, enc) => {
 
 export const remove = (path) => {
 
-	let stat = null;
-	try {
-		stat = fs.lstatSync(path);
-	} catch (err) {
-	}
+	path = isString(path) ? path : null;
 
-	if (stat !== null) {
 
-		if (stat.isFile()) {
+	if (path !== null) {
 
-			let result = false;
-			try {
-				fs.unlinkSync(path);
-				result = true;
-			} catch (err) {
+		let stat = null;
+		try {
+			stat = fs.lstatSync(path);
+		} catch (err) {
+		}
+
+		if (stat !== null) {
+
+			if (stat.isFile()) {
+
+				let result = false;
+				try {
+					fs.unlinkSync(path);
+					result = true;
+				} catch (err) {
+				}
+
+				return result;
+
+			} else if (stat.isDirectory()) {
+
+				let result = false;
+				try {
+					fs.rmdirSync(path, {
+						recursive: true
+					});
+				} catch (err) {
+
+				}
+
+				return result;
+
 			}
-
-			return result;
-
-		} else if (stat.isDirectory()) {
-
-			let result = false;
-			try {
-				fs.rmdirSync(path, {
-					recursive: true
-				});
-			} catch (err) {
-
-			}
-
-			return result;
 
 		}
 
 	}
+
 
 	return false;
 
@@ -140,63 +159,80 @@ export const remove = (path) => {
 
 export const scan = (path, prefix) => {
 
+	path   = isString(path)    ? path   : null;
 	prefix = isBoolean(prefix) ? prefix : true;
 
 
-	let result = [];
-	let stat   = null;
-	try {
-		stat = fs.lstatSync(path);
-	} catch (err) {
-	}
+	if (path !== null) {
 
-	if (stat !== null) {
+		let result = [];
+		let stat   = null;
 
-		if (stat.isDirectory()) {
+		try {
+			stat = fs.lstatSync(path);
+		} catch (err) {
+		}
 
-			let tmp = [];
-			try {
-				tmp = fs.readdirSync(path);
-			} catch (err) {
-			}
+		if (stat !== null) {
 
-			if (tmp.length > 0) {
-				tmp.forEach((node) => {
+			if (stat.isDirectory()) {
 
-					if (node.startsWith('.') === false) {
+				let tmp = [];
+				try {
+					tmp = fs.readdirSync(path);
+				} catch (err) {
+				}
 
-						if (prefix === true) {
-							result.push(path + '/' + node);
-						} else {
-							result.push(node);
+				if (tmp.length > 0) {
+					tmp.forEach((node) => {
+
+						if (node.startsWith('.') === false) {
+
+							if (prefix === true) {
+								result.push(path + '/' + node);
+							} else {
+								result.push(node);
+							}
+
 						}
 
-					}
+					});
+				}
 
-				});
 			}
 
 		}
 
+		return result;
+
 	}
 
-	return result;
+
+	return [];
 
 };
 
 export const write = (path, buffer) => {
 
+	path   = isString(path)   ? path   : null;
 	buffer = isBuffer(buffer) ? buffer : Buffer.from(buffer, 'utf8');
 
 
-	let result = false;
-	try {
-		fs.writeFileSync(path, buffer);
-		result = true;
-	} catch (err) {
+	if (path !== null) {
+
+		let result = false;
+		try {
+			fs.writeFileSync(path, buffer);
+			result = true;
+		} catch (err) {
+		}
+
+		return result;
+
 	}
 
-	return result;
+
+	return false;
 
 };
 

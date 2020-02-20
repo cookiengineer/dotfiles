@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import { execSync } from 'child_process';
+import { isObject, isString } from '../POLYFILLS.mjs';
 
 
 
@@ -211,16 +212,24 @@ const _render_config = (config) => {
 
 export const read = (path) => {
 
-	let config = null;
+	path = isString(path) ? path : null;
 
-	try {
-		config = _parse_config(fs.readFileSync(path + '/.git/config', 'utf8'));
-	} catch (err) {
+
+	if (path !== null) {
+
+		let config = null;
+
+		try {
+			config = _parse_config(fs.readFileSync(path + '/.git/config', 'utf8'));
+		} catch (err) {
+		}
+
+		if (config !== null) {
+			return config;
+		}
+
 	}
 
-	if (config !== null) {
-		return config;
-	}
 
 	return null;
 
@@ -228,22 +237,30 @@ export const read = (path) => {
 
 export const status = (path) => {
 
-	let output = null;
-	try {
-		output = execSync('git status --b --porcelain 2>/dev/null', {
-			cwd: path
-		}).toString('utf8');
-	} catch (err) {
-	}
+	path = isString(path) ? path : null;
 
-	if (output !== null) {
 
-		let status = _parse_status(output);
-		if (status !== null) {
-			return status;
+	if (path !== null) {
+
+		let output = null;
+		try {
+			output = execSync('git status --b --porcelain 2>/dev/null', {
+				cwd: path
+			}).toString('utf8');
+		} catch (err) {
+		}
+
+		if (output !== null) {
+
+			let status = _parse_status(output);
+			if (status !== null) {
+				return status;
+			}
+
 		}
 
 	}
+
 
 	return null;
 
@@ -251,19 +268,28 @@ export const status = (path) => {
 
 export const write = (path, config) => {
 
-	let data = _render_config(config);
-	if (data !== null) {
+	path   = isString(path)   ? path   : null;
+	config = isObject(config) ? config : null;
 
-		let result = false;
-		try {
-			fs.writeFileSync(path + '/.git/config', data);
-			result = true;
-		} catch (err) {
+
+	if (path !== null && config !== null) {
+
+		let data = _render_config(config);
+		if (data !== null) {
+
+			let result = false;
+			try {
+				fs.writeFileSync(path + '/.git/config', data);
+				result = true;
+			} catch (err) {
+			}
+
+			return result;
+
 		}
 
-		return result;
-
 	}
+
 
 	return false;
 

@@ -298,6 +298,8 @@ const _execute = (mode, database, callback) => {
 
 export default {
 
+	name:    'gnupg',
+
 	collect: _collect,
 	details: _details,
 	execute: _execute

@@ -3,21 +3,12 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
 
 
-ID3V2_BIN=`which id3v2`;
-
-if [ "$ID3V2_BIN" == "" ]; then
-
+if [[ "$(which id3v2 2>/dev/null)" == "" ]]; then
 	sudo pacman -S --needed --noconfirm id3v2;
-
 fi;
 
-
-NODEJS_BIN=`which node`;
-
-if [ "$NODEJS_BIN" == "" ]; then
-
+if [[ "$(which node 2>/dev/null)" == "" ]]; then
 	sudo pacman -S --needed --noconfirm nodejs;
-
 fi;
 
 
