@@ -58,7 +58,7 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		let files = scan(BACKUP + '/Profile/gnome/nautilus', true);
+		let files = scan(BACKUP + '/Profiles/' + HOST + '/gnome/nautilus', true);
 		if (files.length > 0) {
 
 			files.forEach((file) => {
@@ -139,8 +139,8 @@ const _execute = (mode, database, callback) => {
 
 		if (database['gnome-nautilus'].length > 0) {
 
-			if (exists(BACKUP + '/Profile/gnome/nautilus') === false) {
-				mkdir(BACKUP + '/Profile/gnome/nautilus');
+			if (exists(BACKUP + '/Profiles/' + HOST + '/gnome/nautilus') === false) {
+				mkdir(BACKUP + '/Profiles/' + HOST + '/gnome/nautilus');
 			}
 
 			database['gnome-nautilus'].forEach((entry) => {
@@ -153,7 +153,7 @@ const _execute = (mode, database, callback) => {
 
 				if (data !== null) {
 					console.log('gnome-nautilus: archiving ' + entry.name + ' ...');
-					write(BACKUP + '/Profile/gnome/nautilus/' + entry.name + '.json', data);
+					write(BACKUP + '/Profiles/' + HOST + '/gnome/nautilus/' + entry.name + '.json', data);
 				}
 
 			});

@@ -56,8 +56,8 @@ const _collect = (mode, database, callback) => {
 								if (origin !== null && (origin.url.startsWith('git@github.com') || origin.url.startsWith('https://github.com'))) {
 
 									config.remotes['github'] = {
-										url:   'git@github.com:' + orga + '/' + repo,
-										fetch: '+refs/heads/*:ref/remotes/github/*'
+										url:   'git@github.com:' + orga + '/' + repo + '.git',
+										fetch: '+refs/heads/*:refs/remotes/github/*'
 									};
 
 									delete config.remotes['origin'];
@@ -89,8 +89,8 @@ const _collect = (mode, database, callback) => {
 								if (github === null) {
 
 									config.remotes['github'] = {
-										url:   'git@github.com:' + orga + '/' + repo,
-										fetch: '+refs/heads/*:ref/remotes/github/*'
+										url:   'git@github.com:' + orga + '/' + repo + '.git',
+										fetch: '+refs/heads/*:refs/remotes/github/*'
 									};
 
 									change = true;
@@ -101,8 +101,8 @@ const _collect = (mode, database, callback) => {
 								if (gitlab === null) {
 
 									config.remotes['gitlab'] = {
-										url:   'git@gitlab.com:' + orga + '/' + repo,
-										fetch: '+refs/heads/*:ref/remotes/gitlab/*'
+										url:   'git@gitlab.com:' + orga + '/' + repo + '.git',
+										fetch: '+refs/heads/*:refs/remotes/gitlab/*'
 									};
 
 									change = true;
@@ -125,7 +125,7 @@ const _collect = (mode, database, callback) => {
 
 											config.remotes[host] = {
 												url:   url,
-												fetch: '+refs/heads/*:ref/remotes/' + host + '/*'
+												fetch: '+refs/heads/*:refs/remotes/' + host + '/*'
 											};
 
 											change = true;
@@ -146,7 +146,7 @@ const _collect = (mode, database, callback) => {
 							if (state !== null) {
 
 								database['software'].push({
-									archive: BACKUP + '/Software/Repositories/' + orga + '/' + repo + (state.changes.length > 0 ? ('@' + HOST) : '') + '.tar.xz',
+									archive: BACKUP + '/Projects/Software/' + orga + '/' + repo + (state.changes.length > 0 ? ('@' + HOST) : '') + '.tar.xz',
 									branch:  state.branch,
 									changes: state.changes,
 									name:    orga + '/' + repo,
@@ -177,18 +177,18 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		if (exists(BACKUP + '/Software/Repositories')) {
+		if (exists(BACKUP + '/Projects/Software')) {
 
-			let orgas = scan(BACKUP + '/Software/Repositories', false);
+			let orgas = scan(BACKUP + '/Projects/Software', false);
 			if (orgas.length > 0) {
 
 				orgas.forEach((orga) => {
 
-					scan(BACKUP + '/Software/Repositories/' + orga, false).forEach((archive) => {
+					scan(BACKUP + '/Projects/Software/' + orga, false).forEach((archive) => {
 
 						if (
 							archive.endsWith('tar.xz')
-							&& exists(BACKUP + '/Software/Repositories/' + orga + '/' + archive, 'file')
+							&& exists(BACKUP + '/Projects/Software/' + orga + '/' + archive, 'file')
 						) {
 
 							let repo = archive.substr(0, archive.length - 7);
@@ -198,7 +198,7 @@ const _collect = (mode, database, callback) => {
 								if (host === HOST) {
 
 									database['software'].push({
-										archive: BACKUP + '/Software/Repositories/' + orga + '/' + archive,
+										archive: BACKUP + '/Projects/Software/' + orga + '/' + archive,
 										branch:  null,
 										changes: [],
 										name:    orga + '/' + repo.split('@').shift(),
@@ -210,7 +210,7 @@ const _collect = (mode, database, callback) => {
 							} else {
 
 								database['software'].push({
-									archive: BACKUP + '/Software/Repositories/' + orga + '/' + archive,
+									archive: BACKUP + '/Projects/Software/' + orga + '/' + archive,
 									branch:  null,
 									changes: [],
 									name:    orga + '/' + repo,

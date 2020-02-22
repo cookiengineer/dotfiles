@@ -1,7 +1,7 @@
 
 import { console } from '../console.mjs';
 import { exists, mkdir, read, scan, write } from '../helper/fs.mjs';
-import { exec, BACKUP, HOME } from '../helper/sh.mjs';
+import { exec, BACKUP, HOME, HOST } from '../helper/sh.mjs';
 
 
 
@@ -152,7 +152,7 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		let files = scan(BACKUP + '/Profile/gnupg', true);
+		let files = scan(BACKUP + '/Profiles/' + HOST + '/gnupg', true);
 		if (files.length > 0) {
 
 			files.forEach((file) => {
@@ -221,8 +221,8 @@ const _execute = (mode, database, callback) => {
 
 		if (database['gnupg'].length > 0) {
 
-			if (exists(BACKUP + '/Profile/gnupg') === false) {
-				mkdir(BACKUP + '/Profile/gnupg');
+			if (exists(BACKUP + '/Profiles/' + HOST + '/gnupg') === false) {
+				mkdir(BACKUP + '/Profiles/' + HOST + '/gnupg');
 			}
 
 			database['gnupg'].forEach((key) => {
@@ -238,7 +238,7 @@ const _execute = (mode, database, callback) => {
 
 				if (key.data !== null) {
 					console.log('gnupg: archiving ' + key.name + ' ...');
-					write(BACKUP + '/Profile/gnupg/' + key.name + '.asc', key.data);
+					write(BACKUP + '/Profiles/' + HOST + '/gnupg/' + key.name + '.asc', key.data);
 				}
 
 			});

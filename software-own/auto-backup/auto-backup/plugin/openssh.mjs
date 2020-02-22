@@ -98,7 +98,7 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		let files = scan(BACKUP + '/Profile/openssh', true);
+		let files = scan(BACKUP + '/Profiles/' + HOST + '/openssh', true);
 		if (files.length > 0) {
 
 			files.forEach((file) => {
@@ -195,18 +195,18 @@ const _execute = (mode, database, callback) => {
 
 		if (database['openssh'].length > 0) {
 
-			if (exists(BACKUP + '/Profile/openssh') === false) {
-				mkdir(BACKUP + '/Profile/openssh');
+			if (exists(BACKUP + '/Profiles/' + HOST + '/openssh') === false) {
+				mkdir(BACKUP + '/Profiles/' + HOST + '/openssh');
 			}
 
 			database['openssh'].forEach((key) => {
 
 				if (key.type === 'private') {
 					console.log('openssh: archiving ' + key.name + ' ...');
-					write(BACKUP + '/Profile/openssh/' + key.name + '.key', key.data);
+					write(BACKUP + '/Profiles/' + HOST + '/openssh/' + key.name + '.key', key.data);
 				} else if (key.type === 'public') {
 					console.log('openssh: archiving ' + key.name + ' ...');
-					write(BACKUP + '/Profile/openssh/' + key.name + '.pub', key.data);
+					write(BACKUP + '/Profiles/' + HOST + '/openssh/' + key.name + '.pub', key.data);
 				}
 
 			});

@@ -109,7 +109,7 @@ const _collect = (mode, database, callback) => {
 
 	} else if (mode === 'restore') {
 
-		let files = scan(BACKUP + '/Profile/gnome/authenticator', true);
+		let files = scan(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator', true);
 		if (files.length > 0) {
 
 			files.forEach((file) => {
@@ -190,8 +190,8 @@ const _execute = (mode, database, callback) => {
 
 		if (database['gnome-authenticator'].length > 0) {
 
-			if (exists(BACKUP + '/Profile/gnome/authenticator') === false) {
-				mkdir(BACKUP + '/Profile/gnome/authenticator');
+			if (exists(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator') === false) {
+				mkdir(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator');
 			}
 
 			database['gnome-authenticator'].forEach((entry) => {
@@ -204,7 +204,7 @@ const _execute = (mode, database, callback) => {
 
 				if (data !== null) {
 					console.log('gnome-authenticator: archiving ' + entry.name + ' ...');
-					write(BACKUP + '/Profile/gnome/authenticator/' + entry.name + '.json', data);
+					write(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator/' + entry.name + '.json', data);
 				}
 
 			});
