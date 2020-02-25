@@ -3,10 +3,12 @@
 import console       from './console.mjs';
 import authenticator from './plugin/gnome-authenticator.mjs';
 import chromium      from './plugin/chromium.mjs';
+import music         from './plugin/music.mjs';
 import nautilus      from './plugin/gnome-nautilus.mjs';
 import gnupg         from './plugin/gnupg.mjs';
 import openssh       from './plugin/openssh.mjs';
 import software      from './plugin/software.mjs';
+// import stealth       from './plugin/stealth.mjs';
 import { read  }     from './helper/fs.mjs';
 import { HOME  }     from './helper/sh.mjs';
 import { queue }     from './helper/io.mjs';
@@ -24,8 +26,10 @@ const MAP = {
 	'gnome-authenticator': authenticator,
 	'gnome-nautilus':      nautilus,
 	'gnupg':               gnupg,
+	'music':               music,
 	'openssh':             openssh,
-	'software':            software
+	'software':            software,
+	'stealth':             null // stealth
 };
 
 if (PLUGINS.length === 0) {
@@ -114,7 +118,6 @@ if (ACTION === 'help' || ACTION === null) {
 	console.log('');
 	console.log('    backup       Backup data to "~/Backup".   ');
 	console.log('    restore      Restore data from "~/Backup".');
-	console.log('    setup        Setup "~/Backup", "~/Software" and "~/Stealth".');
 	console.log('');
 	console.log('Available Plugins:');
 	console.log('');
@@ -123,6 +126,8 @@ if (ACTION === 'help' || ACTION === null) {
 	console.log('    gnome-nautilus         GNOME Nautilus integration     ');
 	console.log('    gnupg                  GnuPG secret keys integration  ');
 	console.log('    openssh                OpenSSH secret keys integration');
+	console.log('');
+	console.log('    music                  "~/Music" integration          ');
 	console.log('    software               "~/Software" integration       ');
 	console.log('    stealth                "~/Stealth" integration        ');
 	console.log('');

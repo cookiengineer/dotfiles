@@ -50,6 +50,7 @@ export const HOST = (() => {
 })();
 
 export const BACKUP   = HOME + '/Backup';
+export const MUSIC    = HOME + '/Music';
 export const SOFTWARE = HOME + '/Software';
 
 export const exec = (cmd, cwd, enc) => {

@@ -146,11 +146,11 @@ const _collect = (mode, database, callback) => {
 							if (state !== null) {
 
 								database['software'].push({
-									archive: BACKUP + '/Projects/Software/' + orga + '/' + repo + (state.changes.length > 0 ? ('@' + HOST) : '') + '.tar.xz',
+									backup:  BACKUP + '/Projects/Software/' + orga + '/' + repo + (state.changes.length > 0 ? ('@' + HOST) : '') + '.tar.xz',
 									branch:  state.branch,
 									changes: state.changes,
 									name:    orga + '/' + repo,
-									path:    SOFTWARE + '/' + orga + '/' + repo
+									origin:  SOFTWARE + '/' + orga + '/' + repo
 								});
 
 							}
@@ -198,11 +198,11 @@ const _collect = (mode, database, callback) => {
 								if (host === HOST) {
 
 									database['software'].push({
-										archive: BACKUP + '/Projects/Software/' + orga + '/' + archive,
+										backup:  BACKUP + '/Projects/Software/' + orga + '/' + archive,
 										branch:  null,
 										changes: [],
 										name:    orga + '/' + repo.split('@').shift(),
-										path:    SOFTWARE + '/' + orga + '/' + repo.split('@').shift()
+										origin:  SOFTWARE + '/' + orga + '/' + repo.split('@').shift()
 									});
 
 								}
@@ -210,11 +210,11 @@ const _collect = (mode, database, callback) => {
 							} else {
 
 								database['software'].push({
-									archive: BACKUP + '/Projects/Software/' + orga + '/' + archive,
+									backup:  BACKUP + '/Projects/Software/' + orga + '/' + archive,
 									branch:  null,
 									changes: [],
 									name:    orga + '/' + repo,
-									path:    SOFTWARE + '/' + orga + '/' + repo
+									origin:  SOFTWARE + '/' + orga + '/' + repo
 								});
 
 							}
@@ -269,7 +269,7 @@ const _details = (mode, database) => {
 		if (database['software'].length > 0) {
 			database['software'].forEach((repo) => {
 
-				if (exists(repo.path, 'folder')) {
+				if (exists(repo.origin, 'folder')) {
 					console.warn('software: ' + repo.name + ' (already exists)');
 				} else {
 					console.info('software: ' + repo.name);
@@ -292,14 +292,13 @@ const _execute = (mode, database, callback) => {
 
 		database['software'].forEach((repo) => {
 
-			let folder = repo.archive.split('/').slice(0, -1).join('/');
+			let folder = repo.backup.split('/').slice(0, -1).join('/');
 			if (exists(folder) === false) {
 				mkdir(folder);
 			}
 
-			let archive = repo.archive;
-			if (exists(archive) === true) {
-				remove(archive);
+			if (exists(repo.backup) === true) {
+				remove(repo.backup);
 			}
 
 			console.log('software: archiving ' + repo.name + ' ...');
@@ -307,7 +306,7 @@ const _execute = (mode, database, callback) => {
 			let cwd    = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
 			let source = repo.name.split('/').pop();
 
-			exec('tar cvfJ "' + archive + '" -C "' + cwd + '" ' + source + ' 2>/dev/null', cwd);
+			exec('tar cvfJ "' + repo.backup + '" -C "' + cwd + '" ' + source + ' 2>/dev/null', cwd);
 
 		});
 
@@ -317,14 +316,13 @@ const _execute = (mode, database, callback) => {
 
 		database['software'].forEach((repo) => {
 
-			if (exists(repo.path, 'folder') === false) {
+			if (exists(repo.origin, 'folder') === false) {
 
 				console.log('software: restoring ' + repo.name + ' ...');
 
-				let archive = repo.archive;
-				let cwd     = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
+				let cwd = SOFTWARE + '/' + repo.name.split('/').slice(0, -1).join('/');
 
-				exec('tar xJf "' + archive + '"', cwd);
+				exec('tar xJf "' + repo.backup + '"', cwd);
 
 			}
 

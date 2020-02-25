@@ -20,6 +20,29 @@ export const chmod = (path, chmod) => {
 
 };
 
+export const copy = (origin, target) => {
+
+	origin = isString(origin) ? origin : null;
+	target = isString(target) ? target : null;
+
+
+	if (origin !== null && target !== null) {
+
+		let result = false;
+		try {
+			fs.copyFileSync(origin, target);
+			result = true;
+		} catch (err) {
+		}
+
+		return result;
+
+	}
+
+	return false;
+
+};
+
 export const exists = (path, type) => {
 
 	path = isString(path) ? path : null;
@@ -241,6 +264,7 @@ export const write = (path, buffer) => {
 export default {
 
 	chmod:  chmod,
+	copy:   copy,
 	exists: exists,
 	mkdir:  mkdir,
 	read:   read,
