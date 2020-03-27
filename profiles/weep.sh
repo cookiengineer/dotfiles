@@ -23,7 +23,7 @@ _install software nodejs;
 _install software tor;
 _install software vim;
 
-_install_packages bluez bluez-firmware bluez-libs bluez-utils;
+# _install_packages bluez bluez-firmware bluez-libs bluez-utils;
 _install_packages gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock;
 _install_packages noto-fonts noto-fonts-compat noto-fonts-emoji;
 _install_packages chromium firefox gimp gparted transmission-gtk uget;
@@ -31,7 +31,7 @@ _install_packages ffmpeg celluloid;
 _install_packages dnsutils macchanger net-tools nmap;
 _install_packages openra;
 _install_packages synergy;
-_install_packages telegram-desktop;
+# _install_packages telegram-desktop;
 _install_packages veracrypt;
 
 
@@ -43,10 +43,9 @@ _install_packages veracrypt;
 _install software-aur trizen;
 # _install software-aur kitty;
 # _install software-aur ungoogled-chromium-bin;
-_install software-aur wireless-regdb-pentest;
+# _install software-aur wireless-regdb-pentest;
 
 _install_packages_aur tldr youtube-dl;
-_install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-origin firefox-extension-umatrix;
 _install_packages_aur gnome-shell-extension-outta-space-git;
 _install_packages_aur mobac;
 _install_packages_aur openscad;
@@ -78,7 +77,7 @@ _install projects polyfillr;
 
 sudo chmod +r /etc/NetworkManager/system-connections;
 
-local home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
+home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
 if [ ! -f $home_connection ]; then
 	sudo cp "$PROFILE_ROOT$home_connection" $home_connection;
 fi;
@@ -89,7 +88,7 @@ if [ ! -f /etc/synergy.conf ]; then
 	sudo cp $PROFILE_ROOT/etc/synergy.conf /etc/synergy.conf;
 fi;
 
-local synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
+synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
 if [ ! -f $synergys_service ]; then
 	mkdir -p $(dirname $synergys_service);
 	cp "$PROFILE_ROOT$synergys_service" $synergys_service;

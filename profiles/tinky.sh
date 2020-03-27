@@ -78,7 +78,7 @@ _install projects polyfillr;
 
 sudo chmod +r /etc/NetworkManager/system-connections;
 
-local home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
+home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
 if [ ! -f $home_connection ]; then
 	sudo cp "$PROFILE_ROOT$home_connection" $home_connection;
 fi;
@@ -88,7 +88,7 @@ if [ ! -f /usr/bin/share-internet ]; then
 	sudo chmod +x /usr/bin/share-internet;
 fi;
 
-local synergyc_service="/home/cookiengineer/.config/systemd/user/synergyc.service";
+synergyc_service="/home/cookiengineer/.config/systemd/user/synergyc.service";
 if [ ! -f $synergyc_service ]; then
 	mkdir -p $(dirname $synergyc_service);
 	cp "$PROFILE_ROOT$synergyc_service" $synergyc_service;

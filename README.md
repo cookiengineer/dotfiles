@@ -12,8 +12,12 @@ gotta deal with it. All profiles here have the shared idea
 of incrementally configuring stuff, so the setup procedures
 can be used in partial, too.
 
-Most likely there's `kitty` Terminal and `vim` installed
-everywhere, as that's my preferred development environment.
+If you have made changes and want to go back to OEM state,
+just run `bash profiles/<hostname>.sh` again. That's the idea.
+
+I also use a `synergy` multi-head setup where my Thinkpad is
+the client to either `nuccy` or `weep` whereas both of my
+desktop machines are airgapped and LUKS-encrypted on purpose.
 
 
 ## Profiles
@@ -31,22 +35,6 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 - Keyboard (Cherry KC1000 US Layout)
 - Vertical Mouse (CSL 26069)
 
-**Tower (weep)**
-
-Profile: [./profiles/weep.sh](./profiles/weep.sh)
-
-- Manjaro Linux and GNOME
-- Synergy Server (left of `tinky`)
-- Monitor 1 (BenQ 24" HDMI 1920x1080)
-- Monitor 2 (BenQ 24" HDMI 1920x1080)
-- Monitor 3 (BenQ 24" HDMI 1920x1080)
-- Radeon HD6000 and 2x GTX 1080Ti
-- Webcam (Logitech C920)
-- Keyboard (Cherry KC1000 US Layout)
-- Vertical Mouse (CSL 26069)
-- Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
-- Analog Audio Headphones (AKG HD242)
-
 **Thinkpad (tinky)**
 
 Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
@@ -54,9 +42,25 @@ Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 - Manjaro Linux and GNOME
 - Synergy Client (right of `weep`, right of `nuccy`)
 - Monitor 1 (Internal 1440x900)
-- Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Intel HD4000 and GT730M
 - Lenovo Thinkpad Keyboard (US Layout)
+- (optional) Bluetooth Audio Headphones (Cowin E8)
+
+**Tower (weep/weeptarded)**
+
+Profile: [./profiles/weep.sh](./profiles/weep.sh)
+
+- Manjaro Linux and GNOME
+- Synergy Server (left of `tinky`)
+- Monitor 1 (BenQ 24" HDMI 1920x1080)
+- Monitor 2 (BenQ 24" HDMI 1920x1080)
+- (optional) Monitor 3 (BenQ 24" HDMI 1920x1080)
+- 4x Radeon RX580
+- Webcam (Logitech C920)
+- Keyboard (Cherry KC1000 US Layout)
+- Vertical Mouse (CSL 26069)
+- (optional) Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
+- (optional) Analog Audio Headphones (AKG HD242)
 
 
 ## Usage
