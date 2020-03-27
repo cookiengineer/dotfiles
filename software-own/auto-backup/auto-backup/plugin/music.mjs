@@ -1,69 +1,135 @@
 
 import { console                   } from '../console.mjs';
 import { copy, exists, mkdir, scan } from '../helper/fs.mjs';
-import { exec, BACKUP, HOST, MUSIC } from '../helper/sh.mjs';
+import { BACKUP, MUSIC             } from '../helper/sh.mjs';
 
 
 
-const _collect = (mode, database, callback) => {
+const PLUGIN = {
 
-	database['music'] = [];
+	name: 'music',
 
+	init: {
 
-	if (mode === 'backup') {
+		collect: (database, callback) => {
 
-		if (exists(MUSIC)) {
+			callback(false);
 
-			let genres = scan(MUSIC, false).filter((genre) => {
+		},
 
-				if (
-					exists(MUSIC + '/' + genre, 'folder')
-					&& genre.startsWith('__') === false
-				) {
-					return true;
-				}
+		execute: (database, callback) => {
 
-				return false;
+			callback(false);
 
-			});
+		}
 
-			if (genres.length > 0) {
+	},
 
-				genres.forEach((genre) => {
+	backup: {
 
-					let entry = {
-						name: genre,
-						data: []
-					};
+		collect: (database, callback) => {
 
-					scan(MUSIC + '/' + genre, false).forEach((file) => {
+			if (exists(MUSIC)) {
 
-						let tmp = file.split('.').slice(0, -1).join('.');
-						if (tmp.includes(' - ') && tmp.split(' - ').length === 2) {
+				let genres = scan(MUSIC, false).filter((genre) => {
 
-							let artist = tmp.split(' - ')[0];
-							let title  = tmp.split(' - ')[1];
+					if (
+						exists(MUSIC + '/' + genre, 'folder')
+						&& genre.startsWith('__') === false
+					) {
+						return true;
+					}
 
-							if (exists(BACKUP + '/Music/' + genre + '/' + file) === false) {
+					return false;
 
-								entry.data.push({
-									artist:  artist,
-									backup:  BACKUP + '/Music/' + genre + '/' + file,
-									genre:   genre,
-									name:    artist + ' - ' + title,
-									origin:  MUSIC + '/' + genre + '/' + file,
-									title:   title
-								});
+				});
+
+				if (genres.length > 0) {
+
+					genres.forEach((genre) => {
+
+						let entry = {
+							name: genre,
+							data: []
+						};
+
+						scan(MUSIC + '/' + genre, false).forEach((file) => {
+
+							let tmp = file.split('.').slice(0, -1).join('.');
+							if (tmp.includes(' - ') && tmp.split(' - ').length === 2) {
+
+								let artist = tmp.split(' - ')[0];
+								let title  = tmp.split(' - ')[1];
+
+								if (exists(BACKUP + '/Music/' + genre + '/' + file) === false) {
+
+									entry.data.push({
+										artist:  artist,
+										backup:  BACKUP + '/Music/' + genre + '/' + file,
+										genre:   genre,
+										name:    artist + ' - ' + title,
+										origin:  MUSIC + '/' + genre + '/' + file,
+										title:   title
+									});
+
+								}
 
 							}
 
+						});
+
+						if (entry.data.length > 0) {
+							database.push(entry);
 						}
 
 					});
 
-					if (entry.data.length > 0) {
-						database['music'].push(entry);
-					}
+					callback(true);
+
+				} else {
+
+					callback(false);
+
+				}
+
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		details: (database) => {
+
+			if (database.length > 0) {
+				database.forEach((genre) => {
+					console.info(PLUGIN.name + ': ' + genre.name + ' (' + genre.data.length + ')');
+				});
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				database.forEach((genre) => {
+
+					console.log(PLUGIN.name + ': archiving ' + genre.name + ' ...');
+
+					genre.data.forEach((entry) => {
+
+						let folder = entry.backup.split('/').slice(0, -1).join('/');
+						if (exists(folder, 'folder') === false) {
+							mkdir(folder);
+						}
+
+						if (exists(entry.backup) === false) {
+							copy(entry.origin, entry.backup);
+						}
+
+					});
 
 				});
 
@@ -75,66 +141,115 @@ const _collect = (mode, database, callback) => {
 
 			}
 
-		} else {
-
-			callback(false);
-
 		}
 
-	} else if (mode === 'restore') {
+	},
 
-		if (exists(BACKUP + '/Music')) {
+	restore: {
 
-			let genres = scan(BACKUP + '/Music', false).filter((genre) => {
+		collect: (database, callback) => {
 
-				if (
-					exists(BACKUP + '/Music/' + genre, 'folder')
-					&& genre.startsWith('__') === false
-				) {
-					return true;
-				}
+			if (exists(BACKUP + '/Music')) {
 
-				return false;
+				let genres = scan(BACKUP + '/Music', false).filter((genre) => {
 
-			});
+					if (
+						exists(BACKUP + '/Music/' + genre, 'folder')
+						&& genre.startsWith('__') === false
+					) {
+						return true;
+					}
 
-			if (genres.length > 0) {
+					return false;
 
-				genres.forEach((genre) => {
+				});
 
-					let entry = {
-						name: genre,
-						data: []
-					};
+				if (genres.length > 0) {
 
-					scan(BACKUP + '/Music/' + genre, false).forEach((file) => {
+					genres.forEach((genre) => {
 
-						let tmp = file.split('.').slice(0, -1).join('.');
-						if (tmp.includes(' - ') && tmp.split(' - ').length === 2) {
+						let entry = {
+							name: genre,
+							data: []
+						};
 
-							let artist = tmp.split(' - ')[0];
-							let title  = tmp.split(' - ')[1];
+						scan(BACKUP + '/Music/' + genre, false).forEach((file) => {
 
-							if (exists(MUSIC + '/' + genre + '/' + file) === false) {
+							let tmp = file.split('.').slice(0, -1).join('.');
+							if (tmp.includes(' - ') && tmp.split(' - ').length === 2) {
 
-								entry.data.push({
-									artist:  artist,
-									backup:  BACKUP + '/Music/' + genre + '/' + file,
-									genre:   genre,
-									name:    artist + ' - ' + title,
-									origin:  MUSIC + '/' + genre + '/' + file,
-									title:   title
-								});
+								let artist = tmp.split(' - ')[0];
+								let title  = tmp.split(' - ')[1];
+
+								if (exists(MUSIC + '/' + genre + '/' + file) === false) {
+
+									entry.data.push({
+										artist:  artist,
+										backup:  BACKUP + '/Music/' + genre + '/' + file,
+										genre:   genre,
+										name:    artist + ' - ' + title,
+										origin:  MUSIC + '/' + genre + '/' + file,
+										title:   title
+									});
+
+								}
 
 							}
 
+						});
+
+						if (entry.data.length > 0) {
+							database.push(entry);
 						}
 
 					});
 
-					if (entry.data.length > 0) {
-						database['music'].push(entry);
-					}
+					callback(true);
+
+				} else {
+
+					callback(false);
+
+				}
+
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		details: (database) => {
+
+			if (database.length > 0) {
+				database.forEach((genre) => {
+					console.info(PLUGIN.name + ': ' + genre.name + ' (' + genre.data.length + ')');
+				});
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				database.forEach((genre) => {
+
+					console.log(PLUGIN.name + ': restoring ' + genre.name + ' ...');
+
+					genre.data.forEach((entry) => {
+
+						let folder = entry.origin.split('/').slice(0, -1).join('/');
+						if (exists(folder, 'folder') === false) {
+							mkdir(folder);
+						}
+
+						if (exists(entry.origin) === false) {
+							copy(entry.backup, entry.origin);
+						}
+
+					});
 
 				});
 
@@ -146,106 +261,6 @@ const _collect = (mode, database, callback) => {
 
 			}
 
-		} else {
-
-			callback(false);
-
-		}
-
-	}
-
-};
-
-const _details = (mode, database) => {
-
-	database['music'] = database['music'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['music'].length > 0) {
-			database['music'].forEach((genre) => {
-				console.info('music: ' + genre.name + ' (' + genre.data.length + ')');
-			});
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['music'].length > 0) {
-			database['music'].forEach((genre) => {
-				console.info('music: ' + genre.name + ' (' + genre.data.length + ')');
-			});
-		}
-
-	}
-
-};
-
-const _execute = (mode, database, callback) => {
-
-	database['music'] = database['music'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['music'].length > 0) {
-
-			database['music'].forEach((genre) => {
-
-				console.log('music: archiving ' + genre.name + ' ...');
-
-				genre.data.forEach((entry) => {
-
-					let folder = entry.backup.split('/').slice(0, -1).join('/');
-					if (exists(folder, 'folder') === false) {
-						mkdir(folder);
-					}
-
-					if (exists(entry.backup) === false) {
-						copy(entry.origin, entry.backup);
-					}
-
-				});
-
-			});
-
-			callback(true);
-
-		} else {
-
-			callback(false);
-
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['music'].length > 0) {
-
-			database['music'].forEach((genre) => {
-
-				console.log('music: restoring ' + genre.name + ' ...');
-
-				genre.data.forEach((entry) => {
-
-					let folder = entry.origin.split('/').slice(0, -1).join('/');
-					if (exists(folder, 'folder') === false) {
-						mkdir(folder);
-					}
-
-					if (exists(entry.origin) === false) {
-						copy(entry.backup, entry.origin);
-					}
-
-				});
-
-			});
-
-			callback(true);
-
-		} else {
-
-			callback(false);
-
 		}
 
 	}
@@ -253,14 +268,5 @@ const _execute = (mode, database, callback) => {
 };
 
 
-
-export default {
-
-	name:    'music',
-
-	collect: _collect,
-	details: _details,
-	execute: _execute
-
-};
+export default PLUGIN;
 

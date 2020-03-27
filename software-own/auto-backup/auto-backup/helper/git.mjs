@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import { execSync } from 'child_process';
+
 import { isObject, isString } from '../POLYFILLS.mjs';
 
 
@@ -37,7 +38,7 @@ const _parse_config = (buffer) => {
 	let lines = buffer.trim().split('\n').map((line) => line.trim());
 	if (lines.length > 0) {
 
-		let config  = {
+		let config = {
 			'core':     {},
 			'branches': {},
 			'remotes':  {}
@@ -210,6 +211,40 @@ const _render_config = (config) => {
 
 
 
+export const clone = (source, target) => {
+
+	source = isString(source) ? source : null;
+	target = isString(target) ? target : null;
+
+
+	if (source !== null && target !== null) {
+
+		let output = null;
+		let path   = target.split('/').slice(0, -1).join('/');
+
+		try {
+			output = execSync('git clone "' + source + '" "' + target + '"', {
+				cwd: path
+			}).toString('utf8');
+		} catch (err) {
+			output = null;
+		}
+
+		if (output !== null) {
+
+			if (output.includes('fatal') === false) {
+				return true;
+			}
+
+		}
+
+	}
+
+
+	return false;
+
+};
+
 export const read = (path) => {
 
 	path = isString(path) ? path : null;
@@ -222,6 +257,7 @@ export const read = (path) => {
 		try {
 			config = _parse_config(fs.readFileSync(path + '/.git/config', 'utf8'));
 		} catch (err) {
+			config = null;
 		}
 
 		if (config !== null) {
@@ -243,11 +279,13 @@ export const status = (path) => {
 	if (path !== null) {
 
 		let output = null;
+
 		try {
 			output = execSync('git status --b --porcelain 2>/dev/null', {
 				cwd: path
 			}).toString('utf8');
 		} catch (err) {
+			output = null;
 		}
 
 		if (output !== null) {
@@ -278,10 +316,12 @@ export const write = (path, config) => {
 		if (data !== null) {
 
 			let result = false;
+
 			try {
 				fs.writeFileSync(path + '/.git/config', data);
 				result = true;
 			} catch (err) {
+				result = false;
 			}
 
 			return result;
@@ -299,6 +339,7 @@ export const write = (path, config) => {
 
 export default {
 
+	clone:  clone,
 	read:   read,
 	status: status,
 	write:  write

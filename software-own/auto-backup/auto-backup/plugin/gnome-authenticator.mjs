@@ -1,9 +1,9 @@
 
-import { console } from '../console.mjs';
+import { console                          } from '../console.mjs';
 import { exists, mkdir, read, scan, write } from '../helper/fs.mjs';
-import { query } from '../helper/sqlite.mjs';
-import { search } from '../helper/secret.mjs';
-import { BACKUP, HOME, HOST } from '../helper/sh.mjs';
+import { query                            } from '../helper/sqlite.mjs';
+import { search                           } from '../helper/secret.mjs';
+import { BACKUP, HOME, HOST               } from '../helper/sh.mjs';
 
 
 
@@ -30,61 +30,188 @@ const _get_service = (url) => {
 
 };
 
-const _collect = (mode, database, callback) => {
-
-	database['gnome-authenticator'] = [];
 
 
-	if (mode === 'backup') {
+const PLUGIN = {
 
-		if (
-			exists(HOME + '/.local/share/keyrings')
-			&& exists(HOME + '/.config/Authenticator/database-7.db')
-		) {
+	name: 'gnome-authenticator',
 
-			let accounts = query('SELECT accounts.username, accounts.token_id, providers.name AS service, providers.website as website FROM accounts JOIN providers ON accounts.provider=providers.id', HOME + '/.config/Authenticator/database-7.db');
-			let entries  = search({
-				'xdg:schema': 'com.github.bilelmoussaoui.Authenticator'
-			});
+	init: {
+
+		collect: (database, callback) => {
+
+			if (exists(HOME + '/.config/Authenticator/database-7.db') === false) {
+
+				PLUGIN.restore.collect(database, callback);
+
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				PLUGIN.restore.execute(database, callback);
+
+			} else {
+
+				callback(false);
+
+			}
+
+		}
+
+	},
+
+	backup: {
+
+		collect: (database, callback) => {
+
+			if (
+				exists(HOME + '/.local/share/keyrings')
+				&& exists(HOME + '/.config/Authenticator/database-7.db')
+			) {
+
+				let accounts = query('SELECT accounts.username, accounts.token_id, providers.name AS service, providers.website as website FROM accounts JOIN providers ON accounts.provider=providers.id', HOME + '/.config/Authenticator/database-7.db');
+				let entries  = search({
+					'xdg:schema': 'com.github.bilelmoussaoui.Authenticator'
+				});
 
 
-			if (accounts.length > 0 && entries.length > 0) {
+				if (accounts.length > 0 && entries.length > 0) {
 
-				accounts.forEach((account) => {
+					accounts.forEach((account) => {
 
-					let entry = entries.find((entry) => entry['attribute.id'] === account['token_id']) || null;
-					if (entry !== null) {
+						let entry = entries.find((entry) => entry['attribute.id'] === account['token_id']) || null;
+						if (entry !== null) {
 
-						let service = (account['service'] || '').toLowerCase() || null;
-						if (service === null) {
-							service = _get_service(account['website']);
-						} else if (service.includes('.')) {
-							service = service.split('.').shift();
+							let service = (account['service'] || '').toLowerCase() || null;
+							if (service === null) {
+								service = _get_service(account['website']);
+							} else if (service.includes('.')) {
+								service = service.split('.').shift();
+							}
+
+							let label = account['username'];
+							if (label.includes('@') === true) {
+								label = label.split('@').shift() + '@' + service;
+							} else {
+								label = label + '@' + service;
+							}
+
+							let schema = entry['schema'] || null;
+							if (schema !== null) {
+
+								database.push({
+									data: {
+										'label':          label,
+										'schema':         schema,
+										'secret':         entry['secret'],
+										'service':        account['service'],
+										'username':       account['username'],
+										'website':        account['website'],
+										'attribute.id':   entry['attribute.id']   || null,
+										'attribute.name': entry['attribute.name'] || null,
+									},
+									name:   label,
+									schema: schema
+								});
+
+							}
+
 						}
 
-						let label = account['username'];
-						if (label.includes('@') === true) {
-							label = label.split('@').shift() + '@' + service;
-						} else {
-							label = label + '@' + service;
+					});
+
+					callback(true);
+
+				} else {
+
+					callback(false);
+
+				}
+
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				if (exists(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator') === false) {
+					mkdir(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator');
+				}
+
+				database.forEach((entry) => {
+
+					let data = null;
+
+					try {
+						data = Buffer.from(JSON.stringify(entry.data, null, '\t'), 'utf8');
+					} catch (err) {
+						data = null;
+					}
+
+					if (data !== null) {
+						console.log(PLUGIN.name + ': archiving ' + entry.name + ' ...');
+						write(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator/' + entry.name + '.json', data);
+					}
+
+				});
+
+				callback(true);
+
+			} else {
+
+				callback(false);
+
+			}
+
+		}
+
+	},
+
+	restore: {
+
+		collect: (database, callback) => {
+
+			let files = scan(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator', true);
+			if (files.length > 0) {
+
+				files.forEach((file) => {
+
+					let data = read(file, 'utf8');
+					if (data !== null) {
+
+						try {
+							data = JSON.parse(data);
+						} catch (err) {
+							data = null;
 						}
 
-						let schema = entry['schema'] || null;
-						if (schema !== null) {
+					}
 
-							database['gnome-authenticator'].push({
-								data: {
-									'label':          label,
-									'schema':         schema,
-									'secret':         entry['secret'],
-									'service':        account['service'],
-									'username':       account['username'],
-									'website':        account['website'],
-									'attribute.id':   entry['attribute.id']   || null,
-									'attribute.name': entry['attribute.name'] || null,
-								},
-								name:   label,
-								schema: schema
+					if (data !== null) {
+
+						let label  = file.split('/').pop().split('.').shift();
+						let schema = data['schema'] || null;
+
+						if (label !== null && schema !== null) {
+
+							database.push({
+								data: data,
+								name: label,
+								type: schema
 							});
 
 						}
@@ -101,135 +228,15 @@ const _collect = (mode, database, callback) => {
 
 			}
 
-		} else {
+		},
 
-			callback(false);
+		execute: (database, callback) => {
 
-		}
-
-	} else if (mode === 'restore') {
-
-		let files = scan(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator', true);
-		if (files.length > 0) {
-
-			files.forEach((file) => {
-
-				let data = read(file, 'utf8');
-				if (data !== null) {
-
-					try {
-						data = JSON.parse(data);
-					} catch (err) {
-						data = null;
-					}
-
-				}
-
-				if (data !== null) {
-
-					let label  = file.split('/').pop().split('.').shift();
-					let schema = data['schema'] || null;
-
-					if (label !== null && schema !== null) {
-
-						database['gnome-authenticator'].push({
-							data: data,
-							name: label,
-							type: schema
-						});
-
-					}
-
-				}
-
-			});
-
-			callback(true);
-
-		} else {
-
-			callback(false);
-
-		}
-
-	}
-
-};
-
-const _details = (mode, database) => {
-
-	database['gnome-authenticator'] = database['gnome-authenticator'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['gnome-authenticator'].length > 0) {
-			database['gnome-authenticator'].forEach((entry) => {
-				console.log('gnome-authenticator: ' + entry.name);
-			});
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['gnome-authenticator'].length > 0) {
-			database['gnome-authenticator'].forEach((entry) => {
-				console.log('gnome-authenticator: ' + entry.name);
-			});
-		}
-
-	}
-
-};
-
-const _execute = (mode, database, callback) => {
-
-	database['gnome-authenticator'] = database['gnome-authenticator'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['gnome-authenticator'].length > 0) {
-
-			if (exists(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator') === false) {
-				mkdir(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator');
-			}
-
-			database['gnome-authenticator'].forEach((entry) => {
-
-				let data = null;
-				try {
-					data = Buffer.from(JSON.stringify(entry.data, null, '\t'), 'utf8');
-				} catch (err) {
-				}
-
-				if (data !== null) {
-					console.log('gnome-authenticator: archiving ' + entry.name + ' ...');
-					write(BACKUP + '/Profiles/' + HOST + '/gnome/authenticator/' + entry.name + '.json', data);
-				}
-
-			});
-
-			callback(true);
-
-		} else {
-
-			callback(false);
-
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['gnome-authenticator'].length > 0) {
-
-			// XXX: Cannot restore authenticator secrets
+			// TODO: Cannot restore authenticator secrets
 			// No import feature in secret-tool
 
 			callback(false);
 
-		} else {
-
-			callback(false);
-
 		}
 
 	}
@@ -238,13 +245,5 @@ const _execute = (mode, database, callback) => {
 
 
 
-export default {
-
-	name:   'gnome-authenticator',
-
-	collect: _collect,
-	details: _details,
-	execute: _execute
-
-};
+export default PLUGIN;
 

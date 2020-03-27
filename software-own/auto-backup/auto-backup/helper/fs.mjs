@@ -1,5 +1,6 @@
 
 import fs from 'fs';
+
 import { isBoolean, isBuffer, isNumber, isString } from '../POLYFILLS.mjs';
 
 
@@ -10,10 +11,12 @@ export const chmod = (path, chmod) => {
 
 
 	let result = false;
+
 	try {
 		fs.chmodSync(path, chmod);
 		result = true;
 	} catch (err) {
+		// Do nothing
 	}
 
 	return result;
@@ -29,10 +32,12 @@ export const copy = (origin, target) => {
 	if (origin !== null && target !== null) {
 
 		let result = false;
+
 		try {
 			fs.copyFileSync(origin, target);
 			result = true;
 		} catch (err) {
+			// Do nothing
 		}
 
 		return result;
@@ -52,9 +57,11 @@ export const exists = (path, type) => {
 	if (path !== null) {
 
 		let stat = null;
+
 		try {
 			stat = fs.lstatSync(path);
 		} catch (err) {
+			// Do nothing
 		}
 
 		if (stat !== null) {
@@ -92,6 +99,7 @@ export const mkdir = (path, chmod) => {
 
 
 	let result = false;
+
 	try {
 		fs.mkdirSync(path, {
 			recursive: true,
@@ -99,6 +107,7 @@ export const mkdir = (path, chmod) => {
 		});
 		result = true;
 	} catch (err) {
+		// Do nothing
 	}
 
 	return result;
@@ -114,9 +123,11 @@ export const read = (path, enc) => {
 	if (path !== null) {
 
 		let result = null;
+
 		try {
 			result = fs.readFileSync(path, enc);
 		} catch (err) {
+			// Do nothing
 		}
 
 		if (result !== null) {
@@ -138,9 +149,11 @@ export const remove = (path) => {
 	if (path !== null) {
 
 		let stat = null;
+
 		try {
 			stat = fs.lstatSync(path);
 		} catch (err) {
+			// Do nothing
 		}
 
 		if (stat !== null) {
@@ -148,10 +161,12 @@ export const remove = (path) => {
 			if (stat.isFile()) {
 
 				let result = false;
+
 				try {
 					fs.unlinkSync(path);
 					result = true;
 				} catch (err) {
+					// Do nothing
 				}
 
 				return result;
@@ -159,12 +174,14 @@ export const remove = (path) => {
 			} else if (stat.isDirectory()) {
 
 				let result = false;
+
 				try {
 					fs.rmdirSync(path, {
 						recursive: true
 					});
+					result = true;
 				} catch (err) {
-
+					// Do nothing
 				}
 
 				return result;
@@ -194,6 +211,7 @@ export const scan = (path, prefix) => {
 		try {
 			stat = fs.lstatSync(path);
 		} catch (err) {
+			// Do nothing
 		}
 
 		if (stat !== null) {
@@ -201,9 +219,11 @@ export const scan = (path, prefix) => {
 			if (stat.isDirectory()) {
 
 				let tmp = [];
+
 				try {
 					tmp = fs.readdirSync(path);
 				} catch (err) {
+					// Do nothing
 				}
 
 				if (tmp.length > 0) {
@@ -244,10 +264,12 @@ export const write = (path, buffer) => {
 	if (path !== null) {
 
 		let result = false;
+
 		try {
 			fs.writeFileSync(path, buffer);
 			result = true;
 		} catch (err) {
+			// Do nothing
 		}
 
 		return result;

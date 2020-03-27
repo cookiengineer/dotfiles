@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import { execSync } from 'child_process';
+
 import { isString } from '../POLYFILLS.mjs';
 
 
@@ -36,9 +37,11 @@ export const HOME = (() => {
 export const HOST = (() => {
 
 	let data = null;
+
 	try {
 		data = fs.readFileSync('/etc/hostname', 'utf8');
 	} catch (err) {
+		// Do nothing
 	}
 
 	if (data !== null) {
@@ -60,11 +63,13 @@ export const exec = (cmd, cwd, enc) => {
 
 
 	let output = null;
+
 	try {
 		output = execSync(cmd, {
 			cwd: cwd
 		}).toString(enc);
 	} catch (err) {
+		output = null;
 	}
 
 	return output;

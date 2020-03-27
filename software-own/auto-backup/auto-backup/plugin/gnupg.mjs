@@ -1,7 +1,7 @@
 
-import { console } from '../console.mjs';
+import { console                          } from '../console.mjs';
 import { exists, mkdir, read, scan, write } from '../helper/fs.mjs';
-import { exec, BACKUP, HOME, HOST } from '../helper/sh.mjs';
+import { exec, BACKUP, HOME, HOST         } from '../helper/sh.mjs';
 
 
 
@@ -117,23 +117,101 @@ const _parse_keylist = (stdout) => {
 
 
 
-const _collect = (mode, database, callback) => {
+const PLUGIN = {
 
-	database['gnupg'] = [];
+	name: 'gnupg',
 
+	init: {
 
-	if (mode === 'backup') {
+		collect: (database, callback) => {
 
-		if (
-			exists(HOME + '/.gnupg')
-			&& exists(HOME + '/.gnupg/private-keys-v1.d')
-		) {
+			if (exists(HOME + '/.gnupg/private-keys-v1.d') === false) {
 
-			let keys = _parse_keylist(exec('gpg --list-secret-keys', HOME));
-			if (keys.length > 0) {
+				PLUGIN.restore.collect(database, callback);
 
-				keys.forEach((key) => {
-					database['gnupg'].push(key);
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				PLUGIN.restore.execute(database, callback);
+
+			} else {
+
+				callback(false);
+
+			}
+
+		}
+
+	},
+
+	backup: {
+
+		collect: (database, callback) => {
+
+			if (
+				exists(HOME + '/.gnupg')
+				&& exists(HOME + '/.gnupg/private-keys-v1.d')
+			) {
+
+				let keys = _parse_keylist(exec('gpg --list-secret-keys', HOME));
+				if (keys.length > 0) {
+
+					keys.forEach((key) => {
+						database.push(key);
+					});
+
+					callback(true);
+
+				} else {
+
+					callback(false);
+
+				}
+
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				if (exists(BACKUP + '/Profiles/' + HOST + '/gnupg') === false) {
+					mkdir(BACKUP + '/Profiles/' + HOST + '/gnupg');
+				}
+
+				database.forEach((key) => {
+
+					if (key.type === 'ultimate') {
+
+						let data = exec('gpg --export-secret-key "' + key.hash + '" 2>/dev/null', HOME, 'hex');
+						if (data !== null) {
+							key.data = Buffer.from(data, 'hex');
+						}
+
+					}
+
+					if (key.data !== null) {
+
+						console.log(PLUGIN.name + ': archiving ' + key.name + ' ...');
+
+						write(BACKUP + '/Profiles/' + HOST + '/gnupg/' + key.name + '.asc', key.data);
+
+					}
+
 				});
 
 				callback(true);
@@ -144,149 +222,94 @@ const _collect = (mode, database, callback) => {
 
 			}
 
-		} else {
-
-			callback(false);
-
 		}
 
-	} else if (mode === 'restore') {
+	},
 
-		let files = scan(BACKUP + '/Profiles/' + HOST + '/gnupg', true);
-		if (files.length > 0) {
+	restore: {
 
-			files.forEach((file) => {
+		collect: (database, callback) => {
 
-				let keys = _parse_keylist(exec('gpg --import-options show-only --import "' + file + '" 2>/dev/null', HOME));
-				if (keys.length > 0) {
+			let files = scan(BACKUP + '/Profiles/' + HOST + '/gnupg', true);
+			if (files.length > 0) {
 
-					keys.forEach((key) => {
+				files.forEach((file) => {
 
-						let data = read(file, 'hex');
-						if (data !== null) {
-							key.data = Buffer.from(data, 'hex');
-							key.file = file;
-							database['gnupg'].push(key);
+					let keys = _parse_keylist(exec('gpg --import-options show-only --import "' + file + '" 2>/dev/null', HOME));
+					if (keys.length > 0) {
+
+						keys.forEach((key) => {
+
+							let data = read(file, 'hex');
+							if (data !== null) {
+
+								key.data = Buffer.from(data, 'hex');
+								key.file = file;
+
+								database.push(key);
+
+							}
+
+						});
+
+					}
+
+				});
+
+				callback(true);
+
+			} else {
+
+				callback(false);
+
+			}
+
+		},
+
+		details: (database) => {
+
+			if (database.length > 0) {
+				database.forEach((key) => {
+					console.info(PLUGIN.name + ': ' + key.hash + ' (' + key.user + '/' + key.type + ')');
+				});
+			}
+
+		},
+
+		execute: (database, callback) => {
+
+			if (database.length > 0) {
+
+				let results = [];
+
+				database.forEach((key) => {
+
+					if (key.file !== null) {
+
+						console.log(PLUGIN.name + ': restoring ' + key.name + ' ...');
+
+						let result = _parse_import(exec('gpg --allow-secret-key-import --import "' + key.file + '" 2>&1'));
+						if (result === true) {
+							results.push(result);
+						} else if (result === false) {
+							results.push(result);
 						}
 
-					});
-
-				}
-
-			});
-
-			callback(true);
-
-		} else {
-
-			callback(false);
-
-		}
-
-	}
-
-};
-
-const _details = (mode, database) => {
-
-	database['gnupg'] = database['gnupg'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['gnupg'].length > 0) {
-			database['gnupg'].forEach((key) => {
-				console.info('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
-			});
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['gnupg'].length > 0) {
-			database['gnupg'].forEach((key) => {
-				console.info('gnupg: ' + key.hash + ' (' + key.user + '/' + key.type + ')');
-			});
-		}
-
-	}
-
-};
-
-const _execute = (mode, database, callback) => {
-
-	database['gnupg'] = database['gnupg'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['gnupg'].length > 0) {
-
-			if (exists(BACKUP + '/Profiles/' + HOST + '/gnupg') === false) {
-				mkdir(BACKUP + '/Profiles/' + HOST + '/gnupg');
-			}
-
-			database['gnupg'].forEach((key) => {
-
-				if (key.type === 'ultimate') {
-
-					let data = exec('gpg --export-secret-key "' + key.hash + '" 2>/dev/null', HOME, 'hex');
-					if (data !== null) {
-						key.data = Buffer.from(data, 'hex');
 					}
 
-				}
+				});
 
-				if (key.data !== null) {
-					console.log('gnupg: archiving ' + key.name + ' ...');
-					write(BACKUP + '/Profiles/' + HOST + '/gnupg/' + key.name + '.asc', key.data);
-				}
-
-			});
-
-			callback(true);
-
-		} else {
-
-			callback(false);
-
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['gnupg'].length > 0) {
-
-			let results = [];
-
-			database['gnupg'].forEach((key) => {
-
-				if (key.file !== null) {
-
-					console.log('gnupg: restoring ' + key.name + ' ...');
-
-					let result = _parse_import(exec('gpg --allow-secret-key-import --import "' + key.file + '" 2>&1'));
-					if (result === true) {
-						results.push(result);
-					} else if (result === false) {
-						results.push(result);
-					}
-
+				if (results.includes(false) === false) {
+					callback(true);
 				} else {
-
-					// TODO: import keys from stdin
-
+					callback(false);
 				}
 
-			});
-
-			if (results.includes(false) === false) {
-				callback(true);
 			} else {
+
 				callback(false);
+
 			}
-
-		} else {
-
-			callback(false);
 
 		}
 
@@ -295,14 +318,5 @@ const _execute = (mode, database, callback) => {
 };
 
 
-
-export default {
-
-	name:    'gnupg',
-
-	collect: _collect,
-	details: _details,
-	execute: _execute
-
-};
+export default PLUGIN;
 

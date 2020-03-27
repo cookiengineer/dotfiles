@@ -1,8 +1,8 @@
 
-import { console } from '../console.mjs';
 import { execSync } from 'child_process';
-import { HOME } from './sh.mjs';
-import { isObject, isString } from '../POLYFILLS.mjs';
+
+import { HOME     } from './sh.mjs';
+import { isObject } from '../POLYFILLS.mjs';
 
 
 
@@ -107,11 +107,13 @@ export const search = (object) => {
 
 
 	let stdout = null;
+
 	try {
 		stdout = execSync('secret-tool search --all ' + params + ' 2>&1', {
 			cwd: HOME
 		}).toString('utf8');
 	} catch (err) {
+		stdout = null;
 	}
 
 	if (stdout !== null) {

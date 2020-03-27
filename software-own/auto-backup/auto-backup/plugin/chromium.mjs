@@ -1,11 +1,12 @@
 
 import { createDecipheriv, pbkdf2Sync } from 'crypto';
 
-import { console } from '../console.mjs';
+import { console                          } from '../console.mjs';
 import { exists, mkdir, read, scan, write } from '../helper/fs.mjs';
-import { search } from '../helper/secret.mjs';
-import { exec, BACKUP, HOME, HOST } from '../helper/sh.mjs';
-import { query } from '../helper/sqlite.mjs';
+import { search                           } from '../helper/secret.mjs';
+import { BACKUP, HOME, HOST               } from '../helper/sh.mjs';
+import { query                            } from '../helper/sqlite.mjs';
+
 
 
 const _get_label = (user, url) => {
@@ -82,54 +83,93 @@ const crack = (buffer, password) => {
 
 
 
-const _collect = (mode, database, callback) => {
+const PLUGIN = {
 
-	database['chromium'] = [];
+	name: 'chromium',
 
+	init: {
 
-	if (mode === 'backup') {
+		collect: (database, callback) => {
 
-		if (
-			exists(HOME + '/.local/share/keyrings')
-			&& exists(HOME + '/.config/chromium')
-			&& exists(HOME + '/.config/chromium/Default')
-		) {
+			if (exists(HOME + '/.config/chromium') === false) {
 
-			let master_key = search({
-				'application': 'chromium'
-			}).filter((entry) => {
-				return entry['schema'] === 'chrome_libsecret_os_crypt_password_v2'
-			})[0] || null;
+				PLUGIN.restore.collect(database, callback);
 
-			if (master_key !== null) {
+			} else {
 
-				let accounts = query('SELECT origin_url as website, username_value as username, hex(password_value) as password FROM logins', HOME + '/.config/chromium/Default/Login Data');
-				if (accounts.length > 0) {
+				callback(false);
 
-					accounts.forEach((account) => {
+			}
 
-						let label   = _get_label(account['username'], account['website']);
-						let service = _get_service(account['website']);
-						let secret  = crack(Buffer.from(account['password'], 'hex'), master_key.secret);
+		},
 
-						if (label !== null && service !== null && secret !== null) {
+		execute: (database, callback) => {
 
-							database['chromium'].push({
-								data: {
-									'label':    label,
-									'secret':   secret,
-									'service':  service,
-									'username': account['username'],
-									'website':  account['website']
-								},
-								name: label
-							});
+			if (database.length > 0) {
 
-						}
+				PLUGIN.restore.execute(database, callback);
 
-					});
+			} else {
 
-					callback(true);
+				callback(false);
+
+			}
+
+		}
+
+	},
+
+	backup: {
+
+		collect: (database, callback) => {
+
+			if (
+				exists(HOME + '/.local/share/keyrings')
+				&& exists(HOME + '/.config/chromium')
+				&& exists(HOME + '/.config/chromium/Default')
+			) {
+
+				let master_key = search({
+					'application': 'chromium'
+				}).filter((entry) => {
+					return entry['schema'] === 'chrome_libsecret_os_crypt_password_v2';
+				})[0] || null;
+
+				if (master_key !== null) {
+
+					let accounts = query('SELECT origin_url as website, username_value as username, hex(password_value) as password FROM logins', HOME + '/.config/chromium/Default/Login Data');
+					if (accounts.length > 0) {
+
+						accounts.forEach((account) => {
+
+							let label   = _get_label(account['username'], account['website']);
+							let service = _get_service(account['website']);
+							let secret  = crack(Buffer.from(account['password'], 'hex'), master_key.secret);
+
+							if (label !== null && service !== null && secret !== null) {
+
+								database.push({
+									data: {
+										'label':    label,
+										'secret':   secret,
+										'service':  service,
+										'username': account['username'],
+										'website':  account['website']
+									},
+									name: label
+								});
+
+							}
+
+						});
+
+						callback(true);
+
+					} else {
+
+						callback(false);
+
+					}
 
 				} else {
 
@@ -143,133 +183,103 @@ const _collect = (mode, database, callback) => {
 
 			}
 
-		} else {
+		},
 
-			callback(false);
+		execute: (database, callback) => {
 
-		}
+			if (database.length > 0) {
 
-	} else if (mode === 'restore') {
+				if (exists(BACKUP + '/Profiles/' + HOST + '/chromium') === false) {
+					mkdir(BACKUP + '/Profiles/' + HOST + '/chromium');
+				}
 
-		let files = scan(BACKUP + '/Profiles/' + HOST + '/chromium', true);
-		if (files.length > 0) {
+				database.forEach((entry) => {
 
-			files.forEach((file) => {
-
-				let data = read(file, 'utf8');
-				if (data !== null) {
-
+					let data = null;
 					try {
-						data = JSON.parse(data);
+						data = Buffer.from(JSON.stringify(entry.data, null, '\t'), 'utf8');
 					} catch (err) {
 						data = null;
 					}
 
-				}
+					if (data !== null) {
+						console.log(PLUGIN.name + ': archiving ' + entry.name + ' ...');
+						write(BACKUP + '/Profiles/' + HOST + '/chromium/' + entry.name + '.json', data);
+					}
 
-				if (data !== null) {
+				});
 
-					let label = file.split('/').pop().split('.').shift();
-					if (label !== null) {
+				callback(true);
 
-						database['chromium'].push({
-							data: data,
-							name: label
-						});
+			} else {
+
+				callback(false);
+
+			}
+
+		}
+
+	},
+
+	restore: {
+
+		collect: (database, callback) => {
+
+			let files = scan(BACKUP + '/Profiles/' + HOST + '/chromium', true);
+			if (files.length > 0) {
+
+				files.forEach((file) => {
+
+					let data = read(file, 'utf8');
+					if (data !== null) {
+
+						try {
+							data = JSON.parse(data);
+						} catch (err) {
+							data = null;
+						}
 
 					}
 
-				}
+					if (data !== null) {
 
-			});
+						let label = file.split('/').pop().split('.').shift();
+						if (label !== null) {
 
-			callback(true);
+							database.push({
+								data: data,
+								name: label
+							});
 
-		} else {
+						}
 
-			callback(false);
+					}
 
-		}
+				});
 
-	}
+				callback(true);
 
-};
+			} else {
 
+				callback(false);
 
-const _details = (mode, database) => {
-
-	database['chromium'] = database['chromium'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['chromium'].length > 0) {
-			database['chromium'].forEach((entry) => {
-				console.log('chromium: ' + entry.name);
-			});
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['chromium'].length > 0) {
-			database['chromium'].forEach((entry) => {
-				console.log('chromium: ' + entry.name);
-			});
-		}
-
-	}
-
-
-};
-
-const _execute = (mode, database, callback) => {
-
-	database['chromium'] = database['chromium'] || [];
-
-
-	if (mode === 'backup') {
-
-		if (database['chromium'].length > 0) {
-
-			if (exists(BACKUP + '/Profiles/' + HOST + '/chromium') === false) {
-				mkdir(BACKUP + '/Profiles/' + HOST + '/chromium');
 			}
 
-			database['chromium'].forEach((entry) => {
+		},
 
-				let data = null;
-				try {
-					data = Buffer.from(JSON.stringify(entry.data, null, '\t'), 'utf8');
-				} catch (err) {
-				}
+		execute: (database, callback) => {
 
-				if (data !== null) {
-					console.log('chromium: archiving ' + entry.name + ' ...');
-					write(BACKUP + '/Profiles/' + HOST + '/chromium/' + entry.name + '.json', data);
-				}
+			if (database.length > 0) {
 
-			});
+				console.error(PLUGIN.name + ': Cannot restore database due to missing feature in libsecret');
 
-			callback(true);
+				callback(false);
 
-		} else {
+			} else {
 
-			callback(false);
+				callback(false);
 
-		}
-
-	} else if (mode === 'restore') {
-
-		if (database['chromium'].length > 0) {
-
-			// XXX: Cannot restore chromium secrets
-			// No way to "fake" chromium master_key
-
-			callback(false);
-
-		} else {
-
-			callback(false);
+			}
 
 		}
 
@@ -278,14 +288,5 @@ const _execute = (mode, database, callback) => {
 };
 
 
-
-export default {
-
-	name:    'chromium',
-
-	collect: _collect,
-	details: _details,
-	execute: _execute
-
-};
+export default PLUGIN;
 

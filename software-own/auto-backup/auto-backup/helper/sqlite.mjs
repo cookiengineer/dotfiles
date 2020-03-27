@@ -1,7 +1,7 @@
 
 import { execSync } from 'child_process';
-import { console } from '../console.mjs';
-import { isObject, isString } from '../POLYFILLS.mjs';
+
+import { isString } from '../POLYFILLS.mjs';
 
 
 
@@ -96,11 +96,13 @@ export const query = (query, path) => {
 		let cwd    = path.split('/').slice(0, -1).join('/');
 		let result = [];
 		let stdout = null;
+
 		try {
 			stdout = execSync('sqlite3 -header -readonly -newline "' + SEPARATOR.row + '" -separator "' + SEPARATOR.column + '" "' + path + '" "' + query + '" 2>/dev/null', {
 				cwd: cwd
 			}).toString('utf8');
 		} catch (err) {
+			stdout = null;
 		}
 
 		if (stdout !== null) {

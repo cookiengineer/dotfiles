@@ -1,25 +1,36 @@
 #!/usr/bin/env node
 
-import console       from './console.mjs';
+import console        from './console.mjs';
+import { isFunction } from './POLYFILLS.mjs';
+import { queue      } from './helper/io.mjs';
+
 import authenticator from './plugin/gnome-authenticator.mjs';
 import chromium      from './plugin/chromium.mjs';
+import gnupg         from './plugin/gnupg.mjs';
 import music         from './plugin/music.mjs';
 import nautilus      from './plugin/gnome-nautilus.mjs';
-import gnupg         from './plugin/gnupg.mjs';
 import openssh       from './plugin/openssh.mjs';
 import software      from './plugin/software.mjs';
 // import stealth       from './plugin/stealth.mjs';
-import { read  }     from './helper/fs.mjs';
-import { HOME  }     from './helper/sh.mjs';
-import { queue }     from './helper/io.mjs';
+import thunderbird   from './plugin/thunderbird.mjs';
 
 
 
-const DATABASE = {};
 const FLAGS    = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--')).map((v) => v.substr(2));
-const HOSTNAME = read('/etc/hostname').trim();
 const ACTION   = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false)[0] || null;
 const PLUGINS  = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false).slice(1);
+
+const DATABASE = {
+	'chromium':            [],
+	'gnome-authenticator': [],
+	'gnome-nautilus':      [],
+	'gnupg':               [],
+	'music':               [],
+	'openssh':             [],
+	'software':            [],
+	'stealth':             [],
+	'thunderbird':         []
+};
 
 const MAP = {
 	'chromium':            chromium,
@@ -29,13 +40,18 @@ const MAP = {
 	'music':               music,
 	'openssh':             openssh,
 	'software':            software,
-	'stealth':             null // stealth
+	'stealth':             null,
+	// 'thunderbird':         thunderbird
 };
 
 if (PLUGINS.length === 0) {
 
 	Object.keys(MAP).forEach((plugin) => {
-		PLUGINS.push(plugin);
+
+		if (MAP[plugin] !== null) {
+			PLUGINS.push(plugin);
+		}
+
 	});
 
 }
@@ -48,7 +64,7 @@ const start = (mode, plugins) => {
 	console.log('auto-backup: collecting ...');
 	console.log('');
 
-	queue(plugins.map((plugin) => plugin.collect), [ mode, DATABASE ], (results) => {
+	queue(plugins.map((plugin) => plugin[mode].collect), plugins.map((plugin) => DATABASE[plugin.name]), (results) => {
 
 		let errors    = [];
 		let collected = [];
@@ -57,8 +73,24 @@ const start = (mode, plugins) => {
 
 			if (result === true) {
 
-				plugins[r].details(mode, DATABASE);
-				collected.push(plugins[r]);
+				let plugin = plugins[r] || null;
+				if (plugin !== null) {
+
+					if (isFunction(plugin[mode].details) === true) {
+
+						plugin[mode].details(DATABASE[plugin.name]);
+
+					} else {
+
+						DATABASE[plugin.name].forEach((entry) => {
+							console.info(plugin.name + ': ' + entry.name);
+						});
+
+					}
+
+					collected.push(plugin);
+
+				}
 
 			} else if (result !== false) {
 				errors.push(r);
@@ -72,7 +104,7 @@ const start = (mode, plugins) => {
 			console.log('auto-backup: executing ...');
 			console.log('');
 
-			queue(collected.map((plugin) => plugin.execute), [ mode, DATABASE ], (results) => {
+			queue(collected.map((plugin) => plugin[mode].execute), collected.map((plugin) => DATABASE[plugin.name]), (results) => {
 
 				results.forEach((result, r) => {
 
@@ -84,13 +116,26 @@ const start = (mode, plugins) => {
 
 				});
 
+				console.info('auto-backup: Done 😎.');
+
+				process.exit(0);
+
 			});
 
+
 		} else if (errors.length > 0) {
+
+			errors.map((e) => plugins[e]).forEach((plugin) => {
+				console.error(plugin.name + ': failure');
+			});
+
+			console.error('auto-backup: Errors occured 😠.');
 
 			process.exit(1);
 
 		} else if (errors.length === 0) {
+
+			console.info('auto-backup: Nothing to do 😴.');
 
 			process.exit(0);
 
@@ -101,7 +146,38 @@ const start = (mode, plugins) => {
 };
 
 
-if (ACTION === 'help' || ACTION === null) {
+if (ACTION === 'init') {
+
+	console.info('auto-backup: init mode');
+	console.warn('auto-backup: Careful! This requires an internet connection ...');
+
+	start('init', Object.keys(MAP).filter((name) => {
+		return PLUGINS.includes(name);
+	}).map((name) => {
+		return MAP[name];
+	}));
+
+} else if (ACTION === 'backup') {
+
+	console.info('auto-backup: backup mode');
+
+	start('backup', Object.keys(MAP).filter((name) => {
+		return PLUGINS.includes(name);
+	}).map((name) => {
+		return MAP[name];
+	}));
+
+} else if (ACTION === 'restore') {
+
+	console.info('auto-backup: restore mode');
+
+	start('restore', Object.keys(MAP).filter((name) => {
+		return PLUGINS.includes(name);
+	}).map((name) => {
+		return MAP[name];
+	}));
+
+} else {
 
 	console.log('');
 	console.info('auto-backup');
@@ -116,8 +192,9 @@ if (ACTION === 'help' || ACTION === null) {
 	console.log('');
 	console.log('Available Actions:');
 	console.log('');
-	console.log('    backup       Backup data to "~/Backup".   ');
-	console.log('    restore      Restore data from "~/Backup".');
+	console.log('    init         Initialize all profiles if not existing.');
+	console.log('    backup       Backup data to "~/Backup".              ');
+	console.log('    restore      Restore data from "~/Backup".           ');
 	console.log('');
 	console.log('Available Plugins:');
 	console.log('');
@@ -130,27 +207,10 @@ if (ACTION === 'help' || ACTION === null) {
 	console.log('    music                  "~/Music" integration          ');
 	console.log('    software               "~/Software" integration       ');
 	console.log('    stealth                "~/Stealth" integration        ');
+	console.log('    thunderbird            Thunderbird integration        ');
 	console.log('');
 
-} else if (ACTION === 'backup') {
-
-	console.info('auto-backup: backup mode');
-
-	start('backup', Object.keys(MAP).filter((name, m) => {
-		return PLUGINS.includes(name);
-	}).map((name) => {
-		return MAP[name];
-	}));
-
-} else if (ACTION === 'restore') {
-
-	console.info('auto-backup: restore mode');
-
-	start('restore', Object.keys(MAP).filter((name, m) => {
-		return PLUGINS.includes(name);
-	}).map((name) => {
-		return MAP[name];
-	}));
+	process.exit(1);
 
 }
 
