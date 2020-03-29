@@ -106,7 +106,7 @@ const PLUGIN = {
 					try {
 						data = Buffer.from(JSON.stringify(entry.data, null, '\t'), 'utf8');
 					} catch (err) {
-						// Do nothing
+						data = null;
 					}
 
 					if (data !== null) {

@@ -5,42 +5,175 @@ import { isBoolean, isBuffer, isNumber, isString } from '../POLYFILLS.mjs';
 
 
 
-export const chmod = (path, chmod) => {
+const copy_file = (source, target) => {
 
-	chmod = isNumber(chmod) ? chmod : 0o777;
+	if (exists(source, 'file')) {
+
+		let folder = target.split('/').slice(0, -1).join('/');
+		if (exists(folder, 'folder') === false) {
+			mkdir(folder);
+		}
 
 
-	let result = false;
+		if (exists(target, 'file') === false) {
 
-	try {
-		fs.chmodSync(path, chmod);
-		result = true;
-	} catch (err) {
-		// Do nothing
+			let result = false;
+
+			try {
+				fs.copyFileSync(source, target);
+				result = true;
+			} catch (err) {
+				result = false;
+			}
+
+			return result;
+
+		}
+
 	}
 
-	return result;
+
+	return false;
 
 };
 
-export const copy = (origin, target) => {
+const copy_folder = (source, target) => {
 
-	origin = isString(origin) ? origin : null;
-	target = isString(target) ? target : null;
+	if (exists(source, 'folder')) {
+
+		if (exists(target, 'folder') === false) {
+
+			mkdir(target);
+
+			let mod = mode(source);
+			if (mod !== null) {
+				mode(target, mod);
+			}
+
+		}
 
 
-	if (origin !== null && target !== null) {
+		let nodes   = scan(source, false);
+		let results = [];
+
+		if (nodes.length > 0) {
+
+			nodes.forEach((node) => {
+
+				let result = false;
+
+				if (exists(source + '/' + node, 'folder')) {
+
+					result = copy_folder(source + '/' + node, target + '/' + node);
+
+				} else if (exists(source + '/' + node, 'file')) {
+
+					result = copy_file(source + '/' + node, target + '/' + node);
+
+				}
+
+				results.push(result);
+
+			});
+
+		}
+
+		if (nodes.length === results.length) {
+
+			if (results.includes(false) === false) {
+				return true;
+			}
+
+		}
+
+	} else if (exists(source, 'file')) {
+
+		return copy_file(source, target);
+
+	}
+
+
+	return false;
+
+};
+
+
+
+export const mode = (path, mod) => {
+
+	mod = isNumber(mod) ? mod : null;
+
+
+	if (mod !== null) {
 
 		let result = false;
 
 		try {
-			fs.copyFileSync(origin, target);
+			fs.chmodSync(path, mod);
 			result = true;
 		} catch (err) {
-			// Do nothing
+			result = false;
 		}
 
 		return result;
+
+	} else {
+
+		let stat = null;
+
+		try {
+			stat = fs.lstatSync(path);
+		} catch (err) {
+			stat = null;
+		}
+
+		if (stat !== null && isNumber(stat.mode) === true) {
+
+			let raw = [ 0, 0, 0 ];
+
+			if (stat.mode & 100) raw[0] += 1;
+			if (stat.mode & 200) raw[0] += 2;
+			if (stat.mode & 400) raw[0] += 4;
+
+			if (stat.mode & 10)  raw[1] += 1;
+			if (stat.mode & 20)  raw[1] += 2;
+			if (stat.mode & 40)  raw[1] += 4;
+
+			if (stat.mode & 1)   raw[2] += 1;
+			if (stat.mode & 2)   raw[2] += 2;
+			if (stat.mode & 4)   raw[2] += 4;
+
+			let num = parseInt(raw.join(''), 8);
+			if (Number.isNaN(num) === false) {
+				return num;
+			}
+
+		}
+
+
+		return null;
+
+	}
+
+};
+
+export const copy = (source, target) => {
+
+	source = isString(source) ? source : null;
+	target = isString(target) ? target : null;
+
+
+	if (source !== null && target !== null) {
+
+		if (exists(source, 'folder')) {
+
+			return copy_folder(source, target);
+
+		} else if (exists(source, 'file')) {
+
+			return copy_file(source, target);
+
+		}
 
 	}
 
@@ -61,7 +194,7 @@ export const exists = (path, type) => {
 		try {
 			stat = fs.lstatSync(path);
 		} catch (err) {
-			// Do nothing
+			stat = null;
 		}
 
 		if (stat !== null) {
@@ -107,7 +240,7 @@ export const mkdir = (path, chmod) => {
 		});
 		result = true;
 	} catch (err) {
-		// Do nothing
+		result = false;
 	}
 
 	return result;
@@ -127,7 +260,7 @@ export const read = (path, enc) => {
 		try {
 			result = fs.readFileSync(path, enc);
 		} catch (err) {
-			// Do nothing
+			result = null;
 		}
 
 		if (result !== null) {
@@ -153,7 +286,7 @@ export const remove = (path) => {
 		try {
 			stat = fs.lstatSync(path);
 		} catch (err) {
-			// Do nothing
+			stat = null;
 		}
 
 		if (stat !== null) {
@@ -166,7 +299,7 @@ export const remove = (path) => {
 					fs.unlinkSync(path);
 					result = true;
 				} catch (err) {
-					// Do nothing
+					result = false;
 				}
 
 				return result;
@@ -181,7 +314,7 @@ export const remove = (path) => {
 					});
 					result = true;
 				} catch (err) {
-					// Do nothing
+					result = false;
 				}
 
 				return result;
@@ -211,7 +344,7 @@ export const scan = (path, prefix) => {
 		try {
 			stat = fs.lstatSync(path);
 		} catch (err) {
-			// Do nothing
+			stat = null;
 		}
 
 		if (stat !== null) {
@@ -223,7 +356,7 @@ export const scan = (path, prefix) => {
 				try {
 					tmp = fs.readdirSync(path);
 				} catch (err) {
-					// Do nothing
+					tmp = [];
 				}
 
 				if (tmp.length > 0) {
@@ -269,7 +402,7 @@ export const write = (path, buffer) => {
 			fs.writeFileSync(path, buffer);
 			result = true;
 		} catch (err) {
-			// Do nothing
+			result = false;
 		}
 
 		return result;
@@ -285,10 +418,10 @@ export const write = (path, buffer) => {
 
 export default {
 
-	chmod:  chmod,
 	copy:   copy,
 	exists: exists,
 	mkdir:  mkdir,
+	mode:   mode,
 	read:   read,
 	remove: remove,
 	scan:   scan,

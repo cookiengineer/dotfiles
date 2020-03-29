@@ -196,6 +196,7 @@ const PLUGIN = {
 				database.forEach((entry) => {
 
 					let data = null;
+
 					try {
 						data = Buffer.from(JSON.stringify(entry.data, null, '\t'), 'utf8');
 					} catch (err) {

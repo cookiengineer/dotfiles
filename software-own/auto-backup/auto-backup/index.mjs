@@ -41,7 +41,7 @@ const MAP = {
 	'openssh':             openssh,
 	'software':            software,
 	'stealth':             null,
-	// 'thunderbird':         thunderbird
+	'thunderbird':         thunderbird
 };
 
 if (PLUGINS.length === 0) {

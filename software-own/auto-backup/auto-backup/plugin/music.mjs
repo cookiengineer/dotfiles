@@ -1,7 +1,7 @@
 
-import { console                   } from '../console.mjs';
-import { copy, exists, mkdir, scan } from '../helper/fs.mjs';
-import { BACKUP, MUSIC             } from '../helper/sh.mjs';
+import { console            } from '../console.mjs';
+import { copy, exists, scan } from '../helper/fs.mjs';
+import { BACKUP, MUSIC      } from '../helper/sh.mjs';
 
 
 
@@ -120,11 +120,6 @@ const PLUGIN = {
 
 					genre.data.forEach((entry) => {
 
-						let folder = entry.backup.split('/').slice(0, -1).join('/');
-						if (exists(folder, 'folder') === false) {
-							mkdir(folder);
-						}
-
 						if (exists(entry.backup) === false) {
 							copy(entry.origin, entry.backup);
 						}
@@ -239,11 +234,6 @@ const PLUGIN = {
 					console.log(PLUGIN.name + ': restoring ' + genre.name + ' ...');
 
 					genre.data.forEach((entry) => {
-
-						let folder = entry.origin.split('/').slice(0, -1).join('/');
-						if (exists(folder, 'folder') === false) {
-							mkdir(folder);
-						}
 
 						if (exists(entry.origin) === false) {
 							copy(entry.backup, entry.origin);

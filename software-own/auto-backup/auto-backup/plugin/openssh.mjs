@@ -1,7 +1,7 @@
 
-import { console                                 } from '../console.mjs';
-import { chmod, exists, mkdir, read, scan, write } from '../helper/fs.mjs';
-import { BACKUP, HOME, HOST                      } from '../helper/sh.mjs';
+import { console                                } from '../console.mjs';
+import { exists, mkdir, read, mode, scan, write } from '../helper/fs.mjs';
+import { BACKUP, HOME, HOST                     } from '../helper/sh.mjs';
 
 
 
@@ -20,7 +20,7 @@ const _parse_key = (file, data) => {
 	let line1 = lines[0];
 	if (line1.includes('BEGIN OPENSSH PRIVATE KEY')) {
 
-		key.user = null; // XXX: set via search for public key
+		key.user = null; // set via search for public key
 		key.type = 'private';
 
 		return key;
@@ -274,8 +274,8 @@ const PLUGIN = {
 					write(HOME + '/.ssh/id_rsa',     private_keys[0].data);
 					write(HOME + '/.ssh/id_rsa.pub', public_keys[0].data);
 
-					chmod(HOME + '/.ssh/id_rsa',     0o600);
-					chmod(HOME + '/.ssh/id_rsa.pub', 0o644);
+					mode(HOME + '/.ssh/id_rsa',     0o600);
+					mode(HOME + '/.ssh/id_rsa.pub', 0o644);
 
 				} else {
 
@@ -289,11 +289,15 @@ const PLUGIN = {
 						}
 
 						if (key.type === 'private') {
+
 							write(HOME + '/.ssh/' + name, key.data);
-							chmod(HOME + '/.ssh/' + name, 0o600);
+							mode(HOME + '/.ssh/' + name, 0o600);
+
 						} else if (key.type === 'public') {
+
 							write(HOME + '/.ssh/' + name + '.pub', key.data);
-							chmod(HOME + '/.ssh/' + name + '.pub', 0o644);
+							mode(HOME + '/.ssh/' + name + '.pub', 0o644);
+
 						}
 
 					});

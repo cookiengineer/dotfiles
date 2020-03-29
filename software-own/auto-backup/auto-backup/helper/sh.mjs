@@ -41,7 +41,7 @@ export const HOST = (() => {
 	try {
 		data = fs.readFileSync('/etc/hostname', 'utf8');
 	} catch (err) {
-		// Do nothing
+		data = null;
 	}
 
 	if (data !== null) {
