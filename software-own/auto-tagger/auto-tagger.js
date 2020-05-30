@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
-const fs          = require('fs');
-const exec        = require('child_process').exec;
-const _ROOT       = '/home/' + process.env.USER + '/Music';
-const _META       = {};
-const _STATISTICS = {};
-const _ID3_TASKS  = [];
-const _SPACE      = ' ' + new Array(128).fill(' ').join(' ');
+const fs       = require('fs');
+const { exec } = require('child_process').exec;
+
+const ROOT       = '/home/' + process.env.USER + '/Music';
+const META       = {};
+const STATISTICS = {};
+const ID3_TASKS  = [];
+const SPACE      = ' ' + new Array(128).fill(' ').join(' ');
 
 
 
@@ -14,7 +15,7 @@ const _SPACE      = ' ' + new Array(128).fill(' ').join(' ');
  * HELPERS
  */
 
-const _distance = function(str_a, str_b) {
+const distance = (str_a, str_b) => {
 
 	let len_a = str_a.length;
 	let len_b = str_b.length;
@@ -73,7 +74,7 @@ const _distance = function(str_a, str_b) {
 
 };
 
-const _filter = function(str) {
+const filter = (str) => {
 
 	let tmp = str.split(' ');
 
@@ -113,7 +114,7 @@ const _filter = function(str) {
 
 };
 
-const _format = function(str, length, invert) {
+const format = (str, length, invert) => {
 
 	invert = invert === true;
 
@@ -121,9 +122,9 @@ const _format = function(str, length, invert) {
 	if (str.length < length) {
 
 		if (invert === true) {
-			return str + _SPACE.substr(0, length - str.length);
+			return str + SPACE.substr(0, length - str.length);
 		} else {
-			return _SPACE.substr(0, length - str.length) + str;
+			return SPACE.substr(0, length - str.length) + str;
 		}
 
 	} else {
@@ -132,7 +133,7 @@ const _format = function(str, length, invert) {
 
 };
 
-const _autotag_file = function(path, data) {
+const autotag_file = function(path, data) {
 
 	let cmd = [ 'id3v2' ];
 
@@ -171,26 +172,38 @@ const _autotag_file = function(path, data) {
 
 };
 
-const _autoparse_data = function(album, file) {
+const autoparse_data = function(album, file) {
 
-	let name = file.substr(0, file.length - 4);
-
-	let artist = name.split(' - ')[0].trim();
-	if (artist.includes('(') === true && artist.includes(')') === false) {
-		artist = file.substr(0, file.indexOf(')') + 1).trim();
+	if (file.endsWith('.mp3')) {
+		file = file.substr(0, file.length - 4);
 	}
 
-	let song = name.substr(artist.length).trim();
-	if (song.startsWith('-')) {
-		song = song.substr(1).trim();
+	let tmp = file.split(' - ').map((v) => v.trim());
+	if (tmp.length === 2) {
+
+		let artist = tmp[0];
+		let song   = tmp[1];
+
+		if (artist.includes('(') === true && artist.includes(')') === false) {
+			artist = file.substr(0, file.indexOf(')') + 1).trim();
+		}
+
+		if (song.includes('-') === false) {
+
+
+			return {
+				album:  album,
+				artist: artist,
+				genre:  album,
+				song:   song
+			};
+
+		}
+
 	}
 
-	return {
-		album:  album,
-		artist: artist,
-		genre:  album,
-		song:   song
-	};
+
+	return null;
 
 };
 
@@ -210,13 +223,13 @@ if (user.trim() === '') {
 
 	let stat = null;
 	try {
-		stat = fs.lstatSync(_ROOT + '/.auto-tagger.json');
+		stat = fs.lstatSync(ROOT + '/.auto-tagger.json');
 	} catch (err) {
 	}
 
 	if (stat !== null && stat.isFile()) {
 
-		let buffer = fs.readFileSync(_ROOT + '/.auto-tagger.json', 'utf8');
+		let buffer = fs.readFileSync(ROOT + '/.auto-tagger.json', 'utf8');
 		if (buffer !== null) {
 
 			let data = JSON.parse(buffer);
@@ -226,16 +239,16 @@ if (user.trim() === '') {
 
 					if (data[genre] instanceof Object) {
 
-						if (_STATISTICS[genre] === undefined) {
-							_STATISTICS[genre] = {
+						if (STATISTICS[genre] === undefined) {
+							STATISTICS[genre] = {
 								'new': 0,
 								'old': 0,
 								'all': 0
 							};
 						}
 
-						if (_META[genre] === undefined) {
-							_META[genre] = {};
+						if (META[genre] === undefined) {
+							META[genre] = {};
 						}
 
 						for (let file in data[genre]) {
@@ -243,7 +256,7 @@ if (user.trim() === '') {
 							let check = true;
 
 							try {
-								fs.lstatSync(_ROOT + '/' + genre + '/' + file);
+								fs.lstatSync(ROOT + '/' + genre + '/' + file);
 							} catch (err) {
 
 								if (err.code === 'ENOENT') {
@@ -254,9 +267,9 @@ if (user.trim() === '') {
 
 
 							if (check === true) {
-								_META[genre][file] = data[genre][file];
+								META[genre][file] = data[genre][file];
 							} else {
-								_STATISTICS[genre]['old']++;
+								STATISTICS[genre]['old']++;
 							}
 
 						}
@@ -272,27 +285,32 @@ if (user.trim() === '') {
 	}
 
 
-	fs.readdir(_ROOT, (err, genres) => {
+	fs.readdir(ROOT, (err, genres) => {
 
 		if (err) return;
 
 		for (let g = 0; g < genres.length; g++) {
 
 			let genre = genres[g];
-			if (fs.statSync(_ROOT + '/' + genre).isDirectory()) {
 
-				if (_META[genre] === undefined) {
-					_META[genre] = {};
+			if (
+				genre.startsWith('.') === false
+				&& genre.startsWith('__') === false
+				&& fs.statSync(ROOT + '/' + genre).isDirectory()
+			) {
+
+				if (META[genre] === undefined) {
+					META[genre] = {};
 				}
 
 
-				fs.readdir(_ROOT + '/' + genre, (err, files) => {
+				fs.readdir(ROOT + '/' + genre, (err, files) => {
 
 					if (err) return;
 
-					let statistics = _STATISTICS[genre] || null;
+					let statistics = STATISTICS[genre] || null;
 					if (statistics === null) {
-						statistics = _STATISTICS[genre] = {
+						statistics = STATISTICS[genre] = {
 							'new': 0,
 							'old': 0,
 							'all': 0
@@ -304,17 +322,26 @@ if (user.trim() === '') {
 					for (let f = 0, fl = files.length; f < fl; f++) {
 
 						let file = files[f];
-						if (file.endsWith('.mp3') && fs.statSync(_ROOT + '/' + genre + '/' + file).isFile()) {
+						if (file.endsWith('.mp3') && fs.statSync(ROOT + '/' + genre + '/' + file).isFile()) {
 
-							if (_META[genre][file] === undefined) {
+							if (META[genre][file] === undefined) {
 
-								_ID3_TASKS.push({
-									path: _ROOT + '/' + genre + '/' + file,
-									data: _autoparse_data(genre, file)
-								});
+								let data = autoparse_data(genre, file);
+								if (data !== null) {
 
-								_META[genre][file] = Date.now();
-								statistics['new']++;
+									ID3_TASKS.push({
+										path: ROOT + '/' + genre + '/' + file,
+										data: data
+									});
+
+									META[genre][file] = Date.now();
+									statistics['new']++;
+
+								} else {
+
+									console.log('WARNING: Cannot parse "' + file + '"');
+
+								}
 
 							}
 
@@ -324,6 +351,10 @@ if (user.trim() === '') {
 
 				});
 
+			} else {
+
+				console.log('WARNING: Ignoring "' + genre + '"');
+
 			}
 
 		}
@@ -331,15 +362,15 @@ if (user.trim() === '') {
 	});
 
 
-	setTimeout(function() {
+	setTimeout(() => {
 
-		if (Object.keys(_META).length > 0) {
+		if (Object.keys(META).length > 0) {
 
 			try {
 
-				let blob = JSON.stringify(_META, null, '\t');
+				let blob = JSON.stringify(META, null, '\t');
 				if (blob !== null) {
-					fs.writeFileSync(_ROOT + '/.auto-tagger.json', blob, 'utf8');
+					fs.writeFileSync(ROOT + '/.auto-tagger.json', blob, 'utf8');
 				}
 
 			} catch (err) {
@@ -348,9 +379,9 @@ if (user.trim() === '') {
 		}
 
 
-		let genres = Object.keys(_STATISTICS).sort();
+		let genres = Object.keys(STATISTICS).sort();
 		let max    = Math.max.apply(0, genres.map(str => str.length));
-		let header = _SPACE.substr(0, 8) + _format('ALBUM', max, false) + ' | NEW | OLD | ALL';
+		let header = SPACE.substr(0, 8) + format('ALBUM', max, false) + ' | NEW | OLD | ALL';
 		let div    = '+' + new Array(header.length + 2).fill('-').join('') + '+';
 
 		console.log(div);
@@ -360,11 +391,11 @@ if (user.trim() === '') {
 		for (let g = 0, gl = genres.length; g < gl; g++) {
 
 			let genre = genres[g];
-			let stat  = _STATISTICS[genre];
-			let album = _format(genre, max, true);
-			let s_new = _format('' + stat['new'], 3, false);
-			let s_old = _format('' + stat['old'], 3, false);
-			let s_all = _format('' + stat['all'], 3, false);
+			let stat  = STATISTICS[genre];
+			let album = format(genre, max, true);
+			let s_new = format('' + stat['new'], 3, false);
+			let s_old = format('' + stat['old'], 3, false);
+			let s_all = format('' + stat['all'], 3, false);
 
 			console.log('| ~/Music/' + album + ' | ' + s_new + ' | ' + s_old + ' | ' + s_all + ' |');
 
@@ -375,9 +406,9 @@ if (user.trim() === '') {
 
 		let references = [];
 
-		for (let genre in _META) {
+		for (let genre in META) {
 
-			let files = Object.keys(_META[genre]);
+			let files = Object.keys(META[genre]);
 
 			for (let f = 0, fl = files.length; f < fl; f++) {
 
@@ -386,7 +417,7 @@ if (user.trim() === '') {
 				references.push({
 					genre:    genre,
 					file:     file,
-					sentence: _filter(file)
+					sentence: filter(file)
 				});
 
 			}
@@ -411,8 +442,8 @@ if (user.trim() === '') {
 				let sentence2 = reference2.sentence;
 				let maxlength = Math.max(sentence1.length, sentence2.length);
 
-				let distance = _distance(sentence1, sentence2);
-				if (distance < 0.1 * maxlength) {
+				let dist = distance(sentence1, sentence2);
+				if (dist < 0.1 * maxlength) {
 
 					let check = null;
 
@@ -436,7 +467,7 @@ if (user.trim() === '') {
 						similarities.push([
 							reference1,
 							reference2,
-							(1 - distance / maxlength) * 100
+							(1 - dist / maxlength) * 100
 						]);
 
 						sl++;
@@ -474,26 +505,26 @@ if (user.trim() === '') {
 
 			console.log('|');
 
-			if (_ID3_TASKS.length === 0) {
+			if (ID3_TASKS.length === 0) {
 				console.log(div);
 			}
 
 		}
 
 
-		if (_ID3_TASKS.length > 0) {
+		if (ID3_TASKS.length > 0) {
 
 			console.log(div);
 			console.log('|        Auto-Tagging Songs via id3v2 ...        |');
 			console.log(div);
 			console.log('|');
 
-			for (let t = 0, tl = _ID3_TASKS.length; t < tl; t++) {
+			for (let t = 0, tl = ID3_TASKS.length; t < tl; t++) {
 
-				let task = _ID3_TASKS[t];
+				let task = ID3_TASKS[t];
 
-				console.log('|> ~/Music' + task.path.substr(_ROOT.length));
-				_autotag_file(task.path, task.data);
+				console.log('|> ~/Music' + task.path.substr(ROOT.length));
+				autotag_file(task.path, task.data);
 
 			}
 
