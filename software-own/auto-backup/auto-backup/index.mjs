@@ -7,6 +7,7 @@ import { queue      } from './helper/io.mjs';
 import authenticator from './plugin/gnome-authenticator.mjs';
 import chromium      from './plugin/chromium.mjs';
 import gnupg         from './plugin/gnupg.mjs';
+import keepass       from './plugin/keepass.mjs';
 import music         from './plugin/music.mjs';
 import nautilus      from './plugin/gnome-nautilus.mjs';
 import openssh       from './plugin/openssh.mjs';
@@ -16,15 +17,15 @@ import thunderbird   from './plugin/thunderbird.mjs';
 
 
 
-const FLAGS    = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--')).map((v) => v.substr(2));
-const ACTION   = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false)[0] || null;
-const PLUGINS  = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false).slice(1);
+const ACTION  = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false)[0] || null;
+const PLUGINS = Array.from(process.argv).slice(2).filter((v) => v.startsWith('--') === false).slice(1);
 
 const DATABASE = {
 	'chromium':            [],
 	'gnome-authenticator': [],
 	'gnome-nautilus':      [],
 	'gnupg':               [],
+	'keepass':             [],
 	'music':               [],
 	'openssh':             [],
 	'software':            [],
@@ -37,6 +38,7 @@ const MAP = {
 	'gnome-authenticator': authenticator,
 	'gnome-nautilus':      nautilus,
 	'gnupg':               gnupg,
+	'keepass':             keepass,
 	'music':               music,
 	'openssh':             openssh,
 	'software':            software,
@@ -198,16 +200,17 @@ if (ACTION === 'init') {
 	console.log('');
 	console.log('Available Plugins:');
 	console.log('');
-	console.log('    chromium               Chromium passwords integration ');
-	console.log('    gnome-authenticator    GNOME Authenticator integration');
-	console.log('    gnome-nautilus         GNOME Nautilus integration     ');
-	console.log('    gnupg                  GnuPG secret keys integration  ');
-	console.log('    openssh                OpenSSH secret keys integration');
+	console.log('    chromium               Chromium passwords integration   ');
+	console.log('    gnome-authenticator    GNOME Authenticator integration  ');
+	console.log('    gnome-nautilus         GNOME Nautilus integration       ');
+	console.log('    gnupg                  GnuPG secret keys integration    ');
+	console.log('    keepass                KeePass(XC) databases integration');
+	console.log('    openssh                OpenSSH secret keys integration  ');
 	console.log('');
-	console.log('    music                  "~/Music" integration          ');
-	console.log('    software               "~/Software" integration       ');
-	console.log('    stealth                "~/Stealth" integration        ');
-	console.log('    thunderbird            Thunderbird integration        ');
+	console.log('    music                  "~/Music" integration            ');
+	console.log('    software               "~/Software" integration         ');
+	console.log('    stealth                "~/Stealth" integration          ');
+	console.log('    thunderbird            Thunderbird integration          ');
 	console.log('');
 
 	process.exit(1);

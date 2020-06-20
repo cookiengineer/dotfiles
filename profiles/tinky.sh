@@ -22,6 +22,7 @@ _install software openssh;
 _install software nodejs;
 _install software tor;
 _install software vim;
+_install software keepassxc;
 
 _install_packages bluez bluez-firmware bluez-libs bluez-utils;
 _install_packages gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock;
@@ -32,8 +33,6 @@ _install_packages dnsutils macchanger net-tools nmap;
 # _install_packages openra;
 _install_packages synergy;
 _install_packages telegram-desktop;
-_install_packages veracrypt;
-
 
 
 #
@@ -52,13 +51,11 @@ _install_packages_aur gnome-shell-extension-outta-space-git;
 # _install_packages_aur openscad;
 
 # _install software-own apt-pac;
-# _install software-own auto-cleanup;
 _install software-own auto-sleep;
 _install software-own auto-tagger;
 _install software-own chromium-extensions;
 _install software-own pacman-backup;
 # _install software-own pacman-server;
-
 
 
 #
@@ -69,7 +66,6 @@ _install projects cookiengineer;
 _install projects Artificial-Engineering;
 _install projects Artificial-University;
 _install projects polyfillr;
-
 
 
 #

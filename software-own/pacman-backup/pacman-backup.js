@@ -646,14 +646,16 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 
 		let upgrades = packages.filter(pkg => pkg._success === true).map(pkg => pkg.file);
 		if (upgrades.length > 0) {
-			console.log('\n:: Execute this to install upgrades from local package cache:');
-			console.log('\ncd "' + pkgs_folder + '"; sudo pacman -U ' + upgrades.join(' ') + ';');
+			console.log('');
+			console.log(':: Use this to install upgrades from cache:');
+			console.log('   cd "' + pkgs_folder + '"; sudo pacman -U ' + upgrades.join(' ') + ';');
 		}
 
 		let downloads = packages.filter(pkg => pkg._success === false).map(pkg => pkg.name);
 		if (downloads.length > 0) {
-			console.log('\n:: Execute this to download upgrades into local package cache:');
-			console.log('\ncd "' + pkgs_folder + '"; sudo pacman -Sw --cachedir "' + pkgs_folder + '" ' + downloads.join(' ') + ';');
+			console.log('');
+			console.log(':: Use this to download upgrades into cache:');
+			console.log('   cd "' + pkgs_folder + '"; sudo pacman -Sw --cachedir "' + pkgs_folder + '" ' + downloads.join(' ') + ';');
 		}
 
 	};
@@ -751,7 +753,8 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 				let downloads = packages.filter(pkg => cache.includes(pkg.file) === false);
 				if (downloads.length > 0) {
 
-					console.log('\n:: Copy/Paste this into a Download Manager of your choice:');
+					console.log('');
+					console.log(':: Copy/Paste this into a Download Manager of your choice:');
 					console.log('');
 
 					downloads.forEach(pkg => {
@@ -849,11 +852,19 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 	server.on('error', err => {
 
 		if (err.code === 'EADDRINUSE') {
-			console.log('\n:: pacman-backup is already serving on port 15678');
+
+			console.log('');
+			console.log(':! pacman-backup is already serving on port 15678');
+
 			process.exit(1);
+
 		} else {
-			console.log('\n:: ' + err.message);
+
+			console.log('');
+			console.log(':! ' + err.message);
+
 			process.exit(1);
+
 		}
 
 	});
@@ -871,21 +882,23 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 
 		if (hostname !== '') {
 
-			console.log('\n:: Execute this on another machine to download from local package cache:');
-			console.log('\npacman-backup download ' + hostname + ';');
+			console.log('');
+			console.log(':: Use this to download from this machine:');
+			console.log('   pacman-backup download ' + hostname + ';');
+
+			console.log('');
+			console.log(':: Use this to override mirrorlist:');
+			console.log('   sudo echo "Server = http://' + hostname + ':15678" > /etc/pacman.d/mirrorlist;');
 
 		} else if (interfaces.length > 0) {
 
-			console.log('\n:: Execute this on another machine to download from local package cache:');
+			console.log('');
+			console.log(':: Use this to download from this machine:');
 			console.log('');
 
-			if (interfaces.length > 0) {
-
-				interfaces.forEach(iface => {
-					console.log('pacman-backup download "' + iface.address + '";');
-				});
-
-			}
+			interfaces.forEach(iface => {
+				console.log('pacman-backup download "' + iface.address + '";');
+			});
 
 		}
 
@@ -909,14 +922,16 @@ if (_ACTION === 'archive' && _FOLDER !== null) {
 
 				let upgrades = packages.filter(pkg => cache.includes(pkg.file) === true);
 				if (upgrades.length > 0) {
-					console.log('\n:: Execute this to install upgrades from local package cache:');
-					console.log('\ncd "' + pkgs_folder + '"; sudo pacman -U ' + upgrades.map(pkg => pkg.file).join(' ') + ';');
+					console.log('');
+					console.log(':: Use this to install upgrades from cache:');
+					console.log('   cd "' + pkgs_folder + '"; sudo pacman -U ' + upgrades.map(pkg => pkg.file).join(' ') + ';');
 				}
 
 				let downloads = packages.filter(pkg => cache.includes(pkg.file) === false);
 				if (downloads.length > 0) {
-					console.log('\n:: Execute this to download upgrades into local package cache:');
-					console.log('\ncd "' + pkgs_folder + '"; sudo pacman -Sw --cachedir "' + pkgs_folder + '" ' + downloads.map(pkg => pkg.name).join(' ') + ';');
+					console.log('');
+					console.log(':: Use this to download upgrades into cache:');
+					console.log('   cd "' + pkgs_folder + '"; sudo pacman -Sw --cachedir "' + pkgs_folder + '" ' + downloads.map(pkg => pkg.name).join(' ') + ';');
 				}
 
 			});
