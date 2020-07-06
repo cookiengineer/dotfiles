@@ -263,6 +263,26 @@ unpack() {
 
 
 #
+# Fix Volume (of Headphones)
+#
+
+fix-volume() {
+
+	cowin_e7="FC_58_FA_78_33_42";
+	cowin_e8="FC_58_FA_39_7E_BB";
+	jbl_flip="B8_F6_53_F5_29_44";
+
+	for i in $(seq 0 100); do
+		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${cowin_e7}" "org.bluez.MediaControl1.VolumeUp";
+		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${cowin_e8}" "org.bluez.MediaControl1.VolumeUp";
+		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${jbl_flip}" "org.bluez.MediaControl1.VolumeUp";
+	done;
+
+}
+
+
+
+#
 # Git Server
 # Usage: cd /path/to/repo && git-serve;
 #
@@ -323,8 +343,8 @@ crx-dl() {
 	crx=$(basename $url);
 	file=$(basename "$(dirname $url)");
 
-	ver="74.0";
-	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=$ver&x=id%3D$crx%26installsource%3Dondemand%26uc";
+	ver="83.0";
+	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=$ver&acceptformat=crx2,crx3&x=id%3D$crx%26uc";
 
 	wget -O "$file.crx" "$crx_url";
 
