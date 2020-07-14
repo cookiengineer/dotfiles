@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const fs       = require('fs');
-const { exec } = require('child_process').exec;
+const fs   = require('fs');
+const exec = require('child_process').exec;
+
 
 const ROOT       = '/home/' + process.env.USER + '/Music';
 const META       = {};
