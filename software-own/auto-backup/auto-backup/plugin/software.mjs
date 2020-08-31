@@ -15,8 +15,8 @@ const GIT_ORGAS = [
 	'Artificial-Engineering',
 	'Artificial-University',
 	'cookiengineer',
-	'heyamz',
-	'polyfillr'
+	'polyfillr',
+	'tholian-network'
 ];
 
 const GIT_PEERS = [{
