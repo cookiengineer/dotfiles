@@ -14,6 +14,7 @@ fi;
 
 _install software bash base-devel;
 _install software gnome-shell;
+_install software xf86-input-synaptics;
 _install software gdm;
 _install software networkmanager;
 _install software modemmanager;
