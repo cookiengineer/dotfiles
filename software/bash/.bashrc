@@ -175,11 +175,11 @@ __my_ps1() {
 	fi;
 
 	if [[ "$host" == "nuccy" ]]; then
-		host="📦 ";
+		host="🖥️";
 	elif [[ "$host" == "tinky" ]]; then
 		host="💻";
 	elif [[ "$host" == "weep" ]]; then
-		host="🖥️ ";
+		host="🖥️";
 	elif [[ "$host" == "wiip" ]]; then
 		host="🍓";
 	fi;
@@ -214,7 +214,7 @@ __my_ps1() {
 		path="${path/"/opt/lycheejs"/🌱}";
 	fi;
 
-	local ps1_status="$code \e[01;49;39m$user@$host:$path\e[0m";
+	local ps1_status="$code\e[01;49;39m$user@$host:$path\e[0m";
 
 	if [[ "$git_status" != "" ]]; then
 		echo -e "\n${ps1_status} ${git_status}\n💻 ";

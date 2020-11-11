@@ -22,8 +22,9 @@ _install software git;
 _install software openssh;
 _install software nodejs;
 _install software tor;
+_install software kitty;
 _install software vim;
-_install software keepassxc;
+# _install software keepassxc;
 
 # _install_packages bluez bluez-firmware bluez-libs bluez-utils;
 _install_packages gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock;
@@ -41,7 +42,6 @@ _install_packages synergy;
 #
 
 _install software-aur trizen;
-# _install software-aur kitty;
 # _install software-aur ungoogled-chromium-bin;
 # _install software-aur wireless-regdb-pentest;
 

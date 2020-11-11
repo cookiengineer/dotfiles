@@ -4,39 +4,21 @@ general {
         interval = 10
 }
 
-order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 0"
 order += "cpu_temperature 0"
 order += "volume master"
 order += "memory"
 order += "tztime local"
 order += "tztime berlin"
 
-wireless _first_ {
-	format_up = "📡%quality at %essid, %bitrate"
-	format_down = "📡 down"
-}
-
 ethernet _first_ {
-	format_up = "🖥️ %speed"
-	format_down = "🖥️ down"
-}
-
-battery 0 {
-	format = "%status %percentage %remaining %emptytime"
-	format_down = "No battery"
-	status_chr = "⚡"
-	status_bat = "🔋"
-	status_unk = "❓"
-	status_full = "☢️"
-	path = "/sys/class/power_supply/BAT%d/uevent"
-	low_threshold = 10
+	format_up = "💻 %speed"
+	format_down = "💻 down"
 }
 
 cpu_temperature 0 {
 	format = "🌡️ %degrees°C"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
 }
 
 volume master {

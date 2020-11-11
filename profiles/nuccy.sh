@@ -21,6 +21,7 @@ _install software git;
 _install software openssh;
 _install software nodejs;
 _install software tor;
+_install software kitty;
 _install software vim;
 # _install software keepassxc;
 
@@ -41,7 +42,6 @@ _install_packages synergy;
 
 _install software-aur trizen;
 _install software-aur ly;
-# _install software-aur kitty;
 # _install software-aur ungoogled-chromium-bin;
 _install software-aur wireless-regdb-pentest;
 
@@ -79,7 +79,13 @@ if [[ ! -f "$home_connection" ]]; then
 fi;
 
 if [[ ! -f "/etc/synergy.conf" ]]; then
-	sudo cp $PROFILE_ROOT/etc/synergy.conf /etc/synergy.conf;
+	sudo cp "$PROFILE_ROOT/etc/synergy.conf" /etc/synergy.conf;
+fi;
+
+i3status_conf="/home/cookiengineer/.config/i3status/config";
+if [[ ! -f "$i3status_conf" ]]; then
+	mkdir -p $(dirname $i3status_conf);
+	cp "$PROFILE_ROOT$i3status_conf" $i3status_conf;
 fi;
 
 synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
