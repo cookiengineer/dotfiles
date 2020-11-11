@@ -7,10 +7,11 @@ Well, here we go again. I'm tired of unautomated shit, so this
 is my repository where all the system profiles and their
 configuration procedures are stored in.
 
-I'm kind of an Arch Linux, Manjaro and GNOME fanboy, so you
-gotta deal with it. All profiles here have the shared idea
-of incrementally configuring stuff, so the setup procedures
-can be used in partial, too.
+I'm kind of an Arch Linux, sometimes i3 and sometimes a GNOME
+fanboy, so you gotta deal with it.
+
+All profiles here have the shared idea of incrementally configuring
+stuff, so the setup procedures can be used in partial, too.
 
 If you have made changes and want to go back to OEM state,
 just run `bash profiles/<hostname>.sh` again. That's the idea.
@@ -26,7 +27,7 @@ desktop machines are airgapped and LUKS-encrypted on purpose.
 
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
-- Manjaro Linux and GNOME
+- Arch Linux and GNOME
 - Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
@@ -39,7 +40,7 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
 Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
-- Manjaro Linux and GNOME
+- Arch Linux and i3
 - Synergy Client (right of `weep`, right of `nuccy`)
 - Monitor 1 (Internal 1440x900)
 - Intel HD4000 and GT730M
@@ -50,7 +51,7 @@ Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
-- Manjaro Linux and GNOME
+- Arch Linux and GNOME
 - Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)

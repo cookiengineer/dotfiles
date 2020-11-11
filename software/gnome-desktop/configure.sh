@@ -32,15 +32,15 @@ if [ "$GSETTINGS_BIN" != "" ]; then
 fi;
 
 
-if [ "$SUDO_USER" != "" ]; then
+if [[ "$SUDO_USER" != "" ]]; then
 	GTK_RC="/home/$SUDO_USER/.config/gtk-3.0/settings.ini";
 	BG_DIR="/home/$SUDO_USER/Pictures/Wallpapers";
-elif [ "$USER" != "" ]; then
+elif [[ "$USER" != "" ]]; then
 	BG_DIR="/home/$USER/Pictures/Wallpapers";
 	GTK_RC="/home/$USER/.config/gtk-3.0/settings.ini";
 fi;
 
-if [ "$GTK_RC" != "" ] && [ ! -f $GTK_RC ]; then
+if [[ "$GTK_RC" != "" ]] && [[ ! -f $GTK_RC ]]; then
 
 	mkdir -p $(dirname $GTK_RC);
 

@@ -13,7 +13,7 @@ fi;
 #
 
 _install software bash base-devel;
-_install software gnome-shell;
+_install software gnome-desktop;
 _install software gdm;
 _install software networkmanager;
 # _install software modemmanager;
@@ -62,9 +62,8 @@ _install software-own pacman-backup;
 #
 
 _install projects cookiengineer;
-_install projects Artificial-Engineering;
-_install projects Artificial-University;
 _install projects polyfillr;
+_install projects tholian-network;
 
 
 #

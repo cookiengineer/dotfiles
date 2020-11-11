@@ -13,9 +13,9 @@ fi;
 #
 
 _install software bash base-devel;
-_install software gnome-shell;
+_install software i3-desktop;
 _install software xf86-input-synaptics;
-_install software gdm;
+
 _install software networkmanager;
 _install software modemmanager;
 _install software git;
@@ -26,9 +26,8 @@ _install software vim;
 _install software keepassxc;
 
 _install_packages bluez bluez-firmware bluez-libs bluez-utils;
-_install_packages gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock;
 _install_packages noto-fonts noto-fonts-compat noto-fonts-emoji;
-_install_packages firefox gimp gparted transmission-gtk uget;
+_install_packages gimp gparted transmission-gtk uget;
 _install_packages ffmpeg celluloid;
 _install_packages dnsutils macchanger net-tools nmap;
 # _install_packages openra;
@@ -41,13 +40,12 @@ _install_packages telegram-desktop;
 #
 
 _install software-aur trizen;
-# _install software-aur kitty;
+_install software-aur ly;
+_install software-aur kitty;
 _install software-aur ungoogled-chromium-bin;
 _install software-aur wireless-regdb-pentest;
 
 _install_packages_aur tldr youtube-dl;
-_install_packages_aur firefox-extension-google-search-link-fix firefox-extension-https-everywhere firefox-extension-ublock-origin firefox-extension-umatrix;
-_install_packages_aur gnome-shell-extension-outta-space-git;
 # _install_packages_aur mobac;
 # _install_packages_aur openscad;
 
@@ -64,9 +62,8 @@ _install software-own pacman-backup;
 #
 
 _install projects cookiengineer;
-_install projects Artificial-Engineering;
-_install projects Artificial-University;
 _install projects polyfillr;
+_install projects tholian-network;
 
 
 #
