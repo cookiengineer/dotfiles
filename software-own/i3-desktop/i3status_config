@@ -4,8 +4,8 @@ general {
         interval = 10
 }
 
-order += "wireless wlp3s0"
-order += "ethernet eth0"
+order += "wireless _first_"
+order += "ethernet _first_"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "volume master"
@@ -13,12 +13,12 @@ order += "memory"
 order += "tztime local"
 order += "tztime berlin"
 
-wireless wlp3s0 {
+wireless _first_ {
 	format_up = "📡%quality at %essid, %bitrate"
 	format_down = "📡 down"
 }
 
-ethernet eth0 {
+ethernet _first_ {
 	format_up = "🖥️ %speed"
 	format_down = "🖥️ down"
 }

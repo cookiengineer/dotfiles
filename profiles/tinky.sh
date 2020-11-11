@@ -13,7 +13,7 @@ fi;
 #
 
 _install software bash base-devel;
-_install software i3-desktop;
+_install software-own i3-desktop;
 _install software xf86-input-synaptics;
 
 _install software networkmanager;
@@ -73,23 +73,23 @@ _install projects tholian-network;
 sudo chmod +r /etc/NetworkManager/system-connections;
 
 home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
-if [ ! -f $home_connection ]; then
+if [[ ! -f "$home_connection" ]]; then
 	sudo cp "$PROFILE_ROOT$home_connection" $home_connection;
 fi;
 
-if [ ! -f /usr/bin/share-internet ]; then
+if [[ ! -f "/usr/bin/share-internet" ]]; then
 	sudo cp $PROFILE_ROOT/usr/bin/share-internet.sh /usr/bin/share-internet;
 	sudo chmod +x /usr/bin/share-internet;
 fi;
 
 synergyc_service="/home/cookiengineer/.config/systemd/user/synergyc.service";
-if [ ! -f $synergyc_service ]; then
+if [[ ! -f "$synergyc_service" ]]; then
 	mkdir -p $(dirname $synergyc_service);
 	cp "$PROFILE_ROOT$synergyc_service" $synergyc_service;
 	systemctl --user enable synergyc;
 fi;
 
-if [ ! -f /etc/modprobe.d/psmouse_synaptics.conf ]; then
+if [[ ! -f "/etc/modprobe.d/psmouse_synaptics.conf" ]]; then
 	sudo echo "options psmouse synaptics_intertouch=0" > /etc/modprobe.d/psmouse_synaptics.conf;
 fi;
 

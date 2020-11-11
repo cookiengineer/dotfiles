@@ -13,8 +13,9 @@ fi;
 #
 
 _install software bash base-devel;
-_install software gnome-desktop;
+_install software-own gnome-desktop;
 _install software gdm;
+
 _install software networkmanager;
 # _install software modemmanager;
 _install software git;
@@ -73,16 +74,16 @@ _install projects tholian-network;
 sudo chmod +r /etc/NetworkManager/system-connections;
 
 home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
-if [ ! -f $home_connection ]; then
+if [[ ! -f "$home_connection" ]]; then
 	sudo cp "$PROFILE_ROOT$home_connection" $home_connection;
 fi;
 
-if [ ! -f /etc/synergy.conf ]; then
-	sudo cp $PROFILE_ROOT/etc/synergy.conf /etc/synergy.conf;
+if [[ ! -f "/etc/synergy.conf" ]]; then
+	sudo cp "$PROFILE_ROOT/etc/synergy.conf" /etc/synergy.conf;
 fi;
 
 synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
-if [ ! -f $synergys_service ]; then
+if [[ ! -f "$synergys_service" ]]; then
 	mkdir -p $(dirname $synergys_service);
 	cp "$PROFILE_ROOT$synergys_service" $synergys_service;
 	systemctl --user enable synergys;

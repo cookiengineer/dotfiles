@@ -13,7 +13,7 @@ fi;
 #
 
 _install software bash base-devel;
-_install software gnome-desktop;
+_install software-own i3-desktop;
 
 _install software networkmanager;
 # _install software modemmanager;
@@ -74,18 +74,23 @@ _install projects tholian-network;
 sudo chmod +r /etc/NetworkManager/system-connections;
 
 home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
-if [ ! -f $home_connection ]; then
+if [[ ! -f "$home_connection" ]]; then
 	sudo cp "$PROFILE_ROOT$home_connection" $home_connection;
 fi;
 
-if [ ! -f /etc/synergy.conf ]; then
+if [[ ! -f "/etc/synergy.conf" ]]; then
 	sudo cp $PROFILE_ROOT/etc/synergy.conf /etc/synergy.conf;
 fi;
 
 synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
-if [ ! -f $synergys_service ]; then
+if [[ ! -f "$synergys_service" ]]; then
 	mkdir -p $(dirname $synergys_service);
 	cp "$PROFILE_ROOT$synergys_service" $synergys_service;
 	systemctl --user enable synergys;
+fi;
+
+monitor_conf="/etc/X11/xorg.conf.d/10-monitor.conf";
+if [[ ! -f "$monitor_conf" ]]; then
+	sudo cp "$PROFILE_ROOT$monitor_conf" $monitor_conf;
 fi;
 
