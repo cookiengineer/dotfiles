@@ -1,14 +1,16 @@
 general {
-        output_format = "i3bar"
-        colors = true
-        interval = 10
+	output_format = "i3bar"
+	colors = true
+	interval = 10
 }
 
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
 order += "cpu_temperature 0"
-order += "volume master"
+order += "volume microphone"
+order += "volume speakers"
+order += "volume bluetooth"
 order += "memory"
 order += "tztime local"
 order += "tztime berlin"
@@ -39,24 +41,36 @@ cpu_temperature 0 {
 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
 }
 
-volume master {
-	format = "🔊 %volume"
-	format_muted = "🔇"
-	device = "pulse:0"
+volume bluetooth {
+	format = "🎧🔊 %volume"
+	format_muted = "🎧🔊🔇"
+	device = "pulse:bluez_sink.FC_58_FA_78_33_42.a2dp_sink"
+}
+
+volume microphone {
+	format = "💻🎤 %volume"
+	format_muted = "💻🎤🔇"
+	device = "pulse:alsa_input.pci-0000_00_1b.0.analog-stereo"
+}
+
+volume speakers {
+	format = "💻🔊 %volume"
+	format_muted = "💻🔊🔇"
+	device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo"
 }
 
 memory {
-	format = "%used"
+	format = "♻️ %used"
 	threshold_degraded = "10%"
 	format_degraded = "MEMORY: %free"
 }
 
 tztime local {
-	format = "%Y-%m-%d %H:%M:%S"
+	format = "📅 %Y-%m-%d %H:%M:%S"
 }
 
 tztime berlin {
-	format = "%Y-%m-%d %H:%M:%S %Z"
+	format = "📅 %Y-%m-%d %H:%M:%S %Z"
 	timezone = "Europe/Berlin"
 	hide_if_equals_localtime = true
 }
