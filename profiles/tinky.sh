@@ -89,7 +89,3 @@ if [[ ! -f "$synergyc_service" ]]; then
 	systemctl --user enable synergyc;
 fi;
 
-if [[ ! -f "/etc/modprobe.d/psmouse_synaptics.conf" ]]; then
-	sudo echo "options psmouse synaptics_intertouch=0" > /etc/modprobe.d/psmouse_synaptics.conf;
-fi;
-

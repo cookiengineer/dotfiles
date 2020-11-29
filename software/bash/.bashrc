@@ -343,8 +343,8 @@ crx-dl() {
 	crx=$(basename $url);
 	file=$(basename "$(dirname $url)");
 
-	ver="83.0";
-	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=$ver&acceptformat=crx2,crx3&x=id%3D$crx%26uc";
+	ver="84.0";
+	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=$ver&x=id%3D$crx%26uc";
 
 	wget -O "$file.crx" "$crx_url";
 

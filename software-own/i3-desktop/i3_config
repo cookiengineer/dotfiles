@@ -115,10 +115,10 @@ mode "resize" {
 	# Pressing up will shrink the window’s height.
 	# Pressing down will grow the window’s height.
 
-	bindsym Left resize shrink width 16 px
-	bindsym Down resize grow height 16 px
-	bindsym Up resize shrink height 16 px
-	bindsym Right resize grow width 16 px
+	bindsym Left resize shrink width 64 px
+	bindsym Down resize grow height 64 px
+	bindsym Up resize shrink height 64 px
+	bindsym Right resize grow width 64 px
 
 	bindsym Escape mode "default"
 	bindsym $mod+r mode "default"
