@@ -41,8 +41,6 @@ cpu_temperature 2 {
 	format_above_threshold = "🔥%degrees°C"
 	max_threshold = 78
 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp3_input"
-	separator = false
-	separator_block_width = 1
 }
 
 volume microphone {
