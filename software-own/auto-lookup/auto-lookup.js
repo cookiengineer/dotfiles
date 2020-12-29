@@ -15,7 +15,7 @@ const lookup = (domain, callback) => {
 
 	dns.lookup(domain, {
 		family: 0
-	}, (err, address, family) => {
+	}, (err, address) => {
 
 		if (err !== null) {
 			callback(null);
@@ -50,10 +50,10 @@ const write = (domain, address) => {
 				encoding: 'utf8'
 			});
 
-			console.info('Successfully wrote /etc/hosts file.');
+			console.info('Updated /etc/hosts file.');
 
 		} catch (err) {
-			console.error('Could not write /etc/hosts file.');
+			console.error('Could not update /etc/hosts file.');
 		}
 
 	}
@@ -68,8 +68,15 @@ const write = (domain, address) => {
 
 DOMAINS.forEach((domain) => {
 
-	lookup(domain, address => {
-		write(domain, address);
+	lookup(domain, (address) => {
+
+		if (address !== null) {
+
+			console.log('Found domain "' + domain  + '" with IP "' + address + '".');
+			write(domain, address);
+
+		}
+
 	});
 
 });

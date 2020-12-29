@@ -18,9 +18,10 @@
 					let button = global.document.createElement('button');
 					let icon   = global.document.createElement('i');
 
-					button.setAttribute('title', label + ' / ' + code);
-					button.setAttribute('data-label', label);
-					button.setAttribute('data-code',  code);
+					button.setAttribute('title',        label + ' / ' + code);
+					button.setAttribute('data-label',   label);
+					button.setAttribute('data-code',    code);
+					button.setAttribute('data-visible', false);
 
 					icon.innerHTML = '&#x' + code + ';';
 
@@ -35,8 +36,26 @@
 
 	}
 
+	let button = global.document.querySelector('header > button');
+	if (button !== null) {
 
-	let input = global.document.querySelector('input[type="search"]');
+		button.onclick = () => {
+
+			if (button.className === 'active') {
+				main.setAttribute('data-visible', '');
+				button.className = '';
+				button.innerHTML = '<i>&#xe8f5;</i>';
+			} else {
+				main.setAttribute('data-visible', 'show');
+				button.className = 'active';
+				button.innerHTML = '<i>&#xe8f4;</i>';
+			}
+
+		};
+
+	}
+
+	let input = global.document.querySelector('header > input[type="search"]');
 	if (input !== null) {
 
 		input.onkeyup = () => {
@@ -65,7 +84,7 @@
 			} else {
 
 				Array.from(global.document.querySelectorAll('main button')).forEach((button) => {
-					button.removeAttribute('data-visible');
+					button.setAttribute('data-visible', false);
 				});
 
 			}

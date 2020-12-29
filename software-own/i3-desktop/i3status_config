@@ -47,7 +47,7 @@ cpu_temperature 1 {
 	format = "🌡️%degrees°C"
 	format_above_threshold = "🔥%degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
 	separator = false
 	separator_block_width = 1
 }
@@ -56,7 +56,7 @@ cpu_temperature 2 {
 	format = "🌡️%degrees°C"
 	format_above_threshold = "🔥%degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp2_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp2_input"
 	separator = false
 	separator_block_width = 1
 }
@@ -65,7 +65,7 @@ cpu_temperature 3 {
 	format = "🌡️%degrees°C"
 	format_above_threshold = "🔥%degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp3_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp3_input"
 	separator = false
 	separator_block_width = 1
 }
@@ -74,7 +74,7 @@ cpu_temperature 4 {
 	format = "🌡️%degrees°C"
 	format_above_threshold = "🔥%degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp4_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp4_input"
 }
 
 volume bluetooth {
