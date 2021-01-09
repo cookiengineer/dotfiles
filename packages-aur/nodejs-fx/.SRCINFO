@@ -1,0 +1,15 @@
+pkgbase = nodejs-fx
+	pkgdesc = Command-line JSON processing tool
+	pkgver = 20.0.2
+	pkgrel = 1
+	url = https://github.com/antonmedv/fx
+	arch = any
+	license = MIT
+	makedepends = npm
+	depends = nodejs
+	options = !emptydirs
+	source = http://registry.npmjs.org/fx/-/fx-20.0.2.tgz
+	sha512sums = 06064dca5a6c0dfe55d1ce03c235a7aded9d95df586c46dd3549d7cce0b6589bf847f027246f1cbbb981111864ab1b9edd2de182626bde5aa8a9e29bd8f79d19
+
+pkgname = nodejs-fx
+

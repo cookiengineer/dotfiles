@@ -7,9 +7,21 @@ set $mod Mod4
 floating_modifier $mod
 
 default_border pixel 2
-hide_edge_borders smart
-
+default_floating_border normal
+default_orientation horizontal
+focus_follows_mouse no
 font pango:DejaVu Sans Mono 16px
+hide_edge_borders smart
+title_align center
+
+# class                 border  backgr. text    indicator
+client.focused          #22ccff #22ccff #ffffff #22ccff
+client.focused_inactive #1a1a1a #1a1a1a #ffffff #22ccff
+client.unfocused        #1a1a1a #1a1a1a #ffffff #22ccff
+client.urgent           #ff2222 #ff2222 #ffffff #ff2222
+client.background       #ffffff
+
+
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id blueman-applet
@@ -90,6 +102,10 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Prior workspace prev
+bindsym $mod+Next workspace next
+bindsym $mod+Insert workspace create
 
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2

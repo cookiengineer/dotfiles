@@ -1,4 +1,5 @@
-/instagram-scraper-*-any.pkg.tar
-/instagram-scraper-*.tar.gz
 /pkg
 /src
+/instagram-scraper-*.pkg.tar.zst
+/instagram-scraper-*.tar.gz
+
