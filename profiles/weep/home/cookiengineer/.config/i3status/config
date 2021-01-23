@@ -11,6 +11,8 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "cpu_temperature 1"
 order += "cpu_temperature 2"
+order += "cpu_temperature 3"
+order += "cpu_temperature 4"
 order += "volume microphone"
 order += "volume speakers"
 order += "memory"
@@ -30,7 +32,7 @@ ethernet _first_ {
 cpu_temperature 1 {
 	format = "🌡️%degrees°C"
 	format_above_threshold = "🔥%degrees°C"
-	max_threshold = 78
+	max_threshold = 74
 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input"
 	separator = false
 	separator_block_width = 1
@@ -39,8 +41,26 @@ cpu_temperature 1 {
 cpu_temperature 2 {
 	format = "🌡️%degrees°C"
 	format_above_threshold = "🔥%degrees°C"
-	max_threshold = 78
+	max_threshold = 74
 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp3_input"
+	separator = false
+	separator_block_width = 1
+}
+
+cpu_temperature 3 {
+	format = "🌡️%degrees°C"
+	format_above_threshold = "🔥%degrees°C"
+	max_threshold = 74
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp4_input"
+	separator = false
+	separator_block_width = 1
+}
+
+cpu_temperature 4 {
+	format = "🌡️%degrees°C"
+	format_above_threshold = "🔥%degrees°C"
+	max_threshold = 74
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp5_input"
 }
 
 volume microphone {

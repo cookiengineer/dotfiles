@@ -7,8 +7,8 @@ Well, here we go again. I'm tired of unautomated shit, so this
 is my repository where all the system profiles and their
 configuration procedures are stored in.
 
-I'm kind of an Arch Linux, sometimes i3 and sometimes a GNOME
-fanboy, so you gotta deal with it.
+I'm kind of an Arch Linux and an i3 fanboy, so you gotta deal
+with it.
 
 All profiles here have the shared idea of incrementally configuring
 stuff, so the setup procedures can be used in partial, too.
@@ -27,19 +27,23 @@ desktop machines are airgapped and LUKS-encrypted on purpose.
 
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
-- Arch Linux and GNOME
+- OEM Intel EFI
+- Arch Linux and i3
 - Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
 - Intel HD4000
-- Keyboard (Cherry KC1000 US Layout)
+- Cherry Strait 3.0 USB (JK-03 US Layout)
 - Vertical Mouse (CSL 26069)
+- (optional) Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
+- (optional) Analog Audio Headphones (AKG HD242)
 
 **Thinkpad (tinky)**
 
 Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
+- coreboot (or patched SeaBIOS 4.7)
 - Arch Linux and i3
 - Synergy Client (right of `weep`, right of `nuccy`)
 - Monitor 1 (Internal 1440x900)
@@ -51,17 +55,16 @@ Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
-- Arch Linux and GNOME
+- coreboot
+- Arch Linux and i3
 - Synergy Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
 - (optional) Monitor 3 (BenQ 24" HDMI 1920x1080)
-- 4x Radeon RX580
+- 4x Radeon RX580 32GB (128GB VRAM memory)
 - Webcam (Logitech C920)
-- Keyboard (Cherry KC1000 US Layout)
+- Cherry Strait 3.0 USB (JK-03 US Layout)
 - Vertical Mouse (CSL 26069)
-- (optional) Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
-- (optional) Analog Audio Headphones (AKG HD242)
 
 
 ## Usage
