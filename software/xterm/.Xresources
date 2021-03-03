@@ -1,51 +1,43 @@
 
 !
 ! Use this file via
-! xrdb -merge ~/.Xresources; uxterm &
+! xrdb -merge ~/.Xresources; xterm &
 !
 
-! Font settings
-xterm*faceName: DejaVu Sans Mono Book
-xterm*faceSize: 12
+! Font
+XTerm*faceName: monospace
+XTerm*faceSize: 11px
 
-! Every shell is a login shell by default
-xterm*loginShell: true
+! Login Shell by default
+XTerm*loginShell: true
 
 ! User Interface
-xterm*internalBorder: 0
-xterm*borderWidth: 0
-xterm*rightScrollBar: false
-xterm*ScrollBar: false
-xterm*scrollTtyOutput: false
-xterm*pointerShape: left_ptr
+XTerm*internalBorder: 0
+XTerm*borderWidth: 0
+XTerm*rightScrollBar: false
+XTerm*ScrollBar: false
+XTerm*scrollTtyOutput: false
+XTerm*pointerShape: left_ptr
 
+! (Tango) Color Scheme
 
-! GNOME colors
-! xterm*foreground: rgb:ff/ff/ff
-! xterm*background: rgb:40/45/52
+XTerm*foreground: #ffffff
+XTerm*background: #121212
 
-! VIM colors
-xterm*foreground: rgb:ff/ff/ff
-xterm*background: rgb:12/12/12
-
-
-! GNOME (Tango) color scheme
-
-xterm*color0: rgb:2e/34/36
-xterm*color1: rgb:cc/00/00
-xterm*color2: rgb:4e/9a/06
-xterm*color3: rgb:c4/a0/00
-xterm*color4: rgb:34/65/a4
-xterm*color5: rgb:75/50/7b
-xterm*color6: rgb:06/98/9a
-xterm*color7: rgb:d3/d7/cf
-
-xterm*color8: rgb:55/57/53
-xterm*color9: rgb:ef/29/29
-xterm*color10: rgb:8a/e2/34
-xterm*color11: rgb:fc/e9/4f
-xterm*color12: rgb:72/9f/cf
-xterm*color13: rgb:ad/7f/a8
-xterm*color14: rgb:34/e2/e2
-xterm*color15: rgb:ee/ee/ec
+XTerm*color0: #2e3436
+XTerm*color1: #cc0000
+XTerm*color2: #4e9a06
+XTerm*color3: #c4a000
+XTerm*color4: #3465a4
+XTerm*color5: #75507b
+XTerm*color6: #06989a
+XTerm*color7: #d3d7cf
+XTerm*color8: #555753
+XTerm*color9: #ef2929
+XTerm*color10: #8ae234
+XTerm*color11: #fce94f
+XTerm*color12: #729fcf
+XTerm*color13: #ad7fa8
+XTerm*color14: #34e2e2
+XTerm*color15: #eeeeec
 

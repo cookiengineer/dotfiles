@@ -54,19 +54,6 @@ alias ns='netstat -tup --wide';      # show only active program sockets
 
 
 
-#
-# Terminal-Specific Hacks
-#
-
-case ${TERM} in
-	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"';
-		;;
-	screen*)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"';
-		;;
-esac
-
 # Enable colors for ls, etc. Prefer ~/.dir_colors #64489
 if [ `which dircolors` != "" ]; then
 	if [ -f ~/.dir_colors ]; then
@@ -123,7 +110,90 @@ colors() {
 # Custom PS1 Status Line
 #
 
-__my_ps1() {
+__legacy_ps1() {
+
+	local last_status="$?";
+	local code="";
+	local user="$USER";
+	local host="$HOSTNAME";
+	local path="$PWD";
+
+	if [[ "$last_status" == "0" ]]; then
+		code=" ";
+	elif [[ "$last_status" == "2" ]]; then
+		code="?";
+	else
+		code="!";
+	fi;
+
+
+	local git_dir="$(git rev-parse --git-dir 2>/dev/null)";
+	local git_status="";
+
+	if [[ "$git_dir" != "" ]]; then
+
+		local git_branch="";
+		local git_commit=$(git rev-parse --short HEAD 2>/dev/null);
+		local has_changes=$(git status --porcelain 2>/dev/null);
+
+		local tmp=$(git status --porcelain -b 2>/dev/null);
+
+		if [[ "$tmp" == "## "* ]]; then
+			git_branch=$(echo "${tmp//\#\# }" | head -n 1 | cut -f1 -d".");
+		fi;
+
+		if [[ "$git_branch" != "" ]]; then
+			git_status="($git_branch)";
+		else
+			git_status="($git_commit)";
+		fi;
+
+		if [[ "$has_changes" != "" ]]; then
+			git_status="$git_status (changed)";
+		fi;
+
+	fi;
+
+
+	if [[ "$path" == "$HOME/Backup"* ]]; then
+
+		if [[ $(stat --format "%F" "$HOME/Backup") == "symbolic link" ]]; then
+			path="${path/"$HOME/Backup"/"~/Backup"}";
+		else
+			path="${path/"$HOME/Backup"/"~/Backup"}";
+		fi;
+
+	elif [[ "$path" == "$HOME/Documents"* ]]; then
+		path="${path/"$HOME/Documents"/"~/Documents"}";
+	elif [[ "$path" == "$HOME/Downloads"* ]]; then
+		path="${path/"$HOME/Downloads"/"~/Downloads"}";
+	elif [[ "$path" == "$HOME/Games"* ]]; then
+		path="${path/"$HOME/Games"/"~/Games"}";
+	elif [[ "$path" == "$HOME/Music"* ]]; then
+		path="${path/"$HOME/Music"/"~/Music"}";
+	elif [[ "$path" == "$HOME/Packages"* ]]; then
+		path="${path/"$HOME/Packages"/"~/Packages"}";
+	elif [[ "$path" == "$HOME/Pictures"* ]]; then
+		path="${path/"$HOME/Pictures"/"~/Pictures"}";
+	elif [[ "$path" == "$HOME/Software"* ]]; then
+		path="${path/"$HOME/Software"/"~/Software"}";
+	elif [[ "$path" == "$HOME/Videos"* ]]; then
+		path="${path/"$HOME/Videos"/"~/Videos"}";
+	elif [[ "$path" == "$HOME"* ]]; then
+		path="${path/"$HOME"/"~"}";
+	fi;
+
+	local ps1_status="$code \e[01;49;39m$user@$host:$path\e[0m";
+
+	if [[ "$git_status" != "" ]]; then
+		echo -e "\n${ps1_status} ${git_status}\n> ";
+	else
+		echo -e "\n${ps1_status}\n> ";
+	fi;
+
+}
+
+__modern_ps1() {
 
 	local last_status="$?";
 	local code="";
@@ -224,7 +294,12 @@ __my_ps1() {
 
 }
 
-PS1='$(__my_ps1)';
+if [[ "$TERM" == "xterm-kitty" ]]; then
+	xrdb -merge ~/.Xresources;
+	PS1='$(__modern_ps1)';
+elif [[ "$TERM" == "xterm" ]]; then
+	PS1='$(__legacy_ps1)';
+fi;
 
 
 
