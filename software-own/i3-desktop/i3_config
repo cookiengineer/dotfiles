@@ -40,7 +40,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set "5%-"
 bindsym Print exec --no-startup-id scrot "/home/cookiengineer/Pictures/%Y-%m-%d_%H:%I:%M_Screenshot.png"
 
 # start a terminal
-bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec kitty
+bindsym $mod+Return exec uxterm
 
 # kill focused window
 bindsym $mod+q kill

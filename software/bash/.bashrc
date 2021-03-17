@@ -295,10 +295,17 @@ __modern_ps1() {
 }
 
 if [[ "$TERM" == "xterm-kitty" ]]; then
-	xrdb -merge ~/.Xresources;
+
 	PS1='$(__modern_ps1)';
+
 elif [[ "$TERM" == "xterm" ]]; then
+
+	if [[ "$DISPLAY" != "" ]]; then
+		xrdb -merge ~/.Xresources;
+	fi;
+
 	PS1='$(__legacy_ps1)';
+
 fi;
 
 
@@ -433,7 +440,7 @@ fi;
 
 THEFUCK=`which thefuck 2> /dev/null`;
 
-if [ "$THEFUCK" != "" ]; then
+if [[ "$THEFUCK" != "" ]]; then
 	eval $(thefuck --alias);
 fi;
 
