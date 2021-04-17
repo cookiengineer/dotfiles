@@ -3,9 +3,9 @@
 if [ "$EMAIL" == "" ]; then
 
 	if [ "$SUDO_USER" != "" ]; then
-		EMAIL="$SUDO_USER@protonmail.ch";
+		EMAIL="$SUDO_USER@protonmail.com";
 	elif [ "$USER" != "" ]; then
-		EMAIL="$USER@protonmail.ch";
+		EMAIL="$USER@protonmail.com";
 	fi;
 
 fi;
@@ -16,7 +16,7 @@ if [ "$EMAIL" != "" ]; then
 	git config --global user.email "$EMAIL";
 fi;
 
-git config --global user.signingkey "61F3D706EDE7DDB6C9E41784A78F070057B04FD7";
+git config --global user.signingkey "5D60A3B7272A6C2C9B55B4A8340F6A4848C5F849";
 git config --global commit.gpgsign true;
 git config --global diff.tool vimdiff;
 git config --global difftool.prompt false;
