@@ -60,6 +60,8 @@ header > button {
 	text-align: center;
 }
 
+header > button:hover,
+header > button:focus,
 header > button.active {
 	color: #ffffff;
 }
@@ -132,5 +134,16 @@ main[data-visible="show"] > button[data-visible="true"] {
 
 main[data-visible="show"] > button[data-visible="false"] {
 	display: inline-block;
+}
+
+
+
+main > button[data-selected="true"] {
+	display: inline-block;
+	color: #0f99cb;
+}
+
+main > button[data-visible="true"][data-selected="true"] {
+	color: #0f99cb;
 }
 
