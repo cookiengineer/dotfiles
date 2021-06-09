@@ -16,6 +16,7 @@ _install software bash base-devel;
 _install software-own i3-desktop;
 _install software xf86-input-synaptics;
 
+_install software barrier-headless;
 _install software networkmanager;
 _install software modemmanager;
 _install software git;
@@ -32,7 +33,6 @@ _install_packages gimp gparted transmission-gtk uget;
 _install_packages ffmpeg celluloid;
 _install_packages dnsutils macchanger net-tools nmap;
 # _install_packages openra;
-_install_packages synergy;
 _install_packages telegram-desktop;
 
 
@@ -82,10 +82,5 @@ if [[ ! -f "/usr/bin/share-internet" ]]; then
 	sudo chmod +x /usr/bin/share-internet;
 fi;
 
-synergyc_service="/home/cookiengineer/.config/systemd/user/synergyc.service";
-if [[ ! -f "$synergyc_service" ]]; then
-	mkdir -p $(dirname $synergyc_service);
-	cp "$PROFILE_ROOT$synergyc_service" $synergyc_service;
-	systemctl --user enable synergyc;
-fi;
+systemctl --user enable barrier-client;
 

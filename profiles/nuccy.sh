@@ -15,6 +15,7 @@ fi;
 _install software bash base-devel;
 _install software-own i3-desktop;
 
+_install software barrier-headless;
 _install software networkmanager;
 # _install software modemmanager;
 _install software git;
@@ -31,7 +32,6 @@ _install_packages chromium firefox gimp gparted transmission-gtk uget;
 _install_packages ffmpeg celluloid;
 _install_packages dnsutils macchanger net-tools nmap;
 # _install_packages openra;
-_install_packages synergy;
 # _install_packages telegram-desktop;
 
 
@@ -61,7 +61,6 @@ _install software-own pacman-backup;
 #
 
 _install projects cookiengineer;
-_install projects polyfillr;
 _install projects tholian-network;
 
 
@@ -82,19 +81,10 @@ if [[ ! -f "$i3status_conf" ]]; then
 	cp "$PROFILE_ROOT$i3status_conf" $i3status_conf;
 fi;
 
-if [[ ! -f "/etc/synergy.conf" ]]; then
-	sudo cp "$PROFILE_ROOT/etc/synergy.conf" /etc/synergy.conf;
-fi;
-
-synergys_service="/home/cookiengineer/.config/systemd/user/synergys.service";
-if [[ ! -f "$synergys_service" ]]; then
-	mkdir -p $(dirname $synergys_service);
-	cp "$PROFILE_ROOT$synergys_service" $synergys_service;
-	systemctl --user enable synergys;
-fi;
-
 monitor_conf="/etc/X11/xorg.conf.d/10-monitor.conf";
 if [[ ! -f "$monitor_conf" ]]; then
 	sudo cp "$PROFILE_ROOT$monitor_conf" $monitor_conf;
 fi;
+
+systemctl --user enable barrier-server;
 

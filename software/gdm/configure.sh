@@ -8,6 +8,7 @@ elif [ "$USER" != "" ]; then
 	USER_NAME="$USER";
 fi;
 
+
 SYS_CTL=`which systemctl`;
 
 if [ "$SYS_CTL" != "" ]; then
