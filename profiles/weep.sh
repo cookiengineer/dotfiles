@@ -29,9 +29,8 @@ _install software vim;
 # _install_packages bluez bluez-firmware bluez-libs bluez-utils;
 _install_packages noto-fonts noto-fonts-compat noto-fonts-emoji;
 _install_packages chromium firefox gimp gparted transmission-gtk uget;
-_install_packages ffmpeg celluloid;
+_install_packages ffmpeg celluloid lollypop;
 _install_packages dnsutils macchanger net-tools nmap;
-_install_packages openra;
 # _install_packages telegram-desktop;
 
 
