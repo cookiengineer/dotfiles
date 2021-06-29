@@ -12,7 +12,7 @@ fi;
 # XXX: MAIN software
 #
 
-_install software bash;
+_install software filesystem bash;
 _install software-own i3-desktop;
 
 _install software barrier-headless;

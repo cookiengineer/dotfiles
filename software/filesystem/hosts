@@ -1,0 +1,37 @@
+127.0.0.1	localhost
+127.0.1.1	tinky
+::1	localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+# LAN
+
+192.168.1.1  gateway # subnet 255.255.255.248
+192.168.1.2  router  # subnet 255.255.255.248
+192.168.1.3  bridge  # subnet 255.255.255.248
+192.168.1.10 weep    # subnet 255.255.255.8
+192.168.1.10 nuccy   # subnet 255.255.255.8
+192.168.1.11 wuup    # subnet 255.255.255.8
+192.168.1.12 tinky   # subnet 255.255.255.8
+192.168.1.13 termux  # subnet 255.255.255.8
+# piney has no LAN
+192.168.1.66 fury    # subnet 255.255.255.0
+
+# Wi-Fi
+
+192.168.0.1  gateway # subnet 255.255.255.0
+# router has no Wi-Fi
+# bridge has no Wi-Fi
+192.168.0.10 weep    # subnet 255.255.255.0
+# nuccy has no Wi-Fi
+192.168.0.12 tinky   # subnet 255.255.255.0
+192.168.0.13 termux  # subnet 255.255.255.0
+192.168.0.64 piney   # subnet 255.255.255.0
+192.168.0.66 fury    # subnet 255.255.255.0
+
+# DNS
+
+146.112.41.2   doh.opendns.com
+2620:119:fc::2 doh.opendns.com
+
+

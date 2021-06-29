@@ -1,16 +1,18 @@
 [connection]
-id=Home
-uuid=6c4cfa02-9726-437b-a8f5-88dc301bf014
+id=Workshop
+uuid=f5b570dc-6c62-4519-9883-08f4d9c8c988
 type=ethernet
+interface-name=enp0s25
 permissions=
-timestamp=1579094828
 
 [ethernet]
+cloned-mac-address=stable
 mac-address=28:D2:44:7E:54:3B
 mac-address-blacklist=
 
 [ipv4]
-address1=192.168.1.12/24
+address1=192.168.1.12/24,192.168.1.1
+dns=1.0.0.1;1.1.1.1;
 dns-search=
 method=manual
 

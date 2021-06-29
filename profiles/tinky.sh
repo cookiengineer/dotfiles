@@ -12,7 +12,7 @@ fi;
 # XXX: MAIN software
 #
 
-_install software bash base-devel;
+_install software filesystem bash base-devel;
 _install software-own i3-desktop;
 _install software xf86-input-synaptics;
 
@@ -45,15 +45,13 @@ _install software-aur ungoogled-chromium-bin;
 _install software-aur wireless-regdb-pentest;
 
 _install_packages_aur tldr youtube-dl;
-# _install_packages_aur mobac;
-# _install_packages_aur openscad;
+_install_packages_aur mobac;
+_install_packages_aur openscad;
 
-# _install software-own apt-pac;
 _install software-own auto-sleep;
 _install software-own auto-tagger;
 _install software-own chromium-extensions;
 _install software-own pacman-backup;
-# _install software-own pacman-server;
 
 
 #
@@ -69,11 +67,7 @@ _install projects tholian-network;
 #
 
 sudo chmod +r /etc/NetworkManager/system-connections;
-
-home_connection="/etc/NetworkManager/system-connections/Home.nmconnection";
-if [[ ! -f "$home_connection" ]]; then
-	sudo cp "$PROFILE_ROOT$home_connection" $home_connection;
-fi;
+sudo cp "$PROFILE_ROOT/etc/NetworkManager/system-connections/Workshop.nmconnection" "/etc/NetworkManager/system-connections/Workshop.nmconnection";
 
 if [[ ! -f "/usr/bin/share-internet" ]]; then
 	sudo cp $PROFILE_ROOT/usr/bin/share-internet.sh /usr/bin/share-internet;

@@ -29,7 +29,7 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
 - OEM Intel EFI
 - Arch Linux and i3
-- Synergy Server (left of `tinky`)
+- Barrier Server (left of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
@@ -45,7 +45,7 @@ Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 
 - coreboot (or patched SeaBIOS 4.7)
 - Arch Linux and i3
-- Synergy Client (right of `weep`, right of `nuccy`)
+- Barrier Client (left of `weep`, right of `nuccy`)
 - Monitor 1 (Internal 1440x900)
 - Intel HD4000 and GT730M
 - Lenovo Thinkpad Keyboard (US Layout)
@@ -57,7 +57,7 @@ Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 - coreboot
 - Arch Linux and i3
-- Synergy Server (left of `tinky`)
+- Barrier Server (right of `tinky`)
 - Monitor 1 (BenQ 24" HDMI 1920x1080)
 - Monitor 2 (BenQ 24" HDMI 1920x1080)
 - (optional) Monitor 3 (BenQ 24" HDMI 1920x1080)
@@ -65,6 +65,14 @@ Profile: [./profiles/weep.sh](./profiles/weep.sh)
 - Webcam (Logitech C920)
 - Cherry Strait 3.0 USB (JK-03 US Layout)
 - Vertical Mouse (CSL 26069)
+
+
+**HP Business Notebook**
+
+Profile: [./profiles/fury.sh](./profiles/fury.sh)
+
+- Arch Linux and i3
+- Barrier Client (right of `weep`)
 
 
 ## Usage

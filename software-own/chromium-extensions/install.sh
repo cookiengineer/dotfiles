@@ -10,7 +10,7 @@ _download_crx () {
 	ver="83.0";
 	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=$ver&acceptformat=crx2,crx3&x=id%3D$crx%26uc";
 
-	wget -O "$file.crx" "$crx_url";
+	wget -O "/home/$USER/Downloads/CRX/$file.crx" "$crx_url";
 
 }
 
@@ -26,8 +26,6 @@ fi;
 
 
 if [[ "$(which wget 2>/dev/null)" != "" ]]; then
-
-	cd /home/$USER/Downloads/CRX;
 
 	_download_crx "https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh";
 	_download_crx "https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm";
