@@ -16,8 +16,15 @@ if [ "$EMAIL" != "" ]; then
 	git config --global user.email "$EMAIL";
 fi;
 
+
+# gpg / vigilante mode integration
+
 git config --global user.signingkey "5D60A3B7272A6C2C9B55B4A8340F6A4848C5F849";
 git config --global commit.gpgsign true;
+
+# semantic diff in vim
+
+git config --global diff.algorithm patience;
 git config --global diff.tool vimdiff;
 git config --global difftool.prompt false;
 git config --global alias.d difftool;
