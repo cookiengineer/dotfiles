@@ -51,8 +51,22 @@ alias ls='ls --color=auto';
 alias more=less;                     # cmd compatibility
 alias mv="mv -i";                    # confirm before overwriting something
 alias ns='netstat -tup --wide';      # show only active program sockets
+alias rm="rm -i";                    # confirm before removing something
 
 
+
+#
+# Terminal-Specific Hacks
+#
+
+case ${TERM} in
+	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"';
+		;;
+	screen*)
+		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"';
+		;;
+esac
 
 # Enable colors for ls, etc. Prefer ~/.dir_colors #64489
 if [ `which dircolors` != "" ]; then
@@ -406,6 +420,25 @@ vimgrep() {
 # cd ~/Music && youtube-mp3 http://url/to/stream;
 # cd ~/Web && website-dl http://website.tld/index.html;
 # cd ~/Extensions && crx-dl https://chrome.google.com/url/with/crx/id;
+
+datetime() {
+
+	date="$1";
+	time="$2";
+
+	if [[ "$date" != "" ]] && [[ $date =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$ ]]; then
+
+		if [[ "$time" != "" ]] && [[ $time =~ ^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$ ]]; then
+			sudo date +"%F %T" -s "$date $time";
+		else
+			sudo date +"%F" -s "$date";
+		fi;
+
+	else
+		sudo ntpdate de.pool.ntp.org;
+	fi;
+
+}
 
 youtube-mp3() {
 	youtube-dl --extract-audio --audio-format mp3 $1 --continue --ignore-errors;
