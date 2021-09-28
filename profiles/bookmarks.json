@@ -1,0 +1,169 @@
+[
+	{
+		"id": 0,
+		"title": "Reading List"
+	}, {
+		"id": 1,
+		"title": "Social"
+	}, {
+		"id": 2,
+		"title": "Research"
+	}, {
+		"id": 3,
+		"title": "Hardware"
+	}, {
+		"id": 4,
+		"title": "Software"
+	}, {
+		"id": 5,
+		"title": "Tholian"
+	}, {
+		"id": 21,
+		"parentId": 2,
+		"title": "Research/Platforms"
+	}, {
+		"id": 22,
+		"parentId": 2,
+		"title": "Research/Papers"
+	}, {
+		"id": 23,
+		"parentId": 2,
+		"title": "Research/Articles"
+	}, {
+		"id": 24,
+		"parentId": 2,
+		"title": "Research/News"
+	}, {
+		"id": 25,
+		"parentId": 2,
+		"title": "Research/Tutorials"
+	}, {
+		"id": 41,
+		"parentId": 4,
+		"title": "Software/Android"
+	}, {
+		"id": 42,
+		"parentId": 4,
+		"title": "Software/Linux"
+	}, {
+		"id": 43,
+		"parentId": 4,
+		"title": "Software/Windows"
+	}, {
+		"id": 44,
+		"parentId": 4,
+		"title": "Software/Netsec"
+	}, {
+		"id": 45,
+		"parentId": 4,
+		"title": "Software/OSINT"
+	}, {
+		"id": 46,
+		"parentId": 4,
+		"title": "Software/Pentest"
+	}, {
+		"id": 51,
+		"parentId": 5,
+		"title": "Tholian/Competition"
+	}, {
+		"id": 52,
+		"parentId": 5,
+		"title": "Tholian/Customers"
+	}, {
+		"parentId": 21,
+		"title": "0x00 Sec",
+		"url": "https://0x00sec.org/"
+	}, {
+		"parentId": 21,
+		"title": "Lumen Database",
+		"url": "https://www.lumendatabase.org/"
+	}, {
+		"parentId": 23,
+		"title": "The 4-hour CDN",
+		"url": "https://fly.io/blog/the-5-hour-content-delivery-network/"
+	}, {
+		"parentId": 23,
+		"title": "Reversing ActionSpy Android Malware",
+		"url": "https://0x00sec.org/t/reversing-actionspy-android-malware/26537"
+	}, {
+		"parentId": 24,
+		"title": "Bleeping Computer",
+		"url": "https://www.bleepingcomputer.com/"
+	}, {
+		"parentId": 24,
+		"title": "Dark Reading",
+		"url": "https://www.darkreading.com/"
+	}, {
+		"parentId": 24,
+		"title": "The Cyberwire",
+		"url": "https://www.thecyberwire.com/"
+	}, {
+		"parentId": 24,
+		"title": "Threatpost",
+		"url": "https://www.threatpost.com/"
+	}, {
+		"parentId": 24,
+		"title": "TL;DR Sec",
+		"url": "https://www.tldrsec.com/"
+	}, {
+		"parentId": 25,
+		"title": "The Illustrated TLS Connection",
+		"url": "https://github.com/syncsynchalt/illustrated-tls"
+	}, {
+		"parentId": 25,
+		"title": "Security Zines (Infographics)",
+		"url": "https://securityzines.com"
+	}, {
+		"parentId": 46,
+		"title": "MITRE DEFEND Framework",
+		"url": "https://d3fend.mitre.org"
+	}, {
+		"parentId": 46,
+		"title": "Hacking Resources and Cheat Sheets",
+		"url": "https://github.com/Lifka/hacking-resources"
+	}, {
+		"parentId": 46,
+		"title": "Fortigate SSL VPN Exploit",
+		"url": "https://github.com/7Elements/Fortigate"
+	}, {
+		"parentId": 46,
+		"title": "Offensive Wi-Fi Toolkit",
+		"url": "https://github.com/clu3bot/owt"
+	}, {
+		"parentId": 46,
+		"title": "Cobalt Strike Spam",
+		"url": "https://github.com/hariomenkel/CobaltSpam"
+	}, {
+		"parentId": 46,
+		"title": "Torghost NG Proxy",
+		"url": "https://github.com/GitHackTools/TorghostNG"
+	}, {
+		"parentId": 46,
+		"title": "HTTP2 Request Smuggler",
+		"url": "https://github.com/BishopFox/h2csmuggler"
+	}, {
+		"parentId": 46,
+		"title": "WebSocket Request Smuggler",
+		"url": "https://github.com/hahwul/ws-smuggler"
+	}, {
+		"parentId": 46,
+		"title": "HTTP2 HTTP/1.1 Request Smuggler",
+		"url": "https://github.com/neex/http2smugl"
+	}, {
+		"parentId": 46,
+		"title": "Custom Pentesting Tools",
+		"url": "https://github.com/gwen001/pentest-tools"
+	}, {
+		"parentId": 51,
+		"title": "SANS Blue Team Operations",
+		"url": "https://www.sans.org/blue-team/"
+	}, {
+		"parentId": 51,
+		"title": "Oxygen Forensics Extractor",
+		"url": "https://www.oxygen-forensics.com/en/products/oxygen-forensics-extractor"
+	}, {
+		"parentId": 52,
+		"title": "Staatsanwaltschaft Koeln",
+		"url": "https://www.sta-koeln.nrw.de/behoerde/presse/ansprechpartner/index.php"
+	}
+]

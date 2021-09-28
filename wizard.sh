@@ -1,34 +1,20 @@
 #!/bin/bash
 
-source "$(dirname "$0")/profiles/_lib/install.sh" "wizard" "--debug";
+source "$(dirname "$0")/profiles/.include/archlinux.sh" "wizard" "--debug";
 
-if [ "$1" == "install" ]; then
+if [ "$1" == "synchronize" ]; then
 
-	if [ "$2" == "software" ]; then
+	synchronize "$2";
+	exit $?;
 
-		_install software "$3";
-		exit $?;
+elif [ "$1" == "clone" ]; then
 
-	elif [ "$2" == "software-aur" ]; then
-
-		_install software-aur "$3";
-		exit $?;
-
-	elif [ "$2" == "software-own" ]; then
-
-		_install software-own "$3";
-		exit $?;
-
-	else
-
-		echo "This wizard can only install \"software\", \"software-aur\" and \"software-own\" for now.";
-		exit 1;
-
-	fi;
+	clone "$2" "$3";
+	exit $?;
 
 else
 
-	echo "This wizard can only \"install\" for now.";
+	echo "This wizard can only \"synchronize\" and \"clone\" for now.";
 	exit 1;
 
 fi;

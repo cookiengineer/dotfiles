@@ -2,9 +2,9 @@
 
 
 if [ "$1" == "--debug" ]; then
-	source "$(dirname "$0")/_lib/install.sh" "weep" "--debug";
+	source "$(dirname "$0")/.include/archlinux.sh" "weep" "--debug";
 else
-	source "$(dirname "$0")/_lib/install.sh" "weep";
+	source "$(dirname "$0")/.include/archlinux.sh" "weep";
 fi;
 
 
@@ -12,44 +12,40 @@ fi;
 # XXX: MAIN software
 #
 
-_install software filesystem bash base-devel;
-_install software-own i3-desktop;
+synchronize filesystem bash base-devel;
+synchronize trizen;
+synchronize i3-desktop;
+synchronize ly;
 
-_install software barrier-headless;
-_install software networkmanager;
-_install software modemmanager;
-_install software git;
-_install software openssh;
-_install software nodejs;
-_install software tor;
-_install software kitty;
-_install software vim;
-_install software keepassxc;
+synchronize barrier-headless;
+synchronize networkmanager;
+synchronize modemmanager;
+synchronize git;
+synchronize openssh;
+synchronize nodejs;
+synchronize tor;
+synchronize kitty;
+synchronize vim;
+synchronize keepassxc;
 
-_install_packages bluez bluez-firmware bluez-libs bluez-utils;
-_install_packages noto-fonts noto-fonts-compat noto-fonts-emoji;
-_install_packages chromium firefox gimp gparted transmission-gtk uget;
-_install_packages ffmpeg celluloid lollypop;
-_install_packages dnsutils macchanger net-tools nmap;
-_install_packages telegram-desktop;
-_install_packages teams;
-
+synchronize bluez bluez-firmware bluez-libs bluez-utils;
+synchronize noto-fonts noto-fonts-compat noto-fonts-emoji;
+synchronize chromium firefox gimp gparted transmission-gtk uget;
+synchronize ffmpeg celluloid lollypop;
+synchronize dnsutils macchanger net-tools nmap;
+synchronize telegram-desktop;
+synchronize teams;
 
 #
 # XXX: AUR software
 #
 
-_install software-aur trizen;
-_install software-aur ly;
-_install software-aur ungoogled-chromium-bin;
-_install software-aur wireless-regdb-pentest;
+synchronize wireless-regdb-pentest;
+synchronize tldr youtube-dl;
 
-_install_packages_aur tldr youtube-dl;
-
-_install software-own auto-tagger;
-_install software-own chromium-extensions;
-_install software-own pacman-backup;
-
+synchronize auto-tagger;
+synchronize chromium-extensions;
+synchronize pacman-backup;
 
 #
 # XXX: System config
