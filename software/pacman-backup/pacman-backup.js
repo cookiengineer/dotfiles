@@ -340,11 +340,34 @@ const read_upgrades = (callback) => {
 
 };
 
-const remove_file = (target, callback) => {
+const remove_package = (folder, pkg, version) => {
 
-	fs.unlink(target, (err) => {
-		callback(err ? err : null);
-	});
+	let stat_xz  = null;
+	let stat_zst = null;
+
+	try {
+		stat_xz = fs.lstatSync(folder + '/' + pkg.name + '-' + version + '-' + pkg.arch + '.pkg.tar.xz');
+	} catch (err) {
+		stat_xz = null;
+	}
+
+	try {
+		stat_zst = fs.lstatSync(folder + '/' + pkg.name + '-' + version + '-' + pkg.arch + '.pkg.tar.zst');
+	} catch (err) {
+		stat_zst = null;
+	}
+
+	if (stat_xz !== null && stat_xz.isFile() === true) {
+		fs.unlink(folder + '/' + pkg.name + '-' + version + '-' + pkg.arch + '.pkg.tar.xz', (err) => {
+			if (!err) console.log(':: purged "' + pkg.name + '-' + version + '" (' + pkg.arch + ')');
+		});
+	}
+
+	if (stat_zst !== null && stat_zst.isFile() === true) {
+		fs.unlink(folder + '/' + pkg.name + '-' + version + '-' + pkg.arch + '.pkg.tar.zst', (err) => {
+			if (!err) console.log(':: purged "' + pkg.name + '-' + version + '" (' + pkg.arch + ')');
+		});
+	}
 
 };
 
@@ -635,11 +658,7 @@ if (ACTION === 'archive' && FOLDER !== null) {
 				}).forEach((pkg) => {
 
 					pkg.versions.sort(sortByVersion).slice(1).forEach((version) => {
-
-						remove_file(pkgs_folder + '/' + pkg.name + '-' + version + '-' + pkg.arch + '.pkg.tar.xz', (err) => {
-							if (!err) console.log(':: purged "' + pkg.name + '-' + version + '" (' + pkg.arch + ')');
-						});
-
+						remove_package(pkgs_folder, pkg, version);
 					});
 
 				});

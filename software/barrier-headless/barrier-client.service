@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 # ExecStartPre=/usr/bin/sleep 5
-ExecStart=/usr/bin/barrierc --no-daemon weep
+ExecStart=/usr/bin/barrierc --no-daemon --disable-crypto weep
 Restart=always
 RestartSec=5
 
