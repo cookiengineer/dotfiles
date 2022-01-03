@@ -364,15 +364,33 @@ unpack() {
 
 fix-volume() {
 
-	cowin_e7="FC_58_FA_78_33_42";
+	cowin_e7="FC_58_FA_9C_01_0B";
 	cowin_e8="FC_58_FA_39_7E_BB";
 	jbl_flip="B8_F6_53_F5_29_44";
 
 	for i in $(seq 0 100); do
-		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${cowin_e7}" "org.bluez.MediaControl1.VolumeUp";
-		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${cowin_e8}" "org.bluez.MediaControl1.VolumeUp";
-		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${jbl_flip}" "org.bluez.MediaControl1.VolumeUp";
+		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${cowin_e7}" "org.bluez.MediaControl1.VolumeUp" 2> /dev/null;
+		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${cowin_e8}" "org.bluez.MediaControl1.VolumeUp" 2> /dev/null;
+		dbus-send --print-reply --system --dest=org.bluez "/org/bluez/hci0/dev_${jbl_flip}" "org.bluez.MediaControl1.VolumeUp" 2> /dev/null;
 	done;
+
+	sinks=`pacmd list-sinks`;
+
+	if [[ "$sinks" == *"$cowin_e7"* ]]; then
+		pacmd set-default-sink 1;
+		sed -i "s|\"pulse:bluez_sink.*.a2dp_sink\"|\"pulse:bluez_sink.${cowin_e7}.a2dp_sink\"|g" .config/i3status/config;
+		i3-msg restart;
+	elif [[ "$sinks" == *"$cowin_e8"* ]]; then
+		pacmd set-default-sink 1;
+		sed -i "s|\"pulse:bluez_sink.*.a2dp_sink\"|\"pulse:bluez_sink.${cowin_e8}.a2dp_sink\"|g" .config/i3status/config;
+		i3-msg restart;
+	elif [[ "$sinks" == *"$jbl_flip"* ]]; then
+		pacmd set-default-sink 1;
+		sed -i "s|\"pulse:bluez_sink.*.a2dp_sink\"|\"pulse:bluez_sink.${jbl_flip}.a2dp_sink\"|g" .config/i3status/config;
+		i3-msg restart;
+	else
+		pacmd set-default-sink 0;
+	fi;
 
 }
 
@@ -393,6 +411,18 @@ git-serve() {
 		git daemon --reuseaddr --verbose --base-path=$cwd --export-all --enable=receive-pack;
 	fi;
 
+}
+
+to720p() {
+	local input="$1";
+	local output="${input%.*}-720p.avi";
+	ffmpeg -i "$input" -vf scale=-1:720 -c:v libx264 -crf 18 -preset veryslow -c:a copy "$output";
+}
+
+to1080p() {
+	local input="$1";
+	local output="${input%.*}-1080p.avi";
+	ffmpeg -i "$input" -vf scale=-1:1080 -c:v libx264 -crf 18 -preset veryslow -c:a copy "$output";
 }
 
 tomp3() {
