@@ -347,6 +347,7 @@ unpack() {
 			*.zip)       unzip $1 ;;
 			*.Z)         uncompress $1 ;;
 			*.7z)        7z x $1 ;;
+			*.xz)        unxz -d $1 ;;
 			*)           echo "'$1' cannot be unpacked via unpack()" ;;
 		esac;
 

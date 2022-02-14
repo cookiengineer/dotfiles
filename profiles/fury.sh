@@ -57,3 +57,15 @@ cp "$PROFILE_ROOT/home/cookiengineer/.config/i3status/config" "/home/$USER/.conf
 
 systemctl --user enable barrier-server;
 
+barrier_profile="/home/$USER/.local/share/barrier";
+ping_weep=$(ping -c 1 weep 1> /dev/null 2> /dev/null; echo $?);
+
+if [[ ! -f "$barrier_profile/SSL/Fingerprints/TrustedServers.txt" ]]; then
+	touch "$barrier_profile/SSL/Fingerprints/TrustedServers.txt";
+fi;
+
+if [[ "$ping_weep" == "0" ]]; then
+	fingerprint=$(echo -n | openssl s_client -connect "weep:24800" 2> /dev/null | openssl x509 -fingerprint -sha256 -noout | cut -d"=" -f2);
+	echo "v2:sha256:$fingerprint" >> "$barrier_profile/SSL/Fingerprints/TrustedServers.txt";
+fi;
+

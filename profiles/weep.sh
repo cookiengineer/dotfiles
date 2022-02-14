@@ -55,7 +55,20 @@ clone tholian-network "*";
 
 sudo chmod +r /etc/NetworkManager/system-connections;
 sudo cp "$PROFILE_ROOT/etc/NetworkManager/system-connections/Workshop.nmconnection" "/etc/NetworkManager/system-connections/Workshop.nmconnection";
+sudo cp "$PROFILE_ROOT/etc/barrier.conf" "/etc/barrier.conf";
 cp "$PROFILE_ROOT/home/cookiengineer/.config/i3status/config" "/home/$USER/.config/i3status/config";
 
 systemctl --user enable barrier-server;
+
+barrier_profile="/home/$USER/.local/share/barrier";
+ping_tinky=$(ping -c 1 tinky 1> /dev/null 2> /dev/null; echo $?);
+
+if [[ ! -f "$barrier_profile/SSL/Fingerprints/TrustedClients.txt" ]]; then
+	touch "$barrier_profile/SSL/Fingerprints/TrustedClients.txt";
+fi;
+
+if [[ "$ping_tinky" == "0" ]]; then
+	fingerprint=$(ssh cookiengineer@tinky "cat $barrier_profile/SSL/Fingerprints/Local.txt");
+	echo "$fingerprint" >> "$barrier_profile/SSL/Fingerprints/TrustedClients.txt";
+fi;
 
