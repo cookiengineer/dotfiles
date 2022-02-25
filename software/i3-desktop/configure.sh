@@ -29,3 +29,10 @@ if [[ "$ICONS_THEME" != "" ]] && [[ "$I3_CONFIG" != "" ]] && [[ "$I3STATUS_CONFI
 
 fi;
 
+I3_BRIGHTNESS="/usr/bin/i3-brightness";
+
+if [[ ! -f "$I3_BRIGHTNESS" ]]; then
+	sudo cp $DIR/i3-brightness.sh /usr/bin/i3-brightness;
+	sudo chmod +x /usr/bin/i3-brightness;
+fi;
+
