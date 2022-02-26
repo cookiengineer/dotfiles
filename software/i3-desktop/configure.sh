@@ -29,10 +29,16 @@ if [[ "$ICONS_THEME" != "" ]] && [[ "$I3_CONFIG" != "" ]] && [[ "$I3STATUS_CONFI
 
 fi;
 
+UDEV_RULE="/etc/udev/rules.d/90-backlight.rules";
+
+if [[ ! -f "$UDEV_RULE" ]]; then
+	sudo cp "$DIR/backlight.rules" "$UDEV_RULE";
+fi;
+
 I3_BRIGHTNESS="/usr/bin/i3-brightness";
 
 if [[ ! -f "$I3_BRIGHTNESS" ]]; then
-	sudo cp $DIR/i3-brightness.sh /usr/bin/i3-brightness;
-	sudo chmod +x /usr/bin/i3-brightness;
+	sudo cp $DIR/i3-brightness.sh "$I3_BRIGHTNESS";
+	sudo chmod +x "$I3_BRIGHTNESS";
 fi;
 

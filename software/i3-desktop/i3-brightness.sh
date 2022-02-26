@@ -1,5 +1,6 @@
 #!/bin/bash
 
+BACKLIGHT="intel_backlight";
 ACTION="reset";
 
 if [[ "$1" == "increase" ]]; then
@@ -11,11 +12,25 @@ elif [[ "$1" == "status" ]]; then
 fi;
 
 
-get_brightness() {
+get_xrandr() {
 	echo $(xrandr --verbose | grep -m 1 -w "$1 connected" -A8 | grep "Brightness" | cut -f2- -d":" | tr -d " ");
 }
 
-increase() {
+increase_backlight() {
+
+	cur="$1";
+	max="$2";
+	new="$(("$cur" + "$max" / 100 * 5))";
+
+	if (("$new" > "$max")); then
+		new="$max";
+	fi;
+
+	echo "$new";
+
+}
+
+increase_xrandr() {
 
 	case "$1" in
 		"1.0"*)  echo "1.0";  ;;
@@ -44,7 +59,21 @@ increase() {
 
 }
 
-decrease() {
+decrease_backlight() {
+
+	cur="$1";
+	max="$2";
+	new="$(("$cur" - "$max" / 100 * 5))";
+
+	if (("$new" < "0")); then
+		new="0";
+	fi;
+
+	echo "$new";
+
+}
+
+decrease_xrandr() {
 
 	case "$1" in
 		"1.0"*)  echo "0.95"; ;;
@@ -73,7 +102,32 @@ decrease() {
 
 }
 
-percentage() {
+percentage_backlight() {
+
+	cur="$1";
+	max="$2";
+
+	percentage="$((("$cur" * 100 / "$max" * 100) / 100))";
+
+	if (("$percentage" < "0")); then
+		percentage="0";
+	elif (("$percentage" > "100")); then
+		percentage="100";
+	fi;
+
+	length=${#percentage};
+
+	if (( "$length" == "1" )); then
+		echo "  $percentage%";
+	elif (( "$length" == "2" )); then
+		echo " $percentage%";
+	elif (( "$length" == "3" )); then
+		echo "$percentage%";
+	fi;
+
+}
+
+percentage_xrandr() {
 
 	case "$1" in
 		"1.0"*)  echo "100%"; ;;
@@ -102,22 +156,54 @@ percentage() {
 
 }
 
+if [[ -f "/sys/class/backlight/$BACKLIGHT/brightness" ]]; then
+
+	max_brightness="$(cat "/sys/class/backlight/$BACKLIGHT/max_brightness")";
+	old_brightness="$(cat "/sys/class/backlight/$BACKLIGHT/brightness")";
+
+	if [[ "$ACTION" == "increase" ]]; then
+
+		new_brightness="$(increase_backlight "$old_brightness" "$max_brightness")";
+		echo "-> Set Backlight for Controller \"$BACKLIGHT\" from \"$old_brightness\" to \"$new_brightness\".";
+		echo "$new_brightness" > "/sys/class/backlight/$BACKLIGHT/brightness";
+
+	elif [[ "$ACTION" == "decrease" ]]; then
+
+		new_brightness="$(decrease_backlight "$old_brightness" "$max_brightness")";
+		echo "-> Set Backlight for Controller \"$BACKLIGHT\" from \"$old_brightness\" to \"$new_brightness\".";
+		echo "$new_brightness" > "/sys/class/backlight/$BACKLIGHT/brightness";
+
+	elif [[ "$ACTION" == "reset" ]]; then
+
+		echo "-> Set Backlight for Controller \"$BACKLIGHT\" to \"$max_brightness\".";
+		echo "$max_brightness" > "/sys/class/backlight/$BACKLIGHT/brightness";
+
+	elif [[ "$ACTION" == "status" ]]; then
+
+		# First Display is always the Main Display
+		echo "$(percentage_backlight "$old_brightness" "$max_brightness")";
+		exit 0;
+
+	fi;
+
+fi;
+
 
 connected=$(xrandr | grep -w connected | cut -f1 -d' ');
 
 for display in $connected; do
 
-	old_brightness="$(get_brightness "$display")";
+	old_brightness="$(get_xrandr "$display")";
 
 	if [[ "$ACTION" == "increase" ]]; then
 
-		new_brightness="$(increase "$old_brightness")";
+		new_brightness="$(increase_xrandr "$old_brightness")";
 		echo "-> Set Brightness for Display \"$display\" from \"$old_brightness\" to \"$new_brightness\".";
 		xrandr --output "$display" --brightness "$new_brightness";
 
 	elif [[ "$ACTION" == "decrease" ]]; then
 
-		new_brightness="$(decrease "$old_brightness")";
+		new_brightness="$(decrease_xrandr "$old_brightness")";
 		echo "-> Set Brightness for Display \"$display\" from \"$old_brightness\" to \"$new_brightness\".";
 		xrandr --output "$display" --brightness "$new_brightness";
 
@@ -128,7 +214,7 @@ for display in $connected; do
 	elif [[ "$ACTION" == "status" ]]; then
 
 		# First Display is always the Main Display
-		echo "$(percentage "$old_brightness")";
+		echo "$(percentage_xrandr "$old_brightness")";
 		exit 0;
 
 	fi;
