@@ -146,20 +146,12 @@ __legacy_ps1() {
 
 	if [[ "$git_dir" != "" ]]; then
 
-		local git_branch="";
-		local git_commit=$(git rev-parse --short HEAD 2>/dev/null);
-		local has_changes=$(git status --porcelain 2>/dev/null);
-
-		local tmp=$(git status --porcelain -b 2>/dev/null);
-
-		if [[ "$tmp" == "## "* ]]; then
-			git_branch=$(echo "${tmp//\#\# }" | head -n 1 | cut -f1 -d".");
-		fi;
+		local git_ref="$(cat $git_dir/HEAD)";
+		local git_branch="${git_ref##"ref: refs/heads/"}";
+		local has_changes=$(git status --short 2>/dev/null);
 
 		if [[ "$git_branch" != "" ]]; then
 			git_status="($git_branch)";
-		else
-			git_status="($git_commit)";
 		fi;
 
 		if [[ "$has_changes" != "" ]]; then
@@ -229,20 +221,12 @@ __modern_ps1() {
 
 	if [[ "$git_dir" != "" ]]; then
 
-		local git_branch="";
-		local git_commit=$(git rev-parse --short HEAD 2>/dev/null);
-		local has_changes=$(git status --porcelain 2>/dev/null);
+		local git_ref="$(cat $git_dir/HEAD)";
+		local git_branch="${git_ref##"ref: refs/heads/"}";
+		local has_changes=$(git status --short 2>/dev/null);
 
-		local tmp=$(git status --porcelain -b 2>/dev/null);
-
-		if [[ "$tmp" == "## "* ]]; then
-			git_branch=$(echo "${tmp//\#\# }" | head -n 1 | cut -f1 -d".");
-		fi;
-		
 		if [[ "$git_branch" != "" ]]; then
 			git_status="🔗 $git_branch";
-		else
-			git_status="🔗 $git_commit";
 		fi;
 
 		if [[ "$has_changes" != "" ]]; then
@@ -301,9 +285,9 @@ __modern_ps1() {
 	local ps1_status="$code\e[01;49;39m$user@$host:$path\e[0m";
 
 	if [[ "$git_status" != "" ]]; then
-		echo -e "\n${ps1_status} ${git_status}\n💻 ";
+		echo -e "\n${ps1_status} ${git_status}\n${host} ";
 	else
-		echo -e "\n${ps1_status}\n💻 ";
+		echo -e "\n${ps1_status}\n${host} ";
 	fi;
 
 }
