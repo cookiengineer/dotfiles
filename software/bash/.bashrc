@@ -242,14 +242,20 @@ __modern_ps1() {
 		user="🤖";
 	fi;
 
-	if [[ "$host" == "nuccy" ]]; then
+	if [[ "$host" == "jarvis" ]]; then
+		host="🤖";
+	elif [[ "$host" == "berry" ]]; then
+		host="🍓";
+	elif [[ "$host" == "fury" ]]; then
+		host="👿";
+	elif [[ "$host" == "nuccy" ]]; then
 		host="🖥️";
+	elif [[ "$host" == "piney" ]]; then
+		host="🌲";
 	elif [[ "$host" == "tinky" ]]; then
 		host="💻";
 	elif [[ "$host" == "weep" ]]; then
 		host="🖥️";
-	elif [[ "$host" == "wiip" ]]; then
-		host="🍓";
 	fi;
 
 	if [[ "$path" == "$HOME/Backup"* ]]; then

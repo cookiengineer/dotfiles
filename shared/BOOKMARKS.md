@@ -7,6 +7,54 @@
 - [Redacted Font](https://github.com/christiannaths/redacted-font)
 - [Comic Mono Font](https://dtinth.github.io/comic-mono-font/)
 
+# Courses
+
+# Courses / Computer Science
+
+# Courses / Computer Science / Programming
+
+- [Let's go with golang](https://www.youtube.com/watch?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa)
+- [Golang Tutorials](https://www.youtube.com/watch?list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q)
+
+# Courses / Computer Science / Stanford CS221
+
+- [Materials](https://stanford-cs221.github.io/spring2022/modules/)
+- [Playlist](https://www.youtube.com/watch?list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX)
+
+# Courses / Computer Science / Berkeley CS188
+
+- [Projects](http://ai.berkeley.edu/project_overview.html)
+- [Slides](http://ai.berkeley.edu/lecture_slides.html)
+- [Videos](http://ai.berkeley.edu/lecture_videos.html)
+- [Playlist](https://www.youtube.com/watch?list=PLsOUugYMBBJENfZ3XAToMsg44W7LeUVhF)
+
+
+# Entertainment
+
+# Entertainment / Comedy
+
+- [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
+- [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
+
+# Entertainment / Science
+
+- [Computerphile](https://www.youtube.com/user/Computerphile/videos)
+- [Numberphile](https://www.youtube.com/c/numberphile/videos)
+- [Smarter Every Day](https://www.youtube.com/c/smartereveryday/videos)
+- [True Crime Documentaries](https://www.youtube.com/watch?list=PLMJjvZqoYSrDnXKTU9p7mdrXGyN8AosUh)
+- [Veritasium](https://www.youtube.com/c/veritasium/videos)
+
+# Entertainment / Visualizations
+
+- [Cameras and Lenses](https://ciechanow.ski/cameras-and-lenses/)
+- [Curves and Surfaces](https://ciechanow.ski/curves-and-surfaces/)
+- [Gears](https://ciechanow.ski/gears/)
+- [Internal Combustion Engine](https://ciechanow.ski/internal-combustion-engine/)
+- [Light and Shadows](https://ciechanow.ski/lights-and-shadows/)
+- [Naval Architecture](https://ciechanow.ski/naval-architecture/)
+- [Ocean Currents, Winds and Pollutions](https://earth.nullschool.net/)
+- [Mechanical Watch](https://ciechanow.ski/mechanical-watch/)
+- [GPS](https://ciechanow.ski/gps/)
 
 # Hardware
 
@@ -84,6 +132,7 @@
 # Platforms / Search
 
 - [BTDig](https://btdig.com)
+- [Geizhals Preisvergleich](https://geizhals.de/)
 - [Lumen Database](https://www.lumendatabase.org/)
 - [Sumi News](https://sumi.news)
 - [theoldnet.com](https://theoldnet.com)
@@ -102,6 +151,11 @@
 - [Silent Mouse Click Mod](https://www.youtube.com/watch?v=Vdejbqy3mpw)
 - [Quieter Mouse](https://www.youtube.com/watch?v=q6shyzh8bLk)
 
+# Projects / Crapphone
+
+- [GSI Images List](https://github.com/phhusson/treble_experimentations/wiki/Generic-System-Image-%28GSI%29-list)
+- [LineageOS GSI Images](https://sourceforge.net/projects/andyyan-gsi/files/lineage-18.x/)
+
 # Projects / Pinephone
 
 - [SXMO](https://sxmo.org)
@@ -118,6 +172,11 @@
 - [Sovereign Tech Fund](https://sovereigntechfund.de/)
 - [Stiftung NV](https://www.stiftung-nv.de/de/publikation/deutschlands-staatliche-cybersicherheitsarchitektur)
 
+# Shopping
+
+# Shopping / Forums
+
+- [Auktionshilfe Forum](https://www.auktionshilfe.info/)
 
 # Software
 
@@ -169,6 +228,16 @@
 - [Packetstream Residential Proxy Network](https://packetstream.io/)
 - [Scuttlebutt Protocol Guide](https://ssbc.github.io/scuttlebutt-protocol-guide/)
 
+# Software / Social
+
+- [FOSSCord](https://github.com/fosscord/fosscord)
+
+# Software / Social / Telegram
+
+- [Telegram API](https://github.com/xelaj/mtproto)
+- [Teamgram Server](https://github.com/teamgram/teamgram-server)
+- [Revived MTProxy](https://github.com/GetPageSpeed/MTProxy)
+
 # Software / Tools
 
 - [bat](https://github.com/sharkdp/bat)
@@ -177,6 +246,10 @@
 - [lsd](https://github.com/Peltoche/lsd)
 - [PDF Extractor](https://github.com/ScientaNL/pdf-extractor)
 - [i3-workspace-groups](https://github.com/infokiller/i3-workspace-groups)
+
+# Software / Visualizations
+
+- [Earth Weather](https://github.com/cambecc/earth)
 
 # Software / Web Scraping
 
@@ -314,12 +387,15 @@
 - [PoisonTap](https://github.com/samyk/poisontap)
 - [PWNAT](https://github.com/samyk/pwnat)
 
+# Cybersecurity / Redteam / Social Engineering
+
+- [Deepfake Offensive Toolkit](https://github.com/sensity-ai/dot)
+
 # Cybersecurity / Redteam / Wi-Fi
 
 - [airgeddon](https://github.com/v1s1t0r1sh3r3/airgeddon)
 - [krackattack](https://github.com/vanhoefm/krackattacks-scripts)
 - [Offensive Wi-Fi Toolkit](https://github.com/clu3bot/owt)
-
 
 # Warez
 
