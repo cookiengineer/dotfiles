@@ -124,6 +124,14 @@
 - [Z-Library](https://z-lib.org)
 - [Z-Library Mirror](https://en.de1lib.org)
 
+# Platforms / Forums
+
+- [Homepage Forum](https://www.homepage-forum.de/)
+- [XHTML Forum](https://xhtmlforum.de/)
+- [Computerbase](https://www.computerbase.de/)
+- [Kuketz IT-Security Forum](https://forum.kuketz-blog.de/)
+- [Macintosh Forum](https://www.macintosh-forum.de/)
+
 # Platforms / Work
 
 - [lancer.to](https://lancer.to)
@@ -160,6 +168,9 @@
 
 - [SXMO](https://sxmo.org)
 - [ArchLinuxARM](https://archlinuxarm.org/platforms)
+- [Pine64 Arch](https://github.com/dreemurrs-embedded/Pine64-Arch/releases)
+- [Pinephone Software Releases](https://wiki.pine64.org/wiki/PinePhone_Software_Releases)
+- [Pure Maps](https://github.com/rinigus/pure-maps)
 
 # Projects / Tholian Network
 
@@ -335,6 +346,13 @@
 - [TL;DR Sec](https://www.tldrsec.com/)
 
 # Cybersecurity / Redteam
+
+# Cybersecurity / Redteam / Capture The Flag
+
+- [0xdf Blog](https://0xdf.gitlab.io/)
+- [CTF Time](https://ctftime.org/)
+- [PicoCTF](https://picoctf.org/)
+- [TryHackMe](https://tryhackme.com/)
 
 # Cybersecurity / Redteam / Forums
 
