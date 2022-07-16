@@ -37,8 +37,14 @@ complete -cf sudo;
 # Default Programs and Aliases
 #
 
-BROWSER=/usr/bin/chromium;
-EDITOR=/usr/bin/vim;
+export BROWSER=/usr/bin/chromium;
+export EDITOR=/usr/bin/vim;
+export PAGER=/usr/bin/vimpager;
+
+
+
+alias less="$PAGER";
+alias more=less;                     # cmd compatibility
 
 alias cls="clear; printf '\033[3J'"; # clear screen and scroll buffer
 alias cp="cp -i";                    # confirm before overwriting something
@@ -48,7 +54,6 @@ alias fgrep='fgrep --colour=auto';
 alias free='free -m';                # show sizes in MB
 alias grep='grep --colour=auto';
 alias ls='ls --color=auto';
-alias more=less;                     # cmd compatibility
 alias mv="mv -i";                    # confirm before overwriting something
 alias ns='netstat -tup --wide';      # show only active program sockets
 alias rm="rm -i";                    # confirm before removing something

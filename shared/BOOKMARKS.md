@@ -36,11 +36,25 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Politics
+
+- [Real Life Lore](https://www.youtube.com/c/RealLifeLore/videos)
+- [Renzo](https://www.youtube.com/c/Renzo69/videos)
+- [Tim Jacken](https://www.youtube.com/c/TimJacken/videos)
+
+# Entertainment / Social
+
+- [Genug Internet fuer heute](https://www.youtube.com/channel/UCsdB5r8CaT6_T5KB3nK1j6g/videos)
+- [Hyperbole](https://www.youtube.com/c/hyperboleTV/videos)
+
 # Entertainment / Science
 
 - [Computerphile](https://www.youtube.com/user/Computerphile/videos)
+- [Jeri Ellsworth](https://www.youtube.com/c/jeriellsworth/videos)
+- [Mark Rober](https://www.youtube.com/c/MarkRober/videos)
 - [Numberphile](https://www.youtube.com/c/numberphile/videos)
 - [Smarter Every Day](https://www.youtube.com/c/smartereveryday/videos)
+- [Tested](https://www.youtube.com/c/tested/videos)
 - [True Crime Documentaries](https://www.youtube.com/watch?list=PLMJjvZqoYSrDnXKTU9p7mdrXGyN8AosUh)
 - [Veritasium](https://www.youtube.com/c/veritasium/videos)
 
@@ -123,6 +137,7 @@
 - [Sci-Hub](https://sci-hub.se)
 - [Z-Library](https://z-lib.org)
 - [Z-Library Mirror](https://en.de1lib.org)
+- [Pirate Library Mirror](https://pilimi.org)
 
 # Platforms / Forums
 
@@ -152,14 +167,18 @@
 
 # Projects / Homeserver
 
-# Projects / Gaming PC
+- [Raidsonic IB-3640SU3](https://geizhals.de/raidsonic-icy-box-ib-3640su3-20640-a847133.html)
 
 # Projects / Noisy Mouse
 
 - [Silent Mouse Click Mod](https://www.youtube.com/watch?v=Vdejbqy3mpw)
 - [Quieter Mouse](https://www.youtube.com/watch?v=q6shyzh8bLk)
 
-# Projects / Crapphone
+# Projects / Robophone
+
+- [LineageOS Ginkgo](https://wiki.lineageos.org/devices/ginkgo/)
+
+# Projects / Crapphone GSI
 
 - [GSI Images List](https://github.com/phhusson/treble_experimentations/wiki/Generic-System-Image-%28GSI%29-list)
 - [LineageOS GSI Images](https://sourceforge.net/projects/andyyan-gsi/files/lineage-18.x/)
@@ -171,6 +190,13 @@
 - [Pine64 Arch](https://github.com/dreemurrs-embedded/Pine64-Arch/releases)
 - [Pinephone Software Releases](https://wiki.pine64.org/wiki/PinePhone_Software_Releases)
 - [Pure Maps](https://github.com/rinigus/pure-maps)
+
+# Projects / Pinetime
+
+- [Gadgetbridge](https://codeberg.org/Freeyourgadget/Gadgetbridge)
+- [InfiniTime Firmware](https://github.com/InfiniTimeOrg/InfiniTime)
+- [Siglo App](https://github.com/theironrobin/siglo)
+- [Wasp OS Firmware](https://github.com/daniel-thompson/wasp-os)
 
 # Projects / Tholian Network
 
@@ -223,7 +249,6 @@
 
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
-- [k8s Lens App](https://github.com/lensapp/lens)
 
 # Software / Filesharing
 
@@ -396,6 +421,10 @@
 - [Zed Attack Proxy](https://github.com/zaproxy/zaproxy)
 - [ZGrab Scanner](https://github.com/zmap/zgrab2)
 - [ZMap Scanner](https://github.com/zmap/zmap)
+
+# Cybersecurity / Redteam / WAF
+
+- [Awesome WAF](https://github.com/0xInfection/Awesome-WAF)
 
 # Cybersecurity / Redteam / Phreaking
 
