@@ -34,7 +34,7 @@ elif [[ "$1" == "--as-server-for" ]] && [[ "$2" != "" ]]; then
 
 	echo "v2:sha256:$fingerprint_server" > "$config/SSL/Fingerprints/Local.txt";
 
-	scp "$USER@$2$config/SSL/Fingerprints/Local.txt" "$config/SSL/Fingerprints/TrustedClients.txt";
+	scp "$USER@$2:$config/SSL/Fingerprints/Local.txt" "$config/SSL/Fingerprints/TrustedClients.txt";
 
 else
 

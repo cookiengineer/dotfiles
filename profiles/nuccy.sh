@@ -12,7 +12,7 @@ fi;
 # XXX: MAIN software
 #
 
-synchronize filesystem bash base-devel;
+synchronize filesystem bash base base-devel;
 synchronize trizen;
 synchronize i3-desktop;
 synchronize ly;
@@ -21,23 +21,23 @@ synchronize barrier-headless;
 synchronize networkmanager;
 synchronize git;
 synchronize openssh;
-synchronize nodejs;
+synchronize nodejs npm;
 synchronize tor;
 synchronize kitty;
 synchronize vim;
 
 synchronize noto-fonts noto-fonts-compat noto-fonts-emoji;
-synchronize bluez bluez-firmware bluez-libs bluez-utils;
-synchronize chromium firefox gimp gparted transmission-gtk uget;
-synchronize ffmpeg celluloid lollypop;
+synchronize firefox gimp gparted transmission-gtk;
+synchronize ffmpeg mpv;
 synchronize dnsutils macchanger net-tools nmap;
+synchronize openscad tldr yt-dlp;
 
 #
 # XXX: AUR software
 #
 
 synchronize wireless-regdb-pentest;
-synchronize tldr youtube-dl mobac openscad;
+syncrhonize mobac;
 
 synchronize auto-tagger;
 synchronize chromium-extensions;
@@ -59,10 +59,22 @@ sudo cp "$PROFILE_ROOT/etc/NetworkManager/system-connections/Workshop.nmconnecti
 sudo cp "$PROFILE_ROOT/etc/barrier.conf" "/etc/barrier.conf";
 cp "$PROFILE_ROOT/home/cookiengineer/.config/i3status/config" "/home/$USER/.config/i3status/config";
 
+
+keyboard_conf="/etc/X11/xorg.conf.d/00-keyboard.conf";
+if [[ ! -f "$keyboard_conf" ]]; then
+	sudo cp "$PROFILE_ROOT$keyboard_conf" $keyboard_conf;
+fi;
+
 monitor_conf="/etc/X11/xorg.conf.d/10-monitor.conf";
 if [[ ! -f "$monitor_conf" ]]; then
 	sudo cp "$PROFILE_ROOT$monitor_conf" $monitor_conf;
 fi;
+
+intel_conf="/etc/X11/xorg.conf.d/20-intel.conf";
+if [[ ! -f "$intel_conf" ]]; then
+	sudo cp "$PROFILE_ROOT$intel_conf" $intel_conf;
+fi;
+
 
 systemctl --user enable barrier-server;
 

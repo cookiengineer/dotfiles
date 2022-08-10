@@ -138,11 +138,11 @@ __legacy_ps1() {
 	local path="$PWD";
 
 	if [[ "$last_status" == "0" ]]; then
-		code=" ";
+		code="";
 	elif [[ "$last_status" == "2" ]]; then
-		code="?";
+		code="? ";
 	else
-		code="!";
+		code="! ";
 	fi;
 
 
@@ -194,7 +194,7 @@ __legacy_ps1() {
 		path="${path/"$HOME"/"~"}";
 	fi;
 
-	local ps1_status="$code \e[01;49;39m$user@$host:$path\e[0m";
+	local ps1_status="$code\e[01;49;39m$user@$host:$path\e[0m";
 
 	if [[ "$git_status" != "" ]]; then
 		echo -e "\n${ps1_status} ${git_status}\n> ";
@@ -213,11 +213,11 @@ __modern_ps1() {
 	local path="$PWD";
 
 	if [[ "$last_status" == "0" ]]; then
-		code="✔️ ";
+		code="";
 	elif [[ "$last_status" == "2" ]]; then
-		code="🔥";
+		code="🔥 ";
 	else
-		code="❌";
+		code="❌ ";
 	fi;
 
 
@@ -296,9 +296,9 @@ __modern_ps1() {
 	local ps1_status="$code\e[01;49;39m$user@$host:$path\e[0m";
 
 	if [[ "$git_status" != "" ]]; then
-		echo -e "\n${ps1_status} ${git_status}\n${host} ";
+		echo -e "\n${ps1_status} ${git_status}\n${host}> ";
 	else
-		echo -e "\n${ps1_status}\n${host} ";
+		echo -e "\n${ps1_status}\n${host}> ";
 	fi;
 
 }
@@ -467,11 +467,17 @@ datetime() {
 }
 
 youtube-mp3() {
-	youtube-dl --extract-audio --audio-format mp3 $1 --continue --ignore-errors;
+	# youtube-dl --extract-audio --audio-format mp3 $1 --continue --ignore-errors;
+	yt-dlp -f 'ba' -x --audio-format mp3 $1;
+}
+
+youtube-mp4() {
+	yt-dlp -S res,ext:mp4:m4a --recode mp4 $1;
 }
 
 youtube-opus() {
-	youtube-dl --extract-audio --audio-format opus $1 --continue --ignore-errors;
+	# youtube-dl --extract-audio --audio-format opus $1 --continue --ignore-errors;
+	yt-dlp -f 'ba' -x --audio-format opus $1;
 }
 
 website-dl() {

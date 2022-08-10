@@ -18,5 +18,9 @@ if [ -d /etc/NetworkManager/conf.d ]; then
 		sudo cp "$DIR/30-mac-randomization.conf" /etc/NetworkManager/conf.d/30-mac-randomization.conf;
 	fi;
 
+	if [ ! -f /etc/NetworkManager/conf.d/20-connectivity.conf ]; then
+		sudo cp "$DIR/20-connectivity.conf" /etc/NetworkManager/conf.d/20-connectivity.conf;
+	fi;
+
 fi;
 
