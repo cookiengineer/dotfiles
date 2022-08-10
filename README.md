@@ -23,6 +23,15 @@ desktop machines are airgapped and LUKS-encrypted on purpose.
 
 ## Profiles
 
+**Intel NUC Homeserver (jarvis)**
+
+Profile: [./profiles/jarvis.sh](./profiles/jarvis.sh)
+
+- OEM Intel EFI
+- Arch Linux
+- Intel HD5000
+
+
 **Intel NUC (nuccy)**
 
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
@@ -34,7 +43,7 @@ Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 3 (BenQ 24" DisplayPort 1920x1080)
 - Intel HD4000
-- Cherry Strait 3.0 USB (JK-03 US Layout)
+- Lenovo Thinkpad USB Keyboard US Layout (03X8715)
 - Vertical Mouse (CSL 26069)
 - (optional) Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
 - (optional) Analog Audio Headphones (AKG HD242)
@@ -66,8 +75,7 @@ Profile: [./profiles/weep.sh](./profiles/weep.sh)
 - Cherry Strait 3.0 USB (JK-03 US Layout)
 - Vertical Mouse (CSL 26069)
 
-
-**HP Business Notebook**
+**HP Business Laptop (fury)**
 
 Profile: [./profiles/fury.sh](./profiles/fury.sh)
 
