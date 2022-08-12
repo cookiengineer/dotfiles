@@ -3,8 +3,10 @@
 
 if [ "$1" == "--debug" ]; then
 	source "$(dirname "$0")/_lib/archlinux.sh" "nuccy" "--debug";
+	source "$(dirname "$0")/../projects/github.sh" "--debug";
 else
 	source "$(dirname "$0")/_lib/archlinux.sh" "nuccy";
+	source "$(dirname "$0")/../projects/github.sh";
 fi;
 
 
@@ -47,8 +49,11 @@ synchronize pacman-backup;
 # XXX: GIT projects
 #
 
-clone cookiengineer "*";
-clone tholian-network "*";
+confirm_github;
+
+if [ "$?" == "0" ]; then
+	clone_github;
+fi;
 
 #
 # XXX: System config

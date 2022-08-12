@@ -31,7 +31,6 @@ Profile: [./profiles/jarvis.sh](./profiles/jarvis.sh)
 - Arch Linux
 - Intel HD5000
 
-
 **Intel NUC (nuccy)**
 
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
@@ -102,14 +101,12 @@ sudo pacman -S base-devel;
 bash ./profiles/nuccy.sh;
 ```
 
-Afterwards, the `id_rsa.pub` file will be generated
-if it doesn't exist - so it has to be added to the
-GitHub account:
+**Important Notes**
 
-```bash
-# Add this Public Key to BitBucket, GitHub and GitLab
-cat ~/.ssh/id_rsa.pub;
-```
+- The `id_rsa.pub` file is automatically generated when the `openssh` software is synchronized.
+- The convention for the git repository paths is `~/Software/${orga_or_user}/${repo}`.
+- There will be an instruction asking you to add the ssh key to GitHub, GitLab and Jarvis.
+  If this isn't confirmed, it won't clone/update the repositories in `~/Software/**`.
 
 
 ## Debugging
@@ -142,12 +139,11 @@ Available Profiles:
 
 Folder Structure:
 
+- [./packages](./packages) contains all self-maintained [aur](https://aur.archlinux.org) packages.
+- [./projects](./projects) contains github repository integrations.
 - [./profiles](./profiles) contains ready-to-use profiles.
-- [./projects](./projects) contains github organization and repository integrations.
-- [./packages-aur](./packages-aur) contains all self-maintained [aur](https://aur.archlinux.org) packages.
-- [./software](./software) contains package integrations for `core`, `community`, `extra` and `multilib`.
-- [./software-aur](./software-aur) contains package integrations for [aur.archlinux.org](https://aur.archlinux.org).
-- [./software-own](./software-own) contains custom helpers that have no upstream packages.
+- [./shared](./shared) contains shared files among machines.
+- [./software](./software) contains package integrations.
 
 
 ## License

@@ -127,11 +127,3 @@ synchronize () {
 
 }
 
-clone () {
-
-	# TODO: Better Integration for install-git $user_or_orga
-
-	exit;
-
-}
-

@@ -1,4 +1,0 @@
-https://github.com/polyfillr/polyfillr-components.git
-https://github.com/polyfillr/polyfillr-console.git
-https://github.com/polyfillr/polyfillr-ecmascript.git
-https://github.com/polyfillr/polyfillr.github.io.git
