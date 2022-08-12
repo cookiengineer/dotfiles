@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T12:26:53.447893623+02:00",
+  "updated": "2022-08-10T12:26:53.447943972+02:00",
+  "name": "deny-always-list-usr-lib-firefox-firefox-location-services-mozilla-com",
+  "enabled": true,
+  "precedence": false,
+  "action": "deny",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"location.services.mozilla.com\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/lib/firefox/firefox\"}]",
+    "list": [
+      {
+        "type": "simple",
+        "operand": "dest.host",
+        "sensitive": false,
+        "data": "location.services.mozilla.com",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/lib/firefox/firefox",
+        "list": null
+      }
+    ]
+  }
+}

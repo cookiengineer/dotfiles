@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T13:16:38.141636827+02:00",
+  "updated": "2022-08-10T13:16:38.141808596+02:00",
+  "name": "allow-always-list-usr-lib-git-core-git-remote-http-aur-archlinux-org",
+  "enabled": true,
+  "precedence": false,
+  "action": "allow",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"aur.archlinux.org\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/lib/git-core/git-remote-http\"}]",
+    "list": [
+      {
+        "type": "simple",
+        "operand": "dest.host",
+        "sensitive": false,
+        "data": "aur.archlinux.org",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/lib/git-core/git-remote-http",
+        "list": null
+      }
+    ]
+  }
+}

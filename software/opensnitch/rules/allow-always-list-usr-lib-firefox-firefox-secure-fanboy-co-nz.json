@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T12:33:38.337686013+02:00",
+  "updated": "2022-08-10T12:33:38.337844738+02:00",
+  "name": "allow-always-list-usr-lib-firefox-firefox-secure-fanboy-co-nz",
+  "enabled": true,
+  "precedence": false,
+  "action": "allow",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"secure.fanboy.co.nz\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/lib/firefox/firefox\"}]",
+    "list": [
+      {
+        "type": "simple",
+        "operand": "dest.host",
+        "sensitive": false,
+        "data": "secure.fanboy.co.nz",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/lib/firefox/firefox",
+        "list": null
+      }
+    ]
+  }
+}

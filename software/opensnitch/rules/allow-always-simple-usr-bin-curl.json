@@ -1,0 +1,16 @@
+{
+  "created": "2022-08-10T13:18:06.098010719+02:00",
+  "updated": "2022-08-10T13:18:06.098107489+02:00",
+  "name": "allow-always-simple-usr-bin-curl",
+  "enabled": true,
+  "precedence": false,
+  "action": "allow",
+  "duration": "always",
+  "operator": {
+    "type": "simple",
+    "operand": "process.path",
+    "sensitive": false,
+    "data": "/usr/bin/curl",
+    "list": []
+  }
+}

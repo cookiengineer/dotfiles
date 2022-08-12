@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T12:37:07.151397214+02:00",
+  "updated": "2022-08-10T12:37:07.151490125+02:00",
+  "name": "deny-always-list-usr-lib-firefox-firefox-darkreader-org",
+  "enabled": true,
+  "precedence": false,
+  "action": "deny",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"darkreader.org\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/lib/firefox/firefox\"}]",
+    "list": [
+      {
+        "type": "simple",
+        "operand": "dest.host",
+        "sensitive": false,
+        "data": "darkreader.org",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/lib/firefox/firefox",
+        "list": null
+      }
+    ]
+  }
+}

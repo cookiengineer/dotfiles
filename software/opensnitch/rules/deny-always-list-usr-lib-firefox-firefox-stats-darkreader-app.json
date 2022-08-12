@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T12:31:55.575945772+02:00",
+  "updated": "2022-08-10T12:31:55.576005227+02:00",
+  "name": "deny-always-list-usr-lib-firefox-firefox-stats-darkreader-app",
+  "enabled": true,
+  "precedence": false,
+  "action": "deny",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"stats.darkreader.app\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/lib/firefox/firefox\"}]",
+    "list": [
+      {
+        "type": "simple",
+        "operand": "dest.host",
+        "sensitive": false,
+        "data": "stats.darkreader.app",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/lib/firefox/firefox",
+        "list": null
+      }
+    ]
+  }
+}

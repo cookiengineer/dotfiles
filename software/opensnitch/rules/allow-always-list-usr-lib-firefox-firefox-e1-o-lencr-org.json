@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T12:33:29.814477606+02:00",
+  "updated": "2022-08-10T12:33:29.814540404+02:00",
+  "name": "allow-always-list-usr-lib-firefox-firefox-e1-o-lencr-org",
+  "enabled": true,
+  "precedence": false,
+  "action": "allow",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"e1.o.lencr.org\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/lib/firefox/firefox\"}]",
+    "list": [
+      {
+        "type": "simple",
+        "operand": "dest.host",
+        "sensitive": false,
+        "data": "e1.o.lencr.org",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/lib/firefox/firefox",
+        "list": null
+      }
+    ]
+  }
+}

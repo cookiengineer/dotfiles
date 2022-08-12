@@ -1,0 +1,31 @@
+{
+  "created": "2022-08-10T12:26:13.23327537+02:00",
+  "updated": "2022-08-10T12:26:13.233432945+02:00",
+  "name": "allow-always-list-usr-bin-ssh-192-168",
+  "enabled": true,
+  "precedence": false,
+  "action": "allow",
+  "duration": "always",
+  "operator": {
+    "type": "list",
+    "operand": "list",
+    "sensitive": false,
+    "data": "[{\"type\": \"regexp\", \"operand\": \"dest.ip\", \"data\": \"192\\\\.168\\\\..*\"}, {\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"/usr/bin/ssh\"}]",
+    "list": [
+      {
+        "type": "regexp",
+        "operand": "dest.ip",
+        "sensitive": false,
+        "data": "192\\.168\\..*",
+        "list": null
+      },
+      {
+        "type": "simple",
+        "operand": "process.path",
+        "sensitive": false,
+        "data": "/usr/bin/ssh",
+        "list": null
+      }
+    ]
+  }
+}
