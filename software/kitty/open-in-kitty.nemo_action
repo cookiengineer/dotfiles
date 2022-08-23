@@ -1,0 +1,9 @@
+[Nemo Action]
+
+Name=Open in KiTTY
+Comment=Open the KiTTY Terminal in the selected folder
+Exec=kitty --working-directory="%F"
+Icon-Name=utilities-terminal-symbolic
+Selection=any
+Extensions=dir;
+
