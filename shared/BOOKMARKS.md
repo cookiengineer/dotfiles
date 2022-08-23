@@ -288,7 +288,9 @@
 - [bat](https://github.com/sharkdp/bat)
 - [DDC Control](https://github.com/ddccontrol/ddccontrol)
 - [dug](https://github.com/unfrl/dug)
+- [fd](https://github.com/sharkdp/fd)
 - [lsd](https://github.com/Peltoche/lsd)
+- [ncdu](https://dev.yorhel.nl/ncdu)
 - [PDF Extractor](https://github.com/ScientaNL/pdf-extractor)
 - [i3-workspace-groups](https://github.com/infokiller/i3-workspace-groups)
 
@@ -422,6 +424,7 @@
 - [RSS Search Engine](https://github.com/davidesantangelo/dato.rss)
 - [Sherlock Social Media Account Hunter](https://github.com/sherlock-project/sherlock)
 - [Snap Map Archiver](https://github.com/king-millez/snapmap-archiver)
+- [Webanalyze Technologies of Web Apps](https://github.com/rverton/webanalyze)
 
 # Cybersecurity / Redteam / OWASP
 
@@ -431,6 +434,7 @@
 - [Zed Attack Proxy](https://github.com/zaproxy/zaproxy)
 - [ZGrab Scanner](https://github.com/zmap/zgrab2)
 - [ZMap Scanner](https://github.com/zmap/zmap)
+- [L9 Explore](https://github.com/LeakIX/l9explore)
 
 # Cybersecurity / Redteam / WAF
 
@@ -443,6 +447,10 @@
 - [MagSpoof](https://github.com/samyk/magspoof)
 - [PoisonTap](https://github.com/samyk/poisontap)
 - [PWNAT](https://github.com/samyk/pwnat)
+
+# Cybersecurity / Redteam / Reverse Engineering
+
+- [SpringShell Scanner](https://github.com/jfrog/jfrog-spring-tools)
 
 # Cybersecurity / Redteam / Social Engineering
 

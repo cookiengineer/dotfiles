@@ -26,6 +26,7 @@ client.background       #ffffff
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id opensnitch-ui
 exec --no-startup-id xset r rate 250 50
 exec --no-startup-id xset dpms 0 0 0
 exec --no-startup-id xset -dpms
@@ -33,17 +34,23 @@ exec --no-startup-id feh --bg-scale "/home/cookiengineer/Pictures/Wallpapers/neo
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessUp exec --no-startup-id i3-brightness increase
 bindsym XF86MonBrightnessDown exec --no-startup-id i3-brightness decrease
+bindsym XF86MonBrightnessUp exec --no-startup-id i3-brightness increase
+bindsym XF86Display exec --no-startup-id mpv --player-operation-mode=pseudo-gui
+bindsym XF86WLAN exec --no-startup-id nm-connection-editor
+bindsym XF86Tools exec --no-startup-id lxappearance
+bindsym XF86Search exec --no-startup-id firefox
+bindsym XF86LaunchA exec --no-startup-id nemo "/home/cookiengineer/Software"
+bindsym XF86Explorer exec --no-startup-id nemo
 bindsym Print exec --no-startup-id scrot "/home/cookiengineer/Pictures/%Y-%m-%d_%H:%I:%M_Screenshot.png"
 
 # start a terminal
-# bindsym $mod+Return exec kitty
-bindsym $mod+Return exec uxterm
+bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec uxterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -87,6 +94,9 @@ bindsym $mod+m bar mode toggle
 # focus the child container
 # bindsym $mod+d focus child
 
+
+
+set $ws0 "0"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -97,7 +107,10 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
 
+bindsym $mod+grave workspace number $ws0
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -108,11 +121,14 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+minus workspace number $ws11
+bindsym $mod+equal workspace number $ws12
+bindsym $mod+BackSpace workspace "BG"
 
 bindsym $mod+Prior workspace prev
 bindsym $mod+Next workspace next
-bindsym $mod+Insert workspace create
 
+bindsym $mod+Shift+grave move container to workspace number $ws0
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -123,6 +139,35 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+minus move container to workspace number $ws11
+bindsym $mod+Shift+equal move container to workspace number $ws12
+bindsym $mod+Shift+BackSpace move container to workspace "BG"
+
+bindsym $mod+F1 workspace "F1"
+bindsym $mod+F2 workspace "F2"
+bindsym $mod+F3 workspace "F3"
+bindsym $mod+F4 workspace "F4"
+bindsym $mod+F5 workspace "F5"
+bindsym $mod+F6 workspace "F6"
+bindsym $mod+F7 workspace "F7"
+bindsym $mod+F8 workspace "F8"
+bindsym $mod+F9 workspace "F9"
+bindsym $mod+F10 workspace "F10"
+bindsym $mod+F11 workspace "F11"
+bindsym $mod+F12 workspace "F12"
+
+bindsym $mod+Shift+F1 move container to workspace "F1"
+bindsym $mod+Shift+F2 move container to workspace "F2"
+bindsym $mod+Shift+F3 move container to workspace "F3"
+bindsym $mod+Shift+F4 move container to workspace "F4"
+bindsym $mod+Shift+F5 move container to workspace "F5"
+bindsym $mod+Shift+F6 move container to workspace "F6"
+bindsym $mod+Shift+F7 move container to workspace "F7"
+bindsym $mod+Shift+F8 move container to workspace "F8"
+bindsym $mod+Shift+F9 move container to workspace "F9"
+bindsym $mod+Shift+F10 move container to workspace "F10"
+bindsym $mod+Shift+F11 move container to workspace "F11"
+bindsym $mod+Shift+F12 move container to workspace "F12"
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
