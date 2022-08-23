@@ -36,6 +36,10 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Fitness
+
+- [Coach Eddy](https://www.youtube.com/c/CoachEddy/videos)
+
 # Entertainment / Politics
 
 - [Real Life Lore](https://www.youtube.com/c/RealLifeLore/videos)
@@ -47,8 +51,13 @@
 - [Genug Internet fuer heute](https://www.youtube.com/channel/UCsdB5r8CaT6_T5KB3nK1j6g/videos)
 - [Hyperbole](https://www.youtube.com/c/hyperboleTV/videos)
 
+# Entertainment / Tech
+
+- [Security Now](https://www.youtube.com/user/TWiTSecurityNow/videos)
+
 # Entertainment / Science
 
+- [CGP Grey](https://www.youtube.com/greymatter/videos)
 - [Computerphile](https://www.youtube.com/user/Computerphile/videos)
 - [Jeri Ellsworth](https://www.youtube.com/c/jeriellsworth/videos)
 - [Mark Rober](https://www.youtube.com/c/MarkRober/videos)
@@ -408,6 +417,7 @@
 - [Amazon Scraper](https://github.com/ScrapingAnt/amazon_scraper)
 - [DEDA Tracking Dots Extraction Toolkit](https://github.com/dfd-tud/deda)
 - [GHunt](https://github.com/mxrch/GHunt)
+- [Holele EMail to Accounts](https://github.com/megadose/holehe)
 - [Little Brother](https://github.com/lulz3xploit/LittleBrother)
 - [RSS Search Engine](https://github.com/davidesantangelo/dato.rss)
 - [Sherlock Social Media Account Hunter](https://github.com/sherlock-project/sherlock)
