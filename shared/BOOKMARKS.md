@@ -36,6 +36,12 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Documentaries
+
+- [ARTEde](https://www.youtube.com/c/artede/videos)
+- [NDR Doku](https://www.youtube.com/c/NDRDoku/videos)
+- [WDR Doku](https://www.youtube.com/c/WDRDoku/videos)
+
 # Entertainment / Fitness
 
 - [Coach Eddy](https://www.youtube.com/c/CoachEddy/videos)
