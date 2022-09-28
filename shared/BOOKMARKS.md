@@ -59,6 +59,7 @@
 
 # Entertainment / Tech
 
+- [Alternativlos](http://alternativlos.org/)
 - [Security Now](https://www.youtube.com/user/TWiTSecurityNow/videos)
 
 # Entertainment / Science
@@ -154,6 +155,11 @@
 - [Z-Library Mirror](https://en.de1lib.org)
 - [Pirate Library Mirror](https://pilimi.org)
 
+# Platforms / Code
+
+- [GitHub Explore](https://github.com/explore)
+- [OSS Insight](https://ossinsight.io)
+
 # Platforms / Forums
 
 - [Homepage Forum](https://www.homepage-forum.de/)
@@ -183,6 +189,8 @@
 # Projects / Homeserver
 
 - [Raidsonic IB-3640SU3](https://geizhals.de/raidsonic-icy-box-ib-3640su3-20640-a847133.html)
+- [DC Step-Up 12V to 19V Converter](https://www.amazon.de/DC-DC-Wandler-Step-up-Konverter-Modul-Power-Supply-Boost/dp/B07Z3XJ8ZG)
+- [Molex 2 Pin Socket](https://www.conrad.de/de/p/molex-buchsengehaeuse-kabel-polzahl-gesamt-2-rastermass-4-2-mm-39012025-1-st-bag-2448284.html)
 
 # Projects / Noisy Mouse
 
@@ -212,6 +220,10 @@
 - [InfiniTime Firmware](https://github.com/InfiniTimeOrg/InfiniTime)
 - [Siglo App](https://github.com/theironrobin/siglo)
 - [Wasp OS Firmware](https://github.com/daniel-thompson/wasp-os)
+
+# Projects / Stuff
+
+- [WebUSB RTL-SDR Radar](https://github.com/charliegerard/webusb-rtlsdr-aircraft-radar-system)
 
 # Projects / Tholian Network
 
@@ -251,6 +263,11 @@
 - [TrebleInfo](https://gitlab.com/hackintosh5/TrebleInfo)
 - [Wigle Wardriving Client](https://github.com/wiglenet/wigle-wifi-wardriving)
 - [Yet Another Call Blocker](https://gitlab.com/xynngh/YetAnotherCallBlocker)
+
+# Software / Code
+
+- [Difftastic](https://github.com/wilfred/difftastic)
+- [OSS Insight](https://github.com/pingcap/ossinsight)
 
 # Software / Cryptography
 
@@ -415,14 +432,18 @@
 
 # Cybersecurity / Redteam / Networking
 
+- [Evil Gophish](https://github.com/fin3ss3g0d/evilgophish)
 - [HTTP2 Request Smuggler](https://github.com/BishopFox/h2csmuggler)
 - [WebSocket Request Smuggler](https://github.com/hahwul/ws-smuggler)
 - [HTTP2/1 Request Smuggler](https://github.com/neex/http2smugl)
+- [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
 
 # Cybersecurity / Redteam / OSINT
 
+- [Assetfinder](https://github.com/tomnomnom/assetfinder)
 - [Awesome OSINT](https://github.com/jivoi/awesome-osint)
 - [Amazon Scraper](https://github.com/ScrapingAnt/amazon_scraper)
+- [Bugged Planet](https://buggedplanet.info/index.php?title=Main_Page)
 - [DEDA Tracking Dots Extraction Toolkit](https://github.com/dfd-tud/deda)
 - [GHunt](https://github.com/mxrch/GHunt)
 - [Holele EMail to Accounts](https://github.com/megadose/holehe)
@@ -467,6 +488,7 @@
 - [airgeddon](https://github.com/v1s1t0r1sh3r3/airgeddon)
 - [krackattack](https://github.com/vanhoefm/krackattacks-scripts)
 - [Offensive Wi-Fi Toolkit](https://github.com/clu3bot/owt)
+- [Sparrow Wi-Fi Toolkit](https://github.com/ghostop14/sparrow-wifi)
 
 # Warez
 

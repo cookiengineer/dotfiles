@@ -1,6 +1,7 @@
 
 # SBOM Generator Tools
 
+- [Rezilion](https://www.rezilion.com/platform/dynamic-sbom/)
 - [Syft](https://github.com/anchore/syft)
 - [OSS Review Toolkit](https://github.com/oss-review-toolkit/ort)
 - [Microsoft SBOM Tool](https://github.com/microsoft/sbom-tool)
