@@ -36,6 +36,10 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Cooking
+
+- [ZDF BesserEsser](https://www.youtube.com/c/ZDFbesseresser/videos)
+
 # Entertainment / Documentaries
 
 - [ARTEde](https://www.youtube.com/c/artede/videos)
@@ -185,6 +189,12 @@
 
 
 # Projects
+
+# Projects / Commodore 64
+
+- [Faszination C64 Parts](https://www.ebay.de/sch/faszinationc64/m.html)
+- [HDMI to Cinch Adapter](https://www.ebay.de/itm/363382469977)
+- [SD2IEC SDCard adapter](https://www.ebay.de/itm/164880599847)
 
 # Projects / Homeserver
 
@@ -399,6 +409,8 @@
 # Cybersecurity / News
 
 - [Bleeping Computer](https://www.bleepingcomputer.com/)
+- [Blue Purple News](https://bluepurple.substack.com/)
+- [Blueteamsec](https://old.reddit.com/r/blueteamsec/)
 - [Dark Reading](https://www.darkreading.com/)
 - [The Cyberwire](https://www.thecyberwire.com/)
 - [Threatpost](https://www.threatpost.com/)
@@ -432,6 +444,7 @@
 
 # Cybersecurity / Redteam / Networking
 
+- [Azure Active Directory Playbook](https://github.com/Cloud-Architekt/AzureAD-Attack-Defense)
 - [Evil Gophish](https://github.com/fin3ss3g0d/evilgophish)
 - [HTTP2 Request Smuggler](https://github.com/BishopFox/h2csmuggler)
 - [WebSocket Request Smuggler](https://github.com/hahwul/ws-smuggler)
