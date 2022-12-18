@@ -36,6 +36,10 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Building
+
+- [Martijn Doolaard](https://www.youtube.com/@MartijnDoolaard/videos)
+
 # Entertainment / Cooking
 
 - [ZDF BesserEsser](https://www.youtube.com/c/ZDFbesseresser/videos)
@@ -49,6 +53,10 @@
 # Entertainment / Fitness
 
 - [Coach Eddy](https://www.youtube.com/c/CoachEddy/videos)
+
+# Entertainment / Making
+
+- [Emily the Engineer](https://www.youtube.com/emilytheengineer/videos)
 
 # Entertainment / Politics
 
@@ -331,6 +339,43 @@
 
 - [Earth Weather](https://github.com/cambecc/earth)
 
+# Software / Development / golang
+
+- [Awesome Go](https://github.com/avelino/awesome-go)
+- [100 Go mistakes](https://github.com/teivah/100-go-mistakes)
+- [The Bad Sides of Go](https://itnext.io/we-need-to-talk-about-the-bad-sides-of-go-568a1e5adbc6)
+- [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
+
+- [act local CI/CD Runner](https://github.com/nektos/act)
+- [chromedp](https://github.com/chromedp/chromedp)
+- [ebpf-go](https://github.com/cilium/ebpf)
+- [garble obfuscator](https://github.com/burrowers/garble)
+- [goflow sflow/netflow/ipfix collector](https://github.com/cloudflare/goflow)
+- [go-geiger](https://github.com/jlauinger/go-geiger)
+- [fyne UI](https://github.com/fyne-io/fyne)
+- [do dependency injection](https://github.com/samber/do)
+- [lo functional library](https://github.com/samber/lo)
+- [goment time parser](https://github.com/samber/goment)
+- [mangle EDR detection avoidance](https://github.com/optiv/Mangle)
+
+- [tinygo compiler](https://github.com/tinygo-org/tinygo)
+- [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
+
+# Software / Development / node.js
+
+- [ESbuild](https://github.com/evanw/esbuild)
+- [Bytenode compiler](https://github.com/bytenode/bytenode)
+- [node.js Embedder API](https://nodejs.org/api/embedding.html)
+- [pkg Packager](https://github.com/vercel/pkg)
+
+# Software / Development / python
+
+- [impacket network protocol parser](https://github.com/SecureAuthCorp/impacket)
+
+# Software / Development / rust
+
+- [Actix Web Framework](https://github.com/actix/actix-web)
+
 # Software / Web Scraping
 
 - [Apple's Autofill TLD Whitelist](https://cdn.smoot.apple.com/static/autofill_tld_whitelist_url)
@@ -339,20 +384,6 @@
 - [Headless Recorder](https://github.com/checkly/headless-recorder)
 - [SikuliX Desktop Automation](https://github.com/RaiMan/SikuliX1)
 - [Undetected Chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver)
-
-# Software / Web Development
-
-# Software / Web Development / node.js
-
-- [ESbuild](https://github.com/evanw/esbuild)
-- [Bytenode compiler](https://github.com/bytenode/bytenode)
-- [node.js Embedder API](https://nodejs.org/api/embedding.html)
-- [pkg Packager](https://github.com/vercel/pkg)
-
-# Software / Web Development / rust
-
-- [Actix Web Framework](https://github.com/actix/actix-web)
-
 
 # Cybersecurity
 
@@ -441,6 +472,7 @@
 - [GTFO Bins](https://gtfobins.github.io/)
 - [LOLBAS Binaries](https://lolbas-project.github.io/)
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
+- [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
 
 # Cybersecurity / Redteam / Networking
 
