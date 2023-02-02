@@ -38,11 +38,17 @@
 
 # Entertainment / Building
 
+- [Perkins Brothers](https://www.youtube.com/@PerkinsBuilderBrothers/videos)
 - [Martijn Doolaard](https://www.youtube.com/@MartijnDoolaard/videos)
 
 # Entertainment / Cooking
 
 - [ZDF BesserEsser](https://www.youtube.com/c/ZDFbesseresser/videos)
+
+# Entertainment / Cyber Security
+
+- [OffensiveCon Videos](https://www.youtube.com/@OffensiveCon/videos)
+- [Hack The Planet Podcast](https://www.symbolcrash.com/podcast/)
 
 # Entertainment / Documentaries
 
@@ -69,10 +75,9 @@
 - [Genug Internet fuer heute](https://www.youtube.com/channel/UCsdB5r8CaT6_T5KB3nK1j6g/videos)
 - [Hyperbole](https://www.youtube.com/c/hyperboleTV/videos)
 
-# Entertainment / Tech
+# Entertainment / Software Development
 
-- [Alternativlos](http://alternativlos.org/)
-- [Security Now](https://www.youtube.com/user/TWiTSecurityNow/videos)
+- [AlaskaLinuxUser Android ROM Building Tutorials](https://www.youtube.com/c/AlaskaLinuxUserAKLU)
 
 # Entertainment / Science
 
@@ -85,6 +90,11 @@
 - [Tested](https://www.youtube.com/c/tested/videos)
 - [True Crime Documentaries](https://www.youtube.com/watch?list=PLMJjvZqoYSrDnXKTU9p7mdrXGyN8AosUh)
 - [Veritasium](https://www.youtube.com/c/veritasium/videos)
+
+# Entertainment / Tech
+
+- [Alternativlos](http://alternativlos.org/)
+- [Security Now](https://www.youtube.com/user/TWiTSecurityNow/videos)
 
 # Entertainment / Visualizations
 
@@ -330,6 +340,7 @@
 - [DDC Control](https://github.com/ddccontrol/ddccontrol)
 - [dug](https://github.com/unfrl/dug)
 - [fd](https://github.com/sharkdp/fd)
+- [git-bug](https://github.com/MichaelMure/git-bug)
 - [lsd](https://github.com/Peltoche/lsd)
 - [ncdu](https://dev.yorhel.nl/ncdu)
 - [PDF Extractor](https://github.com/ScientaNL/pdf-extractor)
@@ -347,7 +358,9 @@
 - [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
 
 - [act local CI/CD Runner](https://github.com/nektos/act)
+- [age encryption library](https://github.com/FiloSottile/age)
 - [chromedp](https://github.com/chromedp/chromedp)
+- [durdur eBPF filter](https://github.com/boratanrikulu/durdur)
 - [ebpf-go](https://github.com/cilium/ebpf)
 - [garble obfuscator](https://github.com/burrowers/garble)
 - [goflow sflow/netflow/ipfix collector](https://github.com/cloudflare/goflow)
@@ -357,6 +370,7 @@
 - [lo functional library](https://github.com/samber/lo)
 - [goment time parser](https://github.com/samber/goment)
 - [mangle EDR detection avoidance](https://github.com/optiv/Mangle)
+- [ov terminal pager](https://github.com/noborus/ov)
 
 - [tinygo compiler](https://github.com/tinygo-org/tinygo)
 - [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
@@ -402,10 +416,13 @@
 # Cybersecurity / Blueteam / Defense
 
 - [CobaltSpam](https://github.com/hariomenkel/CobaltSpam)
+- [Kconfig Hardened Check](https://github.com/a13xp0p0v/kconfig-hardened-check)
+- [Linux Kernel Defense Map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 
 # Cybersecurity / Blueteam / Firewall
 
 - [Burner E-Mail Providers](https://github.com/wesbos/burner-email-providers)
+- [Crowdsec Firewall Bouncer](https://github.com/crowdsecurity/cs-firewall-bouncer)
 - [Disposable E-Mail Domains](https://github.com/disposable-email-domains/disposable-email-domains)
 - [OpenSnitch](https://github.com/evilsocket/opensnitch)
 - [OPNSense](https://github.com/opnsense/core)
@@ -436,6 +453,12 @@
 # Cybersecurity / Blueteam / Specifications
 
 - [CycloneDX SBOM](https://cyclonedx.org/)
+
+# Cybersecurity / Blueteam / Windows Administration
+
+- [PolicyPlus](https://github.com/Fleex255/PolicyPlus)
+- [PowerToys](https://learn.microsoft.com/de-de/windows/powertoys/)
+- [SysInternals](https://learn.microsoft.com/en-us/sysinternals/)
 
 # Cybersecurity / News
 
@@ -469,19 +492,31 @@
 
 # Cybersecurity / Redteam / Exploitation
 
+- [Binject golang/debug Fork](https://github.com/Binject/debug)
+- [Binject injection library](https://github.com/Binject/binjection)
 - [GTFO Bins](https://gtfobins.github.io/)
 - [LOLBAS Binaries](https://lolbas-project.github.io/)
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
 - [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
 
+# Cybersecurity / Redteam / Windows Exploitation
+
+- [LinWinPwn ADS Scanner](https://github.com/lefayjey/linWinPwn)
+- [Multi UAC Bypass](https://github.com/x0xr00t/Automated-MUlti-UAC-Bypass)
+- [Orpheus Windows Kerberos Bypass](https://github.com/trustedsec/orpheus)
+- [r77 Rootkit](https://github.com/bytecode77/r77-rootkit)
+- [Pandorasbox encrypted in-memory VFS](https://github.com/capnspacehook/pandorasbox)
+
 # Cybersecurity / Redteam / Networking
 
+- [Unofficial Backdoorfactory Fork](https://github.com/Binject/backdoorfactory)
 - [Azure Active Directory Playbook](https://github.com/Cloud-Architekt/AzureAD-Attack-Defense)
 - [Evil Gophish](https://github.com/fin3ss3g0d/evilgophish)
 - [HTTP2 Request Smuggler](https://github.com/BishopFox/h2csmuggler)
 - [WebSocket Request Smuggler](https://github.com/hahwul/ws-smuggler)
 - [HTTP2/1 Request Smuggler](https://github.com/neex/http2smugl)
 - [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
+- [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
 
 # Cybersecurity / Redteam / OSINT
 
@@ -522,6 +557,7 @@
 
 # Cybersecurity / Redteam / Reverse Engineering
 
+- [BugChecker Debugger](https://github.com/vitoplantamura/BugChecker)
 - [SpringShell Scanner](https://github.com/jfrog/jfrog-spring-tools)
 
 # Cybersecurity / Redteam / Social Engineering
