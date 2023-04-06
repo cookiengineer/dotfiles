@@ -36,6 +36,10 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Drama
+
+- [Sashka](https://www.youtube.com/@Sashkaskanal/videos)
+
 # Entertainment / Building
 
 - [Perkins Brothers](https://www.youtube.com/@PerkinsBuilderBrothers/videos)
@@ -48,6 +52,7 @@
 # Entertainment / Cyber Security
 
 - [OffensiveCon Videos](https://www.youtube.com/@OffensiveCon/videos)
+- [Hack The Planet Videos](https://www.youtube.com/@SymbolCrash/videos)
 - [Hack The Planet Podcast](https://www.symbolcrash.com/podcast/)
 
 # Entertainment / Documentaries
@@ -309,6 +314,7 @@
 
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
+- [Harbor Container Registry](https://github.com/goharbor/harbor)
 
 # Software / Filesharing
 
@@ -349,6 +355,11 @@
 # Software / Visualizations
 
 - [Earth Weather](https://github.com/cambecc/earth)
+
+# Software / Development / ebpf
+
+- [golang ebpf](https://github.com/cilium/ebpf)
+- [cilium bpf reference docs](https://docs.cilium.io/en/stable/bpf/)
 
 # Software / Development / golang
 
@@ -450,6 +461,10 @@
 - [Grype Vulnerability Scanner](https://github.com/anchore/grype)
 - [Syft SBOM Generator](https://github.com/anchore/syft)
 
+# Cybersecurity / Blueteam / SIEM and SOAR
+
+- [Wazuh XDR](https://github.com/wazuh/wazuh)
+
 # Cybersecurity / Blueteam / Specifications
 
 - [CycloneDX SBOM](https://cyclonedx.org/)
@@ -529,8 +544,10 @@
 - [Holele EMail to Accounts](https://github.com/megadose/holehe)
 - [Little Brother](https://github.com/lulz3xploit/LittleBrother)
 - [RSS Search Engine](https://github.com/davidesantangelo/dato.rss)
+- [Google Security Research POCs](https://github.com/google/security-research-pocs)
 - [Sherlock Social Media Account Hunter](https://github.com/sherlock-project/sherlock)
 - [Snap Map Archiver](https://github.com/king-millez/snapmap-archiver)
+- [SOC Multi Tool](https://github.com/zdhenard42/SOC-Multitool)
 - [Webanalyze Technologies of Web Apps](https://github.com/rverton/webanalyze)
 
 # Cybersecurity / Redteam / OWASP
