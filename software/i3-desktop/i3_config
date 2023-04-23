@@ -86,7 +86,13 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+space focus mode_toggle
 
 # toggle i3bar
-bindsym $mod+m bar mode toggle
+bindsym $mod+n bar mode toggle
+
+# toggle resize
+bindsym $mod+r mode "resize"
+
+# toggle mouse input
+bindsym $mod+m mode mouse
 
 # focus the parent container
 # bindsym $mod+a focus parent
@@ -173,14 +179,41 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+Escape exit
 
+mode "mouse" {
+
+	# These bindings trigger as soon as i3 enters the mouse mode
+	#
+	# Pressing space will do left mouse click
+	# Pressing shift+space will do right mouse click
+	# Pressing cursor keys will move mouse cursor
+	# Pressing shift+cursor keys will move mouse cursor in smaller distances
+
+	bindsym space exec xdotool click 1
+	bindsym Shift+space exec xdotool click 3
+
+	bindsym Left exec xdotool mousemove_relative -- "-96" "0"
+	bindsym Down exec xdotool mousemove_relative "0" "54"
+	bindsym Up exec xdotool mousemove_relative "0" "-54"
+	bindsym Right exec xdotool mousemove_relative "96" "0"
+
+	bindsym Shift+Left exec xdotool mousemove_relative -- "-24" "0"
+	bindsym Shift+Down exec xdotool mousemove_relative "0" "13.5"
+	bindsym Shift+Up exec xdotool mousemove_relative "0" "-13.5"
+	bindsym Shift+Right exec xdotool mousemove_relative "24" "0"
+
+	bindsym Escape mode "default"
+	bindsym $mod+m mode "default"
+
+}
+
 mode "resize" {
 
-	# These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as i3 enters the resize mode
 
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
+	# Pressing left will shrink the window’s width
+	# Pressing right will grow the window’s width
+	# Pressing up will shrink the window’s height
+	# Pressing down will grow the window’s height
 
 	bindsym Left resize shrink width 64 px
 	bindsym Down resize grow height 64 px
@@ -191,8 +224,6 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 
 }
-
-bindsym $mod+r mode "resize"
 
 bar {
 

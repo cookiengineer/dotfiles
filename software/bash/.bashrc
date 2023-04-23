@@ -48,6 +48,7 @@ alias more=less;                     # cmd compatibility
 
 alias cls="clear; printf '\033[3J'"; # clear screen and scroll buffer
 alias cp="cp -i";                    # confirm before overwriting something
+alias dd="sudo dd bs=4M conv=fsync oflag=direct status=progress";
 alias df='df -h';                    # human-readable sizes
 alias egrep='egrep --colour=auto';
 alias fgrep='fgrep --colour=auto';
@@ -490,10 +491,18 @@ crx-dl() {
 	crx=$(basename $url);
 	file=$(basename "$(dirname $url)");
 
-	ver="84.0";
+	ver="100.0";
 	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=$ver&x=id%3D$crx%26uc";
 
 	wget -O "$file.crx" "$crx_url";
+
+}
+
+screenshot() {
+
+	export DISPLAY=":0";
+	export XAUTHORITY="/home/cookiengineer/.Xauthority";
+	scrot -b '%Y-%m-%d_%H:%M:%S.png';
 
 }
 

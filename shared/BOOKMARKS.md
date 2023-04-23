@@ -38,12 +38,18 @@
 
 # Entertainment / Drama
 
+- [Derek van Schaik](https://www.youtube.com/@DerekVanSchaik/videos)
 - [Sashka](https://www.youtube.com/@Sashkaskanal/videos)
 
 # Entertainment / Building
 
 - [Perkins Brothers](https://www.youtube.com/@PerkinsBuilderBrothers/videos)
 - [Martijn Doolaard](https://www.youtube.com/@MartijnDoolaard/videos)
+
+# Entertainment / Chess
+
+- [Botez Sisters](https://www.youtube.com/@BotezLive/videos)
+- [Magnus Carlsen](https://www.youtube.com/@themagnuscarlsen/videos)
 
 # Entertainment / Cooking
 
@@ -60,6 +66,10 @@
 - [ARTEde](https://www.youtube.com/c/artede/videos)
 - [NDR Doku](https://www.youtube.com/c/NDRDoku/videos)
 - [WDR Doku](https://www.youtube.com/c/WDRDoku/videos)
+
+# Entertainment / Electronics
+
+- [Big Clive](https://www.youtube.com/@bigclivedotcom/videos)
 
 # Entertainment / Fitness
 
