@@ -45,6 +45,7 @@
 
 - [Perkins Brothers](https://www.youtube.com/@PerkinsBuilderBrothers/videos)
 - [Martijn Doolaard](https://www.youtube.com/@MartijnDoolaard/videos)
+- [Nerdforge](https://www.youtube.com/@Nerdforge/videos)
 
 # Entertainment / Chess
 
@@ -74,6 +75,8 @@
 # Entertainment / Fitness
 
 - [Coach Eddy](https://www.youtube.com/c/CoachEddy/videos)
+- [Coach Stef](https://www.youtube.com/@CoachStef/videos)
+- [Doc Felix](https://www.youtube.com/@docfelix/videos)
 
 # Entertainment / Making
 
@@ -84,6 +87,10 @@
 - [Real Life Lore](https://www.youtube.com/c/RealLifeLore/videos)
 - [Renzo](https://www.youtube.com/c/Renzo69/videos)
 - [Tim Jacken](https://www.youtube.com/c/TimJacken/videos)
+
+# Entertainment / Rationality
+
+- [Prof Rieck](https://www.youtube.com/@ProfRieck/videos)
 
 # Entertainment / Social
 
@@ -125,8 +132,14 @@
 
 # Hardware
 
+# Hardware / 3D Printing
+
+- [NC GCode Viewer](https://ncviewer.com/)
+
 # Hardware / Electronics
 
+- [Go I2C](https://github.com/d2r2/go-i2c)
+- [Motor Driver HAT](https://www.waveshare.com/wiki/Motor_Driver_HAT)
 - [PCB Prototyping](https://circuithub.com/)
 
 
@@ -234,6 +247,12 @@
 - [Raidsonic IB-3640SU3](https://geizhals.de/raidsonic-icy-box-ib-3640su3-20640-a847133.html)
 - [DC Step-Up 12V to 19V Converter](https://www.amazon.de/DC-DC-Wandler-Step-up-Konverter-Modul-Power-Supply-Boost/dp/B07Z3XJ8ZG)
 - [Molex 2 Pin Socket](https://www.conrad.de/de/p/molex-buchsengehaeuse-kabel-polzahl-gesamt-2-rastermass-4-2-mm-39012025-1-st-bag-2448284.html)
+
+- [Authelia 2FA](https://github.com/authelia/authelia)
+- [Homer Dashboard](https://github.com/bastienwirtz/homer)
+- [Pi-Hole](https://github.com/pi-hole/pi-hole)
+- [Pi-KVM](https://github.com/pikvm/pikvm)
+- [Secure Web Application Gateway](https://github.com/linuxserver/docker-swag)
 
 # Projects / Noisy Mouse
 
@@ -353,18 +372,22 @@
 # Software / Tools
 
 - [bat](https://github.com/sharkdp/bat)
+- [cosmopolitan](https://github.com/jart/cosmopolitan)
 - [DDC Control](https://github.com/ddccontrol/ddccontrol)
 - [dug](https://github.com/unfrl/dug)
 - [fd](https://github.com/sharkdp/fd)
-- [git-bug](https://github.com/MichaelMure/git-bug)
+- [Git Bug](https://github.com/MichaelMure/git-bug)
+- [Git Leaks](https://github.com/gitleaks/gitleaks)
 - [lsd](https://github.com/Peltoche/lsd)
 - [ncdu](https://dev.yorhel.nl/ncdu)
 - [PDF Extractor](https://github.com/ScientaNL/pdf-extractor)
 - [i3-workspace-groups](https://github.com/infokiller/i3-workspace-groups)
+- [QR Designer](https://github.com/kochrt/qr-designer)
 
 # Software / Visualizations
 
 - [Earth Weather](https://github.com/cambecc/earth)
+- [Transpector Transformer Analysis Tool](https://github.com/R0bk/Transpector)
 
 # Software / Development / ebpf
 
@@ -392,9 +415,9 @@
 - [goment time parser](https://github.com/samber/goment)
 - [mangle EDR detection avoidance](https://github.com/optiv/Mangle)
 - [ov terminal pager](https://github.com/noborus/ov)
-
 - [tinygo compiler](https://github.com/tinygo-org/tinygo)
 - [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
+- [wails webview](https://wails.io/docs/gettingstarted/development/)
 
 # Software / Development / node.js
 
@@ -508,6 +531,10 @@
 
 - [0x00sec](https://0x00sec.org/categories)
 
+# Cybersecurity / Redteam / EDR Evasion
+
+- [HookDump](https://github.com/zeroperil/HookDump)
+
 # Cybersecurity / Redteam / Encoding and Encryption
 
 - [CyberChef](https://github.com/gchq/CyberChef)
@@ -523,6 +550,7 @@
 - [LOLBAS Binaries](https://lolbas-project.github.io/)
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
 - [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
+- [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
 
 # Cybersecurity / Redteam / Windows Exploitation
 
@@ -542,6 +570,7 @@
 - [HTTP2/1 Request Smuggler](https://github.com/neex/http2smugl)
 - [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
 - [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
+- [Responder Poisoner](https://github.com/lgandx/Responder)
 
 # Cybersecurity / Redteam / OSINT
 
@@ -569,6 +598,10 @@
 - [ZGrab Scanner](https://github.com/zmap/zgrab2)
 - [ZMap Scanner](https://github.com/zmap/zmap)
 - [L9 Explore](https://github.com/LeakIX/l9explore)
+
+# Cybersecurity / Redteam / Shells
+
+- [Web2Shell](https://github.com/ejedev/web2shell)
 
 # Cybersecurity / Redteam / WAF
 
@@ -598,14 +631,20 @@
 - [Offensive Wi-Fi Toolkit](https://github.com/clu3bot/owt)
 - [Sparrow Wi-Fi Toolkit](https://github.com/ghostop14/sparrow-wifi)
 
-# Warez
+# Libraries
 
-# Warez / Android
+# Libraries / Android
 
 - [Mobilism Forum](https://forum.mobilism.org/viewforum.php?f=399)
 
-# Warez / Movies and Series
+# Libraries / Books
 
+- [Anna's Archive](https://annas-archive.org/)
+- [The Eye](https://the-eye.eu/public/)
+
+# Libraries / Movies and Series
+
+- [EZTV](https://eztv.re/)
 - [RapidMoviez](https://rmz.cr)
-- [RARBG](https://rarbg.to)
+- [RarBG on IPFS](https://ipfs.io/ipfs/QmbpRxBZ5HDZDVRoeAU8xFYnoP4r5eGCxdkmfFW3JbA6mq/)
 
