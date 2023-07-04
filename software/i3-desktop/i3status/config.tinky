@@ -9,9 +9,12 @@ general {
 
 order += "wireless _first_"
 order += "ethernet _first_"
+order += "battery 0"
 order += "cpu_temperature 1"
 order += "cpu_temperature 2"
 order += "cpu_temperature 3"
+order += "cpu_temperature 4"
+order += "cpu_temperature 5"
 order += "volume speakers"
 order += "memory"
 order += "tztime berlin"
@@ -27,11 +30,22 @@ ethernet _first_ {
 	format_down = ""
 }
 
+battery 0 {
+	format = "%status %percentage %remaining"
+	format_down = ""
+	status_bat = ""
+	status_chr = ""
+	status_unk = ""
+	status_full = ""
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 15
+}
+
 cpu_temperature 1 {
 	format = " %degrees°C"
 	format_above_threshold = " %degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
 	separator = false
 	separator_block_width = 1
 }
@@ -40,7 +54,7 @@ cpu_temperature 2 {
 	format = "  %degrees°C"
 	format_above_threshold = "  %degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp2_input"
 	separator = false
 	separator_block_width = 1
 }
@@ -49,13 +63,31 @@ cpu_temperature 3 {
 	format = "  %degrees°C"
 	format_above_threshold = "  %degrees°C"
 	max_threshold = 84
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp3_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp3_input"
+	separator = false
+	separator_block_width = 1
+}
+
+cpu_temperature 4 {
+	format = "  %degrees°C"
+	format_above_threshold = "  %degrees°C"
+	max_threshold = 84
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp4_input"
+	separator = false
+	separator_block_width = 1
+}
+
+cpu_temperature 5 {
+	format = "  %degrees°C"
+	format_above_threshold = "  %degrees°C"
+	max_threshold = 84
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp5_input"
 }
 
 volume speakers {
 	format = " %volume"
 	format_muted = ""
-	device = "pulse:0"
+	device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo"
 }
 
 memory {

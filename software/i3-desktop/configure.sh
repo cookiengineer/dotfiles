@@ -14,11 +14,15 @@ fi;
 
 if [[ "$ICONS_THEME" != "" ]] && [[ "$I3_CONFIG" != "" ]] && [[ "$I3STATUS_CONFIG" != "" ]]; then
 
-	mkdir -p "${I3_CONFIG}";
-	mkdir -p "${I3STATUS_CONFIG}";
+	mkdir -p "$I3_CONFIG";
+	mkdir -p "$I3STATUS_CONFIG";
 
-	cp $DIR/i3/* "${I3_CONFIG}/";
-	cp $DIR/i3status/* "${I3STATUS_CONFIG}/";
+	cp $DIR/i3/* "$I3_CONFIG/";
+	cp $DIR/i3status/* "$I3STATUS_CONFIG/";
+
+	if [[ "$HOSTNAME" != "" ]] && [[ -f "$I3STATUS_CONFIG/config.$HOSTNAME" ]]; then
+		mv "$I3STATUS_CONFIG/config.$HOSTNAME" "$I3STATUS_CONFIG/config";
+	fi;
 
 	if [[ ! -f "$ICONS_THEME" ]]; then
 
