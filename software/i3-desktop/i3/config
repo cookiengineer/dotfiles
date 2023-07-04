@@ -1,0 +1,37 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+include $HOME/.config/i3/autostart.conf
+include $HOME/.config/i3/bindings.conf
+include $HOME/.config/i3/theme.conf
+include $HOME/.config/i3/modes.conf
+include $HOME/.config/i3/workspaces.conf
+
+set $mod Mod4
+floating_modifier $mod
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+Escape exit
+
+bar {
+
+	mode hide
+	status_command i3status
+
+	workspace_buttons yes
+	workspace_min_width 32
+	strip_workspace_name yes
+
+	separator_symbol " | "
+
+	colors {
+		background #222222
+		statusline #eeeeee
+		separator #666666
+		focused_workspace #ffffff #22ccff #ffffff
+		active_workspace #666666 #222222 #ffffff
+		urgent_workspace #ffffff #ff2222 #ffffff
+	}
+
+}

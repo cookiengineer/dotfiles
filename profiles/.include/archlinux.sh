@@ -66,7 +66,7 @@ synchronize () {
 	do
 
 		install_sh="$DOTFILE_ROOT/software/$package/install.sh";
-		configure_sh="$DOTFILE_ROOT/software/$pacakge/configure.sh";
+		configure_sh="$DOTFILE_ROOT/software/$package/configure.sh";
 
 		installed="no";
 
@@ -110,7 +110,6 @@ synchronize () {
 			fi;
 
 		fi;
-
 
 		if [ "$installed" == "yes" ] && [ -f "$configure_sh" ]; then
 

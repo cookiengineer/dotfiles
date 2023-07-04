@@ -5,10 +5,10 @@ sudo pacman -S --needed --noconfirm xorg-server xorg-server-common xorg-setxkbma
 sudo pacman -S --needed --noconfirm xf86-input-evdev xf86-input-libinput xf86-input-void xf86-video-intel;
 
 # i3wm and necessary tools
-sudo pacman -S --needed --noconfirm i3-wm i3status dmenu;
+sudo pacman -S --needed --noconfirm i3-wm i3status;
 sudo pacman -S --needed --noconfirm brightnessctl blueman network-manager-applet;
 sudo pacman -S --needed --noconfirm nemo nemo-fileroller nemo-image-converter nemo-preview file-roller;
-sudo pacman -S --needed --noconfirm feh lxappearance-gtk3;
+sudo pacman -S --needed --noconfirm feh lxappearance flameshot;
 sudo pacman -S --needed --noconfirm arc-gtk-theme arc-icon-theme;
 
 # pulseaudio

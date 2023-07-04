@@ -4,21 +4,21 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)";
 
 if [[ "$SUDO_USER" != "" ]]; then
 	ICONS_THEME="/home/$USER/.icons/default/index.theme";
-	I3_CONFIG="/home/$SUDO_USER/.config/i3/config";
-	I3STATUS_CONFIG="/home/$SUDO_USER/.config/i3status/config";
+	I3_CONFIG="/home/$SUDO_USER/.config/i3";
+	I3STATUS_CONFIG="/home/$SUDO_USER/.config/i3status";
 elif [[ "$USER" != "" ]]; then
 	ICONS_THEME="/home/$USER/.icons/default/index.theme";
-	I3_CONFIG="/home/$USER/.config/i3/config";
-	I3STATUS_CONFIG="/home/$USER/.config/i3status/config";
+	I3_CONFIG="/home/$USER/.config/i3";
+	I3STATUS_CONFIG="/home/$USER/.config/i3status";
 fi;
 
 if [[ "$ICONS_THEME" != "" ]] && [[ "$I3_CONFIG" != "" ]] && [[ "$I3STATUS_CONFIG" != "" ]]; then
 
-	mkdir -p $(dirname $I3_CONFIG);
-	mkdir -p $(dirname $I3STATUS_CONFIG);
+	mkdir -p "${I3_CONFIG}";
+	mkdir -p "${I3STATUS_CONFIG}";
 
-	cp $DIR/i3_config "$I3_CONFIG";
-	cp $DIR/i3status_config "$I3STATUS_CONFIG";
+	cp $DIR/i3/* "${I3_CONFIG}/";
+	cp $DIR/i3status/* "${I3STATUS_CONFIG}/";
 
 	if [[ ! -f "$ICONS_THEME" ]]; then
 
