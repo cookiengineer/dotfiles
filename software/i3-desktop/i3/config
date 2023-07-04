@@ -16,6 +16,7 @@ bindsym $mod+Shift+Escape exit
 
 bar {
 
+	font pango: DejaVu Sans Mono, i3status, 16px
 	mode hide
 	status_command i3status
 

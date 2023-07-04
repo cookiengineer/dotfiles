@@ -42,3 +42,10 @@ if [[ ! -f "$I3_BRIGHTNESS" ]]; then
 	sudo chmod +x "$I3_BRIGHTNESS";
 fi;
 
+I3STATUS_FONT="/usr/share/fonts/TTF/i3status.ttf";
+
+if [[ ! -f "$I3STATUS_FONT" ]]; then
+	sudo cp $DIR/i3status-font/i3status.ttf /usr/share/fonts/TTF/i3status.ttf;
+	fc-cache -f -v;
+fi;
+
