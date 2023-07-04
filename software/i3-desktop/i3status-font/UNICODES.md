@@ -7,6 +7,13 @@ icon | unicode | description   |
     | `e9bc`  | ethernet      |
     | `e9c9`  | internet      |
 :---:|:-------:|:--------------|
+    | `e904`  | full battery  |
+    | `e901`  | battery       |
+    | `e903`  | low battery   |
+    | `e9b5`  | charging      |
+    | `e9b6`  | unknown power |
+    | `e9b7`  | no battery    |
+:---:|:-------:|:--------------|
     | `e9a9`  | fire          |
     | `ea07`  | warning       |
 :---:|:-------:|:--------------|
