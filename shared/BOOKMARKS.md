@@ -15,6 +15,7 @@
 
 - [Let's go with golang](https://www.youtube.com/watch?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa)
 - [Golang Tutorials](https://www.youtube.com/watch?list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q)
+- [Effective Go](https://go.dev/doc/effective_go)
 
 # Courses / Computer Science / Stanford CS221
 
@@ -27,6 +28,10 @@
 - [Slides](http://ai.berkeley.edu/lecture_slides.html)
 - [Videos](http://ai.berkeley.edu/lecture_videos.html)
 - [Playlist](https://www.youtube.com/watch?list=PLsOUugYMBBJENfZ3XAToMsg44W7LeUVhF)
+
+# Courses / Cyber Security
+
+- [CLARK Security Courses](https://clark.center/browse?collection=nccp)
 
 
 # Entertainment
@@ -339,6 +344,11 @@
 
 - [PostGraphile](https://github.com/graphile/postgraphile)
 
+# Software / Design / Iconsets
+
+- [Gophers Pack](https://github.com/MariaLetta/free-gophers-pack)
+- [Lima Studio Icons](https://icon-icons.com/de/users/41pqZN26tNxHKDKz4kO6h/icon-sets/)
+
 # Software / DevOps
 
 - [Karmada](https://github.com/karmada-io/karmada)
@@ -384,10 +394,24 @@
 - [i3-workspace-groups](https://github.com/infokiller/i3-workspace-groups)
 - [QR Designer](https://github.com/kochrt/qr-designer)
 
+# Software / Tools / Stable Diffusion
+
+- [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+
+# Software / Tools / Virtualization
+
+- [Distrobox](https://github.com/89luca89/distrobox)
+
+
 # Software / Visualizations
 
 - [Earth Weather](https://github.com/cambecc/earth)
 - [Transpector Transformer Analysis Tool](https://github.com/R0bk/Transpector)
+
+# Software / Development
+
+- [GB Studio](https://github.com/chrismaltby/gb-studio)
+- [LunarVIM](https://github.com/lunarvim/lunarvim)
 
 # Software / Development / ebpf
 
@@ -447,6 +471,7 @@
 
 # Cybersecurity / Privacy
 
+- [AirGuard](https://github.com/seemoo-lab/AirGuard)
 - [Attacks on TOR](https://github.com/Attacks-on-Tor/Attacks-on-Tor)
 - [Browser Leaks](https://browserleaks.com/)
 - [JShelter Extension](https://jshelter.org/)
@@ -462,6 +487,7 @@
 - [CobaltSpam](https://github.com/hariomenkel/CobaltSpam)
 - [Kconfig Hardened Check](https://github.com/a13xp0p0v/kconfig-hardened-check)
 - [Linux Kernel Defense Map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
+- [Microsoft Cybersecurity Reference Architecture](https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra)
 
 # Cybersecurity / Blueteam / Firewall
 
@@ -480,6 +506,7 @@
 - [EMBA Firmware Analyzer](https://www.github.com/e-m-b-a/emba)
 - [GHidra](https://github.com/NationalSecurityAgency/ghidra)
 - [Angry GHidra](https://github.com/Nalen98/AngryGhidra)
+- [Quickscope](https://github.com/CYB3RMX/Qu1cksc0pe)
 - [Cutter Framework](https://github.com/rizinorg/cutter)
 - [Rizin Framework](https://github.com/rizinorg/rizin)
 
@@ -487,6 +514,12 @@
 
 - [Bettercap](https://github.com/bettercap/bettercap)
 - [Bettercap Web UI](https://www.bettercap.org/usage/webui/)
+- [Microsoft eventlog mindmap](https://github.com/mdecrevoisier/Microsoft-eventlog-mindmap)
+
+# Cybersecurity / Blueteam / Sandboxing
+
+- [Firejail](https://github.com/netblue30/firejail)
+- [Firejail Profiles](https://github.com/netblue30/firejail/tree/master/etc)
 
 # Cybersecurity / Blueteam / Software Inventory
 
@@ -510,15 +543,18 @@
 
 # Cybersecurity / News
 
-- [Bleeping Computer](https://www.bleepingcomputer.com/)
+- [Bleeping Computer](https://www.bleepingcomputer.com/news/security/)
 - [Blue Purple News](https://bluepurple.substack.com/)
 - [Blueteamsec](https://old.reddit.com/r/blueteamsec/)
 - [Dark Reading](https://www.darkreading.com/)
 - [The Cyberwire](https://www.thecyberwire.com/)
 - [Threatpost](https://www.threatpost.com/)
 - [TL;DR Sec](https://www.tldrsec.com/)
+- [VX Underground](https://www.vx-underground.org/)
 
 # Cybersecurity / Redteam
+
+- [Cyber Security Study Roadmap](https://roadmap.sh/cyber-security)
 
 # Cybersecurity / Redteam / Capture The Flag
 
@@ -551,9 +587,16 @@
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
 - [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
 - [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
+- [Recycled Shellcode Injector](https://github.com/florylsk/RecycledInjector)
+- [Trickest CVE PoC database](https://github.com/trickest/cve)
+
+# Cybersecurity / Redteam / Web Exploitation
+
+- [XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 
 # Cybersecurity / Redteam / Windows Exploitation
 
+- [CobaltStrike BOFMask](https://github.com/xforcered/BOFMask)
 - [LinWinPwn ADS Scanner](https://github.com/lefayjey/linWinPwn)
 - [Multi UAC Bypass](https://github.com/x0xr00t/Automated-MUlti-UAC-Bypass)
 - [Orpheus Windows Kerberos Bypass](https://github.com/trustedsec/orpheus)
@@ -579,9 +622,11 @@
 - [Amazon Scraper](https://github.com/ScrapingAnt/amazon_scraper)
 - [Bugged Planet](https://buggedplanet.info/index.php?title=Main_Page)
 - [DEDA Tracking Dots Extraction Toolkit](https://github.com/dfd-tud/deda)
+- [EMAGNET pastebin scraper](https://github.com/wuserman/EMAGNET)
 - [GHunt](https://github.com/mxrch/GHunt)
 - [Holele EMail to Accounts](https://github.com/megadose/holehe)
 - [Little Brother](https://github.com/lulz3xploit/LittleBrother)
+- [Malfrats OSINT Map](https://github.com/Malfrats/OSINT-Map)
 - [RSS Search Engine](https://github.com/davidesantangelo/dato.rss)
 - [Google Security Research POCs](https://github.com/google/security-research-pocs)
 - [Sherlock Social Media Account Hunter](https://github.com/sherlock-project/sherlock)
@@ -644,7 +689,10 @@
 
 # Libraries / Movies and Series
 
+- [1337x](https://1337x.to)
 - [EZTV](https://eztv.re/)
+- [Lime Torrents](https://www.limetorrents.lol/)
 - [RapidMoviez](https://rmz.cr)
 - [RarBG on IPFS](https://ipfs.io/ipfs/QmbpRxBZ5HDZDVRoeAU8xFYnoP4r5eGCxdkmfFW3JbA6mq/)
+- [Yify Torrents](https://yts.mx/)
 
