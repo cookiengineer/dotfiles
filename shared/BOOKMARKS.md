@@ -63,7 +63,12 @@
 
 # Entertainment / Cyber Security
 
+- [Kevin Wallace Training](https://www.youtube.com/@kwallaceccie/videos)
 - [OffensiveCon Videos](https://www.youtube.com/@OffensiveCon/videos)
+- [Hackersploit Videos](https://www.youtube.com/c/Hackersploit/videos)
+- [IPPSec Videos](https://www.youtube.com/c/IPPSec/videos)
+- [John Hammond Videos](https://www.youtube.com/@_JohnHammond/videos)
+- [LiveOverflow Videos](https://www.youtube.com/c/LiveOverflow/videos)
 - [Hack The Planet Videos](https://www.youtube.com/@SymbolCrash/videos)
 - [Hack The Planet Podcast](https://www.symbolcrash.com/podcast/)
 
@@ -105,6 +110,7 @@
 # Entertainment / Software Development
 
 - [AlaskaLinuxUser Android ROM Building Tutorials](https://www.youtube.com/c/AlaskaLinuxUserAKLU)
+- [Michael Mullin](https://www.youtube.com/@masmullin/videos)
 
 # Entertainment / Science
 
@@ -393,10 +399,13 @@
 - [PDF Extractor](https://github.com/ScientaNL/pdf-extractor)
 - [i3-workspace-groups](https://github.com/infokiller/i3-workspace-groups)
 - [QR Designer](https://github.com/kochrt/qr-designer)
+- [XDG Ninja](https://github.com/b3nj5m1n/xdg-ninja)
 
 # Software / Tools / Stable Diffusion
 
 - [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+- [Stable Diffusion WebUI Examples](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
+- [Comic Diffusion Model](https://huggingface.co/ogkalu/Comic-Diffusion)
 
 # Software / Tools / Virtualization
 
@@ -488,6 +497,7 @@
 - [Kconfig Hardened Check](https://github.com/a13xp0p0v/kconfig-hardened-check)
 - [Linux Kernel Defense Map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 - [Microsoft Cybersecurity Reference Architecture](https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra)
+- [DrawIO Threat Modeling Library](https://github.com/michenriksen/drawio-threatmodeling)
 
 # Cybersecurity / Blueteam / Firewall
 
@@ -504,6 +514,7 @@
 
 - [angr binary analyzer](https://github.com/angr/angr)
 - [EMBA Firmware Analyzer](https://www.github.com/e-m-b-a/emba)
+- [FACT Firmware Analyzer](https://github.com/fkie-cad/FACT_core)
 - [GHidra](https://github.com/NationalSecurityAgency/ghidra)
 - [Angry GHidra](https://github.com/Nalen98/AngryGhidra)
 - [Quickscope](https://github.com/CYB3RMX/Qu1cksc0pe)
@@ -563,9 +574,16 @@
 - [PicoCTF](https://picoctf.org/)
 - [TryHackMe](https://tryhackme.com/)
 
+# Cybersecurity / Redteam / Exploitation
+
+- [0day today](https://0day.today/)
+- [ExploitDB](https://www.exploit-db.com/)
+- [Hack Tricks](https://book.hacktricks.xyz/welcome/readme)
+
 # Cybersecurity / Redteam / Forums
 
 - [0x00sec](https://0x00sec.org/categories)
+- [free hack](https://free-hack.com/index.php)
 
 # Cybersecurity / Redteam / EDR Evasion
 
@@ -592,6 +610,7 @@
 
 # Cybersecurity / Redteam / Web Exploitation
 
+- [BurpSuite For Pentester](https://github.com/Ignitetechnologies/BurpSuite-For-Pentester)
 - [XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 
 # Cybersecurity / Redteam / Windows Exploitation
@@ -602,6 +621,11 @@
 - [Orpheus Windows Kerberos Bypass](https://github.com/trustedsec/orpheus)
 - [r77 Rootkit](https://github.com/bytecode77/r77-rootkit)
 - [Pandorasbox encrypted in-memory VFS](https://github.com/capnspacehook/pandorasbox)
+
+# Cybersecurity / Redteam / Windows Persistence
+
+- [SharpUnhooker](https://github.com/GetRektBoy724/SharpUnhooker)
+- [Remote Shellcode Injection](https://github.com/soufianetahiri/RemoteShellCodeInjection)
 
 # Cybersecurity / Redteam / Networking
 

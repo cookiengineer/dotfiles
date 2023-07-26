@@ -1,4 +1,15 @@
 
+# Cyber Defense Games
+
+- CTF, but for real
+- Rules of engagement with real software/webservers
+- Predefined flags.txt paths, e.g. `/root/flag.txt` or `/home/$USER/flag.txt`
+- Blueteam vs Redteam engagement
+- apache, nginx
+- mysql, postgres
+- wordpress, openssh, nodejs(?)
+
+
 # Multitask Browser Extension
 
 Task Planner Overview that integrates tasks with `Agenda`, divided into overdue
@@ -20,6 +31,12 @@ Saving Media in the Browser sucks, and `Ctrl` + `S` could be much better.
 - Instagram Stories and Posts
 - Facebook Stories, Photos and Posts
 - Reddit Posts
+
+
+# Open Dot Software Website
+
+- Discovery of Open Source Projects
+- Web Extension to scrape GitHub/GitLab/Gitea Stars and usage metrics
 
 
 # Quick Command Browser Extension

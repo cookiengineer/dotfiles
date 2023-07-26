@@ -27,7 +27,7 @@ stty -ixon;
 # Misc Options
 #
 
-export PATH=/home/$USER/.cargo/bin:$PATH;
+export PATH="/home/$USER/go/bin:/home/$USER/.cargo/bin:$PATH";
 xhost +local:root > /dev/null 2>&1;
 complete -cf sudo;
 
@@ -37,13 +37,27 @@ complete -cf sudo;
 # Default Programs and Aliases
 #
 
+export XDG_DATA_HOME="${HOME}/.local/share";
+export XDG_STATE_HOME="${HOME}/.local/state";
+export XDG_CACHE_HOME="${HOME}/.cache";
+export XDG_CONFIG_HOME="${HOME}/.config";
+
+export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=\"${XDG_CONFIG_HOME}\"/java";
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc";
+
+export GNUPG_HOME="${XDG_DATA_HOME}/gnupg";
+export ANDROID_HOME="${XDG_DATA_HOME}/android";
+export HISTFILE="${XDG_STATE_HOME}/bash/history";
+export LESSHISTFILE="${XDG_STATE_HOME}/less/history";
+
+
 export BROWSER=/usr/bin/chromium;
 export EDITOR=/usr/bin/vim;
-export PAGER=/usr/bin/vimpager;
+#export PAGER=/usr/bin/vimpager;
 
 
-
-alias less="$PAGER";
+alias copy="xclip -sel c <";
+#alias less="$PAGER";
 alias more=less;                     # cmd compatibility
 
 alias cls="clear; printf '\033[3J'"; # clear screen and scroll buffer
@@ -58,6 +72,8 @@ alias ls='ls --color=auto';
 alias mv="mv -i";                    # confirm before overwriting something
 alias ns='netstat -tup --wide';      # show only active program sockets
 alias rm="rm -i";                    # confirm before removing something
+alias wget="wget --hsts-file=${HOME}/.config/wget/hosts";
+alias steam="flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam-wrapper com.valvesoftware.Steam steam://open/games";
 
 
 
@@ -67,10 +83,10 @@ alias rm="rm -i";                    # confirm before removing something
 
 case ${TERM} in
 	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"';
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#${HOME}/\~}\007"';
 		;;
 	screen*)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"';
+		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#${HOME}/\~}\033\\"';
 		;;
 esac
 
@@ -147,52 +163,65 @@ __legacy_ps1() {
 	fi;
 
 
-	local git_dir="$(git rev-parse --git-dir 2>/dev/null)";
 	local git_status="";
 
-	if [[ "$git_dir" != "" ]]; then
+	if [[ "$path" == "/home/$user/Software/tholian-network/vulnerabilities"* ]]; then
 
-		local git_ref="$(cat $git_dir/HEAD)";
-		local git_branch="${git_ref##"ref: refs/heads/"}";
-		local has_changes=$(git status --short 2>/dev/null);
+		git_status="";
 
-		if [[ "$git_branch" != "" ]]; then
-			git_status="($git_branch)";
-		fi;
+	elif [[ "$path" == "/opt/vulnerabilities"* ]]; then
 
-		if [[ "$has_changes" != "" ]]; then
-			git_status="$git_status (changed)";
+		git_status="";
+
+	else
+
+		local git_dir="$(git rev-parse --git-dir 2>/dev/null)";
+
+		if [[ "$git_dir" != "" ]]; then
+
+			local git_ref="$(cat $git_dir/HEAD)";
+			local git_branch="${git_ref##"ref: refs/heads/"}";
+			local has_changes=$(git status --short 2>/dev/null);
+
+			if [[ "$git_branch" != "" ]]; then
+				git_status="($git_branch)";
+			fi;
+
+			if [[ "$has_changes" != "" ]]; then
+				git_status="$git_status (changed)";
+			fi;
+
 		fi;
 
 	fi;
 
 
-	if [[ "$path" == "$HOME/Backup"* ]]; then
+	if [[ "$path" == "${HOME}/Backup"* ]]; then
 
-		if [[ $(stat --format "%F" "$HOME/Backup") == "symbolic link" ]]; then
-			path="${path/"$HOME/Backup"/"~/Backup"}";
+		if [[ $(stat --format "%F" "${HOME}/Backup") == "symbolic link" ]]; then
+			path="${path/"${HOME}/Backup"/"~/Backup"}";
 		else
-			path="${path/"$HOME/Backup"/"~/Backup"}";
+			path="${path/"${HOME}/Backup"/"~/Backup"}";
 		fi;
 
-	elif [[ "$path" == "$HOME/Documents"* ]]; then
-		path="${path/"$HOME/Documents"/"~/Documents"}";
-	elif [[ "$path" == "$HOME/Downloads"* ]]; then
-		path="${path/"$HOME/Downloads"/"~/Downloads"}";
-	elif [[ "$path" == "$HOME/Games"* ]]; then
-		path="${path/"$HOME/Games"/"~/Games"}";
-	elif [[ "$path" == "$HOME/Music"* ]]; then
-		path="${path/"$HOME/Music"/"~/Music"}";
-	elif [[ "$path" == "$HOME/Packages"* ]]; then
-		path="${path/"$HOME/Packages"/"~/Packages"}";
-	elif [[ "$path" == "$HOME/Pictures"* ]]; then
-		path="${path/"$HOME/Pictures"/"~/Pictures"}";
-	elif [[ "$path" == "$HOME/Software"* ]]; then
-		path="${path/"$HOME/Software"/"~/Software"}";
-	elif [[ "$path" == "$HOME/Videos"* ]]; then
-		path="${path/"$HOME/Videos"/"~/Videos"}";
-	elif [[ "$path" == "$HOME"* ]]; then
-		path="${path/"$HOME"/"~"}";
+	elif [[ "$path" == "${HOME}/Documents"* ]]; then
+		path="${path/"${HOME}/Documents"/"~/Documents"}";
+	elif [[ "$path" == "${HOME}/Downloads"* ]]; then
+		path="${path/"${HOME}/Downloads"/"~/Downloads"}";
+	elif [[ "$path" == "${HOME}/Games"* ]]; then
+		path="${path/"${HOME}/Games"/"~/Games"}";
+	elif [[ "$path" == "${HOME}/Music"* ]]; then
+		path="${path/"${HOME}/Music"/"~/Music"}";
+	elif [[ "$path" == "${HOME}/Packages"* ]]; then
+		path="${path/"${HOME}/Packages"/"~/Packages"}";
+	elif [[ "$path" == "${HOME}/Pictures"* ]]; then
+		path="${path/"${HOME}/Pictures"/"~/Pictures"}";
+	elif [[ "$path" == "${HOME}/Software"* ]]; then
+		path="${path/"${HOME}/Software"/"~/Software"}";
+	elif [[ "$path" == "${HOME}/Videos"* ]]; then
+		path="${path/"${HOME}/Videos"/"~/Videos"}";
+	elif [[ "$path" == "${HOME}"* ]]; then
+		path="${path/"${HOME}"/"~"}";
 	fi;
 
 	local ps1_status="$code\e[01;49;39m$user@$host:$path\e[0m";
@@ -222,21 +251,34 @@ __modern_ps1() {
 	fi;
 
 
-	local git_dir="$(git rev-parse --git-dir 2>/dev/null)";
 	local git_status="";
 
-	if [[ "$git_dir" != "" ]]; then
+	if [[ "$path" == "/home/$user/Software/tholian-network/vulnerabilities"* ]]; then
 
-		local git_ref="$(cat $git_dir/HEAD)";
-		local git_branch="${git_ref##"ref: refs/heads/"}";
-		local has_changes=$(git status --short 2>/dev/null);
+		git_status="";
 
-		if [[ "$git_branch" != "" ]]; then
-			git_status="🔗 $git_branch";
-		fi;
+	elif [[ "$path" == "/opt/vulnerabilities"* ]]; then
 
-		if [[ "$has_changes" != "" ]]; then
-			git_status="$git_status 🚨";
+		git_status="";
+
+	else
+
+		local git_dir="$(git rev-parse --git-dir 2>/dev/null)";
+
+		if [[ "$git_dir" != "" ]]; then
+
+			local git_ref="$(cat $git_dir/HEAD)";
+			local git_branch="${git_ref##"ref: refs/heads/"}";
+			local has_changes=$(git status --short 2>/dev/null);
+
+			if [[ "$git_branch" != "" ]]; then
+				git_status="🔗 $git_branch";
+			fi;
+
+			if [[ "$has_changes" != "" ]]; then
+				git_status="$git_status 🚨";
+			fi;
+
 		fi;
 
 	fi;
@@ -264,42 +306,40 @@ __modern_ps1() {
 		host="🖥️";
 	fi;
 
-	if [[ "$path" == "$HOME/Backup"* ]]; then
+	if [[ "$path" == "${HOME}/Backup"* ]]; then
 
-		if [[ $(stat --format "%F" "$HOME/Backup") == "symbolic link" ]]; then
-			path="${path/"$HOME/Backup"/📀}";
+		if [[ $(stat --format "%F" "${HOME}/Backup") == "symbolic link" ]]; then
+			path="${path/"${HOME}/Backup"/📀}";
 		else
-			path="${path/"$HOME/Backup"/💿}";
+			path="${path/"${HOME}/Backup"/💿}";
 		fi;
 
-	elif [[ "$path" == "$HOME/Documents"* ]]; then
-		path="${path/"$HOME/Documents"/📑}";
-	elif [[ "$path" == "$HOME/Downloads"* ]]; then
-		path="${path/"$HOME/Downloads"/⛔}";
-	elif [[ "$path" == "$HOME/Games"* ]]; then
-		path="${path/"$HOME/Games"/🎮}";
-	elif [[ "$path" == "$HOME/Music"* ]]; then
-		path="${path/"$HOME/Music"/🎵}";
-	elif [[ "$path" == "$HOME/Packages"* ]]; then
-		path="${path/"$HOME/Packages"/📦}";
-	elif [[ "$path" == "$HOME/Pictures"* ]]; then
-		path="${path/"$HOME/Pictures"/📷}";
-	elif [[ "$path" == "$HOME/Software"* ]]; then
-		path="${path/"$HOME/Software"/🚧}";
-	elif [[ "$path" == "$HOME/Videos"* ]]; then
-		path="${path/"$HOME/Videos"/📼}";
-	elif [[ "$path" == "$HOME"* ]]; then
-		path="${path/"$HOME"/🏠}";
-	elif [[ "$path" == "/opt/lycheejs"* ]]; then
-		path="${path/"/opt/lycheejs"/🌱}";
+	elif [[ "$path" == "${HOME}/Documents"* ]]; then
+		path="${path/"${HOME}/Documents"/📑}";
+	elif [[ "$path" == "${HOME}/Downloads"* ]]; then
+		path="${path/"${HOME}/Downloads"/⛔}";
+	elif [[ "$path" == "${HOME}/Games"* ]]; then
+		path="${path/"${HOME}/Games"/🎮}";
+	elif [[ "$path" == "${HOME}/Music"* ]]; then
+		path="${path/"${HOME}/Music"/🎵}";
+	elif [[ "$path" == "${HOME}/Packages"* ]]; then
+		path="${path/"${HOME}/Packages"/📦}";
+	elif [[ "$path" == "${HOME}/Pictures"* ]]; then
+		path="${path/"${HOME}/Pictures"/📷}";
+	elif [[ "$path" == "${HOME}/Software"* ]]; then
+		path="${path/"${HOME}/Software"/🚧}";
+	elif [[ "$path" == "${HOME}/Videos"* ]]; then
+		path="${path/"${HOME}/Videos"/📼}";
+	elif [[ "$path" == "${HOME}"* ]]; then
+		path="${path/"${HOME}"/🏠}";
 	fi;
 
 	local ps1_status="$code\e[01;49;39m$user@$host:$path\e[0m";
 
 	if [[ "$git_status" != "" ]]; then
-		echo -e "\n${ps1_status} ${git_status}\n${host}> ";
+		echo -e "\n${ps1_status} ${git_status}\n> ";
 	else
-		echo -e "\n${ps1_status}\n${host}> ";
+		echo -e "\n${ps1_status}\n> ";
 	fi;
 
 }
@@ -330,6 +370,8 @@ unpack() {
 	if [ -f $1 ] ; then
 
 		case $1 in
+			*.crx)       uncrx $1 ;;
+			*.deb)       ar xv $1 ;;
 			*.tar.bz2)   tar --one-top-level -xjf $1 ;;
 			*.tar.gz)    tar --one-top-level -xzf $1 ;;
 			*.tar.xz)    tar --one-top-level -xJf $1 ;;
@@ -413,13 +455,15 @@ git-serve() {
 to720p() {
 	local input="$1";
 	local output="${input%.*}-720p.avi";
-	ffmpeg -i "$input" -vf scale=-1:720 -c:v libx264 -crf 18 -preset veryslow -c:a copy "$output";
+	local x264params="cabac=1:ref=5:analyse=0x133:me=umh:subme=9:chroma-me=1:deadzone-inter=21:deadzone-intra=11:b-adapt=2:rc-lookahead=60:vbv-maxrate=10000:vbv-bufsize=10000:qpmax=69:bframes=5:b-adapt=2:direct=auto:crf-max=51:weightp=2:merange=24:chroma-qp-offset=-1:sync-lookahead=2:psy-rd=1.00,0.15:trellis=2:min-keyint=23:partitions=all";
+	ffmpeg -i "$input" -vf scale=-1:720 -c:v libx264 -crf 18 -x264-params "${x264params}" -c:a aac -ar 44100 -b:a 128k -map 0 "${output}";
 }
 
 to1080p() {
 	local input="$1";
 	local output="${input%.*}-1080p.avi";
-	ffmpeg -i "$input" -vf scale=-1:1080 -c:v libx264 -crf 18 -preset veryslow -c:a copy "$output";
+	local x264params="cabac=1:ref=5:analyse=0x133:me=umh:subme=9:chroma-me=1:deadzone-inter=21:deadzone-intra=11:b-adapt=2:rc-lookahead=60:vbv-maxrate=10000:vbv-bufsize=10000:qpmax=69:bframes=5:b-adapt=2:direct=auto:crf-max=51:weightp=2:merange=24:chroma-qp-offset=-1:sync-lookahead=2:psy-rd=1.00,0.15:trellis=2:min-keyint=23:partitions=all";
+	ffmpeg -i "$input" -vf scale=-1:1080 -c:v libx264 -crf 18 -x264-params "${x264params}" -c:a aac -ar 44100 -b:a 128k -map 0 "${output}";
 }
 
 tomp3() {
@@ -467,6 +511,14 @@ datetime() {
 
 }
 
+screenshot() {
+
+	export DISPLAY=":0";
+	export XAUTHORITY="/home/cookiengineer/.Xauthority";
+	scrot -b '%Y-%m-%d_%H:%M:%S.png';
+
+}
+
 youtube-mp3() {
 	# youtube-dl --extract-audio --audio-format mp3 $1 --continue --ignore-errors;
 	yt-dlp -f 'ba' -x --audio-format mp3 $1;
@@ -495,14 +547,6 @@ crx-dl() {
 	crx_url="https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=$ver&x=id%3D$crx%26uc";
 
 	wget -O "$file.crx" "$crx_url";
-
-}
-
-screenshot() {
-
-	export DISPLAY=":0";
-	export XAUTHORITY="/home/cookiengineer/.Xauthority";
-	scrot -b '%Y-%m-%d_%H:%M:%S.png';
 
 }
 
