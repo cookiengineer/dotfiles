@@ -654,6 +654,10 @@
 - [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
 - [Responder Poisoner](https://github.com/lgandx/Responder)
 
+# Cybersecurity / Redteam / Network Scanning
+
+- [IVRE Recon Framework](https://github.com/ivre/ivre)
+
 # Cybersecurity / Redteam / OSINT
 
 - [Assetfinder](https://github.com/tomnomnom/assetfinder)
