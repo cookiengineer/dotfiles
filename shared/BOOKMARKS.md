@@ -337,10 +337,6 @@
 - [Wigle Wardriving Client](https://github.com/wiglenet/wigle-wifi-wardriving)
 - [Yet Another Call Blocker](https://gitlab.com/xynngh/YetAnotherCallBlocker)
 
-# Software / Code
-
-- [Difftastic](https://github.com/wilfred/difftastic)
-- [OSS Insight](https://github.com/pingcap/ossinsight)
 
 # Software / Cryptography
 
@@ -364,6 +360,10 @@
 # Software / Filesharing
 
 - [Tribler Torrent Client](https://github.com/Tribler/tribler)
+
+# Software / Music
+
+- [MilkyTracker](https://github.com/milkytracker/MilkyTracker)
 
 # Software / Networking
 
@@ -406,9 +406,12 @@
 - [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - [Stable Diffusion WebUI Examples](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
 - [Comic Diffusion Model](https://huggingface.co/ogkalu/Comic-Diffusion)
+- [InvokeAI](https://github.com/invoke-ai/InvokeAI)
+- [Pixray](https://github.com/pixray/pixray)
 
 # Software / Tools / Virtualization
 
+- [Cog Containers for Machine Learning](https://github.com/replicate/cog)
 - [Distrobox](https://github.com/89luca89/distrobox)
 
 
@@ -417,10 +420,21 @@
 - [Earth Weather](https://github.com/cambecc/earth)
 - [Transpector Transformer Analysis Tool](https://github.com/R0bk/Transpector)
 
+# Software / Debugging
+
+# Software / Debugging / Network
+
+- [Multipeer Connectivity](https://github.com/evilsocket/mpcfw)
+- [PyRDP MITM](https://github.com/gosecure/pyrdp)
+- [Wireshark](https://github.com/wireshark/wireshark)
+
 # Software / Development
 
 - [GB Studio](https://github.com/chrismaltby/gb-studio)
+- [git appraise](https://github.com/google/git-appraise)
+- [Difftastic](https://github.com/wilfred/difftastic)
 - [LunarVIM](https://github.com/lunarvim/lunarvim)
+- [OSS Insight](https://github.com/pingcap/ossinsight)
 
 # Software / Development / ebpf
 
@@ -531,6 +545,7 @@
 
 - [Firejail](https://github.com/netblue30/firejail)
 - [Firejail Profiles](https://github.com/netblue30/firejail/tree/master/etc)
+- [pisshoff SSH Honeypot](https://github.com/w4/pisshoff)
 
 # Cybersecurity / Blueteam / Software Inventory
 
