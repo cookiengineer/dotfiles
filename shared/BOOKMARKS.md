@@ -425,6 +425,8 @@
 
 # Software / Debugging
 
+- [GDB Frontend](https://github.com/nakst/gf)
+
 # Software / Debugging / Network
 
 - [Multipeer Connectivity](https://github.com/evilsocket/mpcfw)
@@ -603,6 +605,10 @@
 - [0x00sec](https://0x00sec.org/categories)
 - [free hack](https://free-hack.com/index.php)
 
+# Cybersecurity / Redteam / DDoS
+
+- [MHDDoS](https://github.com/MatrixTM/MHDDoS)
+
 # Cybersecurity / Redteam / EDR Evasion
 
 - [HookDump](https://github.com/zeroperil/HookDump)
@@ -625,6 +631,10 @@
 - [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
 - [Recycled Shellcode Injector](https://github.com/florylsk/RecycledInjector)
 - [Trickest CVE PoC database](https://github.com/trickest/cve)
+
+# Cybersecurity / Redteam / Fingerprinting
+
+- [P0f Fingerprinter](https://lcamtuf.coredump.cx/p0f3/)
 
 # Cybersecurity / Redteam / Web Exploitation
 
@@ -679,6 +689,7 @@
 - [Snap Map Archiver](https://github.com/king-millez/snapmap-archiver)
 - [SOC Multi Tool](https://github.com/zdhenard42/SOC-Multitool)
 - [Webanalyze Technologies of Web Apps](https://github.com/rverton/webanalyze)
+- [Maigret Dossier Collector](https://github.com/soxoj/maigret)
 
 # Cybersecurity / Redteam / OWASP
 
