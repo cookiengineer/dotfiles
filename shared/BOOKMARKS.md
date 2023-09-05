@@ -54,6 +54,7 @@
 
 # Entertainment / Chess
 
+- [Anna Cramling](https://www.youtube.com/@AnnaCramling/videos)
 - [Botez Sisters](https://www.youtube.com/@BotezLive/videos)
 - [Magnus Carlsen](https://www.youtube.com/@themagnuscarlsen/videos)
 
@@ -94,6 +95,7 @@
 
 # Entertainment / Politics
 
+- [Fabio De Masi](https://www.youtube.com/@fabiodemasi5187/videos)
 - [Real Life Lore](https://www.youtube.com/c/RealLifeLore/videos)
 - [Renzo](https://www.youtube.com/c/Renzo69/videos)
 - [Tim Jacken](https://www.youtube.com/c/TimJacken/videos)
@@ -118,6 +120,7 @@
 - [Computerphile](https://www.youtube.com/user/Computerphile/videos)
 - [Jeri Ellsworth](https://www.youtube.com/c/jeriellsworth/videos)
 - [Mark Rober](https://www.youtube.com/c/MarkRober/videos)
+- [MathemaTrick](https://www.youtube.com/@MathemaTrick/videos)
 - [Numberphile](https://www.youtube.com/c/numberphile/videos)
 - [Smarter Every Day](https://www.youtube.com/c/smartereveryday/videos)
 - [Tested](https://www.youtube.com/c/tested/videos)
