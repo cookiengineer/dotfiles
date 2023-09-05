@@ -15,6 +15,7 @@
 - [LOL Apps](https://lolapps-project.github.io)
 - [LOL Drivers](https://loldrivers.io)
 - [LOL DriverScan](https://github.com/FourCoreLabs/loldriverscan)
+- [CVE-2022-34715 NFS RCE](https://www.zerodayinitiative.com/blog/2022/8/31/cve-2022-34715-more-microsoft-windows-nfs-v4-remote-code-execution)
 
 # Cyber Security / Exploits / Hardware
 
@@ -27,6 +28,7 @@
 # Cyber Security / Traversal / Windows
 
 - [Kerberoasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/t1208-kerberoasting)
+- [SMB Coercer](https://github.com/p0dalirius/Coercer)
 - [NAC Bypass Client](https://github.com/alperenugurlu/Nac_Bypass_Agent)
 
 # Cyber Security / Traversal / Firmware
