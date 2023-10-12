@@ -16,6 +16,8 @@
 - [Let's go with golang](https://www.youtube.com/watch?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa)
 - [Golang Tutorials](https://www.youtube.com/watch?list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q)
 - [Effective Go](https://go.dev/doc/effective_go)
+- [BeeJ's Guide to Network Concepts](https://beej.us/guide/bgnet0/)
+- [BeeJ's Guide to Network Programming](https://beej.us/guide/bgnet/)
 
 # Courses / Computer Science / Stanford CS221
 
@@ -33,24 +35,28 @@
 
 - [CLARK Security Courses](https://clark.center/browse?collection=nccp)
 
+# Courses / Maintainer Advice
+
+- [Uncurled](https://un.curl.dev/)
+- [Tony Dinh](https://news.tonydinh.com/p/my-solopreneur-story-zero-to-45kmo)
 
 # Entertainment
-
-# Entertainment / Comedy
-
-- [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
-- [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
-
-# Entertainment / Drama
-
-- [Derek van Schaik](https://www.youtube.com/@DerekVanSchaik/videos)
-- [Sashka](https://www.youtube.com/@Sashkaskanal/videos)
 
 # Entertainment / Building
 
 - [Perkins Brothers](https://www.youtube.com/@PerkinsBuilderBrothers/videos)
 - [Martijn Doolaard](https://www.youtube.com/@MartijnDoolaard/videos)
 - [Nerdforge](https://www.youtube.com/@Nerdforge/videos)
+
+# Entertainment / Comedy
+
+- [SkyCorp Home Video](https://www.youtube.com/@skycorphomevideo/videos)
+- [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
+- [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
+
+# Entertainment / Construction
+
+- [Bernhard Rennhofer](https://www.youtube.com/@BernhardRennhofer/videos)
 
 # Entertainment / Chess
 
@@ -79,9 +85,15 @@
 - [NDR Doku](https://www.youtube.com/c/NDRDoku/videos)
 - [WDR Doku](https://www.youtube.com/c/WDRDoku/videos)
 
+# Entertainment / Drama
+
+- [Derek van Schaik](https://www.youtube.com/@DerekVanSchaik/videos)
+- [Sashka](https://www.youtube.com/@Sashkaskanal/videos)
+
 # Entertainment / Electronics
 
 - [Big Clive](https://www.youtube.com/@bigclivedotcom/videos)
+- [Der Elektrotechniker](https://www.youtube.com/@derelektrotechniker/videos)
 
 # Entertainment / Fitness
 
@@ -143,6 +155,7 @@
 - [Ocean Currents, Winds and Pollutions](https://earth.nullschool.net/)
 - [Mechanical Watch](https://ciechanow.ski/mechanical-watch/)
 - [GPS](https://ciechanow.ski/gps/)
+
 
 # Hardware
 
@@ -239,6 +252,7 @@
 
 # Platforms / Search
 
+- [Aleph](https://aleph.occrp.org/search)
 - [BTDig](https://btdig.com)
 - [Geizhals Preisvergleich](https://geizhals.de/)
 - [Lumen Database](https://www.lumendatabase.org/)
@@ -359,6 +373,7 @@
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
 - [Harbor Container Registry](https://github.com/goharbor/harbor)
+- [OpenTofu Infrastructure Tool](https://github.com/opentofu)
 
 # Software / Filesharing
 
@@ -377,6 +392,14 @@
 - [INET256](https://github.com/inet256/inet256)
 - [Packetstream Residential Proxy Network](https://packetstream.io/)
 - [Scuttlebutt Protocol Guide](https://ssbc.github.io/scuttlebutt-protocol-guide/)
+
+# Software / Private Networking
+
+- [WireGuard Netmaker](https://github.com/gravitl/netmaker)
+
+# Software / Organization
+
+- [Paperback Key Sharding](https://github.com/cyphar/paperback)
 
 # Software / Social
 
@@ -404,6 +427,11 @@
 - [QR Designer](https://github.com/kochrt/qr-designer)
 - [XDG Ninja](https://github.com/b3nj5m1n/xdg-ninja)
 
+# Software / Tools / Search
+
+- [SearXNG](https://github.com/searxng/searxng)
+- [SeaGOAT](https://github.com/kantord/SeaGOAT)
+
 # Software / Tools / Stable Diffusion
 
 - [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
@@ -416,7 +444,7 @@
 
 - [Cog Containers for Machine Learning](https://github.com/replicate/cog)
 - [Distrobox](https://github.com/89luca89/distrobox)
-
+- [Watchtower Update Manager](https://github.com/containrrr/watchtower)
 
 # Software / Visualizations
 
@@ -445,6 +473,7 @@
 
 - [golang ebpf](https://github.com/cilium/ebpf)
 - [cilium bpf reference docs](https://docs.cilium.io/en/stable/bpf/)
+- [ecapture SSL/TLS sniffer](https://github.com/gojue/ecapture)
 
 # Software / Development / golang
 
@@ -470,6 +499,7 @@
 - [tinygo compiler](https://github.com/tinygo-org/tinygo)
 - [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
 - [wails webview](https://wails.io/docs/gettingstarted/development/)
+- [yaegi golang interpreter](https://github.com/traefik/yaegi)
 
 # Software / Development / node.js
 
@@ -485,6 +515,10 @@
 # Software / Development / rust
 
 - [Actix Web Framework](https://github.com/actix/actix-web)
+
+# Software / Hosting
+
+- [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
 
 # Software / Web Scraping
 
@@ -503,6 +537,7 @@
 - [Attacks on TOR](https://github.com/Attacks-on-Tor/Attacks-on-Tor)
 - [Browser Leaks](https://browserleaks.com/)
 - [JShelter Extension](https://jshelter.org/)
+- [libRedirect Extension](https://github.com/libredirect/browser_extension)
 - [Ninja Cookie Extension](https://gitlab.com/ninja-cookie/ninja-cookie)
 - [Privacy Tests](https://privacytests.org/)
 - [Privacy Redirect Extension](https://github.com/SimonBrazell/privacy-redirect)
