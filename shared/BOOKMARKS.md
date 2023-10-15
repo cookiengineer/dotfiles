@@ -404,10 +404,20 @@
 - [QR Designer](https://github.com/kochrt/qr-designer)
 - [XDG Ninja](https://github.com/b3nj5m1n/xdg-ninja)
 
+# Software / Tools / Mapping
+
+- [PrettyMapp](https://github.com/chrieke/prettymapp)
+
+# Software / Tools / Networking
+
+- [Netbird](https://github.com/netbirdio/netbird)
+- [Netmaker](https://github.com/graviyl/netmaker)
+
 # Software / Tools / Stable Diffusion
 
 - [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - [Stable Diffusion WebUI Examples](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
+- [WALDO](https://github.com/stephansturges/WALDO)
 - [Comic Diffusion Model](https://huggingface.co/ogkalu/Comic-Diffusion)
 - [InvokeAI](https://github.com/invoke-ai/InvokeAI)
 - [Pixray](https://github.com/pixray/pixray)
@@ -417,6 +427,9 @@
 - [Cog Containers for Machine Learning](https://github.com/replicate/cog)
 - [Distrobox](https://github.com/89luca89/distrobox)
 
+# Software / Tools / Voice
+
+- [Lyrebird](https://github.com/lyrebird-voice-changer/lyrebird)
 
 # Software / Visualizations
 
@@ -538,6 +551,7 @@
 - [Angry GHidra](https://github.com/Nalen98/AngryGhidra)
 - [Quickscope](https://github.com/CYB3RMX/Qu1cksc0pe)
 - [Cutter Framework](https://github.com/rizinorg/cutter)
+- [PDF Tools](https://blog.didierstevens.com/programs/pdf-tools/)
 - [Rizin Framework](https://github.com/rizinorg/rizin)
 
 # Cybersecurity / Blueteam / Network Inventory
@@ -629,6 +643,7 @@
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
 - [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
 - [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
+- [PEASS-ng](https://github.com/carlospolop/PEASS-ng)
 - [Recycled Shellcode Injector](https://github.com/florylsk/RecycledInjector)
 - [Trickest CVE PoC database](https://github.com/trickest/cve)
 
