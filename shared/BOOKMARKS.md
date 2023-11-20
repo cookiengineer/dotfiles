@@ -270,6 +270,10 @@
 - [HDMI to Cinch Adapter](https://www.ebay.de/itm/363382469977)
 - [SD2IEC SDCard adapter](https://www.ebay.de/itm/164880599847)
 
+# Projects / Cyberdeck
+
+- [Penkesu Computer](https://penkesu.computer/)
+
 # Projects / Homeserver
 
 - [Raidsonic IB-3640SU3](https://geizhals.de/raidsonic-icy-box-ib-3640su3-20640-a847133.html)
@@ -426,6 +430,10 @@
 - [i3-workspace-groups](https://github.com/infokiller/i3-workspace-groups)
 - [QR Designer](https://github.com/kochrt/qr-designer)
 - [XDG Ninja](https://github.com/b3nj5m1n/xdg-ninja)
+
+# Software / Tools / Database
+
+- [libSQL](https://github.com/tursodatabase/libsql)
 
 # Software / Tools / Mapping
 
