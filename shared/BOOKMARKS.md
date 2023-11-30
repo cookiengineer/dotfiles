@@ -54,6 +54,10 @@
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
 
+# Entertainment / Computer and IT
+
+- [Wolfgang's Channel](https://www.youtube.com/@WolfgangsChannel/videos)
+
 # Entertainment / Construction
 
 - [Bernhard Rennhofer](https://www.youtube.com/@BernhardRennhofer/videos)
@@ -358,6 +362,9 @@
 - [Wigle Wardriving Client](https://github.com/wiglenet/wigle-wifi-wardriving)
 - [Yet Another Call Blocker](https://gitlab.com/xynngh/YetAnotherCallBlocker)
 
+# Software / Content Management Systems
+
+- [Outstatic](https://github.com/avitorio/outstatic)
 
 # Software / Cryptography
 
@@ -369,6 +376,7 @@
 
 # Software / Design / Iconsets
 
+- [PenPot App](https://github.com/penpot/penpot)
 - [Gophers Pack](https://github.com/MariaLetta/free-gophers-pack)
 - [Lima Studio Icons](https://icon-icons.com/de/users/41pqZN26tNxHKDKz4kO6h/icon-sets/)
 
@@ -377,6 +385,7 @@
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
 - [Harbor Container Registry](https://github.com/goharbor/harbor)
+- [Marmotte IT Asset Management](https://github.com/marmotteio/marmotteio)
 - [OpenTofu Infrastructure Tool](https://github.com/opentofu)
 
 # Software / Filesharing
@@ -404,6 +413,7 @@
 # Software / Organization
 
 - [Paperback Key Sharding](https://github.com/cyphar/paperback)
+- [Taiga Project Management](https://github.com/taigaio/taiga)
 
 # Software / Social
 
