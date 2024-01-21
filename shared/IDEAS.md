@@ -1,4 +1,24 @@
 
+# Barrier GUI
+
+- Shipped binary embeds barrier-server and barrier-client packages
+- GUI webview
+- select server/client mode
+- start/stop barrier service
+- discovery of connected machines via multicast DNS
+- arrangement of monitors (very painful with config)
+- config generation
+- systemd user service generation and installation
+
+
+# gogoproxy
+
+- HTTP/S and DNS Proxy, which intercepts requests and archives them
+- Intercept ads and overlays, and filter out HTML and CSS into the "good parts" (e.g. without `overflow:hidden` or `height:100vh`)
+- Standalone GUI, with web frontend to select domains that should be archived.
+- Autonomous SSL certificate generation and installation to `/etc/ca-certificates`
+
+
 # Cyber Defense Games
 
 - CTF, but for real
@@ -8,6 +28,12 @@
 - apache, nginx
 - mysql, postgres
 - wordpress, openssh, nodejs(?)
+
+
+# Mobile Redirector Extension
+
+- Redirect services to no-JavaScript-using ones (e.g. twitter to nitter instances)
+- Remove JavaScript nagging popups, and make websites more mobile friendly via filters
 
 
 # Multitask Browser Extension

@@ -133,6 +133,7 @@
 # Entertainment / Science
 
 - [CGP Grey](https://www.youtube.com/greymatter/videos)
+- [Cleo Abram](https://www.youtube.com/@CleoAbram/videos)
 - [Computerphile](https://www.youtube.com/user/Computerphile/videos)
 - [Jeri Ellsworth](https://www.youtube.com/c/jeriellsworth/videos)
 - [Mark Rober](https://www.youtube.com/c/MarkRober/videos)
@@ -289,6 +290,10 @@
 - [Pi-Hole](https://github.com/pi-hole/pi-hole)
 - [Pi-KVM](https://github.com/pikvm/pikvm)
 - [Secure Web Application Gateway](https://github.com/linuxserver/docker-swag)
+
+# Projects / UM790
+
+- [Better Cooling Fan Mod](https://sagar.se/blog/um790-cooling-wifi/)
 
 # Projects / Noisy Mouse
 
