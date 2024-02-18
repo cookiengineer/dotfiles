@@ -1,4 +1,20 @@
 
+# Go Shell
+
+- [ ] [BubbleTea](https://github.com/charmbracelet/bubbletea) based Terminal UI for an interactive Shell in Golang.
+- [ ] [Yeagi/interp](https://github.com/traefik/yaegi) based Interpreter, but with additional standard package.
+- [ ] `gosh` standard package to interact with shell in an easier way (e.g. `gosh.Mkdir() bool`)
+
+# SMART GUI
+
+- [ ] GUI for `smartctl` and smartmontools, to check external HDDs automatically
+      or in an easier manner.
+
+# Wallet GUI
+
+- [ ] Parse CSVs of bank account into a wallet that auto-tags things based on identifying
+      strings for subjects, receiver, sender etc.
+
 # Barrier GUI
 
 - Shipped binary embeds barrier-server and barrier-client packages
@@ -13,8 +29,9 @@
 
 # gogoproxy
 
-- HTTP/S and DNS Proxy, which intercepts requests and archives them
+- HTTP/S and DNS Proxy, which intercepts requests and archives them.
 - Intercept ads and overlays, and filter out HTML and CSS into the "good parts" (e.g. without `overflow:hidden` or `height:100vh`)
+- [goja](https://github.com/dop251/goja) JavaScript VM to filter out the "bad parts" of tracker codes.
 - Standalone GUI, with web frontend to select domains that should be archived.
 - Autonomous SSL certificate generation and installation to `/etc/ca-certificates`
 
