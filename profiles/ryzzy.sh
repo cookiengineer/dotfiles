@@ -25,12 +25,13 @@ synchronize openssh;
 synchronize git go nodejs npm;
 synchronize tor;
 synchronize kitty vim;
+synchronize keepassxc;
 
 synchronize noto-fonts noto-fonts-compat noto-fonts-emoji;
-synchronize firefox gimp gparted;
+synchronize librewolf gimp gparted;
 synchronize ffmpeg mpv;
 synchronize dnsutils macchanger net-tools nmap;
-synchronize openscad tldr yt-dlp;
+synchronize tldr yt-dlp;
 
 #
 # XXX: AUR software
@@ -62,22 +63,10 @@ sudo cp "$PROFILE_ROOT/etc/hosts" "/etc/hosts";
 sudo cp "$PROFILE_ROOT/etc/NetworkManager/system-connections/Home.nmconnection" "/etc/NetworkManager/system-connections/Home.nmconnection";
 cp "$PROFILE_ROOT/home/cookiengineer/.config/i3status/config" "/home/$USER/.config/i3status/config";
 
-
 keyboard_conf="/etc/X11/xorg.conf.d/00-keyboard.conf";
 if [[ ! -f "$keyboard_conf" ]]; then
 	sudo cp "$PROFILE_ROOT$keyboard_conf" $keyboard_conf;
 fi;
 
-monitor_conf="/etc/X11/xorg.conf.d/10-monitor.conf";
-if [[ ! -f "$monitor_conf" ]]; then
-	sudo cp "$PROFILE_ROOT$monitor_conf" $monitor_conf;
-fi;
-
-intel_conf="/etc/X11/xorg.conf.d/20-intel.conf";
-if [[ ! -f "$intel_conf" ]]; then
-	sudo cp "$PROFILE_ROOT$intel_conf" $intel_conf;
-fi;
-
-
-systemctl --user enable barrier-client;
+systemctl --user enable barrier-server;
 

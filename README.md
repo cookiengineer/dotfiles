@@ -23,27 +23,37 @@ desktop machines are airgapped and LUKS-encrypted on purpose.
 
 ## Profiles
 
-**Intel NUC Homeserver (jarvis)**
+**Intel NUC Home Server (homeserver)**
 
-Profile: [./profiles/jarvis.sh](./profiles/jarvis.sh)
+Profile: [./profiles/homeserver.sh](./profiles/homeserver.sh)
 
 - OEM Intel EFI
 - Arch Linux
 - Intel HD5000
 
-**Intel NUC (nuccy)**
+**AMD Ryzen 7840HS (ryzzy)**
+
+Profile: [./profiles/ryzzy.sh](./profiles/ryzzy.sh)
+
+- OEM EFI
+- Arch Linux and i3
+- Barrier Server (right of `tinky`, left of `nuccy`)
+- Monitor 1 (BenQ 24" HDMI 1920x1080)
+- Monitor 2 (BenQ 24" HDMI 1920x1080)
+- Radeon 780M
+- Lenovo Thinkpad USB Keyboard US Layout (03X8715)
+- Vertical Mouse (CSL 26069)
+
+**Intel NUC Build/Stream Server (nuccy)**
 
 Profile: [./profiles/nuccy.sh](./profiles/nuccy.sh)
 
 - OEM Intel EFI
 - Arch Linux and i3
-- Barrier Server (left of `tinky`)
-- Monitor 1 (BenQ 24" HDMI 1920x1080)
+- Barrier Client (right of `ryzzy`)
+- Monitor 1 (BenQ 24" DisplayPort 1920x1080)
 - Monitor 2 (BenQ 24" DisplayPort 1920x1080)
-- Monitor 3 (BenQ 24" DisplayPort 1920x1080)
 - Intel HD4000
-- Lenovo Thinkpad USB Keyboard US Layout (03X8715)
-- Vertical Mouse (CSL 26069)
 - (optional) Analog Audio Interface (Scarlet 2i2 USB) with Behringer C-3 microphone
 - (optional) Analog Audio Headphones (AKG HD242)
 
@@ -59,27 +69,14 @@ Profile: [./profiles/tinky.sh](./profiles/tinky.sh)
 - Lenovo Thinkpad Keyboard (US Layout)
 - (optional) Bluetooth Audio Headphones (Cowin E8)
 
-**Tower (weep/weeptarded)**
+**Tower AI/ML Server (weepy)**
 
 Profile: [./profiles/weep.sh](./profiles/weep.sh)
 
 - coreboot
 - Arch Linux and i3
-- Barrier Server (right of `tinky`)
-- Monitor 1 (BenQ 24" HDMI 1920x1080)
-- Monitor 2 (BenQ 24" HDMI 1920x1080)
-- (optional) Monitor 3 (BenQ 24" HDMI 1920x1080)
-- 4x Radeon RX580 32GB (128GB VRAM memory)
+- 4x Radeon RX580 64GB (256GB VRAM memory)
 - Webcam (Logitech C920)
-- Cherry Strait 3.0 USB (JK-03 US Layout)
-- Vertical Mouse (CSL 26069)
-
-**HP Business Laptop (fury)**
-
-Profile: [./profiles/fury.sh](./profiles/fury.sh)
-
-- Arch Linux and i3
-- Barrier Client (right of `weep`)
 
 
 ## Usage
@@ -144,6 +141,13 @@ Folder Structure:
 - [./profiles](./profiles) contains ready-to-use profiles.
 - [./shared](./shared) contains shared files among machines.
 - [./software](./software) contains package integrations.
+
+
+## Notes / Pulseaudio
+
+- Use sink `name` identifiers via `pulse:$name` inside the `.config/i3status/config` file.
+- List available sinks via `pacmd list-sinks | grep -e "name:"`. The output has a leading `<` and trailing `>` character.
+- Set default sink in `/etc/pulse/default.pa` via `set-default-sink $name` (without `<`, without `>`).
 
 
 ## License

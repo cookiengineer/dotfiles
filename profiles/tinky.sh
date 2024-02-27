@@ -23,20 +23,19 @@ synchronize ly;
 synchronize barrier-headless;
 synchronize networkmanager;
 synchronize modemmanager;
-synchronize git;
 synchronize openssh;
-synchronize nodejs;
+synchronize git go nodejs npm;
 synchronize tor;
-synchronize kitty;
-synchronize vim;
+synchronize kitty vim;
 synchronize keepassxc;
 
 synchronize bluez bluez-firmware bluez-libs bluez-utils;
 synchronize noto-fonts noto-fonts-compat noto-fonts-emoji;
-synchronize gimp gparted transmission-gtk uget;
-synchronize ffmpeg celluloid lollypop;
+synchronize firefox gimp gparted;
+synchronize ffmpeg mpv;
 synchronize dnsutils macchanger net-tools nmap;
 synchronize telegram-desktop;
+synchronize tldr yt-dlp;
 
 #
 # XXX: AUR software
@@ -65,7 +64,8 @@ fi;
 #
 
 sudo chmod +r /etc/NetworkManager/system-connections;
-sudo cp "$PROFILE_ROOT/etc/NetworkManager/system-connections/Workshop.nmconnection" "/etc/NetworkManager/system-connections/Workshop.nmconnection";
+sudo cp "$PROFILE_ROOT/etc/hosts" "/etc/hosts";
+sudo cp "$PROFILE_ROOT/etc/NetworkManager/system-connections/Home.nmconnection" "/etc/NetworkManager/system-connections/Home.nmconnection";
 
 if [[ ! -f "/usr/bin/share-internet" ]]; then
 	sudo cp $PROFILE_ROOT/usr/bin/share-internet.sh /usr/bin/share-internet;

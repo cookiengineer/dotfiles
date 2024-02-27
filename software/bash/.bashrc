@@ -165,11 +165,23 @@ __legacy_ps1() {
 
 	local git_status="";
 
-	if [[ "$path" == "/home/$user/Software/tholian-network/vulnerabilities"* ]]; then
+	if [[ "$path" == "/home/$user/Software/tholian-network/detective-cache"* ]]; then
 
 		git_status="";
 
-	elif [[ "$path" == "/opt/vulnerabilities"* ]]; then
+	elif [[ "$path" == "/home/$user/Software/tholian-network/detective/cache"* ]]; then
+
+		git_status="";
+
+	elif [[ "$path" == "/home/$user/Software/tholian-network/endpoint-insights"* ]]; then
+
+		git_status="";
+
+	elif [[ "$path" == "/home/$user/Software/tholian-network/endpoint/source/insights"* ]]; then
+
+		git_status="";
+
+	elif [[ "$path" == "/home/$user/Software/tholian-network/oversight/profile"* ]]; then
 
 		git_status="";
 
@@ -253,11 +265,23 @@ __modern_ps1() {
 
 	local git_status="";
 
-	if [[ "$path" == "/home/$user/Software/tholian-network/vulnerabilities"* ]]; then
+	if [[ "$path" == "/home/$user/Software/tholian-network/detective-cache"* ]]; then
 
 		git_status="";
 
-	elif [[ "$path" == "/opt/vulnerabilities"* ]]; then
+	elif [[ "$path" == "/home/$user/Software/tholian-network/detective/cache"* ]]; then
+
+		git_status="";
+
+	elif [[ "$path" == "/home/$user/Software/tholian-network/endpoint-insights"* ]]; then
+
+		git_status="";
+
+	elif [[ "$path" == "/home/$user/Software/tholian-network/endpoint/source/insights"* ]]; then
+
+		git_status="";
+
+	elif [[ "$path" == "/home/$user/Software/tholian-network/oversight/profile"* ]]; then
 
 		git_status="";
 
@@ -300,6 +324,8 @@ __modern_ps1() {
 		host="🖥️";
 	elif [[ "$host" == "piney" ]]; then
 		host="🌲";
+	elif [[ "$host" == "ryzzy" ]]; then
+		host="🚀";
 	elif [[ "$host" == "tinky" ]]; then
 		host="💻";
 	elif [[ "$host" == "weep" ]]; then

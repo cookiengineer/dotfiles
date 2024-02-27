@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 # ExecStartPre=/usr/bin/sleep 5
-ExecStart=/usr/bin/barrierc --no-daemon weep
-ExecStartPre=/usr/bin/echo "" > /dev/tcp/192.168.0.10/24800
+ExecStart=/usr/bin/barrierc --no-daemon ryzzy
+ExecStartPre=/usr/bin/echo "" > /dev/tcp/192.168.0.12/24800
 Restart=always
-RestartSec=30
+RestartSec=10
 
 [Install]
 WantedBy=default.target

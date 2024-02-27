@@ -1,0 +1,56 @@
+general {
+	output_format = "i3bar"
+	colors = true
+	color_good = "#22CCFF"
+	color_degraded = "#FFCC22"
+	color_bad = "#FF2222"
+	interval = 10
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "cpu_temperature 1"
+order += "volume speakers"
+order += "memory"
+order += "tztime berlin"
+order += "tztime local"
+
+wireless _first_ {
+	format_up = " %ip"
+	format_down = ""
+}
+
+ethernet _first_ {
+	format_up = " %ip"
+	format_down = ""
+}
+
+cpu_temperature 1 {
+	format = " %degrees°C"
+	format_above_threshold = " %degrees°C"
+	max_threshold = 84
+	path = "/sys/class/thermal/thermal_zone0/hwmon0/temp1_input"
+}
+
+volume speakers {
+	format = " %volume"
+	format_muted = ""
+	device = "pulse:alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo"
+}
+
+memory {
+	format = " %percentage_used"
+	format_degraded = " %percentage_used"
+	threshold_degraded = "10%"
+}
+
+tztime berlin {
+	format = " %Y-%m-%d %H:%M:%S %Z"
+	timezone = "Europe/Berlin"
+	hide_if_equals_localtime = true
+}
+
+tztime local {
+	format = " %Y-%m-%d %H:%M:%S"
+}
+
