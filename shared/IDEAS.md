@@ -1,19 +1,56 @@
 
+# Watchdaemon for sandboxed end-user VMs
+
+- A watchdaemon for untrusted (external) freelance workers that work on classified projects.
+- Use Docker and RDP to sandbox a VM, only RDP access is allowed
+- Observe Copy/Paste
+- Observe keystrokes via eBPF keylogger
+- Timeline UI of Coding, Browsing, Pushing Time
+- Log of browsed websites (and DNS requests)
+- Log of Copy/Paste interactions
+- Forbid connections to DNS over TLS/HTTPS servers
+- Generate/Intercept TLS certificates automatically
+
+
+# WhatsApp Form Provider
+
+- A lot of people rely on WhatsApp for communication
+- Form that posts entries/contact requests just via WhatsApp bot
+- Create a Web Form UI that can flexibly build forms online through a mobile website
+
+
+# Forensics Tools / Binmap
+
+- Draw a map of an executable and its library dependencies and plot them on an SVG chart
+- Additionally support a `--functions` flag that also plots functions from other libraries
+- Categorize functions and node clusters by filename and/or folder paths
+
+
 # Go Shell
 
 - [ ] [BubbleTea](https://github.com/charmbracelet/bubbletea) based Terminal UI for an interactive Shell in Golang.
 - [ ] [Yeagi/interp](https://github.com/traefik/yaegi) based Interpreter, but with additional standard package.
 - [ ] `gosh` standard package to interact with shell in an easier way (e.g. `gosh.Mkdir() bool`)
 
+
 # SMART GUI
 
 - [ ] GUI for `smartctl` and smartmontools, to check external HDDs automatically
       or in an easier manner.
 
+
+# SystmD GUI
+
+- Build a UI that shows services and sandboxing configurations of systemd units and services
+- Remote UI can be implemented using SSH tunnels to a remote server, where the queries are executed
+- Allow to enable sandboxing features (e.g. seccomp based sandboxes) and other things
+
+
 # Wallet GUI
 
 - [ ] Parse CSVs of bank account into a wallet that auto-tags things based on identifying
       strings for subjects, receiver, sender etc.
+
 
 # Barrier GUI
 
