@@ -73,7 +73,6 @@ alias mv="mv -i";                    # confirm before overwriting something
 alias ns='netstat -tup --wide';      # show only active program sockets
 alias rm="rm -i";                    # confirm before removing something
 alias wget="wget --hsts-file=${HOME}/.config/wget/hosts";
-alias steam="flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam-wrapper com.valvesoftware.Steam steam://open/games";
 
 
 
@@ -498,6 +497,12 @@ tomp3() {
 	ffmpeg -i "$input" -codec:a libmp3lame -qscale:a 0 "$output";
 }
 
+tomp4() {
+	local input="$1";
+	local output="${input%.*}.mp4";
+	ffmpeg -i "$input" -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "$output";
+}
+
 totiff() {
 	local input="$1";
 	local output="${input%.*}.tiff";
@@ -543,6 +548,10 @@ screenshot() {
 	export XAUTHORITY="/home/cookiengineer/.Xauthority";
 	scrot -b '%Y-%m-%d_%H:%M:%S.png';
 
+}
+
+youtube-dl() {
+	yt-dlp -v -S 'res:1080' -o "%(playlist_index)s-%(title)s.%(ext)s" $1;
 }
 
 youtube-mp3() {
