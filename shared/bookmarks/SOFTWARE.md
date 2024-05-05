@@ -80,6 +80,7 @@
 - [INET256](https://github.com/inet256/inet256)
 - [Packetstream Residential Proxy Network](https://packetstream.io/)
 - [Scuttlebutt Protocol Guide](https://ssbc.github.io/scuttlebutt-protocol-guide/)
+- [GoTox](https://github.com/codedust/go-tox)
 - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet)
 
 # Software / Private Networking
@@ -120,6 +121,10 @@
 - [QR Designer](https://github.com/kochrt/qr-designer)
 - [XDG Ninja](https://github.com/b3nj5m1n/xdg-ninja)
 
+# Software / Tools / AI
+
+- [ZLUDA](https://github.com/vosen/ZLUDA)
+
 # Software / Tools / Database
 
 - [libSQL](https://github.com/tursodatabase/libsql)
@@ -132,6 +137,7 @@
 
 - [Netbird](https://github.com/netbirdio/netbird)
 - [Netmaker](https://github.com/graviyl/netmaker)
+- [Wireproxy](https://github.com/pufferffish/wireproxy)
 
 # Software / Tools / Search
 
@@ -151,6 +157,8 @@
 
 - [Cog Containers for Machine Learning](https://github.com/replicate/cog)
 - [Distrobox](https://github.com/89luca89/distrobox)
+- [Kyverno Policy Manager](https://github.com/kyverno/kyverno)
+- [Trivy SBOM Manager](https://github.com/aquasecurity/trivy)
 - [Watchtower Update Manager](https://github.com/containrrr/watchtower)
 
 # Software / Tools / Voice
@@ -175,14 +183,17 @@
 - [Multipeer Connectivity](https://github.com/evilsocket/mpcfw)
 - [PyRDP MITM](https://github.com/gosecure/pyrdp)
 - [Wireshark](https://github.com/wireshark/wireshark)
+- [Scapy](https://github.com/secdev/scapy)
 
 # Software / Development
 
 - [GB Studio](https://github.com/chrismaltby/gb-studio)
+- [difftastic](https://github.com/Wilfred/difftastic)
 - [git appraise](https://github.com/google/git-appraise)
 - [git bug](https://github.com/MichaelMure/git-bug)
 - [Difftastic](https://github.com/wilfred/difftastic)
 - [LunarVIM](https://github.com/lunarvim/lunarvim)
+- [Notepad Next](https://github.com/dail8859/NotepadNext)
 - [OSS Insight](https://github.com/pingcap/ossinsight)
 
 # Software / Development / c
@@ -245,6 +256,10 @@
 
 - [Actix Web Framework](https://github.com/actix/actix-web)
 
+# Software / Development / sql
+
+- [DrawDB](https://github.com/drawdb-io/drawdb)
+
 # Software / Development / web
 
 - [ANDI Web Accessibility Tester](https://github.com/SSAgov/ANDI)
@@ -259,7 +274,13 @@
 
 # Software / Hosting
 
+- [Apache Answer](https://github.com/apache/incubator-answer)
+- [Go Git Service](https://github.com/gogs/gogs)
 - [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
+
+# Software / OSINT
+
+- [IVRE Scanner Framework](https://github.com/ivre/ivre)
 
 # Software / Web Scraping
 
