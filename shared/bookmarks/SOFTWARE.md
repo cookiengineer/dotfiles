@@ -1,6 +1,10 @@
 
 # Software
 
+# Software / Algotrading
+
+- [StockSharp](https://github.com/StockSharp/StockSharp)
+
 # Software / Android
 
 - [920 Text Editor](https://github.com/jecelyin/920-text-editor-v2)
@@ -22,6 +26,10 @@
 - [Wigle Wardriving Client](https://github.com/wiglenet/wigle-wifi-wardriving)
 - [Yet Another Call Blocker](https://gitlab.com/xynngh/YetAnotherCallBlocker)
 
+# Software / Backup
+
+- [timeshift rsync/btrfs](https://github.com/linuxmint/timeshift)
+
 # Software / Content Management Systems
 
 - [Outstatic](https://github.com/avitorio/outstatic)
@@ -33,6 +41,7 @@
 # Software / Databases
 
 - [PostGraphile](https://github.com/graphile/postgraphile)
+- [GoQite](https://github.com/maragudk/goqite)
 
 # Software / Design
 
@@ -75,6 +84,7 @@
 
 - [Yggdrasil Network](https://yggdrasil-network.github.io/)
 - [Beaker Browser](https://github.com/beakerbrowser/beaker)
+- [Corrosion](https://github.com/superfly/corrosion)
 - [Hypercore](https://github.com/hypercore-protocol/hypercore-next)
 - [Hyperdrive](https://github.com/hypercore-protocol/hyperdrive)
 - [INET256](https://github.com/inet256/inet256)
@@ -123,6 +133,7 @@
 
 # Software / Tools / AI
 
+- [FLUX Model](https://github.com/black-forest-labs/flux)
 - [ZLUDA](https://github.com/vosen/ZLUDA)
 
 # Software / Tools / Database

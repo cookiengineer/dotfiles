@@ -16,6 +16,7 @@
 # Entertainment / Computer and IT
 
 - [Wolfgang's Channel](https://www.youtube.com/@WolfgangsChannel/videos)
+- [CCC](https://www.youtube.com/@mediacccde/videos)
 
 # Entertainment / Construction
 

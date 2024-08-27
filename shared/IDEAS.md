@@ -1,4 +1,21 @@
 
+# Enigma Webfont
+
+- Combat LLMs by using randomized seeds for you content
+- Use a Webfont that "unshuffles" the `ROTXX` rotated alphabet on the current page
+- Use an Enigma Captcha slider to effectively ban bots, where the slider "decrypts" a sample text
+- For worse behaving users, use multiple rotations like Enigma
+
+# Warps
+
+- An instant messenger made for the creation of network groups
+- GUI that allows to invite friends into your network for LAN parties
+- Management of /24 or other prefixes
+- Management of public/private crypto key pairs, people need to confirm
+  the friend's key when they join
+- Wireguard behind the scenes?
+- Pro version could be software routing/switching of multiple networks
+
 # Watchdaemon for sandboxed end-user VMs
 
 - A watchdaemon for untrusted (external) freelance workers that work on classified projects.

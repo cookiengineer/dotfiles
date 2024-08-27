@@ -95,6 +95,11 @@
 
 - [Cyber Security Study Roadmap](https://roadmap.sh/cyber-security)
 
+# Cybersecurity / Redteam / Blogs
+
+- [0xdarkvortex Blog](https://0xdarkvortex.dev/blogs/)
+- [MalwareTech Blog](https://malwaretech.com/)
+
 # Cybersecurity / Redteam / Capture The Flag
 
 - [0xdf Blog](https://0xdf.gitlab.io/)
@@ -159,6 +164,7 @@
 - [Orpheus Windows Kerberos Bypass](https://github.com/trustedsec/orpheus)
 - [r77 Rootkit](https://github.com/bytecode77/r77-rootkit)
 - [Pandorasbox encrypted in-memory VFS](https://github.com/capnspacehook/pandorasbox)
+- [Windows Syscall Address Table](https://github.com/j00ru/windows-syscalls)
 
 # Cybersecurity / Redteam / Windows Persistence
 
@@ -181,6 +187,7 @@
 # Cybersecurity / Redteam / Network Scanning
 
 - [IVRE Recon Framework](https://github.com/ivre/ivre)
+- [Kraken Framework](https://github.com/myOmikron/kraken-project)
 
 # Cybersecurity / Redteam / OSINT
 
@@ -245,4 +252,5 @@
 - [krackattack](https://github.com/vanhoefm/krackattacks-scripts)
 - [Offensive Wi-Fi Toolkit](https://github.com/clu3bot/owt)
 - [Sparrow Wi-Fi Toolkit](https://github.com/ghostop14/sparrow-wifi)
+- [Evil Twin](https://github.com/ivan-sincek/evil-twin)
 
