@@ -99,13 +99,16 @@
 
 - [0xdarkvortex Blog](https://0xdarkvortex.dev/blogs/)
 - [MalwareTech Blog](https://malwaretech.com/)
+- [VulnDev Blog](https://vulndev.io/blog/)
 
 # Cybersecurity / Redteam / Capture The Flag
 
 - [0xdf Blog](https://0xdf.gitlab.io/)
 - [CTF Time](https://ctftime.org/)
+- [Exploit Education](https://exploit.education/)
+- [Over The Wire Wargames](https://overthewire.org)
 - [PicoCTF](https://picoctf.org/)
-- [TryHackMe](https://tryhackme.com/)
+- [ROP Emporium](https://ropemporium.com/)
 
 # Cybersecurity / Redteam / Exploitation
 
