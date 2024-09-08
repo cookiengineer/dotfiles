@@ -58,11 +58,23 @@
 - [Gophers Pack](https://github.com/MariaLetta/free-gophers-pack)
 - [Lima Studio Icons](https://icon-icons.com/de/users/41pqZN26tNxHKDKz4kO6h/icon-sets/)
 
+# Software / Design / Themes (CSS)
+
+- [Bahunya](https://github.com/Kimeiga/bahunya)
+- [Sakura](https://github.com/oxalorg/sakura)
+- [Windows 98](https://github.com/jdan/98.css)
+- [Windows XP](https://github.com/botoxparty/XP.css)
+- [Windows 7](https://github.com/khang-nd/7.css)
+
 # Software / Design / Themes (GTK)
 
 - [Arc Theme](https://github.com/jnsh/arc-theme)
 - [Mojave Theme](https://github.com/vinceliuice/Mojave-gtk-theme)
 - [White Sur Theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
+
+# Software / Design / Themes (Vue)
+
+- [Win7 UI](https://github.com/Visnalize/win7-ui)
 
 # Software / DevOps
 
@@ -75,6 +87,10 @@
 # Software / Filesharing
 
 - [Tribler Torrent Client](https://github.com/Tribler/tribler)
+
+# Software / Finances
+
+- [Actual Budget](https://github.com/actualbudget/actual)
 
 # Software / Music
 
@@ -95,9 +111,11 @@
 
 # Software / Private Networking
 
-- [WireGuard Netmaker](https://github.com/gravitl/netmaker)
+- [Bore Tunnel](https://github.com/jkuri/bore)
+- [Go Proxy](https://github.com/elazarl/goproxy)
 - [Micro SOCKS](https://github.com/rofl0r/microsocks)
 - [Shiny SOCKS](https://github.com/jgaa/shinysocks)
+- [WireGuard Netmaker](https://github.com/gravitl/netmaker)
 
 # Software / Organization
 
@@ -224,27 +242,51 @@
 - [The Bad Sides of Go](https://itnext.io/we-need-to-talk-about-the-bad-sides-of-go-568a1e5adbc6)
 - [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
 
+- [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
+
+# Software / Development / golang / Backend
+
+- [iris](https://github.com/kataras/iris)
+- [ov terminal pager](https://github.com/noborus/ov)
+
+# Software / Development / golang / Compilers
+
+- [garble obfuscator](https://github.com/burrowers/garble)
+- [tinygo compiler](https://github.com/tinygo-org/tinygo)
+- [yaegi golang interpreter](https://github.com/traefik/yaegi)
+
+# Software / Development / golang / CI/CD
+
 - [act local CI/CD Runner](https://github.com/nektos/act)
-- [age encryption library](https://github.com/FiloSottile/age)
 - [chromedp](https://github.com/chromedp/chromedp)
+- [go-appimage tools](https://github.com/probonopd/go-appimage)
+- [go-geiger](https://github.com/jlauinger/go-geiger)
+
+# Software / Development / golang / EDR
+
 - [durdur eBPF filter](https://github.com/boratanrikulu/durdur)
 - [ebpf-go](https://github.com/cilium/ebpf)
-- [go-appimage tools](https://github.com/probonopd/go-appimage)
-- [garble obfuscator](https://github.com/burrowers/garble)
 - [goflow sflow/netflow/ipfix collector](https://github.com/cloudflare/goflow)
-- [go-geiger](https://github.com/jlauinger/go-geiger)
-- [goversioninfo for programs on windows](https://github.com/josephspurrier/goversioninfo/)
-- [fyne UI](https://github.com/fyne-io/fyne)
+- [goversioninfo for windows programs](https://github.com/josephspurrier/goversioninfo/)
+- [rsc resource embedding for windows programs](https://github.com/akavel/rsrc)
+- [mangle EDR evasion](https://github.com/optiv/Mangle)
+
+# Software / Development / golang / Networking
+
+- [broxy](https://github.com/rhaidiz/broxy)
+- [goproxy](https://github.com/elazarl/goproxy)
+
+# Software / Development / golang / Parsers
+
+- [age encryption library](https://github.com/FiloSottile/age)
 - [do dependency injection](https://github.com/samber/do)
 - [lo functional library](https://github.com/samber/lo)
 - [goment time parser](https://github.com/samber/goment)
-- [mangle EDR detection avoidance](https://github.com/optiv/Mangle)
-- [ov terminal pager](https://github.com/noborus/ov)
-- [rsc resource embedding for go programs on windows](https://github.com/akavel/rsrc)
-- [tinygo compiler](https://github.com/tinygo-org/tinygo)
-- [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
+
+# Software / Development / golang / UI
+
+- [fyne UI](https://github.com/fyne-io/fyne)
 - [wails webview](https://wails.io/docs/gettingstarted/development/)
-- [yaegi golang interpreter](https://github.com/traefik/yaegi)
 
 # Software / Development / node.js
 
@@ -289,9 +331,9 @@
 - [Go Git Service](https://github.com/gogs/gogs)
 - [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
 
-# Software / OSINT
+# Software / Notes
 
-- [IVRE Scanner Framework](https://github.com/ivre/ivre)
+- [Gophernotes](https://github.com/gopherdata/gophernotes)
 
 # Software / Web Scraping
 
