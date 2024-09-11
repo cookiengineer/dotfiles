@@ -98,7 +98,9 @@
 # Cybersecurity / Redteam / Blogs
 
 - [0xdarkvortex Blog](https://0xdarkvortex.dev/blogs/)
+- [Deeb Blog](https://blog.deeb.ch/)
 - [MalwareTech Blog](https://malwaretech.com/)
+- [SynZack Blog](https://synzack.github.io/posts)
 - [VulnDev Blog](https://vulndev.io/blog/)
 
 # Cybersecurity / Redteam / Capture The Flag
