@@ -206,9 +206,12 @@
 # Software / Debugging
 
 - [GDB Frontend](https://github.com/nakst/gf)
+- [GDB GUI](https://github.com/cs01/gdbgui)
+- [Seer GDB GUI](https://github.com/epasveer/seer)
 
 # Software / Debugging / Network
 
+- [Kyanos](https://github.com/hengyoush/kyanos)
 - [Multipeer Connectivity](https://github.com/evilsocket/mpcfw)
 - [PyRDP MITM](https://github.com/gosecure/pyrdp)
 - [Wireshark](https://github.com/wireshark/wireshark)
@@ -228,6 +231,7 @@
 # Software / Development / c
 
 - [TBox standard library](https://github.com/tboox/tbox)
+- [Taskflow](https://github.com/taskflow/taskflow)
 
 # Software / Development / ebpf
 
@@ -248,6 +252,8 @@
 
 - [iris](https://github.com/kataras/iris)
 - [ov terminal pager](https://github.com/noborus/ov)
+- [Rill concurrency framework](https://github.com/destel/rill)
+- [Taskflow concurrency framework](https://github.com/noneback/go-taskflow)
 
 # Software / Development / golang / Compilers
 
@@ -271,10 +277,15 @@
 - [rsc resource embedding for windows programs](https://github.com/akavel/rsrc)
 - [mangle EDR evasion](https://github.com/optiv/Mangle)
 
+# Software / Development / golang / Graphics
+
+- [canvas Cairo bindings](https://github.com/tdewolff/canvas)
+
 # Software / Development / golang / Networking
 
 - [broxy](https://github.com/rhaidiz/broxy)
 - [goproxy](https://github.com/elazarl/goproxy)
+- [openziti firewall](https://github.com/netfoundry/zfw)
 
 # Software / Development / golang / Parsers
 
@@ -285,6 +296,9 @@
 
 # Software / Development / golang / UI
 
+- [GLFW Go](https://github.com/nitrix/glfw-go)
+- [ImGui](https://github.com/ocornut/imgui)
+- [ImGui Go Bindings](https://github.com/nitrix/imgui-go)
 - [fyne UI](https://github.com/fyne-io/fyne)
 - [wails webview](https://wails.io/docs/gettingstarted/development/)
 
@@ -323,6 +337,7 @@
 - [magic.css animations library](https://github.com/miniMAC/magic)
 - [mermaid.js charting library](https://github.com/mermaid-js/mermaid)
 - [rough.js drawing library](https://github.com/rough-stuff/rough)
+- [Excalidraw whiteboard](https://github.com/excalidraw/excalidraw)
 - [Greenfield HTML5 wayland compositor](https://github.com/udevbe/greenfield)
 
 # Software / Hosting

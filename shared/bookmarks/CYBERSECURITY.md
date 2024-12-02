@@ -53,11 +53,17 @@
 - [Bettercap Web UI](https://www.bettercap.org/usage/webui/)
 - [Microsoft eventlog mindmap](https://github.com/mdecrevoisier/Microsoft-eventlog-mindmap)
 
+# Cybersecurity / Blueteam / Network Inventory / Prometheus
+
+- [endlessh-go](https://github.com/shizunge/endlessh-go)
+
 # Cybersecurity / Blueteam / Sandboxing
 
+- [BGP Reverse Proxy and Firewall](https://github.com/bgpfix/bgpipe)
 - [Firejail](https://github.com/netblue30/firejail)
 - [Firejail Profiles](https://github.com/netblue30/firejail/tree/master/etc)
 - [pisshoff SSH Honeypot](https://github.com/w4/pisshoff)
+- [OTELO Profiling Agent](https://github.com/elastic/otel-profiling-agent)
 - [SSH Honeypot](https://github.com/kjx52/ssh-honeypot-new)
 
 # Cybersecurity / Blueteam / Software Inventory
@@ -191,6 +197,7 @@
 
 # Cybersecurity / Redteam / Network Scanning
 
+- [Bjorn Scanner Framework](https://github.com/infinition/Bjorn)
 - [IVRE Recon Framework](https://github.com/ivre/ivre)
 - [Kraken Framework](https://github.com/myOmikron/kraken-project)
 
@@ -219,6 +226,17 @@
 - [Maigret Dossier Collector](https://github.com/soxoj/maigret)
 - [Social Scan](https://github.com/iojw/socialscan)
 
+# Cybersecurity / Redteam / OSINT / DNS
+
+- [Subdomain Finder](https://subdomainfinder.c99.nl/)
+- [DNS Dumpster](https://dnsdumpster.com/)
+
+# Cybersecurity / Redteam / OSINT / Social
+
+- [Pandora](https://github.com/R4GN4R0K-SEC/pandora)
+- [Sherlock](https://github.com/sherlock-project/sherlock)
+- [Slash](https://github.com/theahmadov/slash)
+
 # Cybersecurity / Redteam / OWASP
 
 - [MITMProxy](https://github.com/mitmproxy/mitmproxy)
@@ -228,6 +246,10 @@
 - [ZGrab Scanner](https://github.com/zmap/zgrab2)
 - [ZMap Scanner](https://github.com/zmap/zmap)
 - [L9 Explore](https://github.com/LeakIX/l9explore)
+
+# Cybersecurity / Redteam / Secret Scanner
+
+- [Secretsnitch](https://github.com/0x4f53/secretsnitch)
 
 # Cybersecurity / Redteam / Shells
 
