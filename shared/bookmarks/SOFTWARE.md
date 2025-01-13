@@ -12,6 +12,7 @@
 - [Briar](https://github.com/briar/briar)
 - [Fake Traveler](https://github.com/mcastillof/FakeTraveler)
 - [Fair Email](https://github.com/M66B/FairEmail)
+- [Hypatia Malware Scanner](https://github.com/Divested-Mobile/Hypatia)
 - [K9 Mail](https://github.com/k9mail/k-9)
 - [Kiwi Browser](https://github.com/kiwibrowser/src)
 - [NTPSync](https://github.com/Free-Software-for-Android/NTPSync)
@@ -92,6 +93,10 @@
 
 - [Actual Budget](https://github.com/actualbudget/actual)
 
+# Software / Maps
+
+- [Tile38 GeoJSON Server](https://github.com/tidwall/tile38)
+
 # Software / Music
 
 - [MilkyTracker](https://github.com/milkytracker/MilkyTracker)
@@ -121,6 +126,11 @@
 
 - [Paperback Key Sharding](https://github.com/cyphar/paperback)
 - [Taiga Project Management](https://github.com/taigaio/taiga)
+
+# Software / Search
+
+- [Jaeger UI](https://github.com/jaegertracing/jaeger-ui)
+- [Quickwit](https://github.com/quickwit-oss/quickwit)
 
 # Software / Social
 
@@ -181,6 +191,11 @@
 - [Comic Diffusion Model](https://huggingface.co/ogkalu/Comic-Diffusion)
 - [InvokeAI](https://github.com/invoke-ai/InvokeAI)
 - [Pixray](https://github.com/pixray/pixray)
+
+# Software / Tools / Tracking
+
+- [Haystack Find My Device](https://github.com/hybridgroup/go-haystack)
+- [Meshtastic Firmware](https://github.com/meshtastic/firmware)
 
 # Software / Tools / Virtualization
 
@@ -255,18 +270,26 @@
 - [Rill concurrency framework](https://github.com/destel/rill)
 - [Taskflow concurrency framework](https://github.com/noneback/go-taskflow)
 
-# Software / Development / golang / Compilers
-
-- [garble obfuscator](https://github.com/burrowers/garble)
-- [tinygo compiler](https://github.com/tinygo-org/tinygo)
-- [yaegi golang interpreter](https://github.com/traefik/yaegi)
-
 # Software / Development / golang / CI/CD
 
 - [act local CI/CD Runner](https://github.com/nektos/act)
 - [chromedp](https://github.com/chromedp/chromedp)
 - [go-appimage tools](https://github.com/probonopd/go-appimage)
 - [go-geiger](https://github.com/jlauinger/go-geiger)
+
+# Software / Development / golang / Compilers
+
+- [garble obfuscator](https://github.com/burrowers/garble)
+- [tinygo compiler](https://github.com/tinygo-org/tinygo)
+- [yaegi golang interpreter](https://github.com/traefik/yaegi)
+
+# Software / Development / golang / Debugging
+
+- [GMon Goroutine Monitor](https://github.com/keisku/gmon)
+
+# Software / Development / golang / Documentation
+
+- [pkgsite](https://github.com/golang/pkgsite)
 
 # Software / Development / golang / EDR
 
@@ -276,6 +299,10 @@
 - [goversioninfo for windows programs](https://github.com/josephspurrier/goversioninfo/)
 - [rsc resource embedding for windows programs](https://github.com/akavel/rsrc)
 - [mangle EDR evasion](https://github.com/optiv/Mangle)
+
+# Software / Development / golang / Forums
+
+- [BBS Software](https://github.com/mlogclub/bbs-go)
 
 # Software / Development / golang / Graphics
 
@@ -292,6 +319,7 @@
 - [age encryption library](https://github.com/FiloSottile/age)
 - [do dependency injection](https://github.com/samber/do)
 - [lo functional library](https://github.com/samber/lo)
+- [goja JavaScript engine](https://github.com/dop251/goja)
 - [goment time parser](https://github.com/samber/goment)
 
 # Software / Development / golang / UI

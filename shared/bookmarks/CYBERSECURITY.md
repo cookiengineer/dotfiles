@@ -22,6 +22,7 @@
 - [Linux Kernel Defense Map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 - [Microsoft Cybersecurity Reference Architecture](https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra)
 - [DrawIO Threat Modeling Library](https://github.com/michenriksen/drawio-threatmodeling)
+- [Portspoof](https://github.com/drk1wi/portspoof)
 
 # Cybersecurity / Blueteam / Firewall
 
@@ -254,6 +255,8 @@
 # Cybersecurity / Redteam / Shells
 
 - [Web2Shell](https://github.com/ejedev/web2shell)
+- [HoaxShell](https://github.com/t3l3machus/hoaxshell)
+- [Reverse Shell Generator](https://github.com/0dayCTF/reverse-shell-generator)
 
 # Cybersecurity / Redteam / WAF
 
