@@ -154,13 +154,18 @@
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
 - [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
 - [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
-- [PEASS-ng](https://github.com/carlospolop/PEASS-ng)
+- [Privilege Escalation Script Suite](https://github.com/peass-ng/PEASS-ng)
 - [Recycled Shellcode Injector](https://github.com/florylsk/RecycledInjector)
 - [Trickest CVE PoC database](https://github.com/trickest/cve)
 
 # Cybersecurity / Redteam / Fingerprinting
 
 - [P0f Fingerprinter](https://lcamtuf.coredump.cx/p0f3/)
+
+# Cybersecurity / Redteam / Linux Exploitation
+
+- [GTFO Binaries](https://gtfobins.github.io/)
+- [Linux Privilege Escalation Scripts](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS)
 
 # Cybersecurity / Redteam / Web Exploitation
 

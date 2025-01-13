@@ -371,6 +371,8 @@
 # Software / Hosting
 
 - [Apache Answer](https://github.com/apache/incubator-answer)
+- [Caddy Webserver](https://github.com/caddyserver/caddy)
+- [Caddy WAF](https://github.com/fabriziosalmi/caddy-waf)
 - [Go Git Service](https://github.com/gogs/gogs)
 - [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
 
