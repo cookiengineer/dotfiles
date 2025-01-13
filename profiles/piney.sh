@@ -17,7 +17,8 @@ fi;
 synchronize filesystem bash;
 synchronize trizen;
 
-install-own i3-desktop;
+synchronize i3wm;
+synchronize polybar;
 
 synchronize barrier-headless;
 synchronize networkmanager;

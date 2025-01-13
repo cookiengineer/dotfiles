@@ -16,7 +16,8 @@ fi;
 
 synchronize filesystem bash base base-devel;
 synchronize trizen;
-synchronize i3-desktop;
+synchronize i3wm;
+synchronize polybar;
 synchronize ly;
 
 synchronize barrier-headless;

@@ -16,7 +16,8 @@ fi;
 
 synchronize filesystem bash base-devel;
 synchronize trizen;
-synchronize i3-desktop;
+synchronize i3wm;
+synchronize polybar;
 synchronize xf86-input-synaptics;
 synchronize ly;
 
