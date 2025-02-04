@@ -5,6 +5,19 @@
 
 - [StockSharp](https://github.com/StockSharp/StockSharp)
 
+# Software / AI
+
+- [Browser Use](https://github.com/browser-use/browser-use)
+
+# Software / AI / LLM
+
+- [LangChainGo](https://github.com/tmc/langchaingo)
+- [Ollama](https://github.com/ollama/ollama)
+
+# Software / AI / LLM / Models
+
+- [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
+
 # Software / Android
 
 - [920 Text Editor](https://github.com/jecelyin/920-text-editor-v2)
@@ -84,6 +97,10 @@
 - [Harbor Container Registry](https://github.com/goharbor/harbor)
 - [Marmotte IT Asset Management](https://github.com/marmotteio/marmotteio)
 - [OpenTofu Infrastructure Tool](https://github.com/opentofu)
+
+# Software / E-Mail
+
+- [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
 
 # Software / Filesharing
 

@@ -26,11 +26,13 @@
 
 # Cybersecurity / Blueteam / Firewall
 
+- [BGP Reverse Proxy and Firewall](https://github.com/bgpfix/bgpipe)
 - [Burner E-Mail Providers](https://github.com/wesbos/burner-email-providers)
 - [Crowdsec Firewall Bouncer](https://github.com/crowdsecurity/cs-firewall-bouncer)
 - [Disposable E-Mail Domains](https://github.com/disposable-email-domains/disposable-email-domains)
 - [OpenSnitch](https://github.com/evilsocket/opensnitch)
 - [OPNSense](https://github.com/opnsense/core)
+- [Portspoof](https://github.com/drk1wi/portspoof)
 - [Security Onion Monitoring](https://github.com/Security-Onion-Solutions/securityonion)
 - [Snowl Snort GUI](https://snowl.io/downloads/)
 - [Snort Rules Downloads](https://www.snort.org/downloads/#rule-downloads)
@@ -58,9 +60,13 @@
 
 - [endlessh-go](https://github.com/shizunge/endlessh-go)
 
+# Cybersecurity / Blueteam / Package Inventory
+
+- [Packj](https://github.com/ossillate-inc/packj)
+
 # Cybersecurity / Blueteam / Sandboxing
 
-- [BGP Reverse Proxy and Firewall](https://github.com/bgpfix/bgpipe)
+- [Bubblewrap](https://github.com/containers/bubblewrap)
 - [Firejail](https://github.com/netblue30/firejail)
 - [Firejail Profiles](https://github.com/netblue30/firejail/tree/master/etc)
 - [pisshoff SSH Honeypot](https://github.com/w4/pisshoff)
@@ -110,6 +116,11 @@
 - [SynZack Blog](https://synzack.github.io/posts)
 - [VulnDev Blog](https://vulndev.io/blog/)
 
+# Cybersecurity / Readteam / Wikis
+
+- [Hack Tricks](https://book.hacktricks.xyz/welcome/readme)
+- [OSDev Wiki](https://wiki.osdev.org/Getting_Started)
+
 # Cybersecurity / Redteam / Capture The Flag
 
 - [0xdf Blog](https://0xdf.gitlab.io/)
@@ -123,7 +134,6 @@
 
 - [0day today](https://0day.today/)
 - [ExploitDB](https://www.exploit-db.com/)
-- [Hack Tricks](https://book.hacktricks.xyz/welcome/readme)
 
 # Cybersecurity / Redteam / Forums
 
