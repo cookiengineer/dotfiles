@@ -1,6 +1,14 @@
 
 # Cyber Security / Exploits
 
+# Cyber Security / Malware Development
+
+- [Develop your own RAT in Golang](https://www.youtube.com/watch?v=w0bh7s7bVXI)
+
+# Cyber Security / EDR
+
+- [Building an EDR from Scratch](https://www.youtube.com/watch?v=vXRercv2iU8&list=PLc2_LEyTNutFkUliQMTZ_FHl8kNx3f5-E)
+
 # Cyber Security / Exploits / Linux
 
 - [ldd code execution](https://catonmat.net/ldd-arbitrary-code-execution)

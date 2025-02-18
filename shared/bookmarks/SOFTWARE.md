@@ -57,6 +57,11 @@
 - [PostGraphile](https://github.com/graphile/postgraphile)
 - [GoQite](https://github.com/maragudk/goqite)
 
+# Software / Document Management Systems
+
+- [Calibre Web Reader](https://github.com/janeczku/calibre-web)
+- [PaperMerge](https://github.com/papermerge/papermerge-core)
+
 # Software / Design
 
 # Software / Design / Icons
@@ -92,6 +97,7 @@
 
 # Software / DevOps
 
+- [Docker WebTop](https://github.com/linuxserver/docker-webtop)
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
 - [Harbor Container Registry](https://github.com/goharbor/harbor)
@@ -137,6 +143,7 @@
 - [Go Proxy](https://github.com/elazarl/goproxy)
 - [Micro SOCKS](https://github.com/rofl0r/microsocks)
 - [Shiny SOCKS](https://github.com/jgaa/shinysocks)
+- [Netbird WireGuard Overlay Network](https://github.com/netbirdio/netbird)
 - [WireGuard Netmaker](https://github.com/gravitl/netmaker)
 
 # Software / Organization
@@ -212,6 +219,7 @@
 # Software / Tools / Tracking
 
 - [Haystack Find My Device](https://github.com/hybridgroup/go-haystack)
+- [OpenHayStack](https://github.com/seemoo-lab/openhaystack)
 - [Meshtastic Firmware](https://github.com/meshtastic/firmware)
 
 # Software / Tools / Virtualization
@@ -265,6 +273,11 @@
 - [TBox standard library](https://github.com/tboox/tbox)
 - [Taskflow](https://github.com/taskflow/taskflow)
 
+# Software / Development / c / Compilers
+
+- [Cosmopolitan](https://github.com/jart/cosmopolitan)
+
+
 # Software / Development / ebpf
 
 - [golang ebpf](https://github.com/cilium/ebpf)
@@ -282,10 +295,16 @@
 
 # Software / Development / golang / Backend
 
+- [huma](https://github.com/danielgtaylor/huma/)
 - [iris](https://github.com/kataras/iris)
 - [ov terminal pager](https://github.com/noborus/ov)
 - [Rill concurrency framework](https://github.com/destel/rill)
 - [Taskflow concurrency framework](https://github.com/noneback/go-taskflow)
+
+# Software / Development / golang / ChatOps
+
+- [ergo IRC server](https://github.com/ergochat/ergo)
+- [llama-coder](https://github.com/ex3ndr/llama-coder)
 
 # Software / Development / golang / CI/CD
 
@@ -298,11 +317,17 @@
 
 - [garble obfuscator](https://github.com/burrowers/garble)
 - [tinygo compiler](https://github.com/tinygo-org/tinygo)
-- [yaegi golang interpreter](https://github.com/traefik/yaegi)
+- [yaegi interpreter](https://github.com/traefik/yaegi)
+- [PureGo library](https://github.com/ebitengine/purego)
+
+# Software / Development / golang / Cryptography
+
+- [Shamir's Secret Sharing](https://github.com/openfort-xyz/shamir-secret-sharing-go)
 
 # Software / Development / golang / Debugging
 
 - [GMon Goroutine Monitor](https://github.com/keisku/gmon)
+- [Redress binary analyzer](https://github.com/goretk/redress)
 
 # Software / Development / golang / Documentation
 
@@ -316,6 +341,7 @@
 - [goversioninfo for windows programs](https://github.com/josephspurrier/goversioninfo/)
 - [rsc resource embedding for windows programs](https://github.com/akavel/rsrc)
 - [mangle EDR evasion](https://github.com/optiv/Mangle)
+- [Fake Sandbox Artefacts](https://github.com/NavyTitanium/Fake-Sandbox-Artifacts)
 
 # Software / Development / golang / Forums
 
@@ -331,6 +357,10 @@
 - [goproxy](https://github.com/elazarl/goproxy)
 - [openziti firewall](https://github.com/netfoundry/zfw)
 
+# Software / Development / golang / Network Management
+
+- [openwisp](https://github.com/openwisp)
+
 # Software / Development / golang / Parsers
 
 - [age encryption library](https://github.com/FiloSottile/age)
@@ -339,6 +369,10 @@
 - [goja JavaScript engine](https://github.com/dop251/goja)
 - [goment time parser](https://github.com/samber/goment)
 
+# Software / Development / golang / Web Scrapers
+
+- [ChromeDP library](https://github.com/chromedp/chromedp)
+
 # Software / Development / golang / UI
 
 - [GLFW Go](https://github.com/nitrix/glfw-go)
@@ -346,6 +380,13 @@
 - [ImGui Go Bindings](https://github.com/nitrix/imgui-go)
 - [fyne UI](https://github.com/fyne-io/fyne)
 - [wails webview](https://wails.io/docs/gettingstarted/development/)
+
+# Software / Development / golang / System
+
+- [gopsutils](https://github.com/shirou/gopsutil)
+- [lsupnp](https://github.com/ccoff/lsupnp)
+- [netproc](https://github.com/berghetti/netproc)
+- [sysdig](https://github.com/draios/sysdig)
 
 # Software / Development / node.js
 
@@ -367,6 +408,10 @@
 # Software / Development / rust
 
 - [Actix Web Framework](https://github.com/actix/actix-web)
+
+# Software / Development / rust / Document Management
+
+- [Paperback library](https://github.com/cyphar/paperback)
 
 # Software / Development / sql
 
