@@ -324,6 +324,10 @@
 
 - [Shamir's Secret Sharing](https://github.com/openfort-xyz/shamir-secret-sharing-go)
 
+# Software / Development / golang / Databases
+
+- [AtomixDB](https://github.com/Sahilb315/AtomixDB)
+
 # Software / Development / golang / Debugging
 
 - [GMon Goroutine Monitor](https://github.com/keisku/gmon)
@@ -367,7 +371,10 @@
 - [do dependency injection](https://github.com/samber/do)
 - [lo functional library](https://github.com/samber/lo)
 - [goja JavaScript engine](https://github.com/dop251/goja)
+- [goja node.js Compatibility Layer](https://github.com/dop251/goja_nodejs)
+- [sobek JavaScript engine fork of goja](https://github.com/grafana/sobek)
 - [goment time parser](https://github.com/samber/goment)
+- [wasmber WebASM runtime](https://github.com/wasmerio/wasmer-go)
 
 # Software / Development / golang / Web Scrapers
 

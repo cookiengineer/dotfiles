@@ -1,4 +1,23 @@
 
+# Go Zim Scraper
+
+- Most ZIM Scrapers are either outdated or require a huge load of dependencies.
+- A scraper that supports search in web archive to export from web archive to zim would be even better.
+- [waybackurls](https://github.com/tomnomnom/waybackurls) scrapes the indexes for a domain or subdomain
+- [wayback-machine-downloader](https://github.com/hartator/wayback-machine-downloader) downloads from wayback machine
+- [gozim](https://github.com/akhenakh/gozim) is a pure go implementation of the ZIM format
+
+# Go Web Browser
+
+- Privacy-respecting Web Browser that actively transforms all JS, CSS, and HTML and
+  filters out the bad parts and replaces them with farbled/faked calls and datasets.
+- The most ahead JS engine is currently Sobek, a fork of Goja (which is sadly a bit inactive)
+- Goja/Sobek need an external event loop, but are made for multiple runtime isolations,
+  so each goroutine / thread could use a separate VM instance
+- [sobek](https://github.com/grafana/sobek) is the new upstream fork
+- [goja_nodejs](https://github.com/dop251/goja_nodejs) already implements an event loop
+- [goja](https://github.com/dop251/goja) is the downstream fork (that has maintenance problems for ES modules)
+
 # Enigma Webfont
 
 - Combat LLMs by using randomized seeds for you content
