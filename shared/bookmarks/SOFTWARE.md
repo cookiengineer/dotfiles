@@ -40,6 +40,12 @@
 - [Wigle Wardriving Client](https://github.com/wiglenet/wigle-wifi-wardriving)
 - [Yet Another Call Blocker](https://gitlab.com/xynngh/YetAnotherCallBlocker)
 
+# Software / Authentication
+
+- [Authentik IAM](https://github.com/goauthentik/authentik)
+- [Casdoor IAM](https://github.com/casdoor/casdoor)
+- [Ory IAM](https://github.com/ory)
+
 # Software / Backup
 
 - [timeshift rsync/btrfs](https://github.com/linuxmint/timeshift)
@@ -47,13 +53,19 @@
 # Software / Content Management Systems
 
 - [Outstatic](https://github.com/avitorio/outstatic)
+- [Ponzu CMS](https://github.com/ponzu-cms/ponzu)
 
 # Software / Cryptography
 
 - [cocert Key Splitter](https://github.com/Dentrax/cocert)
 
+# Software / Customer Management
+
+- [LibreDesk Support Desk](https://github.com/abhinavxd/libredesk)
+
 # Software / Databases
 
+- [AtomixDB](https://github.com/Sahilb315/AtomixDB)
 - [PostGraphile](https://github.com/graphile/postgraphile)
 - [GoQite](https://github.com/maragudk/goqite)
 
@@ -61,6 +73,8 @@
 
 - [Calibre Web Reader](https://github.com/janeczku/calibre-web)
 - [PaperMerge](https://github.com/papermerge/papermerge-core)
+- [Baserow Spreadsheet Colab](https://gitlab.com/baserow/baserow)
+- [NocoDB Spreadsheet Colab](https://github.com/nocodb/nocodb)
 
 # Software / Design
 
@@ -103,6 +117,8 @@
 - [Harbor Container Registry](https://github.com/goharbor/harbor)
 - [Marmotte IT Asset Management](https://github.com/marmotteio/marmotteio)
 - [OpenTofu Infrastructure Tool](https://github.com/opentofu)
+- [UnCloud Selfhosted Docker Management](https://github.com/psviderski/uncloud)
+- [Corrosion Gossip-based Service Discovery](https://github.com/superfly/corrosion)
 
 # Software / E-Mail
 
@@ -110,6 +126,7 @@
 
 # Software / Filesharing
 
+- [File Pizza](https://github.com/kern/filepizza)
 - [Tribler Torrent Client](https://github.com/Tribler/tribler)
 
 # Software / Finances
@@ -137,6 +154,10 @@
 - [GoTox](https://github.com/codedust/go-tox)
 - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet)
 
+# Software / Privacy
+
+- [Rayhunter IMSI Catcher Detection](https://github.com/EFForg/rayhunter)
+
 # Software / Private Networking
 
 - [Bore Tunnel](https://github.com/jkuri/bore)
@@ -145,6 +166,7 @@
 - [Shiny SOCKS](https://github.com/jgaa/shinysocks)
 - [Netbird WireGuard Overlay Network](https://github.com/netbirdio/netbird)
 - [WireGuard Netmaker](https://github.com/gravitl/netmaker)
+- [Fossorial Pangolin](https://github.com/fosrl/pangolin)
 
 # Software / Organization
 
@@ -424,6 +446,11 @@
 
 - [DrawDB](https://github.com/drawdb-io/drawdb)
 
+# Software / Development / typescript
+
+- [Shadcn UI](https://github.com/shadcn-ui/ui)
+- [Shadcn UI Components](https://github.com/shadcn-ui/ui/tree/main/apps/www/components)
+
 # Software / Development / web
 
 - [ANDI Web Accessibility Tester](https://github.com/SSAgov/ANDI)
@@ -444,6 +471,7 @@
 - [Caddy WAF](https://github.com/fabriziosalmi/caddy-waf)
 - [Go Git Service](https://github.com/gogs/gogs)
 - [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
+- [Stash Video Management](https://github.com/stashapp/stash)
 
 # Software / Notes
 

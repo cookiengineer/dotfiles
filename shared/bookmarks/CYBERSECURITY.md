@@ -108,6 +108,7 @@
 # Cybersecurity / Redteam
 
 - [Cyber Security Study Roadmap](https://roadmap.sh/cyber-security)
+- [Red Teaming Techniques, Tactics and Procedures](https://github.com/rosesecurity/red-teaming-ttps)
 
 # Cybersecurity / Redteam / Blogs
 
