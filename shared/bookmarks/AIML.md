@@ -41,9 +41,3 @@
 - [RT/ES HyperNEAT](https://github.com/PaulTOliver/rtES-HyperNeat)
 - [NEATaptic](https://github.com/wagenaartje/neataptic)
 
-# AIML / LLM / Self-Hosted
-
-- [Deepseek R1 Distilled](https://ollama.com/cyberuser42/DeepSeek-R1-Distill-Llama-8B)
-- [Model Context Protocol](https://github.com/modelcontextprotocol)
-- [MCP in Go](https://github.com/owulveryck/gomcptest/)
-- [MCP Cli in Python](https://github.com/chrishayuk/mcp-cli)

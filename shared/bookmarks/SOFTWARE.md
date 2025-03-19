@@ -330,7 +330,9 @@
 
 # Software / Development / golang / CI/CD
 
-- [act local CI/CD Runner](https://github.com/nektos/act)
+- [act local CI/CD runner](https://github.com/nektos/act)
+- [woodpecker CI/CD runner](https://github.com/woodpecker-ci/woodpecker)
+- [zizmor actions validator](https://github.com/woodruffw/zizmor)
 - [chromedp](https://github.com/chromedp/chromedp)
 - [go-appimage tools](https://github.com/probonopd/go-appimage)
 - [go-geiger](https://github.com/jlauinger/go-geiger)
