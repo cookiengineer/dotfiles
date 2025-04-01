@@ -41,3 +41,26 @@
 - [RT/ES HyperNEAT](https://github.com/PaulTOliver/rtES-HyperNeat)
 - [NEATaptic](https://github.com/wagenaartje/neataptic)
 
+# AIML / LLM
+
+- [LangChainGo](https://github.com/tmc/langchaingo)
+- [Ollama](https://github.com/ollama/ollama)
+
+# AIML / LLM / Benchmarks
+
+- [cve-bench](https://github.com/uiuc-kang-lab/cve-bench)
+
+# AIML / LLM / Models
+
+- [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
+
+# AIML / LLM / MCP
+
+- [Awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
+- [Official MCP servers](https://github.com/modelcontextprotocol/servers)
+- [browser-use](https://github.com/browser-use/browser-use)
+- [GhidraMCP](https://github.com/LaurieWired/GhidraMCP)
+- [mcp-cli](https://github.com/chrishayuk/mcp-cli)
+- [mcp-gdb](https://github.com/signal-slot/mcp-gdb)
+- [mcp_server_gdb](https://github.com/pansila/mcp_server_gdb)
+

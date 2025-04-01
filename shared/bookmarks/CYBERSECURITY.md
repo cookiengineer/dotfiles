@@ -41,15 +41,17 @@
 # Cybersecurity / Blueteam / Malware Analysis
 
 - [angr binary analyzer](https://github.com/angr/angr)
-- [EMBA Firmware Analyzer](https://www.github.com/e-m-b-a/emba)
-- [FACT Firmware Analyzer](https://github.com/fkie-cad/FACT_core)
+- [cyberbro CTI analyzer](https://github.com/stanfrbd/cyberbro)
+- [EMBA firmware analyzer](https://www.github.com/e-m-b-a/emba)
+- [FACT firmware analyzer](https://github.com/fkie-cad/FACT_core)
 - [GHidra](https://github.com/NationalSecurityAgency/ghidra)
 - [Angry GHidra](https://github.com/Nalen98/AngryGhidra)
+- [Harpoon sandbox](https://github.com/alegrey91/harpoon)
 - [Quickscope](https://github.com/CYB3RMX/Qu1cksc0pe)
-- [Cutter Framework](https://github.com/rizinorg/cutter)
-- [Modpot Honeypot Framework](https://github.com/referefref/modpot)
+- [Cutter framework](https://github.com/rizinorg/cutter)
+- [Modpot Honeypot framework](https://github.com/referefref/modpot)
 - [PDF Tools](https://blog.didierstevens.com/programs/pdf-tools/)
-- [Rizin Framework](https://github.com/rizinorg/rizin)
+- [Rizin framework](https://github.com/rizinorg/rizin)
 
 # Cybersecurity / Blueteam / Network Inventory
 
@@ -164,7 +166,7 @@
 - [GTFO Bins](https://gtfobins.github.io/)
 - [LOLBAS Binaries](https://lolbas-project.github.io/)
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
-- [Havoc CnC Framework](https://github.com/HavocFramework/Havoc)
+- [Havoc CnC framework](https://github.com/HavocFramework/Havoc)
 - [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
 - [Privilege Escalation Script Suite](https://github.com/peass-ng/PEASS-ng)
 - [Recycled Shellcode Injector](https://github.com/florylsk/RecycledInjector)
@@ -208,7 +210,7 @@
 
 - [Unofficial Backdoorfactory Fork](https://github.com/Binject/backdoorfactory)
 - [Azure Active Directory Playbook](https://github.com/Cloud-Architekt/AzureAD-Attack-Defense)
-- [DNS Rebinding Framework](https://github.com/FSecureLABS/dref)
+- [DNS Rebinding framework](https://github.com/FSecureLABS/dref)
 - [Evil Gophish](https://github.com/fin3ss3g0d/evilgophish)
 - [HTTP2 Request Smuggler](https://github.com/BishopFox/h2csmuggler)
 - [WebSocket Request Smuggler](https://github.com/hahwul/ws-smuggler)
@@ -219,9 +221,9 @@
 
 # Cybersecurity / Redteam / Network Scanning
 
-- [Bjorn Scanner Framework](https://github.com/infinition/Bjorn)
-- [IVRE Recon Framework](https://github.com/ivre/ivre)
-- [Kraken Framework](https://github.com/myOmikron/kraken-project)
+- [Bjorn Scanner framework](https://github.com/infinition/Bjorn)
+- [IVRE Recon framework](https://github.com/ivre/ivre)
+- [Kraken framework](https://github.com/myOmikron/kraken-project)
 
 # Cybersecurity / Redteam / OSINT
 
@@ -233,7 +235,7 @@
 - [EMAGNET pastebin scraper](https://github.com/wuserman/EMAGNET)
 - [GHunt](https://github.com/mxrch/GHunt)
 - [Holele EMail to Accounts](https://github.com/megadose/holehe)
-- [IVRE Scanner Framework](https://github.com/ivre/ivre)
+- [IVRE Scanner framework](https://github.com/ivre/ivre)
 - [Little Brother](https://github.com/lulz3xploit/LittleBrother)
 - [Malfrats OSINT Map](https://github.com/Malfrats/OSINT-Map)
 - [Recon NG](https://github.com/lanmaster53/recon-ng)

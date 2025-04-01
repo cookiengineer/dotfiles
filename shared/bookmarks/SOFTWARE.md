@@ -5,19 +5,6 @@
 
 - [StockSharp](https://github.com/StockSharp/StockSharp)
 
-# Software / AI
-
-- [Browser Use](https://github.com/browser-use/browser-use)
-
-# Software / AI / LLM
-
-- [LangChainGo](https://github.com/tmc/langchaingo)
-- [Ollama](https://github.com/ollama/ollama)
-
-# Software / AI / LLM / Models
-
-- [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
-
 # Software / Android
 
 - [920 Text Editor](https://github.com/jecelyin/920-text-editor-v2)
@@ -181,6 +168,8 @@
 # Software / Social
 
 - [FOSSCord](https://github.com/fosscord/fosscord)
+- [Mastodon](https://github.com/mastodon/mastodon)
+- [Mobilizon](https://github.com/framasoft/mobilizon)
 
 # Software / Social / Telegram
 
