@@ -32,6 +32,10 @@
 - [Go Tensor package](https://github.com/gorgonia/tensor)
 - [Microsoft AutoML / NNI](https://github.com/Microsoft/nni)
 
+# AIML / DNC
+
+- [DNC](https://github.com/bgavran/DNC)
+
 # AIML / NEAT
 
 - [DeepHyperNEAT](https://github.com/flxsosa/DeepHyperNEAT)
@@ -63,4 +67,9 @@
 - [mcp-cli](https://github.com/chrishayuk/mcp-cli)
 - [mcp-gdb](https://github.com/signal-slot/mcp-gdb)
 - [mcp_server_gdb](https://github.com/pansila/mcp_server_gdb)
+
+# AIML / LLM / Tools
+
+- [Aider Coding Assistant](https://github.com/Aider-AI/aider)
+- [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)
 

@@ -38,6 +38,10 @@
 - [Snowl Snort GUI](https://snowl.io/downloads/)
 - [Snort Rules Downloads](https://www.snort.org/downloads/#rule-downloads)
 
+# Cybersecurity / Blueteam / Forensics
+
+- [Deda document dotcode tools](https://github.com/dfd-tud/deda)
+
 # Cybersecurity / Blueteam / Malware Analysis
 
 - [angr binary analyzer](https://github.com/angr/angr)
@@ -181,6 +185,12 @@
 - [GTFO Binaries](https://gtfobins.github.io/)
 - [Linux Privilege Escalation Scripts](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS)
 
+# Cybersecurity / Redteam / LLM Exploitation
+
+- [ChatGPT Prompts 1](https://github.com/TakSec/chatgpt-prompts-bug-bounty)
+- [ChatGPT Prompts 2](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt)
+- [LLM backdoor](https://github.com/sshh12/llm_backdoor)
+
 # Cybersecurity / Redteam / Web Exploitation
 
 - [BurpSuite For Pentester](https://github.com/Ignitetechnologies/BurpSuite-For-Pentester)
@@ -206,7 +216,7 @@
 
 - [Antnium RAT](https://github.com/dobin/antnium)
 
-# Cybersecurity / Redteam / Networking
+# Cybersecurity / Redteam / Network
 
 - [Unofficial Backdoorfactory Fork](https://github.com/Binject/backdoorfactory)
 - [Azure Active Directory Playbook](https://github.com/Cloud-Architekt/AzureAD-Attack-Defense)
@@ -219,11 +229,16 @@
 - [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
 - [Responder Poisoner](https://github.com/lgandx/Responder)
 
+# Cybersecurity / Redteam / Network / Wi-Fi
+
+- [ESP8266 Deauther](https://github.com/SpacehuhnTech/esp8266_deauther)
+
 # Cybersecurity / Redteam / Network Scanning
 
 - [Bjorn Scanner framework](https://github.com/infinition/Bjorn)
 - [IVRE Recon framework](https://github.com/ivre/ivre)
 - [Kraken framework](https://github.com/myOmikron/kraken-project)
+- [Vulnhuntr LLM scanner](https://github.com/protectai/vulnhuntr)
 
 # Cybersecurity / Redteam / OSINT
 
@@ -254,6 +269,7 @@
 
 - [Subdomain Finder](https://subdomainfinder.c99.nl/)
 - [DNS Dumpster](https://dnsdumpster.com/)
+- [Voyage domain scanner](https://github.com/clickswave/voyage)
 
 # Cybersecurity / Redteam / OSINT / Social
 
