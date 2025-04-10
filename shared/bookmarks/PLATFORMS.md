@@ -27,6 +27,10 @@
 - [Macintosh Forum](https://www.macintosh-forum.de/)
 - [/r/cybersecurity](https://old.reddit.com/r/cybersecurity/)
 
+# Platforms / Media
+
+- [media.ccc.de](https://media.ccc.de/)
+
 # Platforms / News / International
 
 - [Guardian](https://www.theguardian.com/world)

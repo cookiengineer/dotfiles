@@ -1,4 +1,12 @@
 
+# Raspberry Zero Game Undercover Pentest Device
+
+- Raspberry Zero with HATs for LAN and USB, made for pentesting
+- Waveshare Game HAT to launch modified RetroPie by default
+- [Game HAT Case](https://www.thingiverse.com/thing:3267519)
+- [Waveshare Game HAT](https://www.waveshare.com/game-hat.htm)
+- [Bashbunny Payloads](https://github.com/hak5/bashbunny-payloads)
+
 # Go Zim Scraper
 
 - Most ZIM Scrapers are either outdated or require a huge load of dependencies.
