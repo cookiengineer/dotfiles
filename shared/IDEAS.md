@@ -1,4 +1,13 @@
 
+# Human Discussion Platform
+
+- No Bots or Web Scraping allowed
+- Use Web Crypto API, share keys on device only
+- Share threads and comments via WebRTC API peer-to-peer
+- Link devices and friends via WebRTC
+- Mandatory 2FA, mandatory crypto key generation
+- Comment and Post UI always uses `input type=file` to select key
+
 # Raspberry Zero Game Undercover Pentest Device
 
 - Raspberry Zero with HATs for LAN and USB, made for pentesting
@@ -6,6 +15,14 @@
 - [Game HAT Case](https://www.thingiverse.com/thing:3267519)
 - [Waveshare Game HAT](https://www.waveshare.com/game-hat.htm)
 - [Bashbunny Payloads](https://github.com/hak5/bashbunny-payloads)
+
+# Go DIY Search Index
+
+- Local search webserver for offline use
+- Call kiwix search API
+- Parse and search epub files in folder
+- Parse and search zim files in folder
+- Support archiving of web URLs to be rediscovered through search?
 
 # Go Zim Scraper
 
