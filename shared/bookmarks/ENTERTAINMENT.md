@@ -65,6 +65,10 @@
 - [Coach Stef](https://www.youtube.com/@CoachStef/videos)
 - [Doc Felix](https://www.youtube.com/@docfelix/videos)
 
+# Entertainment / Investigative Journalism
+
+- [Peter Santenello](https://www.youtube.com/@PeterSantenello/videos)
+
 # Entertainment / Making
 
 - [Emily the Engineer](https://www.youtube.com/emilytheengineer/videos)

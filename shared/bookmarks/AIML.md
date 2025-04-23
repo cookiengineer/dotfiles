@@ -3,6 +3,10 @@
 
 - [Machine Learning Book](https://themlbook.com/wiki/doku.php)
 
+# AIML / Document Scanning
+
+- [Morphik PDF Scanner](https://github.com/morphik-org/morphik-core)
+
 # AIML / Drawing
 
 - [QuickDraw](https://github.com/uvipen/QuickDraw)
@@ -65,11 +69,14 @@
 - [browser-use](https://github.com/browser-use/browser-use)
 - [GhidraMCP](https://github.com/LaurieWired/GhidraMCP)
 - [mcp-cli](https://github.com/chrishayuk/mcp-cli)
+- [go-mcp](https://github.com/dstotijn/go-mcp)
+- [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)
 - [mcp-gdb](https://github.com/signal-slot/mcp-gdb)
 - [mcp_server_gdb](https://github.com/pansila/mcp_server_gdb)
 
 # AIML / LLM / Tools
 
+- [choky](https://github.com/mirth/chonky)
 - [Aider Coding Assistant](https://github.com/Aider-AI/aider)
 - [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)
 
