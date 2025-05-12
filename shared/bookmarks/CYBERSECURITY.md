@@ -51,6 +51,7 @@
 - [GHidra](https://github.com/NationalSecurityAgency/ghidra)
 - [Angry GHidra](https://github.com/Nalen98/AngryGhidra)
 - [Harpoon sandbox](https://github.com/alegrey91/harpoon)
+- [Litterbox sandbox](https://github.com/BlackSnufkin/LitterBox)
 - [Quickscope](https://github.com/CYB3RMX/Qu1cksc0pe)
 - [Cutter framework](https://github.com/rizinorg/cutter)
 - [Modpot Honeypot framework](https://github.com/referefref/modpot)

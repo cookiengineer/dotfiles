@@ -37,6 +37,14 @@
 
 - [timeshift rsync/btrfs](https://github.com/linuxmint/timeshift)
 
+# Software / Business
+
+- [Odoo Office Suite](https://github.com/odoo/odoo)
+
+# Software / Chat
+
+- [Colanode](https://github.com/colanode/colanode)
+
 # Software / Content Management Systems
 
 - [Outstatic](https://github.com/avitorio/outstatic)
@@ -270,6 +278,7 @@
 
 # Software / Development
 
+- [Code Cafe](https://github.com/mrktsm/codecafe)
 - [GB Studio](https://github.com/chrismaltby/gb-studio)
 - [difftastic](https://github.com/Wilfred/difftastic)
 - [git appraise](https://github.com/google/git-appraise)

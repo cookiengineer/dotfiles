@@ -79,4 +79,4 @@
 - [choky](https://github.com/mirth/chonky)
 - [Aider Coding Assistant](https://github.com/Aider-AI/aider)
 - [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)
-
+- [Void Editor](https://github.com/voideditor/void)
