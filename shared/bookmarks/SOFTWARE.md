@@ -211,6 +211,11 @@
 
 - [libSQL](https://github.com/tursodatabase/libsql)
 
+# Software / Tools / Debugging
+
+- [binwalk firmware analyzer](https://github.com/ReFirmLabs/binwalk)
+- [EMBA firmware analyzer](https://github.com/e-m-b-a/emba)
+
 # Software / Tools / Mapping
 
 - [PrettyMapp](https://github.com/chrieke/prettymapp)
@@ -220,6 +225,7 @@
 - [Netbird](https://github.com/netbirdio/netbird)
 - [Netmaker](https://github.com/graviyl/netmaker)
 - [Wireproxy](https://github.com/pufferffish/wireproxy)
+- [WG easy](https://github.com/wg-easy/wg-easy)
 
 # Software / Tools / Search
 
@@ -329,11 +335,13 @@
 # Software / Development / golang / CI/CD
 
 - [act local CI/CD runner](https://github.com/nektos/act)
+- [buildah OCI image builder](https://github.com/containers/buildah)
 - [woodpecker CI/CD runner](https://github.com/woodpecker-ci/woodpecker)
 - [zizmor actions validator](https://github.com/woodruffw/zizmor)
 - [chromedp](https://github.com/chromedp/chromedp)
 - [go-appimage tools](https://github.com/probonopd/go-appimage)
 - [go-geiger](https://github.com/jlauinger/go-geiger)
+- [Ko Build](https://github.com/ko-build/ko)
 
 # Software / Development / golang / Compilers
 
@@ -344,6 +352,7 @@
 
 # Software / Development / golang / Cryptography
 
+- [uuid](https://github.com/gofrs/uuid)
 - [Shamir's Secret Sharing](https://github.com/openfort-xyz/shamir-secret-sharing-go)
 
 # Software / Development / golang / Databases
@@ -376,11 +385,13 @@
 # Software / Development / golang / Graphics
 
 - [canvas Cairo bindings](https://github.com/tdewolff/canvas)
+- [DarwinKit Mac bindings](https://github.com/progrium/darwinkit)
 
 # Software / Development / golang / Networking
 
 - [broxy](https://github.com/rhaidiz/broxy)
 - [goproxy](https://github.com/elazarl/goproxy)
+- [gorilla websocket](https://github.com/gorilla/websocket)
 - [openziti firewall](https://github.com/netfoundry/zfw)
 
 # Software / Development / golang / Network Management

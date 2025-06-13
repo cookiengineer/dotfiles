@@ -13,3 +13,7 @@
 - [Altair Basic](https://github.com/pronoiac/altair-basic-source-code)
 - [Dragon Basic](https://github.com/davidlinsley/DragonBasic)
 
+# Operating Systems / Windows 7
+
+- [VxKex-NEXT Kernel Extensions](https://github.com/YuZhouRen86/VxKex-NEXT)
+
