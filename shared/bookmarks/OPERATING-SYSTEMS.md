@@ -17,3 +17,8 @@
 
 - [VxKex-NEXT Kernel Extensions](https://github.com/YuZhouRen86/VxKex-NEXT)
 
+# Operating Systems / Linux Distributions
+
+- [ArchLinux](https://archlinux.org/)
+- [CachyOS](https://cachyos.org/)
+

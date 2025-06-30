@@ -161,6 +161,7 @@
 - [Shiny SOCKS](https://github.com/jgaa/shinysocks)
 - [Netbird WireGuard Overlay Network](https://github.com/netbirdio/netbird)
 - [WireGuard Netmaker](https://github.com/gravitl/netmaker)
+- [WireGuard Tunnel Management](https://github.com/wiredoor/wiredoor)
 - [Fossorial Pangolin](https://github.com/fosrl/pangolin)
 
 # Software / Organization
@@ -331,6 +332,7 @@
 
 - [ergo IRC server](https://github.com/ergochat/ergo)
 - [llama-coder](https://github.com/ex3ndr/llama-coder)
+- [xmpp](https://github.com/mellium/xmpp)
 
 # Software / Development / golang / CI/CD
 
@@ -378,9 +380,15 @@
 - [mangle EDR evasion](https://github.com/optiv/Mangle)
 - [Fake Sandbox Artefacts](https://github.com/NavyTitanium/Fake-Sandbox-Artifacts)
 
+# Software / Development / golang / Events
+
+- [fsnotify](https://github.com/fsnotify/fsnotify)
+- [multi-process event bus](https://github.com/kelindar/event)
+
 # Software / Development / golang / Forums
 
 - [BBS Software](https://github.com/mlogclub/bbs-go)
+- [Wiki Software](https://github.com/leomoon-studios/wiki-go)
 
 # Software / Development / golang / Graphics
 

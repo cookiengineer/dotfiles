@@ -67,6 +67,7 @@
 
 # Entertainment / Investigative Journalism
 
+- [Johnny Harris](https://www.youtube.com/@johnnyharris/videos)
 - [Peter Santenello](https://www.youtube.com/@PeterSantenello/videos)
 
 # Entertainment / Making
