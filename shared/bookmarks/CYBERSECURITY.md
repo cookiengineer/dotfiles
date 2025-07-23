@@ -95,6 +95,10 @@
 
 - [CycloneDX SBOM](https://cyclonedx.org/)
 
+# Cybersecurity / Blueteam / Threat Intel
+
+- [Unit42 Advisories](https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel)
+
 # Cybersecurity / Blueteam / Windows Administration
 
 - [PolicyPlus](https://github.com/Fleex255/PolicyPlus)

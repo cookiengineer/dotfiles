@@ -51,6 +51,7 @@
 
 # AIML / LLM
 
+- [Continue Dev](https://github.com/continuedev/continue)
 - [LangChainGo](https://github.com/tmc/langchaingo)
 - [Ollama](https://github.com/ollama/ollama)
 

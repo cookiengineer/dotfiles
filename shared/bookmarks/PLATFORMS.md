@@ -49,7 +49,6 @@
 # Platforms / Search
 
 - [Aleph](https://aleph.occrp.org/search)
-- [BTDig](https://btdig.com)
 - [Geizhals Preisvergleich](https://geizhals.de/)
 - [Lumen Database](https://www.lumendatabase.org/)
 - [Sumi News](https://sumi.news)
@@ -61,4 +60,9 @@
 # Platforms / Social
 
 - [Dissent Discord Client](https://github.com/diamondburned/dissent)
+
+# Platforms / Software
+
+- [BTDig](https://btdig.com)
+- [BT4G](https://bt4gprx.com)
 

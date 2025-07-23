@@ -41,6 +41,11 @@
 
 - [Odoo Office Suite](https://github.com/odoo/odoo)
 
+# Software / Charts
+
+- [FossFLOW](https://github.com/stan-smith/FossFLOW)
+- [fossflow-lib](https://github.com/stan-smith/fossflow-lib)
+
 # Software / Chat
 
 - [Colanode](https://github.com/colanode/colanode)
@@ -70,6 +75,7 @@
 - [PaperMerge](https://github.com/papermerge/papermerge-core)
 - [Baserow Spreadsheet Colab](https://gitlab.com/baserow/baserow)
 - [NocoDB Spreadsheet Colab](https://github.com/nocodb/nocodb)
+- [Stirling PDF](https://github.com/Stirling-Tools/Stirling-PDF)
 
 # Software / Design
 

@@ -9,6 +9,10 @@
 - [AirGuard](https://github.com/seemoo-lab/AirGuard)
 - [AppWarden](https://gitlab.com/AuroraOSS/AppWarden)
 
+# Android / Apps / Automation
+
+- [AutoPie](https://github.com/cryptrr/AutoPie)
+
 # Android / Apps / Chat
 
 - [Briar](https://code.briarproject.org/briar/briar)
