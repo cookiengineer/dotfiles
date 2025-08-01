@@ -27,6 +27,10 @@
 - [Wigle Wardriving Client](https://github.com/wiglenet/wigle-wifi-wardriving)
 - [Yet Another Call Blocker](https://gitlab.com/xynngh/YetAnotherCallBlocker)
 
+# Software / Android / Analysis
+
+- [APKLab](https://github.com/APKLab/APKLab)
+
 # Software / Authentication
 
 - [Authentik IAM](https://github.com/goauthentik/authentik)
@@ -217,6 +221,7 @@
 # Software / Tools / Database
 
 - [libSQL](https://github.com/tursodatabase/libsql)
+- [sq data wrangler](https://github.com/neilotoole/sq)
 
 # Software / Tools / Debugging
 
@@ -268,6 +273,7 @@
 
 # Software / Tools / Web Browser
 
+- [Amfora](https://github.com/makew0rld/amfora)
 - [Ungoogled Chromium](https://github.com/ungoogled-software)
 
 # Software / Visualizations
@@ -328,6 +334,7 @@
 
 # Software / Development / golang / Backend
 
+- [gofakeit](https://github.com/brianvoe/gofakeit)
 - [huma](https://github.com/danielgtaylor/huma/)
 - [iris](https://github.com/kataras/iris)
 - [ov terminal pager](https://github.com/noborus/ov)
@@ -369,6 +376,7 @@
 
 # Software / Development / golang / Debugging
 
+- [Delve Debugger](https://github.com/go-delve/delve)
 - [GMon Goroutine Monitor](https://github.com/keisku/gmon)
 - [Redress binary analyzer](https://github.com/goretk/redress)
 
@@ -380,6 +388,7 @@
 
 - [durdur eBPF filter](https://github.com/boratanrikulu/durdur)
 - [ebpf-go](https://github.com/cilium/ebpf)
+- [fastDNS XDP resolver](https://github.com/dwisiswant0/fastdns)
 - [goflow sflow/netflow/ipfix collector](https://github.com/cloudflare/goflow)
 - [goversioninfo for windows programs](https://github.com/josephspurrier/goversioninfo/)
 - [rsc resource embedding for windows programs](https://github.com/akavel/rsrc)
@@ -495,7 +504,9 @@
 - [Caddy Webserver](https://github.com/caddyserver/caddy)
 - [Caddy WAF](https://github.com/fabriziosalmi/caddy-waf)
 - [Go Git Service](https://github.com/gogs/gogs)
+- [JuiceFS Filesystem](https://github.com/juicedata/juicefs)
 - [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
+- [SeaweedFS Filesystem](https://github.com/seaweedfs/seaweedfs)
 - [Stash Video Management](https://github.com/stashapp/stash)
 
 # Software / Notes

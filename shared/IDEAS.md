@@ -1,6 +1,36 @@
 
+# MCP Server for Reverse Engineering Database
+
+- Correlates known symbols back to source codes
+- Shares known libraries, functions and source codes
+- Shares symbols and correlates previously disassembled parts
+
+# Warps GUI
+
+- Test protocols to connect to a node
+- Table/fieldset groups to put nodes into a bucket
+- Each bucket is a group of trusted nodes that can see each other
+- WebRTC for NAT discovery and exchanges of contacts
+
+# DynDNS Balancer
+
+- Peer to Peer server that acts as a reverse proxy on a mapped domain
+- Only routes traffic through its own registered DynDNS clients
+- Multiple clients can register as mirrors, and can be rotated to balance loads
+- End-to-end HTTP Ronin, might even be useful for alternative torrent web seeds
+
+# OSINT MCP Server
+
+- OSINT MCP server and client for recon of machines
+- TCP fingerprinting, port scanning, requests, port knocking
+- Maybe even with zmap, nmap and NSE support
+- [Model Context Protocol](https://modelcontextprotocol.io/specification/2025-06-18/changelog)
+
 # Human Discussion Platform
 
+- Forum and Wiki combination
+- Wiki articles can have questions and answers to them
+- Topics are mapped to wiki articles
 - No Bots or Web Scraping allowed
 - Use Web Crypto API, share keys on device only
 - Share threads and comments via WebRTC API peer-to-peer

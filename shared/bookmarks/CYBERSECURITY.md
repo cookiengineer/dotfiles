@@ -26,6 +26,7 @@
 
 # Cybersecurity / Blueteam / Firewall
 
+- [Anubis DDoS Protection](https://github.com/TecharoHQ/anubis)
 - [BGP Reverse Proxy and Firewall](https://github.com/bgpfix/bgpipe)
 - [BunkerWeb Web Application Firewall](https://github.com/bunkerity/bunkerweb)
 - [Burner E-Mail Providers](https://github.com/wesbos/burner-email-providers)
@@ -62,6 +63,7 @@
 
 - [Bettercap](https://github.com/bettercap/bettercap)
 - [Bettercap Web UI](https://www.bettercap.org/usage/webui/)
+- [HyperDX](https://github.com/hyperdxio/hyperdx)
 - [Microsoft eventlog mindmap](https://github.com/mdecrevoisier/Microsoft-eventlog-mindmap)
 
 # Cybersecurity / Blueteam / Network Inventory / Prometheus
@@ -77,6 +79,8 @@
 - [Bubblewrap](https://github.com/containers/bubblewrap)
 - [Firejail](https://github.com/netblue30/firejail)
 - [Firejail Profiles](https://github.com/netblue30/firejail/tree/master/etc)
+- [microsandbox](https://github.com/microsandbox/microsandbox)
+- [mustardwatch](https://github.com/shachaf/mustardwatch)
 - [pisshoff SSH Honeypot](https://github.com/w4/pisshoff)
 - [OTELO Profiling Agent](https://github.com/elastic/otel-profiling-agent)
 - [SSH Honeypot](https://github.com/kjx52/ssh-honeypot-new)

@@ -61,14 +61,18 @@
 
 # AIML / LLM / Models
 
+- [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
 
 # AIML / LLM / MCP
 
 - [Awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
 - [Official MCP servers](https://github.com/modelcontextprotocol/servers)
+- [Blender MCP](https://github.com/ahujasid/blender-mcp)
 - [browser-use](https://github.com/browser-use/browser-use)
+- [container-use](https://github.com/dagger/container-use)
 - [GhidraMCP](https://github.com/LaurieWired/GhidraMCP)
+- [GhidrAssistMCP](https://github.com/jtang613/GhidrAssistMCP)
 - [mcp-cli](https://github.com/chrishayuk/mcp-cli)
 - [go-mcp](https://github.com/dstotijn/go-mcp)
 - [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)

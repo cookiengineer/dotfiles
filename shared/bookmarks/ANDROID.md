@@ -19,6 +19,10 @@
 - [Telegram FOSS](https://github.com/Telegram-FOSS-Team/Telegram-FOSS)
 - [Thunderbird](https://github.com/thunderbird/thunderbird-android)
 
+# Android / Apps / Emulation
+
+- [Waydroid](https://github.com/waydroid/waydroid)
+
 # Android / Apps / Freezer
 
 - [SuperFreezZ](https://gitlab.com/SuperFreezZ/SuperFreezZ)
