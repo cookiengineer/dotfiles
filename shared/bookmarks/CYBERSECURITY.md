@@ -42,6 +42,7 @@
 # Cybersecurity / Blueteam / Forensics
 
 - [Deda document dotcode tools](https://github.com/dfd-tud/deda)
+- [Sigma CLI](https://github.com/SigmaHQ/sigma-cli)
 
 # Cybersecurity / Blueteam / Malware Analysis
 

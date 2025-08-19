@@ -351,6 +351,7 @@
 
 - [act local CI/CD runner](https://github.com/nektos/act)
 - [buildah OCI image builder](https://github.com/containers/buildah)
+- [gost-dom headless browser](https://github.com/gost-dom/browser)
 - [woodpecker CI/CD runner](https://github.com/woodpecker-ci/woodpecker)
 - [zizmor actions validator](https://github.com/woodruffw/zizmor)
 - [chromedp](https://github.com/chromedp/chromedp)
