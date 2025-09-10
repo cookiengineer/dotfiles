@@ -3,6 +3,10 @@
 
 - [Machine Learning Book](https://themlbook.com/wiki/doku.php)
 
+# AIML / Bayesian
+
+- [CauseNet](https://github.com/causenet-org/CIKM-20)
+
 # AIML / Document Scanning
 
 - [Morphik PDF Scanner](https://github.com/morphik-org/morphik-core)
@@ -55,6 +59,11 @@
 - [LangChainGo](https://github.com/tmc/langchaingo)
 - [Ollama](https://github.com/ollama/ollama)
 
+# AIML / LLM / Agents
+
+- [Crush](https://github.com/charmbracelet/crush)
+- [Hopp](https://github.com/gethopp/hopp)
+
 # AIML / LLM / Benchmarks
 
 - [cve-bench](https://github.com/uiuc-kang-lab/cve-bench)
@@ -63,6 +72,12 @@
 
 - [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
+
+# AIML / LLM / Models / Apertus
+
+- [Apertus Model](https://huggingface.co/swiss-ai/Apertus-70B-2509)
+- [Pretrain Code](https://github.com/swiss-ai/pretrain-code)
+- [Pretrain Data](https://github.com/swiss-ai/pretrain-data)
 
 # AIML / LLM / MCP
 
@@ -85,3 +100,8 @@
 - [Aider Coding Assistant](https://github.com/Aider-AI/aider)
 - [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)
 - [Void Editor](https://github.com/voideditor/void)
+
+# AIML / LLM / Prompt Injection
+
+- [prompt-injector](https://github.com/BlueprintLabIO/prompt-injector)
+

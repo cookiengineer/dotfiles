@@ -119,6 +119,7 @@
 - [Docker WebTop](https://github.com/linuxserver/docker-webtop)
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
+- [Foreman Orchestration](https://github.com/theforeman/foreman)
 - [Harbor Container Registry](https://github.com/goharbor/harbor)
 - [Marmotte IT Asset Management](https://github.com/marmotteio/marmotteio)
 - [OpenTofu Infrastructure Tool](https://github.com/opentofu)
@@ -227,6 +228,7 @@
 
 - [binwalk firmware analyzer](https://github.com/ReFirmLabs/binwalk)
 - [EMBA firmware analyzer](https://github.com/e-m-b-a/emba)
+- [Hoppscotch HTTP debugger](https://github.com/hoppscotch/hoppscotch)
 
 # Software / Tools / Mapping
 
@@ -307,6 +309,11 @@
 - [Notepad Next](https://github.com/dail8859/NotepadNext)
 - [OSS Insight](https://github.com/pingcap/ossinsight)
 
+# Software / Development / vscodium
+
+- [vscodium](https://github.com/VSCodium/vscodium)
+- [devtool plus plugin](https://github.com/fuzionix/devtool-plus)
+
 # Software / Development / c
 
 - [TBox standard library](https://github.com/tboox/tbox)
@@ -385,6 +392,10 @@
 
 - [pkgsite](https://github.com/golang/pkgsite)
 
+# Software / Development / golang / Document Conversion
+
+- [gopdfsuit](https://github.com/chinmay-sawant/gopdfsuit)
+
 # Software / Development / golang / EDR
 
 - [durdur eBPF filter](https://github.com/boratanrikulu/durdur)
@@ -420,6 +431,7 @@
 
 # Software / Development / golang / Network Management
 
+- [lazyssh](https://github.com/adembc/lazyssh)
 - [openwisp](https://github.com/openwisp)
 
 # Software / Development / golang / Parsers
