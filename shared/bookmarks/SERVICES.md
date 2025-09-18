@@ -45,6 +45,10 @@
 
 - [Wigle](https://wigle.net)
 
+# Services / Proxies
+
+- [LunaProxy](https://www.lunaproxy.com/)
+
 # Services / Inventory Management
 
 - [Rezilion](https://www.rezilion.com/platform/dynamic-sbom/)

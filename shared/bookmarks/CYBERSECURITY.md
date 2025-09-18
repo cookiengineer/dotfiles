@@ -15,6 +15,11 @@
 
 # Cybersecurity / Blueteam
 
+# Cybersecurity / Blueteam / Application Security
+
+- [opengrep code analysis](https://github.com/opengrep/opengrep)
+- [opengrep rulesets](https://github.com/opengrep/opengrep-rules)
+
 # Cybersecurity / Blueteam / Defense
 
 - [CobaltSpam](https://github.com/hariomenkel/CobaltSpam)
@@ -91,6 +96,7 @@
 - [FOSSA Open Source Management](https://fossa.com/)
 - [Grype Vulnerability Scanner](https://github.com/anchore/grype)
 - [Syft SBOM Generator](https://github.com/anchore/syft)
+- [Velociraptor](https://github.com/Velocidex/velociraptor)
 
 # Cybersecurity / Blueteam / SIEM and SOAR
 

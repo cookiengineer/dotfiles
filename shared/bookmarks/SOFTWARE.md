@@ -372,6 +372,7 @@
 - [tinygo compiler](https://github.com/tinygo-org/tinygo)
 - [yaegi interpreter](https://github.com/traefik/yaegi)
 - [PureGo library](https://github.com/ebitengine/purego)
+- [dst parser](https://github.com/dave/dst)
 
 # Software / Development / golang / Cryptography
 
@@ -381,6 +382,8 @@
 # Software / Development / golang / Databases
 
 - [AtomixDB](https://github.com/Sahilb315/AtomixDB)
+- [gods data structures](https://github.com/ugurcsen/gods-generic)
+- [haxmap atomics hashmap](https://github.com/alphadose/haxmap)
 
 # Software / Development / golang / Debugging
 

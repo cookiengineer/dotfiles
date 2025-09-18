@@ -18,6 +18,11 @@
 - [OpenGIST](https://github.com/thomiceli/opengist)
 - [OSS Insight](https://ossinsight.io)
 
+# Platforms / Cyber Security
+
+- [Hackurity](https://hackurity.io/products)
+- [Malware Bazaar](https://bazaar.abuse.ch/)
+
 # Platforms / Forums
 
 - [Homepage Forum](https://www.homepage-forum.de/)
@@ -35,16 +40,18 @@
 
 - [Guardian](https://www.theguardian.com/world)
 - [Hacker News](https://news.ycombinator.com/)
+- [Media Bias Fact Check](https://mediabiasfactcheck.com/)
 
 # Platforms / News / German
 
 - [heise.de](https://heise.de)
 - [tarnkappe.info](https://tarnkappe.info)
 
-# Platforms / Work
+# Platforms / Patch Management
 
-- [lancer.to](https://lancer.to)
-- [techmap.io](https://techmap.io)
+- [bitsight.com](https://www.bitsight.com/)
+- [defatom.com](https://www.defatom.com/)
+- [jetpatch.com](https://jetpatch.com/)
 
 # Platforms / Search
 
@@ -65,4 +72,9 @@
 
 - [BTDig](https://btdig.com)
 - [BT4G](https://bt4gprx.com)
+
+# Platforms / Work
+
+- [lancer.to](https://lancer.to)
+- [techmap.io](https://techmap.io)
 
