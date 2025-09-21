@@ -83,6 +83,12 @@
 
 # Software / Design
 
+# Software / Design / Graphics
+
+- [Graphite Editor](https://github.com/GraphiteEditor/Graphite)
+- [Inkscape](https://github.com/inkscape/inkscape)
+- [Krita](https://github.com/KDE/krita)
+
 # Software / Design / Icons
 
 - [Fontello Icon Font Generator](https://fontello.com/)
