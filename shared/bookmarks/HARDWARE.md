@@ -8,3 +8,7 @@
 # Hardware / Flipper Zero
 
 - [FlopperZiro Arduino Clone](https://github.com/lraton/FlopperZiro)
+
+# Hardware / Hackberry
+
+- [HackberryPiCM5](https://github.com/ZitaoTech/HackberryPiCM5)

@@ -112,6 +112,7 @@
 
 # Cybersecurity / Blueteam / Windows Administration
 
+- [FlyOOBE](https://github.com/builtbybel/Flyoobe)
 - [PolicyPlus](https://github.com/Fleex255/PolicyPlus)
 - [PowerToys](https://learn.microsoft.com/de-de/windows/powertoys/)
 - [SysInternals](https://learn.microsoft.com/en-us/sysinternals/)
@@ -126,6 +127,14 @@
 - [Threatpost](https://www.threatpost.com/)
 - [TL;DR Sec](https://www.tldrsec.com/)
 - [VX Underground](https://www.vx-underground.org/)
+
+# Cybersecurity / Purpleteam
+
+- [Vulhub](https://github.com/vulhub/vulhub)
+
+# Cybersecurity / Purpleteam / Windows EDR
+
+- [Atomic Redteam Framework](https://github.com/redcanaryco/atomic-red-team)
 
 # Cybersecurity / Redteam
 
@@ -168,6 +177,7 @@
 # Cybersecurity / Redteam / DDoS
 
 - [MHDDoS](https://github.com/MatrixTM/MHDDoS)
+- [Slowloris](https://github.com/itsankoff/slowloris)
 
 # Cybersecurity / Redteam / EDR Evasion
 
@@ -245,6 +255,11 @@
 - [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
 - [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
 - [Responder Poisoner](https://github.com/lgandx/Responder)
+
+# Cybersecurity / Redteam / Network / Baseband
+
+- [EFF rayhunter IMSI detector](https://github.com/EFForg/rayhunter)
+- [SnoopSnitch IMSI detector](https://github.com/srlabs/snoopsnitch)
 
 # Cybersecurity / Redteam / Network / Wi-Fi
 

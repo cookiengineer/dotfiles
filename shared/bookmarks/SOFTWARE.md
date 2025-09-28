@@ -13,6 +13,7 @@
 - [Fake Traveler](https://github.com/mcastillof/FakeTraveler)
 - [Fair Email](https://github.com/M66B/FairEmail)
 - [Hypatia Malware Scanner](https://github.com/Divested-Mobile/Hypatia)
+- [IMSI Catcher Detector](https://github.com/CellularPrivacy/Android-IMSI-Catcher-Detector)
 - [K9 Mail](https://github.com/k9mail/k-9)
 - [Kiwi Browser](https://github.com/kiwibrowser/src)
 - [NTPSync](https://github.com/Free-Software-for-Android/NTPSync)
@@ -115,6 +116,7 @@
 - [Arc Theme](https://github.com/jnsh/arc-theme)
 - [Mojave Theme](https://github.com/vinceliuice/Mojave-gtk-theme)
 - [White Sur Theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
+- [Yosemite Theme](https://github.com/vinceliuice/Yosemite-gtk-theme)
 
 # Software / Design / Themes (Vue)
 
@@ -315,20 +317,29 @@
 - [Notepad Next](https://github.com/dail8859/NotepadNext)
 - [OSS Insight](https://github.com/pingcap/ossinsight)
 
-# Software / Development / vscodium
+# Software / Development / IDEs
 
+- [helix](https://github.com/helix-editor/helix)
 - [vscodium](https://github.com/VSCodium/vscodium)
 - [devtool plus plugin](https://github.com/fuzionix/devtool-plus)
 
+# Software / Development / assembly
+
+- [SASM](https://github.com/Dman95/SASM)
+
 # Software / Development / c
 
+- [plutofilter library](https://github.com/sammycage/plutofilter)
 - [TBox standard library](https://github.com/tboox/tbox)
 - [Taskflow](https://github.com/taskflow/taskflow)
 
 # Software / Development / c / Compilers
 
-- [Cosmopolitan](https://github.com/jart/cosmopolitan)
-
+- [capstone disassembler](https://github.com/capstone-engine/capstone)
+- [capstone go bindings](https://github.com/knightsc/gapstone)
+- [cosmopolitan](https://github.com/jart/cosmopolitan)
+- [embedded libc](https://gitlab.com/users/cznic/projects)
+- [garble obfuscator](https://github.com/burrowers/garble)
 
 # Software / Development / ebpf
 
