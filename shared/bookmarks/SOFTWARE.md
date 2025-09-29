@@ -37,6 +37,7 @@
 - [Authentik IAM](https://github.com/goauthentik/authentik)
 - [Casdoor IAM](https://github.com/casdoor/casdoor)
 - [Ory IAM](https://github.com/ory)
+- [Zitadel IAM](https://github.com/zitadel/zitadel)
 
 # Software / Backup
 
@@ -322,6 +323,7 @@
 - [helix](https://github.com/helix-editor/helix)
 - [vscodium](https://github.com/VSCodium/vscodium)
 - [devtool plus plugin](https://github.com/fuzionix/devtool-plus)
+- [zedless](https://github.com/zedless-editor/zedless)
 
 # Software / Development / assembly
 
@@ -355,6 +357,7 @@
 - [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
 
 - [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
+- [go size analyzer](https://github.com/Zxilly/go-size-analyzer)
 
 # Software / Development / golang / Backend
 
@@ -401,6 +404,7 @@
 - [AtomixDB](https://github.com/Sahilb315/AtomixDB)
 - [gods data structures](https://github.com/ugurcsen/gods-generic)
 - [haxmap atomics hashmap](https://github.com/alphadose/haxmap)
+- [concurrent swissmap](https://github.com/mhmtszr/concurrent-swiss-map)
 
 # Software / Development / golang / Debugging
 
@@ -554,4 +558,8 @@
 - [Headless Recorder](https://github.com/checkly/headless-recorder)
 - [SikuliX Desktop Automation](https://github.com/RaiMan/SikuliX1)
 - [Undetected Chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver)
+
+# Software / Wine
+
+- [Bottles UI](https://github.com/bottlesdevs/Bottles)
 

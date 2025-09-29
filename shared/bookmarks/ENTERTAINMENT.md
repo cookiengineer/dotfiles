@@ -31,6 +31,7 @@
 # Entertainment / Cooking
 
 - [ZDF BesserEsser](https://www.youtube.com/c/ZDFbesseresser/videos)
+- [Ajun Food Carving](https://www.youtube.com/@JunsFoodCarving)
 
 # Entertainment / Cyber Security
 
