@@ -124,7 +124,9 @@
 
 # Software / DevOps
 
+- [Act GitHub Action Runner](https://github.com/nektos/act)
 - [Docker WebTop](https://github.com/linuxserver/docker-webtop)
+- [GitHub Actions Demo](https://github.com/cplee/github-actions-demo)
 - [Karmada](https://github.com/karmada-io/karmada)
 - [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
 - [Foreman Orchestration](https://github.com/theforeman/foreman)
