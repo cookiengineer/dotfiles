@@ -144,11 +144,21 @@
 # Software / Filesharing
 
 - [File Pizza](https://github.com/kern/filepizza)
+- [Omoide Gallery](https://github.com/EinAeffchen/Omoide)
 - [Tribler Torrent Client](https://github.com/Tribler/tribler)
 
 # Software / Finances
 
 - [Actual Budget](https://github.com/actualbudget/actual)
+
+# Software / Anti-Fingerprinting
+
+- [cURL Impersonate](https://github.com/lexiforest/curl-impersonate)
+- [Thermoptic Anti-Fingerprint Proxy](https://github.com/mandatoryprogrammer/thermoptic)
+
+# Software / Fingerprinting
+
+- [JA4 Suite](https://github.com/FoxIO-LLC/ja4)
 
 # Software / Maps
 
