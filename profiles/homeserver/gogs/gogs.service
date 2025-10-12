@@ -1,0 +1,20 @@
+[Unit]
+Description=Go Git Service
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=gogs
+Group=gogs
+Restart=always
+RestartSec=10s
+# ExecStartPre=/usr/bin/docker ps --filter "name=gogs" --format="{{.Names}}" | grep -q "^gogs$"
+ExecStart=/usr/bin/docker run --name=gogs -p 3001:22 -p 3000:3000 -v /home/gogs:/data gogs/gogs
+ExecStop=/usr/bin/docker stop gogs
+ExecStopPost=/usr/bin/docker rm -f gogs
+TimeoutStartSec=120
+TimeoutStopSec=120
+
+[Install]
+WantedBy=multi-user.target

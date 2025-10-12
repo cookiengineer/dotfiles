@@ -1,0 +1,223 @@
+server:
+  port: 80
+
+theme:
+  background-color: 231 15 21
+  primary-color: 265 89 79
+  contrast-multiplier: 1.2
+  positive-color: 135 94 66
+  negative-color: 0 100 67
+
+pages:
+  - name: Home
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+    # hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: weather
+            location: Heidelberg, Germany
+            units: metric
+            hour-format: 24h
+
+      - size: full
+        widgets:
+          - type: search
+            search-engine: duckduckgo
+            bangs:
+              - title: Google
+                shortcut: "!g"
+                url: https://www.google.com/search?q={QUERY}
+              - title: YouTube
+                shortcut: "!y"
+                url: https://www.youtube.com/results?search_query={QUERY}
+              - title: Reddit
+                shortcut: "!r"
+                url: https://old.reddit.com/search?q={QUERY}
+              - title: eBay
+                shortcut: "!e"
+                url: https://www.ebay.de/sch/i.html?_nkw={QUERY}
+
+          - type: bookmarks
+            groups:
+              - title: Offline Development
+                color: 196 86 43
+                links:
+                  - title: Kiwix Library
+                    url: http://homeserver:3003/
+                  - title: Gogs (cookiengineer)
+                    url: http://homeserver:3000/cookiengineer
+                  - title: Gogs (tholian-network)
+                    url: http://homeserver:3000/tholian-network
+              - title: Online Development
+                color: 16 86 43
+                links:
+                  - title: GitHub (cookiengineer)
+                    url: https://github.com/cookiengineer
+                  - title: GitLab (cookiengineer)
+                    url: https://gitlab.com/cookiengineer
+                  - title: GitHub (tholian-network)
+                    url: https://github.com/tholian-network
+                  - title: GitLab (tholian-network)
+                    url: https://gitlab.com/tholian-network
+              - title: Router
+                color: 106 86 43
+                links:
+                  - title: OpenWRT UI
+                    url: http://192.168.1.1:80/
+                  - title: AdGuard Home
+                    url: http://192.168.1.1:8080/
+
+          - type: to-do
+
+          - type: docker-containers
+            format-container-names: true
+            hide-by-default: false
+
+      - size: small
+        widgets:
+
+          - type: server-stats
+            servers:
+              - type: local
+                name: Homeserver
+
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - gogs/gogs
+              - yt-dlp/yt-dlp
+              - kiwix/kiwix-desktop
+
+          - type: bookmarks
+            groups:
+              - title: Platforms
+                color: 286 86 43
+                links:
+                  - title: ChatGPT
+                    url: https://chatgpt.com
+                  - title: GitHub
+                    url: https://github.com/explore
+                  - title: Reddit
+                    url: https://old.reddit.com/
+                  - title: YouTube
+                    url: https://youtube.com/
+
+  - name: News
+    columns:
+      - size: small
+        widgets:
+          - type: clock
+            hour-format: 24h
+            timezones:
+              - timezone: America/Los_Angeles
+                label: San Francisco
+              - timezone: America/New_York
+                label: New York
+              - timezone: Europe/London
+                label: London
+              - timezone: Europe/Berlin
+                label: Berlin
+              - timezone: Europe/Moscow
+                label: Moscow
+              - timezone: Asia/Kolkata
+                label: Delhi
+              - timezone: Asia/Shanghai
+                label: Shanghai
+              - timezone: Asia/Tokyo
+                label: Tokyo
+
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: hacker-news
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+              - type: reddit
+                subreddit: cybersecurity
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+              - type: reddit
+                subreddit: netsec
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+              - type: reddit
+                subreddit: golang
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+              - type: reddit
+                subreddit: opensource
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: anime_titties
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+              - type: reddit
+                subreddit: europe
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+              - type: reddit
+                subreddit: europeanunion
+                limit: 15
+                collapse-after: 10
+                show-thumbnails: true
+
+  - name: Learning
+    columns:
+      - size: full
+        widgets:
+          - type: videos
+            style: vertical-list
+            playlists:
+              - PL_z_ep2nxC57sHAlCcvvaYRrpdMIQXri1 # Crow Malware Development
+
+          - type: videos
+            style: vertical-list
+            playlists:
+              - PL_dk67mLCSFHa5jDNvEuXuoafMHmTjn32 # Cosmodium Malware Development
+
+          - type: videos
+            style: vertical-list
+            playlists:
+              - PL_dk67mLCSFE1dTqQqpRDFTfEGh9mE7MY # Cosmodium RAT Development
+
+  - name: Entertainment
+    columns:
+      - size: small
+        widgets:
+
+      - size: full
+        widgets:
+
+          - type: videos
+            style: grid-cards
+            channels:
+              - UCLLibJTCy3sXjHLVaDimnpQ # ARTE
+              - UCTPAHk1b-h-WGQn9cfGlw2Q # NDR Doku
+              - UCNNEMxGKV1LsKZRt4vaIbvw # ZDF Magazin Royale
+              - UC3XTzVzaHQEd30rQbuvCtTQ # Last Week Tonight
+
