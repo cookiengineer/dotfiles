@@ -1,0 +1,20 @@
+[Unit]
+Description=Kiwix Service
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=kiwix
+Group=kiwix
+Restart=always
+RestartSec=10s
+ExecStartPre=-/usr/bin/docker rm -f kiwix
+ExecStart=/usr/bin/docker run --name=kiwix -p 3003:8080 -v /home/kiwix:/data ghcr.io/kiwix/kiwix-serve --library /data/library.xml
+# ExecStartPost=/usr/bin/docker exec kiwix sh -c "find /data -type f -name '*.zim' -exec kiwix-manage /data/library.xml add {} \;"
+ExecStop=/usr/bin/docker stop kiwix
+TimeoutStartSec=30
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
