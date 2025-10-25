@@ -11,4 +11,10 @@
 
 # Hardware / Hackberry
 
-- [HackberryPiCM5](https://github.com/ZitaoTech/HackberryPiCM5)
+- [HackberryPi CM5](https://github.com/ZitaoTech/HackberryPiCM5)
+- [HackberryPi Zero](https://github.com/ZitaoTech/Hackberry-Pi_Zero)
+
+# Hardware / BIOS
+
+- [CSMWrap](https://github.com/FlyGoat/csmwrap)
+

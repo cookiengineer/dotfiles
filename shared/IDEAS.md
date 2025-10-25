@@ -1,4 +1,19 @@
 
+# Prompts Wiki
+
+- Wiki specialized for working prompts and chats
+- Browser Extension to share and remix workflows
+- Versionable workflows, so they can be audited
+- Versionable MCP integrations, so they can be reproducible (or not)
+
+# Podzilla GUI
+
+- Offline management GUI for services and sandboxes
+- Manages remote servers via SSH tunnels and profiles
+- Creates users and groups for service isolation
+- Manages systemd sandboxes of service/unit files
+- Manages containers via podman as rootless users
+
 # MCP Server for Reverse Engineering Database
 
 - Correlates known symbols back to source codes
@@ -130,7 +145,7 @@
       or in an easier manner.
 
 
-# SystmD GUI
+# SystemD GUI
 
 - Build a UI that shows services and sandboxing configurations of systemd units and services
 - Remote UI can be implemented using SSH tunnels to a remote server, where the queries are executed

@@ -49,6 +49,11 @@
 - [Deda document dotcode tools](https://github.com/dfd-tud/deda)
 - [Sigma CLI](https://github.com/SigmaHQ/sigma-cli)
 
+# Cybersecurity / Blueteam / Honeypots
+
+- [Certicepticon ADCS honeypot](https://github.com/srlabs/Certiception)
+- [Modpot Honeypot framework](https://github.com/referefref/modpot)
+
 # Cybersecurity / Blueteam / Malware Analysis
 
 - [angr binary analyzer](https://github.com/angr/angr)
@@ -61,9 +66,12 @@
 - [Litterbox sandbox](https://github.com/BlackSnufkin/LitterBox)
 - [Quickscope](https://github.com/CYB3RMX/Qu1cksc0pe)
 - [Cutter framework](https://github.com/rizinorg/cutter)
-- [Modpot Honeypot framework](https://github.com/referefref/modpot)
 - [PDF Tools](https://blog.didierstevens.com/programs/pdf-tools/)
 - [Rizin framework](https://github.com/rizinorg/rizin)
+
+# Cybersecurity / Blueteam / Monitoring
+
+- [Kexa Cloud Monitoring](https://github.com/kexa-io/Kexa)
 
 # Cybersecurity / Blueteam / Network Inventory
 
@@ -252,6 +260,7 @@
 - [HTTP2 Request Smuggler](https://github.com/BishopFox/h2csmuggler)
 - [WebSocket Request Smuggler](https://github.com/hahwul/ws-smuggler)
 - [HTTP2/1 Request Smuggler](https://github.com/neex/http2smugl)
+- [Pingtunnel ICMP Smuggler](https://github.com/esrrhs/pingtunnel)
 - [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
 - [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
 - [Responder Poisoner](https://github.com/lgandx/Responder)

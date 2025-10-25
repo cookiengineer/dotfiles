@@ -63,6 +63,7 @@
 
 - [Crush](https://github.com/charmbracelet/crush)
 - [Hopp](https://github.com/gethopp/hopp)
+- [OctoFriend](https://github.com/synthetic-lab/octofriend)
 
 # AIML / LLM / Benchmarks
 
@@ -72,6 +73,7 @@
 
 - [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
+- [Qwen3-Coder](https://ollama.com/library/qwen3-coder)
 
 # AIML / LLM / Models / Apertus
 

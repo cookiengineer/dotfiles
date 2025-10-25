@@ -123,20 +123,14 @@
 
 - [Win7 UI](https://github.com/Visnalize/win7-ui)
 
-# Software / DevOps
+# Software / Desktop / Keyboard and Mouse
 
-- [Act GitHub Action Runner](https://github.com/nektos/act)
-- [Docker WebTop](https://github.com/linuxserver/docker-webtop)
-- [Glance Dashboard](https://github.com/glanceapp/glance)
-- [GitHub Actions Demo](https://github.com/cplee/github-actions-demo)
-- [Karmada](https://github.com/karmada-io/karmada)
-- [k0s Kubernetes Distribution](https://github.com/k0sproject/k0s)
-- [Foreman Orchestration](https://github.com/theforeman/foreman)
-- [Harbor Container Registry](https://github.com/goharbor/harbor)
-- [Marmotte IT Asset Management](https://github.com/marmotteio/marmotteio)
-- [OpenTofu Infrastructure Tool](https://github.com/opentofu)
-- [UnCloud Selfhosted Docker Management](https://github.com/psviderski/uncloud)
-- [Corrosion Gossip-based Service Discovery](https://github.com/superfly/corrosion)
+- [deskflow](https://github.com/deskflow/deskflow)
+
+# Software / Desktop / Login
+
+- [Howdy Face Login](https://github.com/boltgolt/howdy)
+
 
 # Software / E-Mail
 
@@ -151,6 +145,10 @@
 # Software / Finances
 
 - [Actual Budget](https://github.com/actualbudget/actual)
+
+# Software / Games
+
+- [Gameboy](https://github.com/raphamorim/gameboy)
 
 # Software / Anti-Fingerprinting
 
@@ -249,8 +247,10 @@
 # Software / Tools / Debugging
 
 - [binwalk firmware analyzer](https://github.com/ReFirmLabs/binwalk)
+- [cyme USB list tool](https://github.com/tuna-f1sh/cyme)
 - [EMBA firmware analyzer](https://github.com/e-m-b-a/emba)
 - [Hoppscotch HTTP debugger](https://github.com/hoppscotch/hoppscotch)
+- [somo NET list tool](https://github.com/theopfr/somo)
 
 # Software / Tools / Mapping
 
@@ -325,7 +325,7 @@
 - [GB Studio](https://github.com/chrismaltby/gb-studio)
 - [difftastic](https://github.com/Wilfred/difftastic)
 - [git appraise](https://github.com/google/git-appraise)
-- [git bug](https://github.com/MichaelMure/git-bug)
+- [git bug](https://github.com/git-bug/git-bug)
 - [Difftastic](https://github.com/wilfred/difftastic)
 - [LunarVIM](https://github.com/lunarvim/lunarvim)
 - [Notepad Next](https://github.com/dail8859/NotepadNext)
@@ -344,6 +344,7 @@
 
 # Software / Development / c
 
+- [b+tree](https://github.com/habedi/bptree)
 - [plutofilter library](https://github.com/sammycage/plutofilter)
 - [TBox standard library](https://github.com/tboox/tbox)
 - [Taskflow](https://github.com/taskflow/taskflow)
@@ -452,6 +453,7 @@
 # Software / Development / golang / Forums
 
 - [BBS Software](https://github.com/mlogclub/bbs-go)
+- [DisKaz Software](https://github.com/oodzchen/dizkaz)
 - [Wiki Software](https://github.com/leomoon-studios/wiki-go)
 
 # Software / Development / golang / Graphics
@@ -480,7 +482,13 @@
 - [goja node.js Compatibility Layer](https://github.com/dop251/goja_nodejs)
 - [sobek JavaScript engine fork of goja](https://github.com/grafana/sobek)
 - [goment time parser](https://github.com/samber/goment)
+- [gotoml](https://github.com/pelletier/go-toml)
+- [toml](https://github.com/BurntSushi/toml)
 - [wasmber WebASM runtime](https://github.com/wasmerio/wasmer-go)
+
+# Software / Development / golang / Shells
+
+- [sh](https://github.com/mvdan/sh)
 
 # Software / Development / golang / Web Scrapers
 
