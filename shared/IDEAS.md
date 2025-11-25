@@ -1,4 +1,24 @@
 
+# System Integrity Check for POSIX
+
+- Use package database and package index to compare against filesystem
+- If files are modified, print them out
+- If files in /etc are modified, print them out
+- If files in /usr are modified, show warnings
+- Offer CLI flags like `--exclude /home/whatever` to filter out modifications
+
+- Check profile for autostart hijacks in .profile, .bashrc, .local, .X11rc
+- Check profile for autostarted programs and services, and modified local files like .desktop, .service
+
+# DNS Recon
+
+- Combine Certificate Transparency reports as passive source with DNS data to discover targets
+- https://github.com/projectdiscovery/subfinder
+- https://github.com/google/certificate-transparency-go
+- https://github.com/zmap/zgrab2
+- https://github.com/owasp-amass/amass
+- crt.sh
+
 # Prompts Wiki
 
 - Wiki specialized for working prompts and chats

@@ -13,6 +13,10 @@
 
 - [GoIP](https://www.goip.de/update-url.html)
 
+# Selfhosted / E-Mail
+
+- [Mox](https://github.com/mjl-/mox)
+
 # Selfhosted / Gaming Consoles
 
 - [Pretendo Network](https://github.com/PretendoNetwork)
@@ -35,5 +39,7 @@
 
 # Selfhosted / Other
 
+- [IT Tools](https://github.com/CorentinTh/it-tools)
+- [JSON Crack](https://github.com/AykutSarac/jsoncrack.com)
 - [Scraperr](https://github.com/jaypyles/Scraperr)
 

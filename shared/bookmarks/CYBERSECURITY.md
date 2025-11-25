@@ -250,6 +250,7 @@
 # Cybersecurity / Redteam / Malware Development
 
 - [Antnium RAT](https://github.com/dobin/antnium)
+- [Bishopfox Sliver](https://github.com/BishopFox/sliver)
 
 # Cybersecurity / Redteam / Network
 

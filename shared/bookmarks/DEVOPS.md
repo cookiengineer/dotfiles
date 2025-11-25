@@ -27,6 +27,10 @@
 
 - [OpenTofu](https://github.com/opentofu)
 
+# DevOps / Monitoring
+
+- [coroot](https://github.com/coroot/coroot)
+
 # DevOps / Orchestration
 
 - [Foreman Orchestration](https://github.com/theforeman/foreman)

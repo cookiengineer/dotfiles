@@ -1,6 +1,7 @@
 
 # Android / Platforms
 
+- [Droidify](https://github.com/Droid-ify/client)
 - [F-Droid](https://github.com/f-droid)
 - [Obtanium](https://github.com/ImranR98/Obtainium)
 
