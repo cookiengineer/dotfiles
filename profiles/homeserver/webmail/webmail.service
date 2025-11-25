@@ -1,0 +1,18 @@
+[Unit]
+Description=Persistent SSH Tunnel to Webmail Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=webmail
+Environment=SSH_AUTH_SOCK=
+
+ExecStart=/usr/bin/ssh -N -L 0.0.0.0:3004:localhost:80 webmail@leavenocrumbs.email -i /home/webmail/.ssh/id_ed25519 -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o ConnectTimeout=10
+Restart=always
+RestartSec=60
+StartLimitIntervalSec=300
+StartLimitBurst=5
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

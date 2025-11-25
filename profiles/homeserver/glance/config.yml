@@ -70,6 +70,13 @@ pages:
                     url: http://192.168.1.1:80/
                   - title: AdGuard Home
                     url: http://192.168.1.1:8080/
+              - title: Webmail
+                color: 106 86 43
+                links:
+                  - title: Mox Webmail UI
+                    url: http://192.168.0.2:3004/webmail
+                  - title: Mox Admin UI
+                    url: http://192.168.0.2:3004/admin
 
           - type: to-do
 
