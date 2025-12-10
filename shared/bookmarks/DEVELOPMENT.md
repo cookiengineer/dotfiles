@@ -222,7 +222,11 @@
 
 # Development / python
 
+# Development / python / Web Scraping
+
 - [impacket network protocol parser](https://github.com/SecureAuthCorp/impacket)
+- [silkworm web spider framework](https://github.com/BitingSnakes/silkworm)
+- [rnet http client with TLS impersonation](https://github.com/0x676e67/rnet)
 
 # Development / rust
 
