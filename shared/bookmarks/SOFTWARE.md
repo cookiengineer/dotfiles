@@ -408,6 +408,10 @@
 - [PureGo library](https://github.com/ebitengine/purego)
 - [dst parser](https://github.com/dave/dst)
 
+# Software / Development / golang / Compression
+
+- [xtractr](https://github.com/golift/xtractr)
+
 # Software / Development / golang / Cryptography
 
 - [uuid](https://github.com/gofrs/uuid)
@@ -466,6 +470,7 @@
 - [broxy](https://github.com/rhaidiz/broxy)
 - [goproxy](https://github.com/elazarl/goproxy)
 - [gorilla websocket](https://github.com/gorilla/websocket)
+- [nebula](https://github.com/slackhq/nebula)
 - [openziti firewall](https://github.com/netfoundry/zfw)
 
 # Software / Development / golang / Network Management
