@@ -15,6 +15,10 @@
 
 # Cybersecurity / Blueteam
 
+# Cybersecurity / Blueteam / Misc
+
+- [nomoreransom decryption tools](https://www.nomoreransom.org/en/decryption-tools.html)
+
 # Cybersecurity / Blueteam / Application Security
 
 - [opengrep code analysis](https://github.com/opengrep/opengrep)
@@ -83,6 +87,10 @@
 # Cybersecurity / Blueteam / Network Inventory / Prometheus
 
 - [endlessh-go](https://github.com/shizunge/endlessh-go)
+
+# Cybersecurity / Blueteam / Software Inventory
+
+- [win-post-install](https://github.com/kaic/win-post-install)
 
 # Cybersecurity / Blueteam / Package Inventory
 
