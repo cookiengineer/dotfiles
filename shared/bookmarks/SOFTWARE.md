@@ -131,10 +131,13 @@
 
 - [Howdy Face Login](https://github.com/boltgolt/howdy)
 
-
 # Software / E-Mail
 
 - [Maddy E-Mail Server](https://github.com/foxcpp/maddy)
+
+# Software / Editing / Video
+
+- [lossless-cut](https://github.com/mifi/lossless-cut)
 
 # Software / Filesharing
 
