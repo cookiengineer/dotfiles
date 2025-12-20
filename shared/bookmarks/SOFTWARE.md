@@ -341,12 +341,6 @@
 - [devtool plus plugin](https://github.com/fuzionix/devtool-plus)
 - [zedless](https://github.com/zedless-editor/zedless)
 
-# Software / Development / Web Compatibility
-
-- [ANDI Web Accessibility Tester](https://github.com/SSAgov/ANDI)
-- [Excalidraw whiteboard](https://github.com/excalidraw/excalidraw)
-- [Greenfield HTML5 wayland compositor](https://github.com/udevbe/greenfield)
-
 # Software / Hosting
 
 - [Apache Answer](https://github.com/apache/incubator-answer)

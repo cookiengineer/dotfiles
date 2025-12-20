@@ -245,3 +245,9 @@
 - [Shadcn UI](https://github.com/shadcn-ui/ui)
 - [Shadcn UI Components](https://github.com/shadcn-ui/ui/tree/main/apps/www/components)
 
+# Development / Web Compatibility
+
+- [ANDI Web Accessibility Tester](https://github.com/SSAgov/ANDI)
+- [Excalidraw whiteboard](https://github.com/excalidraw/excalidraw)
+- [Greenfield HTML5 wayland compositor](https://github.com/udevbe/greenfield)
+
