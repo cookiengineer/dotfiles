@@ -184,6 +184,7 @@
 
 - [0day today](https://0day.today/)
 - [ExploitDB](https://www.exploit-db.com/)
+- [CIA Vault7 Hacking Tools](https://github.com/secoba/CIA-Hacking-Tools)
 
 # Cybersecurity / Redteam / Forums
 
