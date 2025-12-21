@@ -20,11 +20,18 @@
 - [embedded libc](https://gitlab.com/users/cznic/projects)
 - [garble obfuscator](https://github.com/burrowers/garble)
 
+# Development / css
+
+- [tailwind basecoat ui](https://basecoatui.com)
+- [tailwind basecoat theme](https://github.com/hunvreus/basecoat)
+
 # Development / ebpf
 
 - [golang ebpf](https://github.com/cilium/ebpf)
 - [cilium bpf reference docs](https://docs.cilium.io/en/stable/bpf/)
 - [ecapture SSL/TLS sniffer](https://github.com/gojue/ecapture)
+- [pugdns](https://github.com/c3l3si4n/pugdns)
+- [qtap network sniffer](https://github.com/qpoint-io/qtap)
 
 # Development / javascript
 
