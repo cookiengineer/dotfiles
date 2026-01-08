@@ -33,6 +33,10 @@
 - [DrawIO Threat Modeling Library](https://github.com/michenriksen/drawio-threatmodeling)
 - [Portspoof](https://github.com/drk1wi/portspoof)
 
+# Cybersecurity / Blueteam / Defense / LLM Agents
+
+- [coroot](https://github.com/coroot/coroot)
+
 # Cybersecurity / Blueteam / Firewall
 
 - [Anubis DDoS Protection](https://github.com/TecharoHQ/anubis)
@@ -41,6 +45,7 @@
 - [Burner E-Mail Providers](https://github.com/wesbos/burner-email-providers)
 - [Crowdsec Firewall Bouncer](https://github.com/crowdsecurity/cs-firewall-bouncer)
 - [Disposable E-Mail Domains](https://github.com/disposable-email-domains/disposable-email-domains)
+- [fwtui](https://github.com/Beny406/fwtui)
 - [OpenSnitch](https://github.com/evilsocket/opensnitch)
 - [OPNSense](https://github.com/opnsense/core)
 - [Portspoof](https://github.com/drk1wi/portspoof)
@@ -188,6 +193,7 @@
 
 - [0day today](https://0day.today/)
 - [ExploitDB](https://www.exploit-db.com/)
+- [CIA Vault7 Hacking Tools](https://github.com/secoba/CIA-Hacking-Tools)
 
 # Cybersecurity / Redteam / Forums
 
@@ -318,6 +324,7 @@
 - [Webanalyze Technologies of Web Apps](https://github.com/rverton/webanalyze)
 - [Maigret Dossier Collector](https://github.com/soxoj/maigret)
 - [Social Scan](https://github.com/iojw/socialscan)
+- [wtfis IP lookup](https://github.com/pirxthepilot/wtfis)
 
 # Cybersecurity / Redteam / OSINT / DNS
 

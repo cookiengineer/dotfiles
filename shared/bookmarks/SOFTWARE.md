@@ -149,10 +149,6 @@
 
 - [Actual Budget](https://github.com/actualbudget/actual)
 
-# Software / Games
-
-- [Gameboy](https://github.com/raphamorim/gameboy)
-
 # Software / Anti-Fingerprinting
 
 - [cURL Impersonate](https://github.com/lexiforest/curl-impersonate)

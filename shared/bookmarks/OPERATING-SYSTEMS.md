@@ -3,6 +3,18 @@
 
 - [EFIKitty Payload Injection](https://github.com/x86byte/EFIKitty)
 
+# Operating Systems / Routers
+
+- [OpenWRT](https://openwrt.org)
+
+# Operating Systems / Smartphones
+
+- [LineageOS Devices](https://wiki.lineageos.org/devices/)
+
+# Operating Systems / Vacuum Robots
+
+- [Valetudo Devices](https://valetudo.cloud/pages/general/buying-supported-robots.html)
+
 # Operating Systems / MS-DOS
 
 - [FreeDOS](https://github.com/FDOS)

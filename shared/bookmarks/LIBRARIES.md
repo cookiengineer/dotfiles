@@ -8,7 +8,6 @@
 
 # Libraries / Android
 
-- [LineageOS Devices](https://wiki.lineageos.org/devices/)
 - [Mobilism Forum](https://forum.mobilism.org/viewforum.php?f=399)
 
 # Libraries / Art

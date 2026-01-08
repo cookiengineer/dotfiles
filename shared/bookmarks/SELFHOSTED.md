@@ -17,10 +17,6 @@
 
 - [Mox](https://github.com/mjl-/mox)
 
-# Selfhosted / Gaming Consoles
-
-- [Pretendo Network](https://github.com/PretendoNetwork)
-
 # Selfhosted / Notes
 
 - [Jotty](https://github.com/fccview/jotty)
