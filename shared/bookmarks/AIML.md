@@ -69,6 +69,10 @@
 
 - [cve-bench](https://github.com/uiuc-kang-lab/cve-bench)
 
+# AIML / LLM / Data Compression
+
+- [Time Series Lean Notation](https://github.com/turboline-ai/tsln-golang)
+
 # AIML / LLM / Models
 
 - [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
