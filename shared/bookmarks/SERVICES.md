@@ -1,6 +1,11 @@
 
 # Services
 
+# Services / CTI
+
+- [Greynoise](https://viz.greynoise.io/)
+- [OpenCTI](https://www.filigran.io/en/solutions/products/opencti/)
+
 # Services / Payment
 
 - [Adyen](https://adyen.com)
@@ -36,10 +41,11 @@
 - [PulseDive](https://pulsedive.com)
 - [URLscan](https://urlscan.io)
 
-# Services / CTI
+# Services / OSINT / Misinformation
 
-- [Greynoise](https://viz.greynoise.io/)
-- [OpenCTI](https://www.filigran.io/en/solutions/products/opencti/)
+- [correctiv](https://correctiv.org/faktencheck/)
+- [disinfo.eu](https://www.disinfo.eu/publications/)
+- [spravdi.org](https://spravdi.org/en/anti-fake/)
 
 # Services / OSINT / Wi-Fi
 
