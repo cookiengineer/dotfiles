@@ -48,6 +48,10 @@
 - [Snowl Snort GUI](https://snowl.io/downloads/)
 - [Snort Rules Downloads](https://www.snort.org/downloads/#rule-downloads)
 
+# Cybersecurity / Blueteam / Firewall / LLM
+
+- [Raxe](https://github.com/raxe-ai/raxe-ce)
+
 # Cybersecurity / Blueteam / Forensics
 
 - [Deda document dotcode tools](https://github.com/dfd-tud/deda)

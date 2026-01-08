@@ -23,6 +23,7 @@
 
 # Selfhosted / Notes
 
+- [Jotty](https://github.com/fccview/jotty)
 - [Papernote](https://github.com/noahhefner/papernote)
 
 # Selfhosted / LLMs

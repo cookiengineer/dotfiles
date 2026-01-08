@@ -34,6 +34,10 @@
 - [Meshroom 3D Reconstruction Tool](https://github.com/alicevision/meshroom)
 - [SOD Embedded Library](https://github.com/symisc/sod)
 
+# AIML / Vision / Zoom
+
+- [ML SHARP](https://github.com/apple/ml-sharp)
+
 # AIML / AlphaGo
 
 - [Go AlphaGo](https://github.com/gorgonia/agogo)

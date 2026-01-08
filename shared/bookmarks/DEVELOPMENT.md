@@ -251,3 +251,7 @@
 - [Excalidraw whiteboard](https://github.com/excalidraw/excalidraw)
 - [Greenfield HTML5 wayland compositor](https://github.com/udevbe/greenfield)
 
+# Development / Web Stressing
+
+- [Nightcrawler MITM](https://github.com/thesp0nge/nightcrawler-mitm)
+
