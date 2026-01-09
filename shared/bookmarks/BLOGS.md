@@ -17,4 +17,5 @@
 # Blogs / Development / golang
 
 - [jitesh117](https://jitesh117.github.io/blog/)
+- [rednafi](https://rednafi.com/)
 

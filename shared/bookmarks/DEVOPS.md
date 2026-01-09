@@ -30,6 +30,7 @@
 # DevOps / Monitoring
 
 - [coroot](https://github.com/coroot/coroot)
+- [witr](https://github.com/pranshuparmar/witr)
 
 # DevOps / Orchestration
 

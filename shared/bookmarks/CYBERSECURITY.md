@@ -46,6 +46,7 @@
 - [Crowdsec Firewall Bouncer](https://github.com/crowdsecurity/cs-firewall-bouncer)
 - [Disposable E-Mail Domains](https://github.com/disposable-email-domains/disposable-email-domains)
 - [fwtui](https://github.com/Beny406/fwtui)
+- [TailSnitch](https://github.com/Adversis/tailsnitch)
 - [OpenSnitch](https://github.com/evilsocket/opensnitch)
 - [OPNSense](https://github.com/opnsense/core)
 - [Portspoof](https://github.com/drk1wi/portspoof)

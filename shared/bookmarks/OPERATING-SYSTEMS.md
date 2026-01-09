@@ -1,4 +1,8 @@
 
+# Operating Systems / Bootloaders
+
+- [go-boot](https://github.com/usbarmory/go-boot)
+
 # Operating Systems / EFI
 
 - [EFIKitty Payload Injection](https://github.com/x86byte/EFIKitty)

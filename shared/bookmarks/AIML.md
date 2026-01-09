@@ -15,6 +15,10 @@
 
 - [QuickDraw](https://github.com/uvipen/QuickDraw)
 
+# AIML / Memory
+
+- [ADNC](https://github.com/JoergFranke/ADNC)
+
 # AIML / Speech
 
 - [Linda Johnson Speech Dataset](https://keithito.com/LJ-Speech-Dataset/)
@@ -62,6 +66,7 @@
 - [Continue Dev](https://github.com/continuedev/continue)
 - [LangChainGo](https://github.com/tmc/langchaingo)
 - [Ollama](https://github.com/ollama/ollama)
+- [LLM Gateway](https://github.com/theopenco/llmgateway)
 
 # AIML / LLM / Agents
 
