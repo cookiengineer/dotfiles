@@ -339,7 +339,6 @@
 - [difftastic](https://github.com/Wilfred/difftastic)
 - [git appraise](https://github.com/google/git-appraise)
 - [git bug](https://github.com/git-bug/git-bug)
-- [Difftastic](https://github.com/wilfred/difftastic)
 - [LunarVIM](https://github.com/lunarvim/lunarvim)
 - [Notepad Next](https://github.com/dail8859/NotepadNext)
 - [OSS Insight](https://github.com/pingcap/ossinsight)
