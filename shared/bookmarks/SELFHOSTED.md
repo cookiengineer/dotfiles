@@ -4,6 +4,7 @@
 # Selfhosted / Development
 
 - [Git PR Pastebin](https://github.com/picosh/git-pr)
+- [Sourcebot](https://github.com/sourcebot-dev/sourcebot)
 
 # Selfhosted / DynDNS Clients
 
@@ -33,6 +34,10 @@
 - [Model Context Protocol](https://github.com/modelcontextprotocol)
 - [MCP in Go](https://github.com/owulveryck/gomcptest/)
 - [MCP Cli in Python](https://github.com/chrishayuk/mcp-cli)
+
+# Selfhosted / TTS
+
+- [Chatterbox](https://github.com/devnen/Chatterbox-TTS-Server)
 
 # Selfhosted / Other
 

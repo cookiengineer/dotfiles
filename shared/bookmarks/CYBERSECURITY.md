@@ -175,6 +175,10 @@
 - [SynZack Blog](https://synzack.github.io/posts)
 - [VulnDev Blog](https://vulndev.io/blog/)
 
+# Cybersecurity / Redteam / Bug Bounties
+
+- [pwnsuite](https://pwnsuite.com/)
+
 # Cybersecurity / Readteam / Wikis
 
 - [Hack Tricks](https://book.hacktricks.xyz/welcome/readme)

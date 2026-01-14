@@ -17,12 +17,14 @@
 
 # Libraries / Books
 
+- [SLUM Index](https://open-slum.org/)
 - [Anna's Archive](https://annas-archive.org/)
 - [B-OK](https://b-ok.cc)
 - [ebook-dl](https://ebook-dl.com/)
 - [Internet Archive Scholar](https://scholar.archive.org/search)
 - [The Eye](https://the-eye.eu/public/)
 - [Genesis](http://gen.lib.rus.ec/search.php)
+- [Opentextbooks](https://open.umn.edu/opentextbooks/)
 
 # Libraries / Exploits
 

@@ -98,6 +98,10 @@
 
 - [Awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
 - [Official MCP servers](https://github.com/modelcontextprotocol/servers)
+- [Metorial MCP index](https://github.com/metorial/metorial-index)
+
+# AIML / LLM / MCP Servers
+
 - [Blender MCP](https://github.com/ahujasid/blender-mcp)
 - [browser-use](https://github.com/browser-use/browser-use)
 - [container-use](https://github.com/dagger/container-use)

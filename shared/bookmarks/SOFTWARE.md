@@ -158,6 +158,13 @@
 
 - [JA4 Suite](https://github.com/FoxIO-LLC/ja4)
 
+# Software / Game Development
+
+- [godot engine](https://github.com/godotengine/godot)
+- [kkrieger werkkzeug](https://github.com/jaromil/kkrieger-werkkzeug3)
+- [phaser engine](https://github.com/phaserjs/phaser)
+- [phaser editor2d](https://github.com/PhaserEditor2D/PhaserEditor2D-v3)
+
 # Software / Maps
 
 - [Tile38 GeoJSON Server](https://github.com/tidwall/tile38)
@@ -171,6 +178,7 @@
 - [Yggdrasil Network](https://yggdrasil-network.github.io/)
 - [Beaker Browser](https://github.com/beakerbrowser/beaker)
 - [Corrosion](https://github.com/superfly/corrosion)
+- [Dumbproxy](https://github.com/SenseUnit/dumbproxy)
 - [Hypercore](https://github.com/hypercore-protocol/hypercore-next)
 - [Hyperdrive](https://github.com/hypercore-protocol/hyperdrive)
 - [INET256](https://github.com/inet256/inet256)
@@ -178,6 +186,12 @@
 - [Scuttlebutt Protocol Guide](https://ssbc.github.io/scuttlebutt-protocol-guide/)
 - [GoTox](https://github.com/codedust/go-tox)
 - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet)
+
+# Software / Networking / Management
+
+- [bluetui BT CLI](https://github.com/pythops/bluetui)
+- [impala Wi-Fi CLI](https://github.com/pythops/impala)
+- [oryx Network Sniffer](https://github.com/pythops/oryx)
 
 # Software / Privacy
 
