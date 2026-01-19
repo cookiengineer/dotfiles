@@ -23,6 +23,10 @@
 
 - [Harbor](https://github.com/goharbor/harbor)
 
+# DevOps / Download Manager
+
+- [surge](https://github.com/surge-downloader/surge)
+
 # DevOps / Infrastructure as Code
 
 - [OpenTofu](https://github.com/opentofu)
@@ -31,6 +35,10 @@
 
 - [coroot](https://github.com/coroot/coroot)
 - [witr](https://github.com/pranshuparmar/witr)
+
+# DevOps / Networking
+
+- [xc reverse shell](https://github.com/xct/xc)
 
 # DevOps / Orchestration
 

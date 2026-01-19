@@ -49,6 +49,7 @@
 - [ARTEde](https://www.youtube.com/c/artede/videos)
 - [NDR Doku](https://www.youtube.com/c/NDRDoku/videos)
 - [WDR Doku](https://www.youtube.com/c/WDRDoku/videos)
+- [Ruhi Cenet](https://www.youtube.com/c/RuhiCenetMedya)
 
 # Entertainment / Drama
 
