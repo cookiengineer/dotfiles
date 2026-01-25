@@ -108,10 +108,15 @@
 - [GhidraMCP](https://github.com/LaurieWired/GhidraMCP)
 - [GhidrAssistMCP](https://github.com/jtang613/GhidrAssistMCP)
 - [mcp-cli](https://github.com/chrishayuk/mcp-cli)
-- [go-mcp](https://github.com/dstotijn/go-mcp)
-- [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)
 - [mcp-gdb](https://github.com/signal-slot/mcp-gdb)
 - [mcp_server_gdb](https://github.com/pansila/mcp_server_gdb)
+- [responsible-vibe-mcp](https://github.com/mrsimpson/responsible-vibe-mcp)
+
+# AIML / LLM / MCP Servers / Go
+
+- [go-mcp](https://github.com/dstotijn/go-mcp)
+- [mcphost](https://github.com/mark3labs/mcphost)
+- [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)
 
 # AIML / LLM / Tools
 

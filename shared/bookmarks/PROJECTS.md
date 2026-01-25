@@ -46,12 +46,6 @@
 - [Pi-KVM](https://github.com/pikvm/pikvm)
 - [Secure Web Application Gateway](https://github.com/linuxserver/docker-swag)
 
-# Projects / Lancer Evo VIII
-
-- [Engine Codes](https://www.lancerregister.com/showthread.php?t=226959)
-- [Change Timing Belt](https://www.youtube.com/watch?v=hwuDKo7Elzw)
-- [Lancer Fix Series](https://www.youtube.com/playlist?list=PLf1z6ICGK4wXwfkjr5pC48CPKl2NjHmil)
-
 # Projects / Thinkpad T440p
 
 - [Arch Wiki / Synaptics Touchpad](https://wiki.archlinux.org/index.php/Touchpad_Synaptics)
@@ -103,4 +97,5 @@
 # Projects / Stuff
 
 - [WebUSB RTL-SDR Radar](https://github.com/charliegerard/webusb-rtlsdr-aircraft-radar-system)
+- [Visual Wizard UI Editor](https://visualwizard.app/editor/demo)
 

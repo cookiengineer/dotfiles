@@ -313,6 +313,7 @@
 - [Bugged Planet](https://buggedplanet.info/index.php?title=Main_Page)
 - [DEDA Tracking Dots Extraction Toolkit](https://github.com/dfd-tud/deda)
 - [EMAGNET pastebin scraper](https://github.com/wuserman/EMAGNET)
+- [FinalRecon](https://github.com/thewhiteh4t/FinalRecon)
 - [GHunt](https://github.com/mxrch/GHunt)
 - [Holele EMail to Accounts](https://github.com/megadose/holehe)
 - [IVRE Scanner framework](https://github.com/ivre/ivre)

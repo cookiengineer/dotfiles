@@ -32,6 +32,10 @@
 - [Macintosh Forum](https://www.macintosh-forum.de/)
 - [/r/cybersecurity](https://old.reddit.com/r/cybersecurity/)
 
+# Platforms / Link Directories
+
+- [Corentin Bettiol](https://links.l3m.in/en/)
+
 # Platforms / Media
 
 - [media.ccc.de](https://media.ccc.de/)
