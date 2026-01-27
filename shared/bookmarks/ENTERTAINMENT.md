@@ -83,6 +83,10 @@
 - [Renzo](https://www.youtube.com/c/Renzo69/videos)
 - [Tim Jacken](https://www.youtube.com/c/TimJacken/videos)
 
+# Entertainment / Random
+
+- [Evan Edinger](https://www.youtube.com/@evan/videos)
+
 # Entertainment / Rationality
 
 - [Prof Rieck](https://www.youtube.com/@ProfRieck/videos)

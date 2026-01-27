@@ -93,6 +93,8 @@
 - [Bettercap Web UI](https://www.bettercap.org/usage/webui/)
 - [HyperDX](https://github.com/hyperdxio/hyperdx)
 - [Microsoft eventlog mindmap](https://github.com/mdecrevoisier/Microsoft-eventlog-mindmap)
+- [Netbox](https://github.com/netbox-community/netbox)
+- [Whosthere](https://github.com/ramonvermeulen/whosthere)
 
 # Cybersecurity / Blueteam / Network Inventory / Prometheus
 

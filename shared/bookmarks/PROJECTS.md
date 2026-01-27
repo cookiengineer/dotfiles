@@ -99,3 +99,7 @@
 - [WebUSB RTL-SDR Radar](https://github.com/charliegerard/webusb-rtlsdr-aircraft-radar-system)
 - [Visual Wizard UI Editor](https://visualwizard.app/editor/demo)
 
+# Projects / Waveshare ESP32 S3
+
+- [S3Watch](https://github.com/joaquimorg/S3Watch)
+

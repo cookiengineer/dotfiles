@@ -54,6 +54,10 @@
 - [The Bad Sides of Go](https://itnext.io/we-need-to-talk-about-the-bad-sides-of-go-568a1e5adbc6)
 - [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
 
+# Development / golang / Compatibility
+
+- [go-leacy-win7](https://github.com/thongtech/go-legacy-win7)
+
 # Development / golang / Misc
 
 - [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
@@ -176,6 +180,7 @@
 - [goment time parser](https://github.com/samber/goment)
 - [gotoml](https://github.com/pelletier/go-toml)
 - [gozim](https://github.com/akhenakh/gozim)
+- [quamina](https://github.com/timbray/quamina)
 - [toml](https://github.com/BurntSushi/toml)
 - [wasmber WebASM runtime](https://github.com/wasmerio/wasmer-go)
 
@@ -229,6 +234,10 @@
 
 # Development / python
 
+# Development / python / Art
+
+- [window-art](https://github.com/willmeyers/window-art)
+
 # Development / python / Web Scraping
 
 - [impacket network protocol parser](https://github.com/SecureAuthCorp/impacket)
@@ -249,6 +258,7 @@
 
 # Development / typescript
 
+- [ChartGPU](https://github.com/ChartGPU/ChartGPU)
 - [Shadcn UI](https://github.com/shadcn-ui/ui)
 - [Shadcn UI Components](https://github.com/shadcn-ui/ui/tree/main/apps/www/components)
 
