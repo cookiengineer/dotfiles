@@ -34,6 +34,10 @@
 - [Windows 7 CSS](https://khang-nd.github.io/7.css/)
 - [Windows 10 CSS](https://github.com/jianzhongli/csswin10)
 
+# Projects / HackberryPi
+
+- [KeebDeck Keyboard](https://www.solder.party/keeb/)
+
 # Projects / Homeserver
 
 - [Raidsonic IB-3640SU3](https://geizhals.de/raidsonic-icy-box-ib-3640su3-20640-a847133.html)
@@ -45,6 +49,10 @@
 - [Pi-Hole](https://github.com/pi-hole/pi-hole)
 - [Pi-KVM](https://github.com/pikvm/pikvm)
 - [Secure Web Application Gateway](https://github.com/linuxserver/docker-swag)
+
+# Projects / Remote
+
+- [TV Be Gone Kit](https://github.com/adafruit/TV-B-Gone-Kit)
 
 # Projects / Thinkpad T440p
 

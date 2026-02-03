@@ -86,6 +86,9 @@
 # Cybersecurity / Blueteam / Monitoring
 
 - [Kexa Cloud Monitoring](https://github.com/kexa-io/Kexa)
+- [Grafana](https://github.com/grafana/grafana)
+- [Grafana Alloy](https://github.com/grafana/alloy)
+- [Grafana Loki](https://github.com/grafana/loki)
 
 # Cybersecurity / Blueteam / Network Inventory
 
@@ -254,7 +257,9 @@
 # Cybersecurity / Redteam / Web Exploitation
 
 - [BurpSuite For Pentester](https://github.com/Ignitetechnologies/BurpSuite-For-Pentester)
+- [PNG Payload Injector](https://github.com/acuciureanu/png-payload-injector)
 - [Routersploit](https://github.com/threat9/routersploit)
+- [SVGScan](https://github.com/x0xr00t/sl0ppy-SVGScan)
 - [XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 
 # Cybersecurity / Redteam / Windows Exploitation
@@ -300,12 +305,16 @@
 
 - [ESP8266 Deauther](https://github.com/SpacehuhnTech/esp8266_deauther)
 
-# Cybersecurity / Redteam / Network Scanning
+# Cybersecurity / Redteam / Network Scanners
 
 - [Bjorn Scanner framework](https://github.com/infinition/Bjorn)
 - [IVRE Recon framework](https://github.com/ivre/ivre)
 - [Kraken framework](https://github.com/myOmikron/kraken-project)
 - [Vulnhuntr LLM scanner](https://github.com/protectai/vulnhuntr)
+
+# Cybersecurity / Redteam / Network Scanner Plugins
+
+- [Nmap Microsoft Sharepoint Version](https://github.com/righel/ms-sharepoint-version-nse)
 
 # Cybersecurity / Redteam / OSINT
 

@@ -75,6 +75,10 @@
 - [PostGraphile](https://github.com/graphile/postgraphile)
 - [GoQite](https://github.com/maragudk/goqite)
 
+# Software / Document Management
+
+- [NAPS2 Document Scanner](https://github.com/cyanfish/naps2)
+
 # Software / Document Management Systems
 
 - [Calibre Web Reader](https://github.com/janeczku/calibre-web)

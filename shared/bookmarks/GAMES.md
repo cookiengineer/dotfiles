@@ -16,3 +16,6 @@
 # Games / Windows / RTS
 
 - [Age of Empires LAN Server](https://github.com/luskaner/ageLANServer)
+- [CC Generals Game Code](https://github.com/TheSuperHackers/GeneralsGameCode)
+- [CC Generals Zero Hour](https://github.com/electronicarts/CnC_Generals_Zero_Hour)
+- [CC Generals Graboid](https://www.atredis.com/blog/2026/1/26/generals)

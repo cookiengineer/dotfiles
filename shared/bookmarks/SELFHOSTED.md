@@ -3,6 +3,7 @@
 
 # Selfhosted / Archive / Web
 
+- [DiskerNet](https://github.com/BrowserBox/DiskerNet)
 - [Om Nom](https://github.com/asciimoo/omnom)
 
 # Selfhosted / Development
