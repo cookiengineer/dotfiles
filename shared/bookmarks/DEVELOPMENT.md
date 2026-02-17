@@ -69,6 +69,7 @@
 - [huma](https://github.com/danielgtaylor/huma/)
 - [iris](https://github.com/kataras/iris)
 - [ov terminal pager](https://github.com/noborus/ov)
+- [Postgres Parser](https://github.com/ValkDB/postgresparser)
 - [Rill concurrency framework](https://github.com/destel/rill)
 - [Taskflow concurrency framework](https://github.com/noneback/go-taskflow)
 

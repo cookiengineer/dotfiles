@@ -17,6 +17,7 @@
 # Android / Apps / Automation
 
 - [AutoPie](https://github.com/cryptrr/AutoPie)
+- [DoNotNotify](https://github.com/anujja/DoNotNotify)
 
 # Android / Apps / Chat
 

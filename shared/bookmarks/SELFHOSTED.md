@@ -23,6 +23,10 @@
 
 - [Mox](https://github.com/mjl-/mox)
 
+# Selfhosted / Filesharing
+
+- [Filestash](https://github.com/mickael-kerjean/filestash)
+
 # Selfhosted / Notes
 
 - [Jotty](https://github.com/fccview/jotty)
@@ -49,4 +53,8 @@
 - [IT Tools](https://github.com/CorentinTh/it-tools)
 - [JSON Crack](https://github.com/AykutSarac/jsoncrack.com)
 - [Scraperr](https://github.com/jaypyles/Scraperr)
+
+# Selfhosted / Voice
+
+- [Freeflow](https://github.com/zachlatta/freeflow)
 

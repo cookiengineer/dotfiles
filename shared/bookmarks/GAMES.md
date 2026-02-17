@@ -9,6 +9,10 @@
 
 - [Pretendo Network](https://github.com/PretendoNetwork)
 
+# Games / MS-DOS / Commander Keen
+
+- [Commander Genius Engine](https://gitlab.com/Dringgstein/Commander-Genius)
+
 # Games / Windows / Platformer
 
 - [SM63Redux](https://github.com/Redux-Team/SM63Redux)

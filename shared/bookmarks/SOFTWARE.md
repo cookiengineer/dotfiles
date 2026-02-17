@@ -55,6 +55,7 @@
 # Software / Chat
 
 - [Colanode](https://github.com/colanode/colanode)
+- [Zulip](https://github.com/zulip/zulip)
 
 # Software / Content Management Systems
 

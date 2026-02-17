@@ -85,6 +85,7 @@
 
 # Cybersecurity / Blueteam / Monitoring
 
+- [Cerberus eBPF Agent](https://github.com/zrougamed/cerberus)
 - [Kexa Cloud Monitoring](https://github.com/kexa-io/Kexa)
 - [Grafana](https://github.com/grafana/grafana)
 - [Grafana Alloy](https://github.com/grafana/alloy)
