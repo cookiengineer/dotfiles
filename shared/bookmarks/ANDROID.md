@@ -35,6 +35,7 @@
 # Android / Apps / Firewall
 
 - [NetGuard](https://github.com/M66B/NetGuard)
+- [Rethink DNS](https://github.com/celzero/rethink-app)
 
 # Android / Apps / Navigation
 

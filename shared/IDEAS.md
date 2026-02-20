@@ -114,6 +114,8 @@
 - Use a Webfont that "unshuffles" the `ROTXX` rotated alphabet on the current page
 - Use an Enigma Captcha slider to effectively ban bots, where the slider "decrypts" a sample text
 - For worse behaving users, use multiple rotations like Enigma
+- [cistercian font](https://bobbiec.github.io/cistercian-font.html)
+- [making a font with ligatures](https://digitalseams.com/blog/making-a-font-with-9999-ligatures-to-display-thirteenth-century-monk-numerals)
 
 # Warps
 

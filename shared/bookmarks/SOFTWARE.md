@@ -146,6 +146,7 @@
 # Software / Filesharing
 
 - [File Pizza](https://github.com/kern/filepizza)
+- [Levin](https://github.com/bjesus/levin)
 - [Omoide Gallery](https://github.com/EinAeffchen/Omoide)
 - [Tribler Torrent Client](https://github.com/Tribler/tribler)
 
@@ -197,6 +198,11 @@
 - [impala Wi-Fi CLI](https://github.com/pythops/impala)
 - [oryx Network Sniffer](https://github.com/pythops/oryx)
 
+# Software / Organization
+
+- [Paperback Key Sharding](https://github.com/cyphar/paperback)
+- [Taiga Project Management](https://github.com/taigaio/taiga)
+
 # Software / Privacy
 
 - [Rayhunter IMSI Catcher Detection](https://github.com/EFForg/rayhunter)
@@ -211,11 +217,6 @@
 - [WireGuard Netmaker](https://github.com/gravitl/netmaker)
 - [WireGuard Tunnel Management](https://github.com/wiredoor/wiredoor)
 - [Fossorial Pangolin](https://github.com/fosrl/pangolin)
-
-# Software / Organization
-
-- [Paperback Key Sharding](https://github.com/cyphar/paperback)
-- [Taiga Project Management](https://github.com/taigaio/taiga)
 
 # Software / Search
 
@@ -233,6 +234,10 @@
 - [Telegram API](https://github.com/xelaj/mtproto)
 - [Teamgram Server](https://github.com/teamgram/teamgram-server)
 - [Revived MTProxy](https://github.com/GetPageSpeed/MTProxy)
+
+# Software / Streaming
+
+- [TinyICE](https://github.com/DatanoiseTV/tinyice)
 
 # Software / Tools
 

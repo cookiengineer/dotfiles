@@ -1,18 +1,18 @@
 
 # Development
 
-# Development / assembly
+# Development / Assembly
 
 - [SASM](https://github.com/Dman95/SASM)
 
-# Development / c
+# Development / C
 
 - [b+tree](https://github.com/habedi/bptree)
 - [plutofilter library](https://github.com/sammycage/plutofilter)
 - [TBox standard library](https://github.com/tboox/tbox)
 - [Taskflow](https://github.com/taskflow/taskflow)
 
-# Development / c / Compilers
+# Development / C / Compilers
 
 - [capstone disassembler](https://github.com/capstone-engine/capstone)
 - [capstone go bindings](https://github.com/knightsc/gapstone)
@@ -20,12 +20,16 @@
 - [embedded libc](https://gitlab.com/users/cznic/projects)
 - [garble obfuscator](https://github.com/burrowers/garble)
 
-# Development / css
+# Development / CUDA / Compilers
+
+- [BarraCUDA](https://github.com/Zaneham/BarraCUDA)
+
+# Development / CSS
 
 - [tailwind basecoat ui](https://basecoatui.com)
 - [tailwind basecoat theme](https://github.com/hunvreus/basecoat)
 
-# Development / ebpf
+# Development / eBPF
 
 - [golang ebpf](https://github.com/cilium/ebpf)
 - [cilium bpf reference docs](https://docs.cilium.io/en/stable/bpf/)
@@ -33,37 +37,37 @@
 - [pugdns](https://github.com/c3l3si4n/pugdns)
 - [qtap network sniffer](https://github.com/qpoint-io/qtap)
 
-# Development / javascript
+# Development / JavaScript
 
 - [editor.js WYSIWYG library](https://github.com/codex-team/editor.js)
 - [highlight.js syntax highlighter](https://github.com/highlightjs/highlight.js)
 - [mermaid.js charting library](https://github.com/mermaid-js/mermaid)
 - [rough.js drawing library](https://github.com/rough-stuff/rough)
 
-# Development / javascript / Animations
+# Development / JavaScript / Animations
 
 - [animate.css library](https://github.com/animate-css/animate.css)
 - [anime.js animation library](https://github.com/juliangarnier/anime/)
 - [lipsync.js](https://github.com/yashrajbharti/LipSync.js)
 - [magic.css animations library](https://github.com/miniMAC/magic)
 
-# Development / golang
+# Development / Golang
 
 - [Awesome Go](https://github.com/avelino/awesome-go)
 - [100 Go mistakes](https://github.com/teivah/100-go-mistakes)
 - [The Bad Sides of Go](https://itnext.io/we-need-to-talk-about-the-bad-sides-of-go-568a1e5adbc6)
 - [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
 
-# Development / golang / Compatibility
+# Development / Golang / Compatibility
 
 - [go-leacy-win7](https://github.com/thongtech/go-legacy-win7)
 
-# Development / golang / Misc
+# Development / Golang / Misc
 
 - [gomobile tutorial](https://github.com/golang/go/wiki/Mobile)
 - [go size analyzer](https://github.com/Zxilly/go-size-analyzer)
 
-# Development / golang / Backend
+# Development / Golang / Backend
 
 - [gofakeit](https://github.com/brianvoe/gofakeit)
 - [huma](https://github.com/danielgtaylor/huma/)
@@ -72,17 +76,17 @@
 - [Rill concurrency framework](https://github.com/destel/rill)
 - [Taskflow concurrency framework](https://github.com/noneback/go-taskflow)
 
-# Development / golang / Bootloaders
+# Development / Golang / Bootloaders
 
 - [u-root](https://github.com/u-root/u-root)
 
-# Development / golang / ChatOps
+# Development / Golang / ChatOps
 
 - [ergo IRC server](https://github.com/ergochat/ergo)
 - [llama-coder](https://github.com/ex3ndr/llama-coder)
 - [xmpp](https://github.com/mellium/xmpp)
 
-# Development / golang / CI/CD
+# Development / Golang / CI/CD
 
 - [act local CI/CD runner](https://github.com/nektos/act)
 - [buildah OCI image builder](https://github.com/containers/buildah)
@@ -94,7 +98,7 @@
 - [go-geiger](https://github.com/jlauinger/go-geiger)
 - [Ko Build](https://github.com/ko-build/ko)
 
-# Development / golang / Compilers
+# Development / Golang / Compilers
 
 - [Go ABI internals](https://github.com/golang/go/blob/master/src/cmd/compile/abi-internal.md)
 - [garble obfuscator](https://github.com/burrowers/garble)
@@ -103,33 +107,33 @@
 - [PureGo library](https://github.com/ebitengine/purego)
 - [dst parser](https://github.com/dave/dst)
 
-# Development / golang / Cryptography
+# Development / Golang / Cryptography
 
 - [uuid](https://github.com/gofrs/uuid)
 - [Shamir's Secret Sharing](https://github.com/openfort-xyz/shamir-secret-sharing-go)
 
-# Development / golang / Databases
+# Development / Golang / Databases
 
 - [AtomixDB](https://github.com/Sahilb315/AtomixDB)
 - [gods data structures](https://github.com/ugurcsen/gods-generic)
 - [haxmap atomics hashmap](https://github.com/alphadose/haxmap)
 - [concurrent swissmap](https://github.com/mhmtszr/concurrent-swiss-map)
 
-# Development / golang / Debugging
+# Development / Golang / Debugging
 
 - [Delve Debugger](https://github.com/go-delve/delve)
 - [GMon Goroutine Monitor](https://github.com/keisku/gmon)
 - [Redress binary analyzer](https://github.com/goretk/redress)
 
-# Development / golang / Documentation
+# Development / Golang / Documentation
 
 - [pkgsite](https://github.com/golang/pkgsite)
 
-# Development / golang / Document Conversion
+# Development / Golang / Document Conversion
 
 - [gopdfsuit](https://github.com/chinmay-sawant/gopdfsuit)
 
-# Development / golang / EDR
+# Development / Golang / EDR
 
 - [durdur eBPF filter](https://github.com/boratanrikulu/durdur)
 - [ebpf-go](https://github.com/cilium/ebpf)
@@ -140,39 +144,39 @@
 - [mangle EDR evasion](https://github.com/optiv/Mangle)
 - [Fake Sandbox Artefacts](https://github.com/NavyTitanium/Fake-Sandbox-Artifacts)
 
-# Development / golang / Events
+# Development / Golang / Events
 
 - [fsnotify](https://github.com/fsnotify/fsnotify)
 - [multi-process event bus](https://github.com/kelindar/event)
 
-# Development / golang / Filesharing
+# Development / Golang / Filesharing
 
 - [p2p-share](https://github.com/yeboahd24/p2p-share)
 
-# Development / golang / Forums
+# Development / Golang / Forums
 
 - [BBS Software](https://github.com/mlogclub/bbs-go)
 - [DisKaz Software](https://github.com/oodzchen/dizkaz)
 - [Wiki Software](https://github.com/leomoon-studios/wiki-go)
 
-# Development / golang / Graphics
+# Development / Golang / Graphics
 
 - [canvas Cairo bindings](https://github.com/tdewolff/canvas)
 - [DarwinKit Mac bindings](https://github.com/progrium/darwinkit)
 
-# Development / golang / Networking
+# Development / Golang / Networking
 
 - [broxy](https://github.com/rhaidiz/broxy)
 - [goproxy](https://github.com/elazarl/goproxy)
 - [gorilla websocket](https://github.com/gorilla/websocket)
 - [openziti firewall](https://github.com/netfoundry/zfw)
 
-# Development / golang / Network Management
+# Development / Golang / Network Management
 
 - [lazyssh](https://github.com/adembc/lazyssh)
 - [openwisp](https://github.com/openwisp)
 
-# Development / golang / Parsers
+# Development / Golang / Parsers
 
 - [age encryption library](https://github.com/FiloSottile/age)
 - [do dependency injection](https://github.com/samber/do)
@@ -184,7 +188,7 @@
 - [toml](https://github.com/BurntSushi/toml)
 - [wasmber WebASM runtime](https://github.com/wasmerio/wasmer-go)
 
-# Development / golang / Parsers / DOM
+# Development / Golang / Parsers / DOM
 
 - [headless browser for unit tests](https://github.com/gost-dom/browser)
 - [dom parser library](https://github.com/krpors/dom)
@@ -192,15 +196,15 @@
 - [goja node.js compatibility layer](https://github.com/dop251/goja_nodejs)
 - [goja fork with ESM support](https://github.com/grafana/sobek)
 
-# Development / golang / Shells
+# Development / Golang / Shells
 
 - [sh](https://github.com/mvdan/sh)
 
-# Development / golang / Web Scrapers
+# Development / Golang / Web Scrapers
 
 - [ChromeDP library](https://github.com/chromedp/chromedp)
 
-# Development / golang / UI
+# Development / Golang / UI
 
 - [GLFW Go](https://github.com/nitrix/glfw-go)
 - [ImGui](https://github.com/ocornut/imgui)
@@ -208,11 +212,11 @@
 - [fyne UI](https://github.com/fyne-io/fyne)
 - [wails webview](https://wails.io/docs/gettingstarted/development/)
 
-# Development / golang / Search
+# Development / Golang / Search
 
 - [zoekt](https://github.com/sourcegraph/zoekt)
 
-# Development / golang / System
+# Development / Golang / System
 
 - [gopsutils](https://github.com/shirou/gopsutil)
 - [lsupnp](https://github.com/ccoff/lsupnp)
@@ -244,19 +248,19 @@
 - [silkworm web spider framework](https://github.com/BitingSnakes/silkworm)
 - [rnet http client with TLS impersonation](https://github.com/0x676e67/rnet)
 
-# Development / rust
+# Development / Rust
 
 - [Actix Web Framework](https://github.com/actix/actix-web)
 
-# Development / rust / Document Management
+# Development / Rust / Document Management
 
 - [Paperback library](https://github.com/cyphar/paperback)
 
-# Development / sql
+# Development / SQL
 
 - [DrawDB](https://github.com/drawdb-io/drawdb)
 
-# Development / typescript
+# Development / TypeScript
 
 - [ChartGPU](https://github.com/ChartGPU/ChartGPU)
 - [Shadcn UI](https://github.com/shadcn-ui/ui)
