@@ -35,6 +35,7 @@
 # Platforms / Link Directories
 
 - [Corentin Bettiol](https://links.l3m.in/en/)
+- [Ooh Directory](https://ooh.directory/)
 
 # Platforms / Media
 

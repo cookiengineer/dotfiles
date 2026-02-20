@@ -10,6 +10,11 @@
 
 - [Podman Desktop](https://github.com/podman-desktop/podman-desktop)
 
+# DevOps / Configuration Management
+
+- [GoSSH](https://github.com/krilor/gossh)
+- [Spot](https://github.com/umputun/spot)
+
 # DevOps / Container OS
 
 - [ParticleOS](https://github.com/systemd/particleos)
