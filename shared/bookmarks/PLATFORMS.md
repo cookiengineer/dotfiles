@@ -30,6 +30,7 @@
 - [Computerbase](https://www.computerbase.de/)
 - [Kuketz IT-Security Forum](https://forum.kuketz-blog.de/)
 - [Macintosh Forum](https://www.macintosh-forum.de/)
+- [Nukeproof Alliance](https://nukeproof.org/)
 - [/r/cybersecurity](https://old.reddit.com/r/cybersecurity/)
 
 # Platforms / Link Directories

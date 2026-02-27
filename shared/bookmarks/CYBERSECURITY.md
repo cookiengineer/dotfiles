@@ -71,6 +71,7 @@
 # Cybersecurity / Blueteam / Malware Analysis
 
 - [angr binary analyzer](https://github.com/angr/angr)
+- [capa](https://github.com/mandiant/capa)
 - [cyberbro CTI analyzer](https://github.com/stanfrbd/cyberbro)
 - [EMBA firmware analyzer](https://www.github.com/e-m-b-a/emba)
 - [FACT firmware analyzer](https://github.com/fkie-cad/FACT_core)

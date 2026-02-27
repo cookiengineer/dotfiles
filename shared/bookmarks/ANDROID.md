@@ -25,6 +25,10 @@
 - [Telegram FOSS](https://github.com/Telegram-FOSS-Team/Telegram-FOSS)
 - [Thunderbird](https://github.com/thunderbird/thunderbird-android)
 
+# Android / Apps / Drones
+
+- [DJI Logbook Analyzer](https://github.com/arpanghosh8453/drone-logbook)
+
 # Android / Apps / Emulation
 
 - [Waydroid](https://github.com/waydroid/waydroid)

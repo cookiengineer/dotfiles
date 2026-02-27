@@ -224,6 +224,10 @@
 - [netproc](https://github.com/berghetti/netproc)
 - [sysdig](https://github.com/draios/sysdig)
 
+# Development / Golang / Windows
+
+- [Windigo](https://github.com/rodrigocfd/windigo)
+
 # Development / node.js
 
 - [ESbuild](https://github.com/evanw/esbuild)
