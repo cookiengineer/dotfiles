@@ -27,6 +27,10 @@
 - [DroneSploit](https://github.com/dhondta/dronesploit)
 - [DJI Super Patcher](https://github.com/brett8883/DJI_Super-Patcher)
 
+# Projects / DIY Drone
+
+- [Mercury Drone](https://github.com/L42ARO/Mercury-Transforming-Drone)
+
 # Projects / Golem
 
 - [Windows 98 CSS](https://jdan.github.io/98.css/)

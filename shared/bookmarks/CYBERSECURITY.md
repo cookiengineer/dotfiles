@@ -201,25 +201,10 @@
 - [ROP Emporium](https://ropemporium.com/)
 - [VulnerableCode](https://github.com/aboutcode-org/vulnerablecode)
 
-# Cybersecurity / Redteam / Exploitation
-
-- [0day today](https://0day.today/)
-- [ExploitDB](https://www.exploit-db.com/)
-- [CIA Vault7 Hacking Tools](https://github.com/secoba/CIA-Hacking-Tools)
-
-# Cybersecurity / Redteam / Forums
-
-- [0x00sec](https://0x00sec.org/categories)
-- [free hack](https://free-hack.com/index.php)
-
 # Cybersecurity / Redteam / DDoS
 
 - [MHDDoS](https://github.com/MatrixTM/MHDDoS)
 - [Slowloris](https://github.com/itsankoff/slowloris)
-
-# Cybersecurity / Redteam / EDR Evasion
-
-- [HookDump](https://github.com/zeroperil/HookDump)
 
 # Cybersecurity / Redteam / Encoding and Encryption
 
@@ -230,8 +215,10 @@
 
 # Cybersecurity / Redteam / Exploitation
 
+- [0day today](https://0day.today/)
 - [Binject golang/debug Fork](https://github.com/Binject/debug)
 - [Binject injection library](https://github.com/Binject/binjection)
+- [ExploitDB](https://www.exploit-db.com/)
 - [GTFO Bins](https://gtfobins.github.io/)
 - [LOLBAS Binaries](https://lolbas-project.github.io/)
 - [POC or GTFO](https://www.alchemistowl.org/pocorgtfo/)
@@ -240,23 +227,28 @@
 - [Privilege Escalation Script Suite](https://github.com/peass-ng/PEASS-ng)
 - [Recycled Shellcode Injector](https://github.com/florylsk/RecycledInjector)
 - [Trickest CVE PoC database](https://github.com/trickest/cve)
+- [CIA Vault7 Hacking Tools](https://github.com/secoba/CIA-Hacking-Tools)
 
-# Cybersecurity / Redteam / Fingerprinting
+# Cybersecurity / Redteam / Exploitation / EDR Evasion
 
-- [P0f Fingerprinter](https://lcamtuf.coredump.cx/p0f3/)
+- [HookDump](https://github.com/zeroperil/HookDump)
 
-# Cybersecurity / Redteam / Linux Exploitation
+# Cybersecurity / Redteam / Exploitation / GraphQL
+
+- [GraphQLer](https://github.com/omar2535/GraphQLer)
+
+# Cybersecurity / Redteam / Exploitation / Linux
 
 - [GTFO Binaries](https://gtfobins.github.io/)
 - [Linux Privilege Escalation Scripts](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS)
 
-# Cybersecurity / Redteam / LLM Exploitation
+# Cybersecurity / Redteam / Exploitation / LLM
 
 - [ChatGPT Prompts 1](https://github.com/TakSec/chatgpt-prompts-bug-bounty)
 - [ChatGPT Prompts 2](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt)
 - [LLM backdoor](https://github.com/sshh12/llm_backdoor)
 
-# Cybersecurity / Redteam / Web Exploitation
+# Cybersecurity / Redteam / Exploitation / Web
 
 - [BurpSuite For Pentester](https://github.com/Ignitetechnologies/BurpSuite-For-Pentester)
 - [PNG Payload Injector](https://github.com/acuciureanu/png-payload-injector)
@@ -264,7 +256,7 @@
 - [SVGScan](https://github.com/x0xr00t/sl0ppy-SVGScan)
 - [XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 
-# Cybersecurity / Redteam / Windows Exploitation
+# Cybersecurity / Redteam / Exploitation / Windows
 
 - [CobaltStrike BOFMask](https://github.com/xforcered/BOFMask)
 - [LinWinPwn ADS Scanner](https://github.com/lefayjey/linWinPwn)
@@ -274,10 +266,19 @@
 - [Pandorasbox encrypted in-memory VFS](https://github.com/capnspacehook/pandorasbox)
 - [Windows Syscall Address Table](https://github.com/j00ru/windows-syscalls)
 
-# Cybersecurity / Redteam / Windows Persistence
+# Cybersecurity / Redteam / Exploitation / Windows Persistence
 
 - [SharpUnhooker](https://github.com/GetRektBoy724/SharpUnhooker)
 - [Remote Shellcode Injection](https://github.com/soufianetahiri/RemoteShellCodeInjection)
+
+# Cybersecurity / Redteam / Fingerprinting
+
+- [P0f Fingerprinter](https://lcamtuf.coredump.cx/p0f3/)
+
+# Cybersecurity / Redteam / Forums
+
+- [0x00sec](https://0x00sec.org/categories)
+- [free hack](https://free-hack.com/index.php)
 
 # Cybersecurity / Redteam / Malware Development
 
