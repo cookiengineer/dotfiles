@@ -35,6 +35,7 @@
 
 # AIML / Vision
 
+- [AutoGAN](https://github.com/ColumbiaDVMM/AutoGAN)
 - [Meshroom 3D Reconstruction Tool](https://github.com/alicevision/meshroom)
 - [SOD Embedded Library](https://github.com/symisc/sod)
 
