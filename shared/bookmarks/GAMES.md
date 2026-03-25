@@ -17,6 +17,10 @@
 
 - [SM63Redux](https://github.com/Redux-Team/SM63Redux)
 
+# Games / Windows / Puzzle
+
+- [Chromatron Oxide](https://github.com/stared/chromatron-oxide)
+
 # Games / Windows / RTS
 
 - [Age of Empires LAN Server](https://github.com/luskaner/ageLANServer)

@@ -100,6 +100,12 @@
 
 # Software / Design
 
+# Software / Design / CAD
+
+- [Dune3D](https://github.com/dune3d/dune3d)
+- [FreeCAD](https://github.com/freecad/freecad)
+- [OpenSCAD](https://github.com/openscad/openscad)
+
 # Software / Design / Graphics
 
 - [Graphite Editor](https://github.com/GraphiteEditor/Graphite)

@@ -144,6 +144,11 @@
 
 - [Unit42 Advisories](https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel)
 
+# Cybersecurity / Blueteam / WAF
+
+- [Anubis](https://github.com/TecharoHQ/anubis)
+- [Anubis Intro](https://xeiaso.net/blog/2025/anubis/)
+
 # Cybersecurity / Blueteam / Windows Administration
 
 - [FlyOOBE](https://github.com/builtbybel/Flyoobe)

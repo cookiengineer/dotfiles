@@ -75,6 +75,7 @@
 - [Hopp](https://github.com/gethopp/hopp)
 - [OctoFriend](https://github.com/synthetic-lab/octofriend)
 - [Local LLM with RAG](https://github.com/amscotti/local-LLM-with-RAG)
+- [OpenCode](https://github.com/anomalyco/opencode)
 
 # AIML / LLM / Benchmarks
 
@@ -119,6 +120,7 @@
 - [go-mcp](https://github.com/dstotijn/go-mcp)
 - [mcphost](https://github.com/mark3labs/mcphost)
 - [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)
+- [Responsible Vibe MCP](https://github.com/mrsimpson/responsible-vibe-mcp)
 
 # AIML / LLM / Tools
 
