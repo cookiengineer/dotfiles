@@ -18,3 +18,7 @@
 
 - [CSMWrap](https://github.com/FlyGoat/csmwrap)
 
+# Hardware / Canon EOS
+
+- [Magic Lantern](https://github.com/reticulatedpines/magiclantern_simplified)
+

@@ -43,9 +43,19 @@
 
 - [timeshift rsync/btrfs](https://github.com/linuxmint/timeshift)
 
+# Software / Bootloaders
+
+- [U-Boot Bootloader](https://github.com/u-boot/u-boot)
+- [Ventoy USB Bootloader](https://sourceforge.net/projects/ventoy/)
+
 # Software / Business
 
 - [Odoo Office Suite](https://github.com/odoo/odoo)
+
+# Software / Camera
+
+- [Frigate](https://github.com/blakeblackshear/frigate)
+- [Strix Stream Finder](https://github.com/eduard256/Strix)
 
 # Software / Charts
 

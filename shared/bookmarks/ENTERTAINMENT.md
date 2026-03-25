@@ -1,6 +1,10 @@
 
 # Entertainment
 
+# Entertainment / Architecture
+
+- [Dami Lee](https://www.youtube.com/@DamiLeeArch)
+
 # Entertainment / Building
 
 - [Perkins Brothers](https://www.youtube.com/@PerkinsBuilderBrothers/videos)
@@ -41,6 +45,7 @@
 - [IPPSec Videos](https://www.youtube.com/c/IPPSec/videos)
 - [John Hammond Videos](https://www.youtube.com/@_JohnHammond/videos)
 - [LiveOverflow Videos](https://www.youtube.com/c/LiveOverflow/videos)
+- [Low Level Videos](https://www.youtube.com/@LowLevelTV/videos)
 - [Hack The Planet Videos](https://www.youtube.com/@SymbolCrash/videos)
 - [Hack The Planet Podcast](https://www.symbolcrash.com/podcast/)
 
