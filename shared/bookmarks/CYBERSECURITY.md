@@ -67,6 +67,7 @@
 
 - [Certicepticon ADCS honeypot](https://github.com/srlabs/Certiception)
 - [Modpot Honeypot framework](https://github.com/referefref/modpot)
+- [Portspoof](https://github.com/drk1wi/Portspoof)
 
 # Cybersecurity / Blueteam / Malware Analysis
 
