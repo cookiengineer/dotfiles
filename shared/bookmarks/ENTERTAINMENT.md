@@ -84,6 +84,7 @@
 # Entertainment / Politics
 
 - [Fabio De Masi](https://www.youtube.com/@fabiodemasi5187/videos)
+- [Jolly Good Ginger](https://www.youtube.com/@Jolly_good_ginger/videos)
 - [Real Life Lore](https://www.youtube.com/c/RealLifeLore/videos)
 - [Renzo](https://www.youtube.com/c/Renzo69/videos)
 - [Tim Jacken](https://www.youtube.com/c/TimJacken/videos)

@@ -313,6 +313,8 @@
 # Cybersecurity / Redteam / Network / Wi-Fi
 
 - [ESP8266 Deauther](https://github.com/SpacehuhnTech/esp8266_deauther)
+- [Wifi Phisher](https://github.com/wifiphisher/wifiphisher)
+- [RoguehostAPD](https://github.com/wifiphisher/roguehostapd)
 
 # Cybersecurity / Redteam / Network Scanners
 
