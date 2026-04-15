@@ -301,9 +301,10 @@
 - [WebSocket Request Smuggler](https://github.com/hahwul/ws-smuggler)
 - [HTTP2/1 Request Smuggler](https://github.com/neex/http2smugl)
 - [Pingtunnel ICMP Smuggler](https://github.com/esrrhs/pingtunnel)
-- [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
 - [Ratnet Mesh Router C2](https://github.com/awgh/ratnet)
 - [Responder Poisoner](https://github.com/lgandx/Responder)
+- [Spycast Multicast DNS Listener](https://github.com/evilsocket/spycast)
+- [Subnet Lens](https://github.com/ostefani/subnetlens)
 
 # Cybersecurity / Redteam / Network / Baseband
 

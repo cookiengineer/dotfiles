@@ -26,3 +26,7 @@
 
 - [Magic Lantern](https://github.com/reticulatedpines/magiclantern_simplified)
 
+# Hardware / Realtek Wi-Fi Cards
+
+- [rtw88 linux driver](https://github.com/lwfinger/rtw88)
+

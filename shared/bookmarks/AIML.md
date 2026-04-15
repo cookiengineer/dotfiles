@@ -64,10 +64,12 @@
 
 # AIML / LLM
 
+- [Agentic Patterns](https://www.agentic-patterns.com/patterns?category=Tool%20Use%20%26%20Environment)
 - [Continue Dev](https://github.com/continuedev/continue)
 - [LangChainGo](https://github.com/tmc/langchaingo)
 - [Ollama](https://github.com/ollama/ollama)
 - [LLM Gateway](https://github.com/theopenco/llmgateway)
+- [gollama.cpp](https://github.com/dianlight/gollama.cpp)
 
 # AIML / LLM / Agents
 
@@ -76,6 +78,10 @@
 - [OctoFriend](https://github.com/synthetic-lab/octofriend)
 - [Local LLM with RAG](https://github.com/amscotti/local-LLM-with-RAG)
 - [OpenCode](https://github.com/anomalyco/opencode)
+
+# AIML / LLM / Agentic Environments
+
+- [Druids](https://github.com/fulcrumresearch/druids)
 
 # AIML / LLM / Benchmarks
 
@@ -90,6 +96,7 @@
 - [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
 - [Qwen3-Coder](https://ollama.com/library/qwen3-coder)
+- [Qwen3.5-Coder](https://ollama.com/mdq100/qwen3.5-coder:122b)
 
 # AIML / LLM / Models / Apertus
 
