@@ -71,6 +71,15 @@
 - [LLM Gateway](https://github.com/theopenco/llmgateway)
 - [gollama.cpp](https://github.com/dianlight/gollama.cpp)
 
+# AIML / LLM / Inference Engines
+
+- [gollama.cpp](https://github.com/dianlight/gollama.cpp)
+- [IK llama.cpp fork](https://github.com/ikawrakow/ik_llama.cpp)
+- [llama.cpp](https://github.com/ggml-org/llama.cpp)
+- [ollama](https://github.com/ollama/ollama)
+- [vllm](https://github.com/vllm-project/vllm)
+- [vllama](https://github.com/erkkimon/vllama)
+
 # AIML / LLM / Agents
 
 - [Crush](https://github.com/charmbracelet/crush)
@@ -81,6 +90,7 @@
 
 # AIML / LLM / Agentic Environments
 
+- [macOS Agent](https://github.com/macOS26/Agent)
 - [Druids](https://github.com/fulcrumresearch/druids)
 
 # AIML / LLM / Benchmarks
@@ -94,6 +104,7 @@
 # AIML / LLM / Models
 
 - [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
+- [nanoGPT](https://github.com/karpathy/nanoGPT)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
 - [Qwen3-Coder](https://ollama.com/library/qwen3-coder)
 - [Qwen3.5-Coder](https://ollama.com/mdq100/qwen3.5-coder:122b)
@@ -103,6 +114,10 @@
 - [Apertus Model](https://huggingface.co/swiss-ai/Apertus-70B-2509)
 - [Pretrain Code](https://github.com/swiss-ai/pretrain-code)
 - [Pretrain Data](https://github.com/swiss-ai/pretrain-data)
+
+# AIML / LLM / Models / Cyber Security
+
+- [subwiz](https://github.com/hadriansecurity/subwiz)
 
 # AIML / LLM / MCP
 

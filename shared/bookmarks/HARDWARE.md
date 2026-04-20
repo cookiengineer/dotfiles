@@ -26,6 +26,16 @@
 
 - [Magic Lantern](https://github.com/reticulatedpines/magiclantern_simplified)
 
+# Hardware / DJI Drones
+
+- [DJI Firmware Tools](https://github.com/o-gs/dji-firmware-tools)
+- [DJI Hardware Schematics](https://github.com/o-gs/dji-hardware-schematics)
+- [DJI Packet Dumps](https://github.com/o-gs/dji-packet-dumps)
+- [DJI FC Patcher](https://github.com/o-gs/DJI_FC_Patcher)
+- [DJI Modder](https://github.com/Bin4ry/deejayeye-modder)
+- [DJI FTP AES Unscrambler](https://github.com/MAVProxyUser/DJI_ftpd_aes_unscramble)
+- [PyDUML](https://github.com/hdnes/pyduml)
+
 # Hardware / Realtek Wi-Fi Cards
 
 - [rtw88 linux driver](https://github.com/lwfinger/rtw88)

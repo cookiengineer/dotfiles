@@ -400,6 +400,15 @@
 - [SikuliX Desktop Automation](https://github.com/RaiMan/SikuliX1)
 - [Undetected Chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver)
 
+# Software / Web Scraping / Media
+
+- [gallery-dl](https://codeberg.org/mikf/gallery-dl)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
+# Software / Windows
+
+- [MS 365 Electron Wrapper](https://github.com/agam778/MS-365-Electron)
+
 # Software / Wine
 
 - [Bottles UI](https://github.com/bottlesdevs/Bottles)
