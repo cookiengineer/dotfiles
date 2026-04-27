@@ -75,6 +75,7 @@
 # Software / Cryptography
 
 - [cocert Key Splitter](https://github.com/Dentrax/cocert)
+- [StegoForge](https://github.com/Nour833/StegoForge)
 
 # Software / Customer Management
 
@@ -246,6 +247,10 @@
 - [Mastodon](https://github.com/mastodon/mastodon)
 - [Mobilizon](https://github.com/framasoft/mobilizon)
 
+# Software / Social / Reddit
+
+- [go-reddit](https://github.com/vartanbeno/go-reddit)
+
 # Software / Social / Telegram
 
 - [Telegram API](https://github.com/xelaj/mtproto)
@@ -407,7 +412,10 @@
 
 # Software / Windows
 
+- [KRBTray](https://github.com/edward-murrell/krbtray)
 - [MS 365 Electron Wrapper](https://github.com/agam778/MS-365-Electron)
+- [Sambervise](https://github.com/edward-murrell/sambervise)
+
 
 # Software / Wine
 

@@ -109,6 +109,7 @@
 
 # Cybersecurity / Blueteam / Software Inventory
 
+- [auditd](https://github.com/Neo23x0/auditd)
 - [win-post-install](https://github.com/kaic/win-post-install)
 
 # Cybersecurity / Blueteam / Package Inventory
