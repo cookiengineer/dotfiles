@@ -93,6 +93,7 @@
 - [macOS Agent](https://github.com/macOS26/Agent)
 - [Druids](https://github.com/fulcrumresearch/druids)
 - [NeoBild CVE Analysis](https://github.com/weissmann93/NeoBild)
+- [Warp](https://github.com/warpdotdev/warp)
 
 # AIML / LLM / Benchmarks
 

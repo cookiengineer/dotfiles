@@ -50,7 +50,12 @@
 
 # Software / Business
 
+- [Euro Office](https://github.com/Euro-Office/DesktopEditors)
+- [L123](https://github.com/duane1024/l123)
 - [Odoo Office Suite](https://github.com/odoo/odoo)
+- [OnlyOffice](https://github.com/ONLYOFFICE/DesktopEditors)
+- [WordPerfect Unix](https://github.com/taviso/wpunix)
+
 
 # Software / Camera
 
