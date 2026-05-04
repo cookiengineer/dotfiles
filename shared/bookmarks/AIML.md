@@ -105,11 +105,18 @@
 
 # AIML / LLM / Models
 
+- [GLM 4.7 Flash](https://huggingface.co/DavidAU/GLM-4.7-Flash-Uncensored-Heretic-NEO-CODE-Imatrix-MAX-GGUF)
 - [nano vLLM](https://github.com/GeeeekExplorer/nano-vllm)
 - [nanoGPT](https://github.com/karpathy/nanoGPT)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
 - [Qwen3-Coder](https://ollama.com/library/qwen3-coder)
 - [Qwen3.5-Coder](https://ollama.com/mdq100/qwen3.5-coder:122b)
+
+Stable Diffusion:
+
+- [FLUX 1](https://huggingface.co/black-forest-labs/FLUX.1-schnell)
+- [SDXL Turbo](https://huggingface.co/stabilityai/sdxl-turbo)
+- [Z Image Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo)
 
 # AIML / LLM / Models / Apertus
 
