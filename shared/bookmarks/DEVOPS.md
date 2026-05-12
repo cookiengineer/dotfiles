@@ -43,6 +43,7 @@
 
 # DevOps / Networking
 
+- [boring ssh tunnel manager](https://github.com/alebeck/boring)
 - [xc reverse shell](https://github.com/xct/xc)
 
 # DevOps / Orchestration

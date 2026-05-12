@@ -36,7 +36,9 @@
 # AIML / Vision
 
 - [AutoGAN](https://github.com/ColumbiaDVMM/AutoGAN)
+- [Colmap](https://github.com/colmap/colmap)
 - [Meshroom 3D Reconstruction Tool](https://github.com/alicevision/meshroom)
+- [Map Anything](https://github.com/facebookresearch/map-anything)
 - [SOD Embedded Library](https://github.com/symisc/sod)
 
 # AIML / Vision / Zoom
@@ -110,6 +112,7 @@
 - [nanoGPT](https://github.com/karpathy/nanoGPT)
 - [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
 - [Qwen3-Coder](https://ollama.com/library/qwen3-coder)
+- [Qwen3-Coder A3B](https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF)
 - [Qwen3.5-Coder](https://ollama.com/mdq100/qwen3.5-coder:122b)
 
 Stable Diffusion:

@@ -8,6 +8,8 @@
 
 # Selfhosted / Development
 
+- [Forgejo](https://codeberg.org/forgejo/forgejo)
+- [Go Git Service](https://github.com/gogs/gogs)
 - [Git PR Pastebin](https://github.com/picosh/git-pr)
 - [Sourcebot](https://github.com/sourcebot-dev/sourcebot)
 
