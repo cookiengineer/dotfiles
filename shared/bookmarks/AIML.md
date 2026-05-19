@@ -93,6 +93,7 @@
 # AIML / LLM / Agentic Environments
 
 - [macOS Agent](https://github.com/macOS26/Agent)
+- [Cactus](https://github.com/cactus-compute/cactus)
 - [Druids](https://github.com/fulcrumresearch/druids)
 - [NeoBild CVE Analysis](https://github.com/weissmann93/NeoBild)
 - [Warp](https://github.com/warpdotdev/warp)
