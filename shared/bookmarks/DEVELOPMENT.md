@@ -31,8 +31,11 @@
 
 # Development / eBPF
 
+- [bpfvet](https://github.com/boratanrikulu/bpfvet)
+- [gobee compiler](https://github.com/boratanrikulu/gobee)
 - [golang ebpf](https://github.com/cilium/ebpf)
 - [cilium bpf reference docs](https://docs.cilium.io/en/stable/bpf/)
+- [durdur xdp filter](https://github.com/boratanrikulu/durdur)
 - [ecapture SSL/TLS sniffer](https://github.com/gojue/ecapture)
 - [pugdns](https://github.com/c3l3si4n/pugdns)
 - [qtap network sniffer](https://github.com/qpoint-io/qtap)
@@ -60,7 +63,8 @@
 
 # Development / Golang / Compatibility
 
-- [go-leacy-win7](https://github.com/thongtech/go-legacy-win7)
+- [go-legacy-win7](https://github.com/thongtech/go-legacy-win7)
+- [llgo](https://github.com/xgo-dev/llgo)
 
 # Development / Golang / Misc
 

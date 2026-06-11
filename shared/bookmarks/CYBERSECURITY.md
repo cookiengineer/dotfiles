@@ -295,6 +295,7 @@
 
 # Cybersecurity / Redteam / Network
 
+- [bettercap](https://github.com/bettercap/bettercap)
 - [Unofficial Backdoorfactory Fork](https://github.com/Binject/backdoorfactory)
 - [Azure Active Directory Playbook](https://github.com/Cloud-Architekt/AzureAD-Attack-Defense)
 - [DNS Rebinding framework](https://github.com/FSecureLABS/dref)
@@ -324,6 +325,7 @@
 - [Bjorn Scanner framework](https://github.com/infinition/Bjorn)
 - [IVRE Recon framework](https://github.com/ivre/ivre)
 - [Kraken framework](https://github.com/myOmikron/kraken-project)
+- [NMLinux](https://github.com/thongor77/nmlinux)
 - [Vulnhuntr LLM scanner](https://github.com/protectai/vulnhuntr)
 
 # Cybersecurity / Redteam / Network Scanner Plugins

@@ -89,6 +89,7 @@
 # Software / Databases
 
 - [AtomixDB](https://github.com/Sahilb315/AtomixDB)
+- [HeidiSQL](https://github.com/HeidiSQL/HeidiSQL)
 - [PostGraphile](https://github.com/graphile/postgraphile)
 - [GoQite](https://github.com/maragudk/goqite)
 

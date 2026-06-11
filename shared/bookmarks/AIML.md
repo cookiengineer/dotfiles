@@ -7,6 +7,10 @@
 
 - [CauseNet](https://github.com/causenet-org/CIKM-20)
 
+# AIML / Code Scanning
+
+- [Repowise](https://github.com/repowise-dev/repowise)
+
 # AIML / Document Scanning
 
 - [Morphik PDF Scanner](https://github.com/morphik-org/morphik-core)

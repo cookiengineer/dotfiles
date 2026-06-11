@@ -1,4 +1,9 @@
 
+# Go SQL Map
+
+- SQL injection fuzzer written in Go
+- Standalone Tool so it can be deployed more easily
+
 # System Integrity Check for POSIX
 
 - Use package database and package index to compare against filesystem

@@ -36,6 +36,10 @@
 - [DJI FTP AES Unscrambler](https://github.com/MAVProxyUser/DJI_ftpd_aes_unscramble)
 - [PyDUML](https://github.com/hdnes/pyduml)
 
+# Hardware / DVD Drives
+
+- [LG OmniDrive](https://github.com/RibShark/OmniDrive)
+
 # Hardware / Realtek Wi-Fi Cards
 
 - [rtw88 linux driver](https://github.com/lwfinger/rtw88)
