@@ -1,6 +1,10 @@
 
 # Courses
 
+# Courses / AIML
+
+- [Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/)
+
 # Courses / Computer Science
 
 - [MIT OpenCourseWare](https://ocw.mit.edu/index.htm)
@@ -25,6 +29,10 @@
 - [Videos](http://ai.berkeley.edu/lecture_videos.html)
 - [Playlist](https://www.youtube.com/watch?list=PLsOUugYMBBJENfZ3XAToMsg44W7LeUVhF)
 
+# Courses / Computer Science / Stanford CS336
+
+TODO
+
 # Courses / Cyber Security
 
 - [CLARK Security Courses](https://clark.center/browse?collection=nccp)
@@ -33,4 +41,8 @@
 
 - [Uncurled](https://un.curl.dev/)
 - [Tony Dinh](https://news.tonydinh.com/p/my-solopreneur-story-zero-to-45kmo)
+
+# Courses / OS Development
+
+- [Little OS Book](https://ordoflammae.github.io/littleosbook/)
 

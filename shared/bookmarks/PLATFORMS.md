@@ -42,6 +42,10 @@
 
 - [media.ccc.de](https://media.ccc.de/)
 
+# Platforms / Music
+
+- [Jamendo](https://www.jamendo.com/start)
+
 # Platforms / News / International
 
 - [Guardian](https://www.theguardian.com/world)

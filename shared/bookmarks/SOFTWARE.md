@@ -56,7 +56,6 @@
 - [OnlyOffice](https://github.com/ONLYOFFICE/DesktopEditors)
 - [WordPerfect Unix](https://github.com/taviso/wpunix)
 
-
 # Software / Camera
 
 - [Frigate](https://github.com/blakeblackshear/frigate)
@@ -158,6 +157,10 @@
 # Software / Desktop / Login
 
 - [Howdy Face Login](https://github.com/boltgolt/howdy)
+
+# Software / DNS
+
+- [DNSFS](https://github.com/benjojo/dnsfs)
 
 # Software / E-Mail
 
@@ -401,6 +404,10 @@
 
 - [Gophernotes](https://github.com/gopherdata/gophernotes)
 
+# Software / Translation
+
+- [Asryx](https://github.com/rccyx/asryx)
+
 # Software / Web Scraping
 
 - [Apple's Autofill TLD Whitelist](https://cdn.smoot.apple.com/static/autofill_tld_whitelist_url)
@@ -420,7 +427,6 @@
 - [KRBTray](https://github.com/edward-murrell/krbtray)
 - [MS 365 Electron Wrapper](https://github.com/agam778/MS-365-Electron)
 - [Sambervise](https://github.com/edward-murrell/sambervise)
-
 
 # Software / Wine
 

@@ -13,6 +13,15 @@
 
 - [Commander Genius Engine](https://gitlab.com/Dringgstein/Commander-Genius)
 
+# Games / Music
+
+- [1014](https://1014.org/)
+- [Gameboy Music Archive](https://www.vgmusic.com/music/console/nintendo/gameboy/)
+
+# Games / Web
+
+- [Pirates](https://github.com/piwodlaiwo/pirates)
+
 # Games / Windows / Platformer
 
 - [SM63Redux](https://github.com/Redux-Team/SM63Redux)

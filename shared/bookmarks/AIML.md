@@ -26,6 +26,7 @@
 # AIML / Speech
 
 - [Linda Johnson Speech Dataset](https://keithito.com/LJ-Speech-Dataset/)
+- [MegaTTS3](https://github.com/bytedance/MegaTTS3)
 - [Tacotron](https://github.com/keithito/tacotron)
 
 # AIML / Trade
@@ -48,6 +49,10 @@
 # AIML / Vision / Zoom
 
 - [ML SHARP](https://github.com/apple/ml-sharp)
+
+# AIML / Web
+
+- [WebClaw](https://github.com/0xMassi/webclaw)
 
 # AIML / AlphaGo
 
@@ -105,6 +110,7 @@
 # AIML / LLM / Benchmarks
 
 - [cve-bench](https://github.com/uiuc-kang-lab/cve-bench)
+- [Local LLM Coding Eval](https://github.com/gauravvij/local-llm-coding-eval)
 
 # AIML / LLM / Data Compression
 
@@ -161,12 +167,21 @@ Stable Diffusion:
 - [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)
 - [Responsible Vibe MCP](https://github.com/mrsimpson/responsible-vibe-mcp)
 
+# AIML / LLM / Summarization
+
+- [Caveman](https://github.com/JuliusBrussee/caveman)
+- [Caveman Code](https://github.com/JuliusBrussee/caveman-code)
+
 # AIML / LLM / Tools
 
 - [choky](https://github.com/mirth/chonky)
 - [Aider Coding Assistant](https://github.com/Aider-AI/aider)
 - [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)
 - [Void Editor](https://github.com/voideditor/void)
+
+# AIML / LLM / Prompt Extraction
+
+- [Claude System Prompt](https://github.com/zep-us/claude-system-prompt)
 
 # AIML / LLM / Prompt Injection
 

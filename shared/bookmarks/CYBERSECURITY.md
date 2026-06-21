@@ -121,6 +121,7 @@
 - [Bubblewrap](https://github.com/containers/bubblewrap)
 - [Firejail](https://github.com/netblue30/firejail)
 - [Firejail Profiles](https://github.com/netblue30/firejail/tree/master/etc)
+- [Landrun Sandboxes](https://github.com/Zouuup/landrun)
 - [microsandbox](https://github.com/microsandbox/microsandbox)
 - [mustardwatch](https://github.com/shachaf/mustardwatch)
 - [pisshoff SSH Honeypot](https://github.com/w4/pisshoff)
@@ -292,6 +293,7 @@
 
 - [Antnium RAT](https://github.com/dobin/antnium)
 - [Bishopfox Sliver](https://github.com/BishopFox/sliver)
+- [RedEDR Telemetry](https://github.com/dobin/RedEdr)
 
 # Cybersecurity / Redteam / Network
 

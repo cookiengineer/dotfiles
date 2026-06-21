@@ -17,3 +17,7 @@
 - [Evading EDR](https://nostarch.com/evading-edr)
 - [Rootkits and Bootkits](https://nostarch.com/rootkits)
 
+# Books / Classics
+
+- [Sun Tzu - The Art of War](https://classics.mit.edu/Tzu/artwar.html)
+
