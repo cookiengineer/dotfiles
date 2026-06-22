@@ -1,6 +1,14 @@
 
 # DevOps
 
+# DevOps / Ad Blocking
+
+- [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)
+
+# DevOps / Boot Management
+
+- [Bootimus PXE Boot](https://github.com/garybowers/bootimus)
+
 # DevOps / Dashboards
 
 - [Docker WebTop](https://github.com/linuxserver/docker-webtop)

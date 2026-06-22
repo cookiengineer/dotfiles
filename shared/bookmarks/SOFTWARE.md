@@ -390,6 +390,12 @@
 - [devtool plus plugin](https://github.com/fuzionix/devtool-plus)
 - [zedless](https://github.com/zedless-editor/zedless)
 
+# Software / Development / Terminals
+
+- [boo multiplexer](https://github.com/coder/boo)
+- [ghostty](https://github.com/coder/ghostty)
+- [kitty](https://github.com/kovidgoyal/kitty)
+
 # Software / Hosting
 
 - [Apache Answer](https://github.com/apache/incubator-answer)

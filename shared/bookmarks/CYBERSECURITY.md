@@ -241,6 +241,7 @@
 # Cybersecurity / Redteam / Exploitation / EDR Evasion
 
 - [HookDump](https://github.com/zeroperil/HookDump)
+- [Activation Context Hijacking](https://github.com/r3xmax/PhantomCtx)
 
 # Cybersecurity / Redteam / Exploitation / GraphQL
 
