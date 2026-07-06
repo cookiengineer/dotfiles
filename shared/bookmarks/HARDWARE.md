@@ -13,6 +13,7 @@
 
 - [HackberryPi CM5](https://github.com/ZitaoTech/HackberryPiCM5)
 - [HackberryPi Zero](https://github.com/ZitaoTech/Hackberry-Pi_Zero)
+- [SXMO](https://sxmo.org/source/)
 
 # Hardware / HAK5
 

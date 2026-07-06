@@ -63,6 +63,11 @@
 - [Deda document dotcode tools](https://github.com/dfd-tud/deda)
 - [Sigma CLI](https://github.com/SigmaHQ/sigma-cli)
 
+# Cybersecurity / Blueteam / Forensics / Android
+
+- [AndroidQF](https://github.com/mvt-project/androidqf)
+- [Mobile Verification Toolkit](https://github.com/mvt-project/mvt)
+
 # Cybersecurity / Blueteam / Honeypots
 
 - [Certicepticon ADCS honeypot](https://github.com/srlabs/Certiception)
@@ -204,6 +209,7 @@
 
 - [0xdf Blog](https://0xdf.gitlab.io/)
 - [CTF Time](https://ctftime.org/)
+- [CyberKiller](https://github.com/aaron-kidwell/cyberkiller)
 - [Exploit Education](https://exploit.education/)
 - [Over The Wire Wargames](https://overthewire.org)
 - [PicoCTF](https://picoctf.org/)

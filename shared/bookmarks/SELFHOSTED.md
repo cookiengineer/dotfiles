@@ -33,6 +33,7 @@
 # Selfhosted / Filesharing
 
 - [Filestash](https://github.com/mickael-kerjean/filestash)
+- [PeerTube](https://github.com/Chocobozzz/PeerTube)
 
 # Selfhosted / Notes
 
@@ -50,6 +51,10 @@
 - [Model Context Protocol](https://github.com/modelcontextprotocol)
 - [MCP in Go](https://github.com/owulveryck/gomcptest/)
 - [MCP Cli in Python](https://github.com/chrishayuk/mcp-cli)
+
+# Selfhosted / Search
+
+- [SearXNG](https://github.com/searxng/searxng)
 
 # Selfhosted / TTS
 
