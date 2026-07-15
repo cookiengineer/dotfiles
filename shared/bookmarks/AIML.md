@@ -107,6 +107,10 @@
 - [NeoBild CVE Analysis](https://github.com/weissmann93/NeoBild)
 - [Warp](https://github.com/warpdotdev/warp)
 
+# AIML / LLM / Agentic Visualizations
+
+- [Mindwalk](https://github.com/cosmtrek/mindwalk)
+
 # AIML / LLM / Benchmarks
 
 - [cve-bench](https://github.com/uiuc-kang-lab/cve-bench)

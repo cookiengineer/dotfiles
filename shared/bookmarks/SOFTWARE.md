@@ -68,6 +68,7 @@
 
 # Software / Chat
 
+- [Chatto](https://github.com/chattocorp/chatto)
 - [Colanode](https://github.com/colanode/colanode)
 - [Zulip](https://github.com/zulip/zulip)
 
