@@ -37,6 +37,7 @@
 - [Authentik IAM](https://github.com/goauthentik/authentik)
 - [Casdoor IAM](https://github.com/casdoor/casdoor)
 - [Ory IAM](https://github.com/ory)
+- [TinyAuth](https://github.com/tinyauthapp/tinyauth)
 - [Zitadel IAM](https://github.com/zitadel/zitadel)
 
 # Software / Backup

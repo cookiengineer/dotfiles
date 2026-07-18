@@ -61,6 +61,10 @@
 - [The Bad Sides of Go](https://itnext.io/we-need-to-talk-about-the-bad-sides-of-go-568a1e5adbc6)
 - [CGO Tutorial](https://karthikkaranth.me/blog/calling-c-code-from-go/)
 
+# Development / Golang / API
+
+- [ogen OpenAPI generator](https://github.com/ogen-go/ogen)
+
 # Development / Golang / Compatibility
 
 - [go-legacy-win7](https://github.com/thongtech/go-legacy-win7)
@@ -168,6 +172,10 @@
 
 - [canvas Cairo bindings](https://github.com/tdewolff/canvas)
 - [DarwinKit Mac bindings](https://github.com/progrium/darwinkit)
+
+# Development / Golang / Media
+
+- [ff ffmpeg bindings](https://github.com/ernado/ff)
 
 # Development / Golang / Networking
 
