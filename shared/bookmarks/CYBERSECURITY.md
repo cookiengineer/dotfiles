@@ -335,6 +335,7 @@
 - [IVRE Recon framework](https://github.com/ivre/ivre)
 - [Kraken framework](https://github.com/myOmikron/kraken-project)
 - [NMLinux](https://github.com/thongor77/nmlinux)
+- [Unicornscan](https://github.com/robertelee78/unicornscan)
 - [Vulnhuntr LLM scanner](https://github.com/protectai/vulnhuntr)
 
 # Cybersecurity / Redteam / Network Scanner Plugins

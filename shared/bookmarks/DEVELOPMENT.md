@@ -94,6 +94,7 @@
 - [ergo IRC server](https://github.com/ergochat/ergo)
 - [llama-coder](https://github.com/ex3ndr/llama-coder)
 - [xmpp](https://github.com/mellium/xmpp)
+- [gotd telegram client](https://github.com/gotd/td)
 
 # Development / Golang / CI/CD
 
@@ -153,6 +154,10 @@
 - [mangle EDR evasion](https://github.com/optiv/Mangle)
 - [Fake Sandbox Artefacts](https://github.com/NavyTitanium/Fake-Sandbox-Artifacts)
 
+# Development / Golang / Encoding
+
+- [jx json encoder](https://github.com/go-faster/jx)
+
 # Development / Golang / Events
 
 - [fsnotify](https://github.com/fsnotify/fsnotify)
@@ -161,6 +166,7 @@
 # Development / Golang / Filesharing
 
 - [p2p-share](https://github.com/yeboahd24/p2p-share)
+- [IPFS kubo](https://github.com/ipfs/kubo)
 
 # Development / Golang / Forums
 
@@ -212,6 +218,10 @@
 # Development / Golang / Shells
 
 - [sh](https://github.com/mvdan/sh)
+
+# Development / Golang / Web
+
+- [indielib](https://github.com/hacdias/indielib)
 
 # Development / Golang / Web Scrapers
 

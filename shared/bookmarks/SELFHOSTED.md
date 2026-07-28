@@ -32,6 +32,7 @@
 
 # Selfhosted / Filesharing
 
+- [Filebrowser](https://github.com/filebrowser/filebrowser)
 - [Filestash](https://github.com/mickael-kerjean/filestash)
 - [PeerTube](https://github.com/Chocobozzz/PeerTube)
 
