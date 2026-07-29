@@ -36,6 +36,11 @@
 - [Filestash](https://github.com/mickael-kerjean/filestash)
 - [PeerTube](https://github.com/Chocobozzz/PeerTube)
 
+# Selfhosted / Monitoring
+
+- [Akashic](https://github.com/CaviraOSS/Akashic)
+- [Worldmonitor](https://github.com/koala73/worldmonitor)
+
 # Selfhosted / Notes
 
 - [Jotty](https://github.com/fccview/jotty)

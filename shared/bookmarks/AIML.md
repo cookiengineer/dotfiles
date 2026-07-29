@@ -97,7 +97,6 @@
 - [Hopp](https://github.com/gethopp/hopp)
 - [OctoFriend](https://github.com/synthetic-lab/octofriend)
 - [Local LLM with RAG](https://github.com/amscotti/local-LLM-with-RAG)
-- [OpenCode](https://github.com/anomalyco/opencode)
 
 # AIML / LLM / Agentic Environments
 
@@ -119,6 +118,11 @@
 # AIML / LLM / Data Compression
 
 - [Time Series Lean Notation](https://github.com/turboline-ai/tsln-golang)
+
+# AIML / LLM / IDEs
+
+- [OpenCode](https://github.com/anomalyco/opencode)
+- [DeepSeek Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 # AIML / LLM / Models
 

@@ -17,6 +17,8 @@
 # DevOps / Desktop Clients
 
 - [Podman Desktop](https://github.com/podman-desktop/podman-desktop)
+- [Kata Containers](https://github.com/kata-containers/kata-containers)
+- [Tarit Hypervisor](https://github.com/instavm/tarit)
 
 # DevOps / Configuration Management
 
