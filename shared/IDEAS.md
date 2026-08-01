@@ -166,19 +166,6 @@
 - [ ] `gosh` standard package to interact with shell in an easier way (e.g. `gosh.Mkdir() bool`)
 
 
-# SMART GUI
-
-- [ ] GUI for `smartctl` and smartmontools, to check external HDDs automatically
-      or in an easier manner.
-
-
-# SystemD GUI
-
-- Build a UI that shows services and sandboxing configurations of systemd units and services
-- Remote UI can be implemented using SSH tunnels to a remote server, where the queries are executed
-- Allow to enable sandboxing features (e.g. seccomp based sandboxes) and other things
-
-
 # Wallet GUI
 
 - [ ] Parse CSVs of bank account into a wallet that auto-tags things based on identifying
