@@ -3,6 +3,10 @@
 
 - [Machine Learning Book](https://themlbook.com/wiki/doku.php)
 
+# AIML / Arenas
+
+- [Doom Multiplayer](https://github.com/Rootly-AI-Labs/rootly-doom-agent-arena)
+
 # AIML / Bayesian
 
 - [CauseNet](https://github.com/causenet-org/CIKM-20)
@@ -145,6 +149,12 @@ Stable Diffusion:
 - [Apertus Model](https://huggingface.co/swiss-ai/Apertus-70B-2509)
 - [Pretrain Code](https://github.com/swiss-ai/pretrain-code)
 - [Pretrain Data](https://github.com/swiss-ai/pretrain-data)
+
+# AIML / LLM / Models / Inkling
+
+- [Inkling](https://huggingface.co/thinkingmachines/Inkling)
+- [Tinker](https://github.com/thinking-machines-lab/tinker)
+- [Tinker Cookbook](https://github.com/thinking-machines-lab/tinker-cookbook)
 
 # AIML / LLM / Models / Cyber Security
 

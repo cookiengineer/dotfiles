@@ -30,6 +30,7 @@
 # Hardware / DJI Drones
 
 - [DJI Firmware Tools](https://github.com/o-gs/dji-firmware-tools)
+- [DJI Supported Hardware](https://github.com/o-gs/dji-firmware-tools/wiki/DJI-Hardware)
 - [DJI Hardware Schematics](https://github.com/o-gs/dji-hardware-schematics)
 - [DJI Packet Dumps](https://github.com/o-gs/dji-packet-dumps)
 - [DJI FC Patcher](https://github.com/o-gs/DJI_FC_Patcher)

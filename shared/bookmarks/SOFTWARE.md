@@ -124,6 +124,7 @@
 
 - [Fontello Icon Font Generator](https://fontello.com/)
 - [Icomoon App](https://icomoon.io/app/)
+- [Iconimate Icons](https://github.com/smammar100/Iconimate)
 - [Numix Icons](https://github.com/numixproject/numix-core)
 - [Material Design Icons](https://github.com/google/material-design-icons)
 
@@ -397,6 +398,10 @@
 - [boo multiplexer](https://github.com/coder/boo)
 - [ghostty](https://github.com/coder/ghostty)
 - [kitty](https://github.com/kovidgoyal/kitty)
+
+# Software / Development / VIM
+
+- [vim-go](https://github.com/fatih/vim-go)
 
 # Software / Hosting
 

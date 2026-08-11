@@ -20,6 +20,13 @@
 - [embedded libc](https://gitlab.com/users/cznic/projects)
 - [garble obfuscator](https://github.com/burrowers/garble)
 
+# Development / C / Web Scraping
+
+- [libzim](https://github.com/openzim/libzim)
+- [warc2zim](https://github.com/openzim/warc2zim)
+- [zimfarm](https://github.com/openzim/zimfarm)
+- [zim-tools](https://github.com/openzim/zim-tools)
+
 # Development / CUDA / Compilers
 
 - [BarraCUDA](https://github.com/Zaneham/BarraCUDA)
@@ -202,7 +209,6 @@
 - [lo functional library](https://github.com/samber/lo)
 - [goment time parser](https://github.com/samber/goment)
 - [gotoml](https://github.com/pelletier/go-toml)
-- [gozim](https://github.com/akhenakh/gozim)
 - [quamina](https://github.com/timbray/quamina)
 - [toml](https://github.com/BurntSushi/toml)
 - [wasmber WebASM runtime](https://github.com/wasmerio/wasmer-go)
