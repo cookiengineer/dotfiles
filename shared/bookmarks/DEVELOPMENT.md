@@ -126,6 +126,7 @@
 
 # Development / Golang / Cryptography
 
+- [go-passkeys](https://github.com/go-passkeys/go-passkeys)
 - [uuid](https://github.com/gofrs/uuid)
 - [Shamir's Secret Sharing](https://github.com/openfort-xyz/shamir-secret-sharing-go)
 

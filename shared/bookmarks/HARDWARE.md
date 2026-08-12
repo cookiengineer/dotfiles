@@ -1,9 +1,9 @@
 
 # Hardware
 
-# Hardware / KVM
+# Hardware / ESP32
 
-- [Input Leap KVM Software](https://github.com/input-leap/input-leap)
+- [espradio](https://github.com/tinygo-org/espradio)
 
 # Hardware / Flipper Zero
 
@@ -41,6 +41,10 @@
 # Hardware / DVD Drives
 
 - [LG OmniDrive](https://github.com/RibShark/OmniDrive)
+
+# Hardware / KVM
+
+- [Input Leap KVM Software](https://github.com/input-leap/input-leap)
 
 # Hardware / Realtek Wi-Fi Cards
 
