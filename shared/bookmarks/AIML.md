@@ -197,6 +197,11 @@ Stable Diffusion:
 - [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)
 - [Void Editor](https://github.com/voideditor/void)
 
+# AIML / LLM / Training
+
+- [Little Learner](https://littlelearner-ll.github.io/)
+- [Little Learner Paper](https://arxiv.org/abs/2608.13545)
+
 # AIML / LLM / Prompt Extraction
 
 - [Claude System Prompt](https://github.com/zep-us/claude-system-prompt)
@@ -204,4 +209,8 @@ Stable Diffusion:
 # AIML / LLM / Prompt Injection
 
 - [prompt-injector](https://github.com/BlueprintLabIO/prompt-injector)
+
+# AIML / LLM / Water Marking
+
+- [declaude](https://declaude.org/)
 

@@ -6,6 +6,10 @@
 - [Greynoise](https://viz.greynoise.io/)
 - [OpenCTI](https://www.filigran.io/en/solutions/products/opencti/)
 
+# Services / Fun
+
+- [LinkedIn cringebot3000](https://www.cringebot3000.com/)
+
 # Services / Payment
 
 - [Adyen](https://adyen.com)

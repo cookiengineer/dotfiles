@@ -10,6 +10,10 @@
 
 - [Dobin Rotishaeuser](https://blog.deeb.ch/)
 
+# Blogs / Cyber Security / Hardware
+
+- [Dmitry Grinberg](https://dmitry.gr/)
+
 # Blogs / Cyber Security / SoftSec
 
 - [Alex Edwards](https://www.alexedwards.net/blog)

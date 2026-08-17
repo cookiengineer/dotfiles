@@ -4,6 +4,7 @@
 # Games / Consoles / GameBoy
 
 - [Gameboy](https://github.com/raphamorim/gameboy)
+- [Pokemon Emerald Port to RP2340](https://github.com/mattdeeds/pokeemerald-rp2350)
 
 # Games / Consoles / Switch
 

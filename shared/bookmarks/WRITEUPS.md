@@ -1,6 +1,10 @@
 
 # Write-Ups
 
+# Write-Ups / Cyber Security / Web
+
+- [E-Mail CSS CSRF](https://portswigger.net/research/css-the-bomb-inside-your-inbox)
+
 # Write-Ups / Cyber Security / Linux
 
 - [CVE-2026-43456](https://thecybersecguru.com/exploits/cve-2026-43456-linux-kernel-zero-day/)
@@ -20,6 +24,13 @@
 - [Hacking C++ Part 1](https://forum.0x00sec.org/t/hacking-c-part-1/531)
 - [Hacking C++ Part 2](https://forum.0x00sec.org/t/hacking-c-part-2/532)
 - [Snippet List](https://unprotect.it/snippets/)
+
+# Write-Ups / Cyber Security / Malware
+
+- [Shai Hulud 1.0](https://www.wiz.io/blog/shai-hulud-npm-supply-chain-attack)
+- [Shai Hulud 2.0](https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack)
+- [Shai Hulud 2.0 Aftermath](https://www.wiz.io/blog/shai-hulud-2-0-aftermath-ongoing-supply-chain-attack)
+- [Shai Hulud SAP](https://www.wiz.io/blog/mini-shai-hulud-supply-chain-sap-npm)
 
 # Write-Ups / Leaks
 

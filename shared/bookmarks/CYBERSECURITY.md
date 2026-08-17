@@ -148,9 +148,10 @@
 
 - [CycloneDX SBOM](https://cyclonedx.org/)
 
-# Cybersecurity / Blueteam / Threat Intel
+# Cybersecurity / Blueteam / Threat Intelligence
 
 - [Unit42 Advisories](https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel)
+- [OpenCTI](https://github.com/opencti-platform/opencti)
 
 # Cybersecurity / Blueteam / WAF
 
@@ -335,6 +336,7 @@
 - [IVRE Recon framework](https://github.com/ivre/ivre)
 - [Kraken framework](https://github.com/myOmikron/kraken-project)
 - [NMLinux](https://github.com/thongor77/nmlinux)
+- [Project Discovery](https://github.com/projectdiscovery)
 - [Unicornscan](https://github.com/robertelee78/unicornscan)
 - [Vulnhuntr LLM scanner](https://github.com/protectai/vulnhuntr)
 
