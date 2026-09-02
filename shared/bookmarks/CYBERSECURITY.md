@@ -78,6 +78,7 @@
 
 - [angr binary analyzer](https://github.com/angr/angr)
 - [capa](https://github.com/mandiant/capa)
+- [Cratera firejail sandbox](https://github.com/cratera-project/cratera)
 - [cyberbro CTI analyzer](https://github.com/stanfrbd/cyberbro)
 - [drakvuf](https://github.com/tklengyel/drakvuf)
 - [EMBA firmware analyzer](https://www.github.com/e-m-b-a/emba)
@@ -419,6 +420,7 @@
 
 - [BugChecker Debugger](https://github.com/vitoplantamura/BugChecker)
 - [SpringShell Scanner](https://github.com/jfrog/jfrog-spring-tools)
+- [Fortitool Fortinet Firmware decryption tool](https://github.com/mosajjal/fortitool)
 - [Frida IDE](https://frida.re)
 
 # Cybersecurity / Redteam / Social Engineering
