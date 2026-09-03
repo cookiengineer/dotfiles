@@ -13,6 +13,7 @@
 
 # Entertainment / Comedy
 
+- [Frank Fischer](https://www.tiktok.com/@frankfischercomedy)
 - [SkyCorp Home Video](https://www.youtube.com/@skycorphomevideo/videos)
 - [Last Week Tonight](https://www.youtube.com/user/LastWeekTonight/videos)
 - [Magazin Royale](https://www.youtube.com/c/ZDFMAGAZINROYALE/videos)
@@ -88,6 +89,7 @@
 - [Real Life Lore](https://www.youtube.com/c/RealLifeLore/videos)
 - [Renzo](https://www.youtube.com/c/Renzo69/videos)
 - [Tim Jacken](https://www.youtube.com/c/TimJacken/videos)
+- [Timothy Snyder](https://www.youtube.com/@proftimothysnyder/videos)
 
 # Entertainment / Random
 
