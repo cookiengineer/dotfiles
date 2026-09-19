@@ -73,6 +73,7 @@
 - [Certicepticon ADCS honeypot](https://github.com/srlabs/Certiception)
 - [Modpot Honeypot framework](https://github.com/referefref/modpot)
 - [Portspoof](https://github.com/drk1wi/Portspoof)
+- [SShamble](https://github.com/runZeroInc/sshamble)
 
 # Cybersecurity / Blueteam / Malware Analysis
 
@@ -189,6 +190,11 @@
 
 - [Cyber Security Study Roadmap](https://roadmap.sh/cyber-security)
 - [Red Teaming Techniques, Tactics and Procedures](https://github.com/rosesecurity/red-teaming-ttps)
+
+# Cybersecurity / Redteam / AI Bypass Techniques
+
+- [Awesome AI system prompts](https://github.com/dontriskit/awesome-ai-system-prompts)
+- [Garak vulnerability scanner](https://github.com/NVIDIA/garak)
 
 # Cybersecurity / Redteam / Blogs
 

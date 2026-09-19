@@ -25,6 +25,7 @@
 
 # Hardware / Canon EOS
 
+- [Magic Lantern Website](https://www.magiclantern.fm/)
 - [Magic Lantern](https://github.com/reticulatedpines/magiclantern_simplified)
 
 # Hardware / DJI Drones

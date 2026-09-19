@@ -20,6 +20,10 @@
 - [embedded libc](https://gitlab.com/users/cznic/projects)
 - [garble obfuscator](https://github.com/burrowers/garble)
 
+# Development / C / Gamedev
+
+- [Bonsai Voxel Engine](https://github.com/scallyw4g/bonsai)
+
 # Development / C / Web Scraping
 
 - [libzim](https://github.com/openzim/libzim)

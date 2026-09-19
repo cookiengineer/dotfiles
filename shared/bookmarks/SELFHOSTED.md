@@ -58,6 +58,10 @@
 - [MCP in Go](https://github.com/owulveryck/gomcptest/)
 - [MCP Cli in Python](https://github.com/chrishayuk/mcp-cli)
 
+# Selfhosted / Password Managers
+
+- [VaultWarden](https://github.com/dani-garcia/vaultwarden)
+
 # Selfhosted / Search
 
 - [SearXNG](https://github.com/searxng/searxng)

@@ -66,6 +66,7 @@
 
 - [Big Clive](https://www.youtube.com/@bigclivedotcom/videos)
 - [Der Elektrotechniker](https://www.youtube.com/@derelektrotechniker/videos)
+- [Diode Gonewild](https://www.youtube.com/@DiodeGoneWild/playlists)
 
 # Entertainment / Fitness
 
@@ -94,6 +95,10 @@
 # Entertainment / Random
 
 - [Evan Edinger](https://www.youtube.com/@evan/videos)
+
+# Entertainment / Radio
+
+- [Keygen Music](https://keygenmusic.tk/)
 
 # Entertainment / Rationality
 

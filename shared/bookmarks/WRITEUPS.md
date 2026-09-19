@@ -23,6 +23,7 @@
 
 - [Hacking C++ Part 1](https://forum.0x00sec.org/t/hacking-c-part-1/531)
 - [Hacking C++ Part 2](https://forum.0x00sec.org/t/hacking-c-part-2/532)
+- [Towards automated Heap Feng Shui](https://www.usenix.org/conference/usenixsecurity21/presentation/wang-yan)
 - [Snippet List](https://unprotect.it/snippets/)
 
 # Write-Ups / Cyber Security / Malware

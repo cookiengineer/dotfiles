@@ -22,6 +22,14 @@
 - [CVE-2023-36664 GhostScript RCE](https://www.kroll.com/en/insights/publications/cyber/ghostscript-cve-2023-36664-remote-code-execution-vulnerability)
 - [LKM Linux Rootkit](https://github.com/hardenedvault/Reptile)
 
+# Cyber Security / Exploits / Routers
+
+- [CVE-2026-0310 PanOS](https://socprime.com/blog/cve-2026-0310-analysis/)
+
+# Cyber Security / Exploits / Web Services
+
+- [CVE-2026-71362 Magento](https://github.com/dinosn/cve-2026-71362-magento-lab)
+
 # Cyber Security / Exploits / Windows
 
 - [LOL Apps](https://lolapps-project.github.io)

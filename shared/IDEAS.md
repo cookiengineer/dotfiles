@@ -1,4 +1,24 @@
 
+# Data Badger
+
+- [ ] Step 1: Select dataset/files
+- [ ] Step 2: Select Worker (agent) Type
+- [ ] Step 3: Select (optional) output template
+- [ ] Step 4: Write instructions on what to convert
+
+# Paranoid Proxy
+
+- [ ] Implement a Proxy that fakes Backend APIs
+- [ ] RST packet counter as indicator of surveillance
+- [ ] Make it a time based counts per second per MB indicator
+
+# Audit Automation
+
+- [ ] Questionnaire pack for ISO norms
+- [ ] Workflow guides for ISO norms and audits
+- [ ] Matching Assessment tools
+- [ ] GUI tool for ISO management?
+
 # Go SQL Map
 
 - SQL injection fuzzer written in Go
@@ -77,6 +97,11 @@
 - Link devices and friends via WebRTC
 - Mandatory 2FA, mandatory crypto key generation
 - Comment and Post UI always uses `input type=file` to select key
+- Bots can get flagged but dont know whether they are bots or not
+- Humans can get flagged but also dont know if they see only bots or humans
+- Nice behavior gives higher likeliness of seeing human content
+- Bad behavior gives higher likeliness of seeing bot content
+- Bot fingerprint creates static seed, and usernames and content posts are randomized based on seed
 
 # Raspberry Zero Game Undercover Pentest Device
 
