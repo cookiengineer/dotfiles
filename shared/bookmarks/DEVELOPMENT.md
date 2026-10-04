@@ -75,6 +75,7 @@
 # Development / Golang / API
 
 - [ogen OpenAPI generator](https://github.com/ogen-go/ogen)
+- [specout OpenAPI generator](https://github.com/happytoolin/specout)
 
 # Development / Golang / Compatibility
 

@@ -31,7 +31,8 @@
 
 # Courses / Computer Science / Stanford CS336
 
-TODO
+- [Projects](https://cs336.stanford.edu/)
+- [Playlist](https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)
 
 # Courses / Cyber Security
 
