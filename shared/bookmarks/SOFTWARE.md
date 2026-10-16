@@ -119,6 +119,9 @@
 - [Graphite Editor](https://github.com/GraphiteEditor/Graphite)
 - [Inkscape](https://github.com/inkscape/inkscape)
 - [Krita](https://github.com/KDE/krita)
+- [PDFcraft](https://github.com/storytold/pdfcraft)
+- [Photocraft](https://github.com/storytold/photocraft)
+- [Vectorcraft](https://github.com/storytold/vectorcraft)
 
 # Software / Design / Icons
 
