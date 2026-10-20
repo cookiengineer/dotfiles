@@ -36,6 +36,7 @@
 - [LOL Drivers](https://loldrivers.io)
 - [LOL DriverScan](https://github.com/FourCoreLabs/loldriverscan)
 - [CVE-2022-34715 NFS RCE](https://www.zerodayinitiative.com/blog/2022/8/31/cve-2022-34715-more-microsoft-windows-nfs-v4-remote-code-execution)
+- [DDL Sideloading](https://akchhat.gitbook.io/dev/initial-access/dll-sideloading-for-initial-access-and-bypassing-elastic-edr)
 
 # Cyber Security / Exploits / Hardware
 

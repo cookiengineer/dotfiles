@@ -42,6 +42,10 @@
 
 - [fast text](https://fasttext.cc/)
 
+# AIML / Vision / User Interfaces
+
+- [NeuralOS](https://github.com/yuntian-group/neural-os)
+
 # AIML / Vision
 
 - [AutoGAN](https://github.com/ColumbiaDVMM/AutoGAN)
@@ -88,8 +92,10 @@
 
 # AIML / LLM / Inference Engines
 
+- [DeepInfer](https://github.com/deepseek-ai/DeepInfer)
 - [gollama.cpp](https://github.com/dianlight/gollama.cpp)
 - [IK llama.cpp fork](https://github.com/ikawrakow/ik_llama.cpp)
+- [Kimi K3 in C](https://github.com/FareedKhan-dev/kimi-k3-in-c)
 - [llama.cpp](https://github.com/ggml-org/llama.cpp)
 - [ollama](https://github.com/ollama/ollama)
 - [vllm](https://github.com/vllm-project/vllm)
@@ -110,9 +116,20 @@
 - [NeoBild CVE Analysis](https://github.com/weissmann93/NeoBild)
 - [Warp](https://github.com/warpdotdev/warp)
 
+# AIML / LLM / Agentic Skills
+
+- [Firmware Reverse Engineering](https://github.com/OrbitCurve/firmware-reverse-engineering)
+
 # AIML / LLM / Agentic Visualizations
 
 - [Mindwalk](https://github.com/cosmtrek/mindwalk)
+
+# AIML / LLM / Agentic Workflows
+
+- [LGTMaybe](https://github.com/MattJColes/lgtmaybe)
+- [How To Train Your GPT](https://github.com/raiyanyahya/how-to-train-your-gpt)
+- [RAG Step-by-Step Guide](https://github.com/FareedKhan-dev/complex-RAG-guide)
+- [Train LLM From Scratch](https://github.com/FareedKhan-dev/train-llm-from-scratch)
 
 # AIML / LLM / Benchmarks
 

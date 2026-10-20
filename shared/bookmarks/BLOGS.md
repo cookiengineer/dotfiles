@@ -31,3 +31,6 @@
 - [jitesh117](https://jitesh117.github.io/blog/)
 - [rednafi](https://rednafi.com/)
 
+# Blogs / History
+
+- [Uwe Spiekermann](https://uwe-spiekermann.com/publikationen/aufsaetze/)

@@ -62,6 +62,10 @@
 - [Derek van Schaik](https://www.youtube.com/@DerekVanSchaik/videos)
 - [Sashka](https://www.youtube.com/@Sashkaskanal/videos)
 
+# Entertainment / Economics
+
+- [Oliver Bahl-Franke](https://www.youtube.com/@OBFYT/videos)
+
 # Entertainment / Electronics
 
 - [Big Clive](https://www.youtube.com/@bigclivedotcom/videos)
