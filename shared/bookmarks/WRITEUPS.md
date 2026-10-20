@@ -8,6 +8,11 @@
 # Write-Ups / Cyber Security / Linux
 
 - [CVE-2026-43456](https://thecybersecguru.com/exploits/cve-2026-43456-linux-kernel-zero-day/)
+- [memfd fileless execution](https://www.elastic.co/security-labs/threat-command/memfd-create-linux-fileless-execution)
+
+# Write-Ups / Cyber Security / TOR
+
+- [Ebury SSH Interceptor Campaign](https://kaba.cx/posts/20261020_Tor/)
 
 # Write-Ups / Cyber Security / Windows / ICMP
 
@@ -28,6 +33,7 @@
 
 # Write-Ups / Cyber Security / Malware
 
+- [Evasion Engineering Book](https://github.com/dc401/nostarch-evasion-engineering)
 - [Shai Hulud 1.0](https://www.wiz.io/blog/shai-hulud-npm-supply-chain-attack)
 - [Shai Hulud 2.0](https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack)
 - [Shai Hulud 2.0 Aftermath](https://www.wiz.io/blog/shai-hulud-2-0-aftermath-ongoing-supply-chain-attack)

@@ -8,6 +8,8 @@
 
 # Selfhosted / Databases
 
+- [Baserow Spreadsheets](https://github.com/baserow/baserow)
+- [NocoDB Spreadsheets](https://github.com/nocodb/nocodb)
 - [Turso](https://github.com/tursodatabase/turso)
 
 # Selfhosted / Development

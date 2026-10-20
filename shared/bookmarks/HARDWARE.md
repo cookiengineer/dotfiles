@@ -3,6 +3,7 @@
 
 # Hardware / ESP32
 
+- [esp32-c3-adblock](https://github.com/M-Abozaid/esp32-c3-adblock)
 - [espradio](https://github.com/tinygo-org/espradio)
 
 # Hardware / Flipper Zero

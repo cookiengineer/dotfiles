@@ -126,6 +126,7 @@
 
 # AIML / LLM / Agentic Workflows
 
+- [Blast Loop](https://github.com/rlshaw-ml/BlastLoop)
 - [LGTMaybe](https://github.com/MattJColes/lgtmaybe)
 - [How To Train Your GPT](https://github.com/raiyanyahya/how-to-train-your-gpt)
 - [RAG Step-by-Step Guide](https://github.com/FareedKhan-dev/complex-RAG-guide)
@@ -216,6 +217,7 @@ Stable Diffusion:
 
 # AIML / LLM / Training
 
+- [Hybrid Reasoning Agents](https://github.com/togethercomputer/HybridAgent)
 - [Little Learner](https://littlelearner-ll.github.io/)
 - [Little Learner Paper](https://arxiv.org/abs/2608.13545)
 

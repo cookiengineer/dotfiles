@@ -15,4 +15,5 @@
 - [DeepSeek v4 Towards Highly Efficient Million Token Context Intelligence](https://arxiv.org/html/2606.19348v1)
 - [DeepSeek v4.1 Flash Pushing the Limits of KV Cache Compression](https://arxiv.org/html/2609.19969)
 - [EchoCoT Extracting Hidden Chain-of-Thought from Large Reasoning Models](https://arxiv.org/html/2608.20055v1)
+- [UniEvo-VL An On Policy Self Distillation Training Recipe for Self Improvement](https://arxiv.org/html/2609.38721)
 
