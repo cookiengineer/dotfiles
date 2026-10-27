@@ -1,6 +1,6 @@
 
 import fs from 'fs';
-import { execSync } from 'child_process';
+import { execSync, execFileSync } from 'child_process';
 
 import { isObject, isString } from '../POLYFILLS.mjs';
 
@@ -223,7 +223,7 @@ export const clone = (source, target) => {
 		let path   = target.split('/').slice(0, -1).join('/');
 
 		try {
-			output = execSync('git clone "' + source + '" "' + target + '"', {
+			output = execFileSync('git', [ 'clone', source, target ], {
 				cwd: path
 			}).toString('utf8');
 		} catch (err) {
