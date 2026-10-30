@@ -32,6 +32,7 @@
 - [Linda Johnson Speech Dataset](https://keithito.com/LJ-Speech-Dataset/)
 - [MegaTTS3](https://github.com/bytedance/MegaTTS3)
 - [Tacotron](https://github.com/keithito/tacotron)
+- [OpenSpline](https://github.com/openspline/openspline)
 
 # AIML / Trade
 

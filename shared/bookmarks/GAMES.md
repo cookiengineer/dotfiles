@@ -21,6 +21,7 @@
 
 # Games / Web
 
+- [Amsterdam Map Recall](https://github.com/blackmad/map-recall2)
 - [Pirates](https://github.com/piwodlaiwo/pirates)
 
 # Games / Windows / Platformer

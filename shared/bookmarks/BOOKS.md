@@ -15,6 +15,7 @@
 - [Black Hat Go](https://nostarch.com/blackhatgo)
 - [Black Hat Python](https://nostarch.com/black-hat-python2E)
 - [Evading EDR](https://nostarch.com/evading-edr)
+- [Evasion Engineering](https://github.com/dc401/nostarch-evasion-engineering)
 - [Rootkits and Bootkits](https://nostarch.com/rootkits)
 
 # Books / Classics

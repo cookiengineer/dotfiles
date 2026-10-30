@@ -44,6 +44,10 @@
 
 - [timeshift rsync/btrfs](https://github.com/linuxmint/timeshift)
 
+# Software / Battery Management
+
+- [ohmwatt](https://github.com/osspakistan/ohmwatt)
+
 # Software / Bootloaders
 
 - [U-Boot Bootloader](https://github.com/u-boot/u-boot)
@@ -103,8 +107,13 @@
 - [Calibre Web Reader](https://github.com/janeczku/calibre-web)
 - [PaperMerge](https://github.com/papermerge/papermerge-core)
 - [Baserow Spreadsheet Colab](https://gitlab.com/baserow/baserow)
+- [Kensaku Search](https://github.com/yjid/kensaku)
 - [NocoDB Spreadsheet Colab](https://github.com/nocodb/nocodb)
 - [Stirling PDF](https://github.com/Stirling-Tools/Stirling-PDF)
+
+# Software / Job Search
+
+- [Eregion](https://github.com/ethany14/Eregion-Job-Finding-Agent)
 
 # Software / Design
 
