@@ -199,6 +199,7 @@
 # Development / Golang / Networking
 
 - [broxy](https://github.com/rhaidiz/broxy)
+- [dtls](https://github.com/pion/dtls)
 - [goproxy](https://github.com/elazarl/goproxy)
 - [gorilla websocket](https://github.com/gorilla/websocket)
 - [openziti firewall](https://github.com/netfoundry/zfw)
@@ -226,6 +227,11 @@
 - [goja JavaScript engine](https://github.com/dop251/goja)
 - [goja node.js compatibility layer](https://github.com/dop251/goja_nodejs)
 - [goja fork with ESM support](https://github.com/grafana/sobek)
+
+# Development / Golang / Terminal
+
+- [bubbles](https://github.com/charmbracelet/bubbles)
+- [bubbletea](https://github.com/charmbracelet/bubbletea)
 
 # Development / Golang / Shells
 

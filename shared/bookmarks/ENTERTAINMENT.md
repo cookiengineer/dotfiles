@@ -83,6 +83,13 @@
 - [Johnny Harris](https://www.youtube.com/@johnnyharris/videos)
 - [Peter Santenello](https://www.youtube.com/@PeterSantenello/videos)
 
+# Entertainment / Lockpicking
+
+- [Dr Kun Daniel](https://www.youtube.com/@kundaniel/videos)
+- [HelpfulLockPicker](https://www.youtube.com/@HelpfulLockPicker/videos)
+- [LockPickingLawyer](https://www.youtube.com/@lockpickinglawyer/videos)
+- [McNallyOfficial](https://www.youtube.com/@McNallyOfficial/shorts)
+
 # Entertainment / Making
 
 - [Emily the Engineer](https://www.youtube.com/emilytheengineer/videos)

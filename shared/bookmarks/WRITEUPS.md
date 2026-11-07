@@ -9,6 +9,7 @@
 
 - [CVE-2026-43456](https://thecybersecguru.com/exploits/cve-2026-43456-linux-kernel-zero-day/)
 - [memfd fileless execution](https://www.elastic.co/security-labs/threat-command/memfd-create-linux-fileless-execution)
+- [Picking apart PHP2Shell](https://andrewmohawk.com/2026/10/26/picking-apart-php2shell/)
 
 # Write-Ups / Cyber Security / TOR
 
@@ -38,6 +39,7 @@
 - [Shai Hulud 2.0](https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack)
 - [Shai Hulud 2.0 Aftermath](https://www.wiz.io/blog/shai-hulud-2-0-aftermath-ongoing-supply-chain-attack)
 - [Shai Hulud SAP](https://www.wiz.io/blog/mini-shai-hulud-supply-chain-sap-npm)
+- [Shai Hulud Open Source](https://github.com/edxeth/Shai-Hulud-Open-Source)
 
 # Write-Ups / Leaks
 
