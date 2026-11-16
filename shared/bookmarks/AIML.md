@@ -204,6 +204,11 @@ Stable Diffusion:
 - [mark3labs MCP implementation](https://github.com/mark3labs/mcp-go)
 - [Responsible Vibe MCP](https://github.com/mrsimpson/responsible-vibe-mcp)
 
+# AIML / LLM / Gateways
+
+- [AgentTrace](https://github.com/aymane-amounas/agenttrace)
+- [Magpie](https://github.com/yetone/magpie)
+
 # AIML / LLM / Summarization
 
 - [Caveman](https://github.com/JuliusBrussee/caveman)

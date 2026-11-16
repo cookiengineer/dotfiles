@@ -1,6 +1,10 @@
 
 # Selfhosted
 
+# Selfhosted / Accounting
+
+- [Securo](https://github.com/securo-finance/securo)
+
 # Selfhosted / Archive / Web
 
 - [DiskerNet](https://github.com/BrowserBox/DiskerNet)

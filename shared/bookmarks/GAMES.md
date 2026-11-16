@@ -24,6 +24,10 @@
 - [Amsterdam Map Recall](https://github.com/blackmad/map-recall2)
 - [Pirates](https://github.com/piwodlaiwo/pirates)
 
+# Games / Windows / Arcade
+
+- [AI Wars](https://github.com/GearPlot/ai-wars)
+
 # Games / Windows / Platformer
 
 - [SM63Redux](https://github.com/Redux-Team/SM63Redux)

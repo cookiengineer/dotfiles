@@ -78,6 +78,10 @@
 - [Coach Stef](https://www.youtube.com/@CoachStef/videos)
 - [Doc Felix](https://www.youtube.com/@docfelix/videos)
 
+# Entertainment / Fun
+
+- [Standard Galactic Translator](https://standardgalactic.github.io/sga-converter.html)
+
 # Entertainment / Investigative Journalism
 
 - [Johnny Harris](https://www.youtube.com/@johnnyharris/videos)

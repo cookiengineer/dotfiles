@@ -5,6 +5,15 @@
 
 - [E-Mail CSS CSRF](https://portswigger.net/research/css-the-bomb-inside-your-inbox)
 
+# Write-Ups / Cyber Security / Web / JS
+
+- [Generating Strings without Parentheses in JavaScript](https://blog.ikaes.de/generating-strings-without-parentheses-in-javascript/)
+
+# Write-Ups / Cyber Security / Web / PHP2Shell
+
+- [Picking Apart PHP2Shell](https://andrewmohawk.com/2026/10/26/picking-apart-php2shell/)
+- [PHP2Shell Deep Dive](https://djad04.github.io/php2shell-deep-dive/)
+
 # Write-Ups / Cyber Security / Linux
 
 - [CVE-2026-43456](https://thecybersecguru.com/exploits/cve-2026-43456-linux-kernel-zero-day/)
