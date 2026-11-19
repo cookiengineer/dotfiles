@@ -94,6 +94,7 @@
 # AIML / LLM / Inference Engines
 
 - [DeepInfer](https://github.com/deepseek-ai/DeepInfer)
+- [DeepSeek Ultrafast](https://github.com/basetenlabs/deepseek-ultrafast)
 - [gollama.cpp](https://github.com/dianlight/gollama.cpp)
 - [IK llama.cpp fork](https://github.com/ikawrakow/ik_llama.cpp)
 - [Kimi K3 in C](https://github.com/FareedKhan-dev/kimi-k3-in-c)
@@ -120,6 +121,7 @@
 # AIML / LLM / Agentic Skills
 
 - [Firmware Reverse Engineering](https://github.com/OrbitCurve/firmware-reverse-engineering)
+- [Geo Sleuth](https://github.com/Oldcircle/geo-sleuth)
 
 # AIML / LLM / Agentic Visualizations
 
@@ -142,10 +144,13 @@
 
 - [Time Series Lean Notation](https://github.com/turboline-ai/tsln-golang)
 
-# AIML / LLM / IDEs
+# AIML / LLM / Harnesses
 
+- [AgentBox](https://github.com/savannahfeder/agentbox)
+- [ARTEX](https://github.com/BaaRai/ARTEX)
 - [OpenCode](https://github.com/anomalyco/opencode)
 - [DeepSeek Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
+- [Strix](https://github.com/usestrix/strix)
 
 # AIML / LLM / Models
 
@@ -208,6 +213,7 @@ Stable Diffusion:
 
 - [AgentTrace](https://github.com/aymane-amounas/agenttrace)
 - [Magpie](https://github.com/yetone/magpie)
+- [NuGuard](https://github.com/NuGuardAI/nuguard)
 
 # AIML / LLM / Summarization
 
@@ -216,6 +222,7 @@ Stable Diffusion:
 
 # AIML / LLM / Tools
 
+- [agweb](https://github.com/paul-nameless/agweb)
 - [choky](https://github.com/mirth/chonky)
 - [Aider Coding Assistant](https://github.com/Aider-AI/aider)
 - [Tabbly Coding Assistant](https://github.com/TabbyML/tabby)

@@ -44,6 +44,11 @@
 
 - [timeshift rsync/btrfs](https://github.com/linuxmint/timeshift)
 
+# Software / Backup / DVD
+
+- [Brasero](https://github.com/GNOME/brasero)
+- [DiscImageStudio](https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio)
+
 # Software / Battery Management
 
 - [ohmwatt](https://github.com/osspakistan/ohmwatt)
@@ -110,10 +115,6 @@
 - [Kensaku Search](https://github.com/yjid/kensaku)
 - [NocoDB Spreadsheet Colab](https://github.com/nocodb/nocodb)
 - [Stirling PDF](https://github.com/Stirling-Tools/Stirling-PDF)
-
-# Software / Job Search
-
-- [Eregion](https://github.com/ethany14/Eregion-Job-Finding-Agent)
 
 # Software / Design
 
@@ -185,6 +186,10 @@
 
 - [lossless-cut](https://github.com/mifi/lossless-cut)
 
+# Software / Emulation
+
+- [Darling](https://github.com/darlinghq/darling)
+
 # Software / Filesharing
 
 - [File Pizza](https://github.com/kern/filepizza)
@@ -211,6 +216,10 @@
 - [kkrieger werkkzeug](https://github.com/jaromil/kkrieger-werkkzeug3)
 - [phaser engine](https://github.com/phaserjs/phaser)
 - [phaser editor2d](https://github.com/PhaserEditor2D/PhaserEditor2D-v3)
+
+# Software / Job Search
+
+- [Eregion](https://github.com/ethany14/Eregion-Job-Finding-Agent)
 
 # Software / Maps
 
